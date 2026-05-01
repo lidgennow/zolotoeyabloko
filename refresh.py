@@ -48,24 +48,16 @@ CATEGORIES = [
 OTVAL_YAVKA = {"Не пришел", "Отмена записи"}
 
 def parse_payment(s):
+    """Для Золотого Яблока: колонка продажа содержит просто число."""
     if pd.isna(s): return 0
-    m = re.search(r"оплат[аы]?[^\d]{0,5}(\d[\d\s]*)", s.lower())
-    if not m: return 0
-    n = re.sub(r"\s", "", m.group(1))
-    return int(n) if n.isdigit() else 0
+    try:
+        return int(float(str(s).strip().replace(' ', '').replace('\xa0', '')))
+    except Exception:
+        return 0
 
 def parse_plan(s, root_pat):
-    if pd.isna(s): return 0
-    total = 0
-    pat = rf"{root_pat}[\s\-—:,\.]{{0,6}}(\d[\d\s]{{1,12}})\s*(т\b|тыс|т\.)?"
-    for m in re.finditer(pat, s.lower()):
-        n = re.sub(r"\s", "", m.group(1))
-        if not n.isdigit(): continue
-        v = int(n)
-        if m.group(2): v *= 1000
-        if v < 1000: continue
-        total += v
-    return total
+    """Не используется для этого клиента, возвращает 0."""
+    return 0
 
 def categorize(comment):
     if not isinstance(comment, str): return "Другое"
@@ -195,11 +187,13 @@ def main():
     df = pd.read_csv(CSV_PATH)
     df.columns = df.columns.str.strip()          # убираем пробелы из заголовков
     df = df.rename(columns={"продажа": "Чек"})   # только это переименование нужно
-    df["payment"] = df["Чек"].apply(parse_payment)
-    for label, pat in ROOTS.items():
-        df[label] = df["Чек"].apply(lambda s, p=pat: parse_plan(s, p))
-    df["plan_total"] = sum(df[k] for k in ROOTS)
+    df["payment"]    = df["Чек"].apply(parse_payment)
+    df["plan_total"] = df["payment"]   # план = оплата (правило клиента)
+    print(f"  Пример Заявка: {df['Заявка:'].dropna().iloc[:3].tolist()}")
     df["dt"]    = pd.to_datetime(df["Заявка:"], dayfirst=True, errors="coerce")
+    nat_count = df["dt"].isna().sum()
+    if nat_count > 0:
+        print(f"  WARN: {nat_count} строк с NaT после парсинга дат")
     df["month"] = df["dt"].dt.strftime("%Y-%m")
     df["refusal_cat"] = df["Комментарии:"].apply(categorize)
     df.loc[~df["Статус:"].isin(["ОТКАЗ", "неактуал"]), "refusal_cat"] = None
