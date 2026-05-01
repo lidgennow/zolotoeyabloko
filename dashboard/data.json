@@ -1,14 +1,19 @@
 {
   "period": {
-    "date_min": "1970-01-01",
-    "date_max": "1970-01-01"
+    "date_min": "2026-04-11",
+    "date_max": "2026-05-01"
   },
-  "generated_at": "2026-05-01T21:27:01Z",
+  "generated_at": "2026-05-01T21:30:43Z",
   "months": [
     {
-      "key": "1970-01",
-      "label": "1970-01",
-      "count": 187
+      "key": "2026-04",
+      "label": "Апрель 2026",
+      "count": 179
+    },
+    {
+      "key": "2026-05",
+      "label": "Май 2026",
+      "count": 8
     }
   ],
   "all": {
@@ -828,21 +833,21 @@
     ]
   },
   "by_month": {
-    "1970-01": {
+    "2026-04": {
       "kpi": {
-        "total": 187,
-        "pcp": 80,
-        "nekv": 107,
-        "zapis": 28,
+        "total": 179,
+        "pcp": 78,
+        "nekv": 101,
+        "zapis": 27,
         "prishel": 9,
         "neprishel": 5,
         "otmena": 2,
         "perezap": 6,
-        "active_zapis": 12,
+        "active_zapis": 11,
         "otval_zapis": 7,
-        "conv_pcp": 42.8,
-        "conv_zapis_from_pcp": 35.0,
-        "conv_prishel_from_zapis": 32.1,
+        "conv_pcp": 43.6,
+        "conv_zapis_from_pcp": 34.6,
+        "conv_prishel_from_zapis": 33.3,
         "sum_payment": 0,
         "sum_plan": 0,
         "plan_with_dep_sum": 0,
@@ -853,30 +858,30 @@
         "only_payment_sum": 0,
         "only_payment_count": 0,
         "refusals_total": 29,
-        "neaktual_total": 23,
-        "ad_spend": null,
+        "neaktual_total": 22,
+        "ad_spend": 214800,
         "drr": null
       },
       "status_counts": {
-        "в работе / переговорах": 47,
-        "недозвон": 39,
+        "в работе / переговорах": 46,
+        "недозвон": 37,
         "ОТКАЗ": 29,
-        "запись в клинику": 28,
-        "неактуал": 23,
+        "запись в клинику": 27,
+        "неактуал": 22,
         "дубль": 7,
         "ндз финал": 5,
         "отложенный спрос": 5,
-        "—": 4
+        "—": 1
       },
       "operator_stats": {
         "ГАЛИНА": {
-          "total": 6,
-          "pcp": 3,
-          "nekv": 3,
-          "zapis": 1,
+          "total": 2,
+          "pcp": 1,
+          "nekv": 1,
+          "zapis": 0,
           "prishel": 0,
           "otval": 0,
-          "active": 1,
+          "active": 0,
           "payment": 0,
           "plan_with_dep": 0,
           "plan_no_dep": 0,
@@ -912,9 +917,9 @@
           "patients_no_dep": 0
         },
         "ЛЕНА": {
-          "total": 60,
+          "total": 59,
           "pcp": 32,
-          "nekv": 28,
+          "nekv": 27,
           "zapis": 12,
           "prishel": 4,
           "otval": 2,
@@ -1010,9 +1015,9 @@
           "patients_no_dep": 0
         },
         "—": {
-          "total": 7,
+          "total": 4,
           "pcp": 3,
-          "nekv": 4,
+          "nekv": 1,
           "zapis": 0,
           "prishel": 0,
           "otval": 0,
@@ -1296,23 +1301,13 @@
           "payment": 0,
           "plan_total": 0,
           "Комментарии:": "ПРОТЕЗИРОВАНИЕ"
-        },
-        {
-          "Имя:": "Светлана",
-          "Телефон:": 79139680246,
-          "Дата записи": "2.05 НА 12:00",
-          "Явка:": null,
-          "Имя оператора, взявшего в работу": "ГАЛИНА",
-          "payment": 0,
-          "plan_total": 0,
-          "Комментарии:": "ДИАГНОСТИКА "
         }
       ],
       "refusal_categories": [
         {
           "cat": "Другое",
-          "count": 43,
-          "share": 82.7,
+          "count": 42,
+          "share": 82.4,
           "items": [
             {
               "Имя:": "Елена, 11.04 после 18.00",
@@ -1565,19 +1560,13 @@
               "Статус:": "ОТКАЗ",
               "Имя оператора, взявшего в работу": "ЛЕНА",
               "Комментарии:": "записана 02.05 в спарту к своему доктору"
-            },
-            {
-              "Имя:": "Константин ",
-              "Статус:": "неактуал",
-              "Имя оператора, взявшего в работу": "ГАЛИНА",
-              "Комментарии:": "ХОТЕЛ УСЛУГИ ПО ДМС "
             }
           ]
         },
         {
           "cat": "Не актуально / не нужно",
           "count": 8,
-          "share": 15.4,
+          "share": 15.7,
           "items": [
             {
               "Имя:": "Кристина, 11.04 в 18:00",
@@ -1632,13 +1621,123 @@
         {
           "cat": "Цена / финансы",
           "count": 1,
-          "share": 1.9,
+          "share": 2.0,
           "items": [
             {
               "Имя:": "Игорь",
               "Статус:": "ОТКАЗ",
               "Имя оператора, взявшего в работу": "ЛЕНА",
               "Комментарии:": "НЕ РАБОТАЕТ, НЕТ ДЕНЕГ, ПЛАНИРУЕТ ПРОТЕЗИРОВАНИЕ В ПОЛИКЛИНИКЕ, ХОЧЕТ БЕСПЛАТНО УСЛУГИ.+ РАНЕЕ УПАЛ, ПЛОХО ХОДИТ ОТ СПИНЫ ОТДАЕТ В НОГУ.  НЕ СТАЛА ПРЕДЛАГАТЬ ЕМУ ЕХАТЬ К НАМ. НЕТ СМЫСЛА!!!"
+            }
+          ]
+        }
+      ]
+    },
+    "2026-05": {
+      "kpi": {
+        "total": 8,
+        "pcp": 2,
+        "nekv": 6,
+        "zapis": 1,
+        "prishel": 0,
+        "neprishel": 0,
+        "otmena": 0,
+        "perezap": 0,
+        "active_zapis": 1,
+        "otval_zapis": 0,
+        "conv_pcp": 25.0,
+        "conv_zapis_from_pcp": 50.0,
+        "conv_prishel_from_zapis": 0.0,
+        "sum_payment": 0,
+        "sum_plan": 0,
+        "plan_with_dep_sum": 0,
+        "plan_with_dep_count": 0,
+        "plan_with_dep_paid": 0,
+        "plan_no_dep_sum": 0,
+        "plan_no_dep_count": 0,
+        "only_payment_sum": 0,
+        "only_payment_count": 0,
+        "refusals_total": 0,
+        "neaktual_total": 1,
+        "ad_spend": null,
+        "drr": null
+      },
+      "status_counts": {
+        "—": 3,
+        "недозвон": 2,
+        "в работе / переговорах": 1,
+        "неактуал": 1,
+        "запись в клинику": 1
+      },
+      "operator_stats": {
+        "ГАЛИНА": {
+          "total": 4,
+          "pcp": 2,
+          "nekv": 2,
+          "zapis": 1,
+          "prishel": 0,
+          "otval": 0,
+          "active": 1,
+          "payment": 0,
+          "plan_with_dep": 0,
+          "plan_no_dep": 0,
+          "patients_with_dep": 0,
+          "patients_no_dep": 0
+        },
+        "ЛЕНА": {
+          "total": 1,
+          "pcp": 0,
+          "nekv": 1,
+          "zapis": 0,
+          "prishel": 0,
+          "otval": 0,
+          "active": 0,
+          "payment": 0,
+          "plan_with_dep": 0,
+          "plan_no_dep": 0,
+          "patients_with_dep": 0,
+          "patients_no_dep": 0
+        },
+        "—": {
+          "total": 3,
+          "pcp": 0,
+          "nekv": 3,
+          "zapis": 0,
+          "prishel": 0,
+          "otval": 0,
+          "active": 0,
+          "payment": 0,
+          "plan_with_dep": 0,
+          "plan_no_dep": 0,
+          "patients_with_dep": 0,
+          "patients_no_dep": 0
+        }
+      },
+      "plans_with_deposit": [],
+      "plans_without_deposit": [],
+      "appointments": [
+        {
+          "Имя:": "Светлана",
+          "Телефон:": 79139680246,
+          "Дата записи": "2.05 НА 12:00",
+          "Явка:": null,
+          "Имя оператора, взявшего в работу": "ГАЛИНА",
+          "payment": 0,
+          "plan_total": 0,
+          "Комментарии:": "ДИАГНОСТИКА "
+        }
+      ],
+      "refusal_categories": [
+        {
+          "cat": "Другое",
+          "count": 1,
+          "share": 100.0,
+          "items": [
+            {
+              "Имя:": "Константин ",
+              "Статус:": "неактуал",
+              "Имя оператора, взявшего в работу": "ГАЛИНА",
+              "Комментарии:": "ХОТЕЛ УСЛУГИ ПО ДМС "
             }
           ]
         }
