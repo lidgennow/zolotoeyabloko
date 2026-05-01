@@ -188,6 +188,7 @@ def main():
         sys.exit(f"curl failed: {r.stderr}")
 
     df = pd.read_csv(CSV_PATH)
+    print(f"  Колонки CSV: {df.columns.tolist()}")
     # Маппинг колонок Золотого Яблока → внутренние имена
     df = df.rename(columns={
         "Заявка":      "Время:",
