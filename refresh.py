@@ -74,15 +74,19 @@ def categorize(comment):
         if re.search(pat, c): return name
     return "Другое"
 
+PCP_STATUSES = {"в работе", "в переговорах", "запись в клинику", "отложенный спрос"}
+
 def normalize_status(s):
     if pd.isna(s): return "—"
     if s.startswith("недозвон"): return "недозвон"
+    if s in ("в работе", "в переговорах"): return "в работе / переговорах"
     return s
 
 def compute(g, ad_spend=None):
     total = len(g)
-    pcp   = int((g["КВАЛИФИКАЦИЯ"] == "ПЦП").sum())
-    nekv  = int((g["КВАЛИФИКАЦИЯ"] == "НЕКВАЛ").sum())
+    pcp_mask = g["Статус:"].isin(PCP_STATUSES)
+    pcp  = int(pcp_mask.sum())
+    nekv = total - pcp
     zapis = int((g["Статус:"] == "запись в клинику").sum())
     prishel   = int((g["Явка:"] == "Пришел").sum())
     neprishel = int((g["Явка:"] == "Не пришел").sum())
@@ -103,10 +107,11 @@ def compute(g, ad_spend=None):
     for op, og in g.groupby("Имя оператора, взявшего в работу", dropna=False):
         op_name = op if pd.notna(op) else "—"
         ozap = og["Статус:"] == "запись в клинику"
+        op_pcp = int(og["Статус:"].isin(PCP_STATUSES).sum())
         op_stats[op_name] = {
             "total":    int(len(og)),
-            "pcp":      int((og["КВАЛИФИКАЦИЯ"] == "ПЦП").sum()),
-            "nekv":     int((og["КВАЛИФИКАЦИЯ"] == "НЕКВАЛ").sum()),
+            "pcp":      op_pcp,
+            "nekv":     int(len(og)) - op_pcp,
             "zapis":    int(ozap.sum()),
             "prishel":  int((og["Явка:"] == "Пришел").sum()),
             "otval":    int((ozap & og["Явка:"].isin(OTVAL_YAVKA)).sum()),
