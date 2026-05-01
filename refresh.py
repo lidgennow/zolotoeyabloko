@@ -218,9 +218,12 @@ def main():
     df = pd.read_csv(CSV_PATH)
     df.columns = df.columns.str.strip()
     df = df.rename(columns={"продажа": "Чек"})
-    # Нормализуем имена операторов: ЛЕНА/лена/Лена → Лена
+    # Нормализуем имена операторов: ЛЕНА/лена/Лена → Лена, Наталья Ш → Наталья
+    OPERATOR_MAP = {"Наталья Ш": "Наталья"}
     df["Имя оператора, взявшего в работу"] = (
-        df["Имя оператора, взявшего в работу"].str.strip().str.title()
+        df["Имя оператора, взявшего в работу"]
+        .str.strip().str.title()
+        .replace(OPERATOR_MAP)
     )
     parsed = df["Чек"].apply(lambda s: pd.Series(parse_payment_plan(s), index=["payment","plan_total"]))
     df["payment"]    = parsed["payment"]
