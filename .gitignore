@@ -1,0 +1,7 @@
+data/sheet.csv
+dashboard/sc_*.png
+dashboard/screenshot*.png
+*.pyc
+__pycache__/
+.DS_Store
+.claude/

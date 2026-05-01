@@ -1,0 +1,15 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(file /Users/2haha/stomteststat/*.csv)",
+      "Bash(mkdir -p /Users/2haha/stomteststat/data)",
+      "Bash(mkdir -p /Users/2haha/stomteststat/dashboard)",
+      "Bash(python3)",
+      "Bash(curl -sL -o /Users/2haha/stomteststat/data/sheet.csv \"https://docs.google.com/spreadsheets/d/102vvFrGBKJJE14d2ZMQaDQX7zEQ1IgvsP0nL6NAtnHk/export?format=csv&gid=0\" -w \"HTTP %{http_code}\\\\n\")",
+      "Bash(pip3 install *)",
+      "Bash(python3 -m http.server 8765)",
+      "Bash(curl -s -o /dev/null -w \"index: HTTP %{http_code}\\\\n\" http://localhost:8765/)",
+      "Bash(curl -s -o /dev/null -w \"data:  HTTP %{http_code}\\\\n\" http://localhost:8765/data.json)"
+    ]
+  }
+}
