@@ -2,7 +2,7 @@
 <html lang="ru">
 <head>
 <meta charset="utf-8">
-<title>Дашборд КЦ — Стоматология «Мои Родные» VDL, Астрахань</title>
+<title>Дашборд КЦ — «Золотое Яблоко», Омск</title>
 <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js"></script>
 <style>
   :root {
@@ -70,7 +70,7 @@
 
 <div class="header-row">
   <div>
-    <h1>Стоматология «Мои Родные» VDL — Астрахань</h1>
+    <h1>«Золотое Яблоко» — Омск</h1>
     <div class="sub" id="period"></div>
   </div>
   <div style="display:flex;align-items:center;gap:12px;flex-wrap:wrap">
@@ -89,7 +89,7 @@
 <div class="card"><div class="funnel" id="funnel"></div></div>
 
 <h2>Планы лечения: внесли депозит vs без депозита</h2>
-<div class="grid row3" style="margin-bottom:16px">
+<div class="grid row2" style="margin-bottom:16px">
   <div class="card">
     <div class="kpi-mini" style="color:var(--good)">С планом + депозит</div>
     <div style="font-size:24px;font-weight:600;margin-top:8px" id="seg1Sum"></div>
@@ -101,12 +101,6 @@
     <div style="font-size:24px;font-weight:600;margin-top:8px" id="seg2Sum"></div>
     <div style="color:var(--muted);font-size:13px;margin-top:4px" id="seg2Sub"></div>
     <div style="margin-top:8px;font-size:13px;color:var(--warn)">потенциал «дожима»</div>
-  </div>
-  <div class="card">
-    <div class="kpi-mini" style="color:var(--accent)">Оплата без плана</div>
-    <div style="font-size:24px;font-weight:600;margin-top:8px" id="seg3Sum"></div>
-    <div style="color:var(--muted);font-size:13px;margin-top:4px" id="seg3Sub"></div>
-    <div style="margin-top:8px;font-size:13px;color:var(--muted)">диагностика, КТ и т.п.</div>
   </div>
 </div>
 
@@ -208,17 +202,16 @@ function render(d) {
     `<span style="color:var(--muted)">(${pct(k.plan_with_dep_paid, k.plan_with_dep_sum)} от плана)</span>`;
   document.getElementById('seg2Sum').textContent = fmt(k.plan_no_dep_sum) + ' ₽';
   document.getElementById('seg2Sub').textContent = `${k.plan_no_dep_count} пациент(а) с планом без оплаты`;
-  document.getElementById('seg3Sum').textContent = fmt(k.only_payment_sum) + ' ₽';
-  document.getElementById('seg3Sub').textContent = `${k.only_payment_count} пациент(а)`;
 
-  // ---------- Donut: статусы (с объединённым недозвоном) ----------
+  // ---------- Donut: статусы ----------
   Chart.defaults.color = '#94a3b8';
   Chart.defaults.borderColor = '#334155';
   const sc = d.status_counts;
   const colorMap = {
-    'запись в клинику':'#22c55e', 'в переговорах':'#38bdf8', 'ОТКАЗ':'#ef4444',
+    'запись в клинику':'#22c55e', 'в работе / переговорах':'#38bdf8', 'ОТКАЗ':'#ef4444',
     'ндз финал':'#f59e0b', 'неактуал':'#a78bfa', 'отложенный спрос':'#0ea5e9',
-    'недозвон':'#fb923c', 'дубль':'#94a3b8', 'Другой город':'#64748b', '—':'#475569',
+    'недозвон':'#fb923c', 'дубль':'#94a3b8',
+    '—':'#475569',
   };
   if (chartStatus) chartStatus.destroy();
   chartStatus = new Chart(document.getElementById('chStatus'), {
@@ -348,7 +341,9 @@ function render(d) {
             </div>
           </div>
         </summary>
-        <div style="background:rgba(0,0,0,.15);border-top:1px solid var(--border)">${items}</div>
+        <div style="background:rgba(0,0,0,.15);border-top:1px solid var(--border)">
+          ${items || '<div style="padding:12px 14px;color:var(--muted);font-size:13px">Детальные комментарии будут добавлены при следующем обновлении</div>'}
+        </div>
       </details>`;
     }).join('');
   }
@@ -365,7 +360,7 @@ function setActive(key) {
   render(key === 'all' ? DATA.all : DATA.by_month[key]);
 }
 
-const UPDATE_INTERVAL_MS = 30 * 60 * 1000; // GitHub Actions запускается каждые 30 мин
+const UPDATE_INTERVAL_MS = 30 * 60 * 1000;
 let _countdownTimer = null;
 
 function formatMoscow(date) {
@@ -384,7 +379,6 @@ function scheduleRetry(el, delayMs) {
 function startCountdown(nextUpdateAt) {
   if (_countdownTimer) { clearInterval(_countdownTimer); clearTimeout(_countdownTimer); }
   const el = document.getElementById('nextUpdate');
-  // Если время обновления уже прошло — данные ещё не пришли, ждём 2 минуты и пробуем снова
   if (nextUpdateAt <= Date.now()) {
     scheduleRetry(el, 2 * 60 * 1000);
     return;
@@ -393,7 +387,6 @@ function startCountdown(nextUpdateAt) {
     const rem = nextUpdateAt - Date.now();
     if (rem <= 0) {
       clearInterval(_countdownTimer);
-      // Даём GitHub Actions 45 секунд завершить работу, потом проверяем
       el.textContent = 'обновляется…';
       _countdownTimer = setTimeout(() => loadData(), 45 * 1000);
       return;

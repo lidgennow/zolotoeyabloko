@@ -14,21 +14,21 @@ OUT_PATH = ROOT / "dashboard" / "data.json"
 # ============================================================
 
 # 1. ID таблицы Google Sheets (из URL: .../spreadsheets/d/ВОТ_ЭТО/edit)
-SHEET_ID = "102vvFrGBKJJE14d2ZMQaDQX7zEQ1IgvsP0nL6NAtnHk"
+SHEET_ID = "1nlz9_J_AF-9I4i9GA0y1UQWwud_uEfnpHDyThiHLR-0"
+SHEET_GID = "903839238"
 
 # 2. Рекламные расходы по месяцам (None = данных нет, не считать ДРР)
 AD_SPEND = {
-    "2026-03": 36000,
-    "2026-04": 145500,
+    "2026-04": 214800,
     "2026-05": None,
 }
 
 # 3. Названия месяцев для отображения в дашборде
-MONTH_NAMES = {"2026-03": "Март 2026", "2026-04": "Апрель 2026", "2026-05": "Май 2026"}
+MONTH_NAMES = {"2026-04": "Апрель 2026", "2026-05": "Май 2026"}
 
 # ============================================================
 
-SHEET_URL = f"https://docs.google.com/spreadsheets/d/{SHEET_ID}/export?format=csv&gid=0"
+SHEET_URL = f"https://docs.google.com/spreadsheets/d/{SHEET_ID}/export?format=csv&gid={SHEET_GID}"
 ROOTS = {
     "Имплантация": r"имплант\w*", "Ортопедия": r"ортопед\w*",
     "Терапия": r"тера(?:п|пи)\w*", "Хирургия": r"хирург\w*",
@@ -188,11 +188,22 @@ def main():
         sys.exit(f"curl failed: {r.stderr}")
 
     df = pd.read_csv(CSV_PATH)
+    # Маппинг колонок Золотого Яблока → внутренние имена
+    df = df.rename(columns={
+        "Заявка":      "Время:",
+        "Статус":      "Статус:",
+        "Явка":        "Явка:",
+        "Имя":         "Имя:",
+        "Телефон":     "Телефон:",
+        "Комментарии": "Комментарии:",
+        "Имя оператора": "Имя оператора, взявшего в работу",
+        "продажа":     "Чек",
+    })
     df["payment"] = df["Чек"].apply(parse_payment)
     for label, pat in ROOTS.items():
         df[label] = df["Чек"].apply(lambda s, p=pat: parse_plan(s, p))
     df["plan_total"] = sum(df[k] for k in ROOTS)
-    df["dt"]    = pd.to_datetime(df["Время:"], format="%Y.%m.%d %H:%M:%S", errors="coerce")
+    df["dt"]    = pd.to_datetime(df["Время:"], dayfirst=True, errors="coerce")
     df["month"] = df["dt"].dt.strftime("%Y-%m")
     df["refusal_cat"] = df["Комментарии:"].apply(categorize)
     df.loc[~df["Статус:"].isin(["ОТКАЗ", "неактуал"]), "refusal_cat"] = None
