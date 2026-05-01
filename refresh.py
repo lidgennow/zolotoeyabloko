@@ -216,8 +216,12 @@ def main():
         sys.exit(f"curl failed: {r.stderr}")
 
     df = pd.read_csv(CSV_PATH)
-    df.columns = df.columns.str.strip()          # убираем пробелы из заголовков
-    df = df.rename(columns={"продажа": "Чек"})   # только это переименование нужно
+    df.columns = df.columns.str.strip()
+    df = df.rename(columns={"продажа": "Чек"})
+    # Нормализуем имена операторов: ЛЕНА/лена/Лена → Лена
+    df["Имя оператора, взявшего в работу"] = (
+        df["Имя оператора, взявшего в работу"].str.strip().str.title()
+    )
     parsed = df["Чек"].apply(lambda s: pd.Series(parse_payment_plan(s), index=["payment","plan_total"]))
     df["payment"]    = parsed["payment"]
     df["plan_total"] = parsed["plan_total"]
