@@ -187,6 +187,7 @@ def main():
     df = pd.read_csv(CSV_PATH)
     df.columns = df.columns.str.strip()          # убираем пробелы из заголовков
     df = df.rename(columns={"продажа": "Чек"})   # только это переименование нужно
+    print(f"  Чек (все непустые): {df['Чек'].dropna().tolist()}")
     df["payment"]    = df["Чек"].apply(parse_payment)
     df["plan_total"] = df["payment"]   # план = оплата (правило клиента)
     print(f"  Оплаты > 0: {(df['payment'] > 0).sum()}, суммарно: {df['payment'].sum()}")
