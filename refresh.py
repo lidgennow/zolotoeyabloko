@@ -47,17 +47,48 @@ CATEGORIES = [
 ]
 OTVAL_YAVKA = {"Не пришел", "Отмена записи"}
 
+def _num(s):
+    """'504 082' → 504082"""
+    n = re.sub(r'[\s\xa0]', '', str(s).strip())
+    return int(n) if n.isdigit() else 0
+
+def parse_payment_plan(text):
+    """Возвращает (payment, plan_total) из колонки продажа."""
+    if not isinstance(text, str) or not text.strip():
+        return 0, 0
+    s = text.lower()
+    num_pat = r'\d{1,3}(?:[\s\xa0]\d{3})*|\d{4,}'
+
+    # "504 082 внесено 450 000" → план=504082, оплата=450000
+    m = re.search(r'(' + num_pat + r')\s+внесено\s+(' + num_pat + r')', s)
+    if m:
+        plan, pay = _num(m.group(1)), _num(m.group(2))
+        if plan >= 1000 and pay >= 1000:
+            return pay, plan
+
+    # "30 000 внесено" → оплата=30000, ищем "127 541 план"
+    m = re.search(r'(' + num_pat + r')\s+внесено', s)
+    if m:
+        pay = _num(m.group(1))
+        if pay >= 1000:
+            m2 = re.search(r'(' + num_pat + r')\s+план', s)
+            plan = _num(m2.group(1)) if m2 and _num(m2.group(1)) >= 1000 else pay
+            return pay, max(pay, plan)
+
+    # "104 367 полная оплата, план лечения 104 367"
+    if 'полная оплата' in s or 'план лечения' in s:
+        nums = [_num(n) for n in re.findall(num_pat, text)]
+        nums = [n for n in nums if n >= 1000]
+        if nums:
+            return nums[0], nums[-1]
+
+    return 0, 0
+
 def parse_payment(s):
-    """Для Золотого Яблока: колонка продажа содержит просто число."""
-    if pd.isna(s): return 0
-    try:
-        return int(float(str(s).strip().replace(' ', '').replace('\xa0', '')))
-    except Exception:
-        return 0
+    return parse_payment_plan(s)[0]
 
 def parse_plan(s, root_pat):
-    """Не используется для этого клиента, возвращает 0."""
-    return 0
+    return parse_payment_plan(s)[1]
 
 def categorize(comment):
     if not isinstance(comment, str): return "Другое"
@@ -187,9 +218,9 @@ def main():
     df = pd.read_csv(CSV_PATH)
     df.columns = df.columns.str.strip()          # убираем пробелы из заголовков
     df = df.rename(columns={"продажа": "Чек"})   # только это переименование нужно
-    print(f"  Чек (все непустые): {df['Чек'].dropna().tolist()}")
-    df["payment"]    = df["Чек"].apply(parse_payment)
-    df["plan_total"] = df["payment"]   # план = оплата (правило клиента)
+    parsed = df["Чек"].apply(lambda s: pd.Series(parse_payment_plan(s), index=["payment","plan_total"]))
+    df["payment"]    = parsed["payment"]
+    df["plan_total"] = parsed["plan_total"]
     print(f"  Оплаты > 0: {(df['payment'] > 0).sum()}, суммарно: {df['payment'].sum()}")
     df["dt"]    = pd.to_datetime(df["Время:"], format="%Y.%m.%d %H:%M:%S", errors="coerce")
     nat_count = df["dt"].isna().sum()
