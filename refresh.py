@@ -189,11 +189,11 @@ def main():
     df = df.rename(columns={"продажа": "Чек"})   # только это переименование нужно
     df["payment"]    = df["Чек"].apply(parse_payment)
     df["plan_total"] = df["payment"]   # план = оплата (правило клиента)
-    print(f"  Пример Заявка: {df['Заявка:'].dropna().iloc[:3].tolist()}")
-    df["dt"]    = pd.to_datetime(df["Заявка:"], dayfirst=True, errors="coerce")
+    print(f"  Оплаты > 0: {(df['payment'] > 0).sum()}, суммарно: {df['payment'].sum()}")
+    df["dt"]    = pd.to_datetime(df["Время:"], format="%Y.%m.%d %H:%M:%S", errors="coerce")
     nat_count = df["dt"].isna().sum()
     if nat_count > 0:
-        print(f"  WARN: {nat_count} строк с NaT после парсинга дат")
+        print(f"  WARN: {nat_count} строк с NaT, пример Время: {df['Время:'].dropna().iloc[:2].tolist()}")
     df["month"] = df["dt"].dt.strftime("%Y-%m")
     df["refusal_cat"] = df["Комментарии:"].apply(categorize)
     df.loc[~df["Статус:"].isin(["ОТКАЗ", "неактуал"]), "refusal_cat"] = None
