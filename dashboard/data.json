@@ -3,7 +3,7 @@
     "date_min": "2026-04-11",
     "date_max": "2026-05-01"
   },
-  "generated_at": "2026-05-01T21:36:15Z",
+  "generated_at": "2026-05-01T21:39:01Z",
   "months": [
     {
       "key": "2026-04",
@@ -31,11 +31,11 @@
       "conv_pcp": 42.8,
       "conv_zapis_from_pcp": 35.0,
       "conv_prishel_from_zapis": 32.1,
-      "sum_payment": 0,
-      "sum_plan": 0,
-      "plan_with_dep_sum": 0,
-      "plan_with_dep_count": 0,
-      "plan_with_dep_paid": 0,
+      "sum_payment": 776210,
+      "sum_plan": 927833,
+      "plan_with_dep_sum": 927833,
+      "plan_with_dep_count": 4,
+      "plan_with_dep_paid": 776210,
       "plan_no_dep_sum": 0,
       "plan_no_dep_count": 0,
       "only_payment_sum": 0,
@@ -43,7 +43,7 @@
       "refusals_total": 29,
       "neaktual_total": 23,
       "ad_spend": 214800,
-      "drr": null
+      "drr": 23.2
     },
     "status_counts": {
       "в работе / переговорах": 47,
@@ -107,10 +107,10 @@
         "prishel": 4,
         "otval": 2,
         "active": 6,
-        "payment": 0,
-        "plan_with_dep": 0,
+        "payment": 450000,
+        "plan_with_dep": 504082,
         "plan_no_dep": 0,
-        "patients_with_dep": 0,
+        "patients_with_dep": 1,
         "patients_no_dep": 0
       },
       "Лена": {
@@ -121,10 +121,10 @@
         "prishel": 1,
         "otval": 2,
         "active": 0,
-        "payment": 0,
-        "plan_with_dep": 0,
+        "payment": 191843,
+        "plan_with_dep": 191843,
         "plan_no_dep": 0,
-        "patients_with_dep": 0,
+        "patients_with_dep": 1,
         "patients_no_dep": 0
       },
       "НАТАЛЬЯ": {
@@ -177,10 +177,10 @@
         "prishel": 1,
         "otval": 0,
         "active": 2,
-        "payment": 0,
-        "plan_with_dep": 0,
+        "payment": 30000,
+        "plan_with_dep": 127541,
         "plan_no_dep": 0,
-        "patients_with_dep": 0,
+        "patients_with_dep": 1,
         "patients_no_dep": 0
       },
       "наталья": {
@@ -191,10 +191,10 @@
         "prishel": 1,
         "otval": 0,
         "active": 2,
-        "payment": 0,
-        "plan_with_dep": 0,
+        "payment": 104367,
+        "plan_with_dep": 104367,
         "plan_no_dep": 0,
-        "patients_with_dep": 0,
+        "patients_with_dep": 1,
         "patients_no_dep": 0
       },
       "—": {
@@ -212,7 +212,52 @@
         "patients_no_dep": 0
       }
     },
-    "plans_with_deposit": [],
+    "plans_with_deposit": [
+      {
+        "Имя:": "Сергей",
+        "Телефон:": 79095368854,
+        "plan_total": 504082,
+        "payment": 450000,
+        "Имя оператора, взявшего в работу": "ЛЕНА",
+        "Статус:": "запись в клинику",
+        "Явка:": "Пришел",
+        "Дата записи": "19.04",
+        "Комментарии:": null
+      },
+      {
+        "Имя:": "Кайрат",
+        "Телефон:": 79609990400,
+        "plan_total": 191843,
+        "payment": 191843,
+        "Имя оператора, взявшего в работу": "Лена",
+        "Статус:": "запись в клинику",
+        "Явка:": "Пришел",
+        "Дата записи": null,
+        "Комментарии:": null
+      },
+      {
+        "Имя:": "Ярослав ",
+        "Телефон:": 79681065999,
+        "plan_total": 127541,
+        "payment": 30000,
+        "Имя оператора, взявшего в работу": "Наталья Ш",
+        "Статус:": "запись в клинику",
+        "Явка:": "Пришел",
+        "Дата записи": "21.04",
+        "Комментарии:": null
+      },
+      {
+        "Имя:": "Ольга",
+        "Телефон:": 79039815766,
+        "plan_total": 104367,
+        "payment": 104367,
+        "Имя оператора, взявшего в работу": "наталья",
+        "Статус:": "запись в клинику",
+        "Явка:": "Пришел",
+        "Дата записи": null,
+        "Комментарии:": null
+      }
+    ],
     "plans_without_deposit": [],
     "appointments": [
       {
@@ -231,8 +276,8 @@
         "Дата записи": null,
         "Явка:": "Пришел",
         "Имя оператора, взявшего в работу": "наталья",
-        "payment": 0,
-        "plan_total": 0,
+        "payment": 104367,
+        "plan_total": 104367,
         "Комментарии:": null
       },
       {
@@ -261,8 +306,8 @@
         "Дата записи": "19.04",
         "Явка:": "Пришел",
         "Имя оператора, взявшего в работу": "ЛЕНА",
-        "payment": 0,
-        "plan_total": 0,
+        "payment": 450000,
+        "plan_total": 504082,
         "Комментарии:": null
       },
       {
@@ -311,8 +356,8 @@
         "Дата записи": null,
         "Явка:": "Пришел",
         "Имя оператора, взявшего в работу": "Лена",
-        "payment": 0,
-        "plan_total": 0,
+        "payment": 191843,
+        "plan_total": 191843,
         "Комментарии:": null
       },
       {
@@ -321,8 +366,8 @@
         "Дата записи": "21.04",
         "Явка:": "Пришел",
         "Имя оператора, взявшего в работу": "Наталья Ш",
-        "payment": 0,
-        "plan_total": 0,
+        "payment": 30000,
+        "plan_total": 127541,
         "Комментарии:": null
       },
       {
@@ -848,11 +893,11 @@
         "conv_pcp": 43.6,
         "conv_zapis_from_pcp": 34.6,
         "conv_prishel_from_zapis": 33.3,
-        "sum_payment": 0,
-        "sum_plan": 0,
-        "plan_with_dep_sum": 0,
-        "plan_with_dep_count": 0,
-        "plan_with_dep_paid": 0,
+        "sum_payment": 776210,
+        "sum_plan": 927833,
+        "plan_with_dep_sum": 927833,
+        "plan_with_dep_count": 4,
+        "plan_with_dep_paid": 776210,
         "plan_no_dep_sum": 0,
         "plan_no_dep_count": 0,
         "only_payment_sum": 0,
@@ -860,7 +905,7 @@
         "refusals_total": 29,
         "neaktual_total": 22,
         "ad_spend": 214800,
-        "drr": null
+        "drr": 23.2
       },
       "status_counts": {
         "в работе / переговорах": 46,
@@ -924,10 +969,10 @@
           "prishel": 4,
           "otval": 2,
           "active": 6,
-          "payment": 0,
-          "plan_with_dep": 0,
+          "payment": 450000,
+          "plan_with_dep": 504082,
           "plan_no_dep": 0,
-          "patients_with_dep": 0,
+          "patients_with_dep": 1,
           "patients_no_dep": 0
         },
         "Лена": {
@@ -938,10 +983,10 @@
           "prishel": 1,
           "otval": 2,
           "active": 0,
-          "payment": 0,
-          "plan_with_dep": 0,
+          "payment": 191843,
+          "plan_with_dep": 191843,
           "plan_no_dep": 0,
-          "patients_with_dep": 0,
+          "patients_with_dep": 1,
           "patients_no_dep": 0
         },
         "НАТАЛЬЯ": {
@@ -994,10 +1039,10 @@
           "prishel": 1,
           "otval": 0,
           "active": 2,
-          "payment": 0,
-          "plan_with_dep": 0,
+          "payment": 30000,
+          "plan_with_dep": 127541,
           "plan_no_dep": 0,
-          "patients_with_dep": 0,
+          "patients_with_dep": 1,
           "patients_no_dep": 0
         },
         "наталья": {
@@ -1008,10 +1053,10 @@
           "prishel": 1,
           "otval": 0,
           "active": 2,
-          "payment": 0,
-          "plan_with_dep": 0,
+          "payment": 104367,
+          "plan_with_dep": 104367,
           "plan_no_dep": 0,
-          "patients_with_dep": 0,
+          "patients_with_dep": 1,
           "patients_no_dep": 0
         },
         "—": {
@@ -1029,7 +1074,52 @@
           "patients_no_dep": 0
         }
       },
-      "plans_with_deposit": [],
+      "plans_with_deposit": [
+        {
+          "Имя:": "Сергей",
+          "Телефон:": 79095368854,
+          "plan_total": 504082,
+          "payment": 450000,
+          "Имя оператора, взявшего в работу": "ЛЕНА",
+          "Статус:": "запись в клинику",
+          "Явка:": "Пришел",
+          "Дата записи": "19.04",
+          "Комментарии:": null
+        },
+        {
+          "Имя:": "Кайрат",
+          "Телефон:": 79609990400,
+          "plan_total": 191843,
+          "payment": 191843,
+          "Имя оператора, взявшего в работу": "Лена",
+          "Статус:": "запись в клинику",
+          "Явка:": "Пришел",
+          "Дата записи": null,
+          "Комментарии:": null
+        },
+        {
+          "Имя:": "Ярослав ",
+          "Телефон:": 79681065999,
+          "plan_total": 127541,
+          "payment": 30000,
+          "Имя оператора, взявшего в работу": "Наталья Ш",
+          "Статус:": "запись в клинику",
+          "Явка:": "Пришел",
+          "Дата записи": "21.04",
+          "Комментарии:": null
+        },
+        {
+          "Имя:": "Ольга",
+          "Телефон:": 79039815766,
+          "plan_total": 104367,
+          "payment": 104367,
+          "Имя оператора, взявшего в работу": "наталья",
+          "Статус:": "запись в клинику",
+          "Явка:": "Пришел",
+          "Дата записи": null,
+          "Комментарии:": null
+        }
+      ],
       "plans_without_deposit": [],
       "appointments": [
         {
@@ -1048,8 +1138,8 @@
           "Дата записи": null,
           "Явка:": "Пришел",
           "Имя оператора, взявшего в работу": "наталья",
-          "payment": 0,
-          "plan_total": 0,
+          "payment": 104367,
+          "plan_total": 104367,
           "Комментарии:": null
         },
         {
@@ -1078,8 +1168,8 @@
           "Дата записи": "19.04",
           "Явка:": "Пришел",
           "Имя оператора, взявшего в работу": "ЛЕНА",
-          "payment": 0,
-          "plan_total": 0,
+          "payment": 450000,
+          "plan_total": 504082,
           "Комментарии:": null
         },
         {
@@ -1128,8 +1218,8 @@
           "Дата записи": null,
           "Явка:": "Пришел",
           "Имя оператора, взявшего в работу": "Лена",
-          "payment": 0,
-          "plan_total": 0,
+          "payment": 191843,
+          "plan_total": 191843,
           "Комментарии:": null
         },
         {
@@ -1138,8 +1228,8 @@
           "Дата записи": "21.04",
           "Явка:": "Пришел",
           "Имя оператора, взявшего в работу": "Наталья Ш",
-          "payment": 0,
-          "plan_total": 0,
+          "payment": 30000,
+          "plan_total": 127541,
           "Комментарии:": null
         },
         {
