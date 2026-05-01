@@ -188,23 +188,13 @@ def main():
         sys.exit(f"curl failed: {r.stderr}")
 
     df = pd.read_csv(CSV_PATH)
-    print(f"  Колонки CSV: {df.columns.tolist()}")
-    # Маппинг колонок Золотого Яблока → внутренние имена
-    df = df.rename(columns={
-        "Заявка":      "Время:",
-        "Статус":      "Статус:",
-        "Явка":        "Явка:",
-        "Имя":         "Имя:",
-        "Телефон":     "Телефон:",
-        "Комментарии": "Комментарии:",
-        "Имя оператора": "Имя оператора, взявшего в работу",
-        "продажа":     "Чек",
-    })
+    df.columns = df.columns.str.strip()          # убираем пробелы из заголовков
+    df = df.rename(columns={"продажа": "Чек"})   # только это переименование нужно
     df["payment"] = df["Чек"].apply(parse_payment)
     for label, pat in ROOTS.items():
         df[label] = df["Чек"].apply(lambda s, p=pat: parse_plan(s, p))
     df["plan_total"] = sum(df[k] for k in ROOTS)
-    df["dt"]    = pd.to_datetime(df["Время:"], dayfirst=True, errors="coerce")
+    df["dt"]    = pd.to_datetime(df["Заявка:"], dayfirst=True, errors="coerce")
     df["month"] = df["dt"].dt.strftime("%Y-%m")
     df["refusal_cat"] = df["Комментарии:"].apply(categorize)
     df.loc[~df["Статус:"].isin(["ОТКАЗ", "неактуал"]), "refusal_cat"] = None
