@@ -7,7 +7,7 @@ from pathlib import Path
 
 ROOT = Path(__file__).parent
 CSV_PATH = ROOT / "data" / "sheet.csv"
-OUT_PATH = ROOT / "dashboard" / "data.json"
+OUT_PATH = ROOT / "docs" / "data.json"
 
 # ============================================================
 # НАСТРОЙКИ — меняй только этот блок для нового клиента
