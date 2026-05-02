@@ -3,7 +3,7 @@
     "date_min": "2026-04-11",
     "date_max": "2026-05-02"
   },
-  "generated_at": "2026-05-02T06:34:35Z",
+  "generated_at": "2026-05-02T08:10:20Z",
   "months": [
     {
       "key": "2026-04",
@@ -13,14 +13,14 @@
     {
       "key": "2026-05",
       "label": "Май 2026",
-      "count": 10
+      "count": 12
     }
   ],
   "all": {
     "kpi": {
-      "total": 189,
-      "pcp": 80,
-      "nekv": 109,
+      "total": 191,
+      "pcp": 81,
+      "nekv": 110,
       "zapis": 28,
       "prishel": 9,
       "neprishel": 5,
@@ -28,8 +28,8 @@
       "perezap": 6,
       "active_zapis": 12,
       "otval_zapis": 7,
-      "conv_pcp": 42.3,
-      "conv_zapis_from_pcp": 35.0,
+      "conv_pcp": 42.4,
+      "conv_zapis_from_pcp": 34.6,
       "conv_prishel_from_zapis": 32.1,
       "sum_payment": 776210,
       "sum_plan": 927833,
@@ -41,20 +41,20 @@
       "only_payment_sum": 0,
       "only_payment_count": 0,
       "refusals_total": 29,
-      "neaktual_total": 23,
+      "neaktual_total": 24,
       "ad_spend": 214800,
       "drr": 23.2
     },
     "status_counts": {
-      "в работе / переговорах": 47,
-      "недозвон": 42,
+      "в работе / переговорах": 48,
+      "недозвон": 44,
       "ОТКАЗ": 29,
       "запись в клинику": 28,
-      "неактуал": 23,
+      "неактуал": 24,
       "дубль": 7,
       "ндз финал": 5,
       "отложенный спрос": 5,
-      "—": 3
+      "—": 1
     },
     "operator_stats": {
       "Галина": {
@@ -86,8 +86,8 @@
         "patients_no_dep": 0
       },
       "Наталья": {
-        "total": 74,
-        "pcp": 31,
+        "total": 75,
+        "pcp": 32,
         "nekv": 43,
         "zapis": 11,
         "prishel": 3,
@@ -100,9 +100,9 @@
         "patients_no_dep": 0
       },
       "—": {
-        "total": 9,
+        "total": 10,
         "pcp": 3,
-        "nekv": 6,
+        "nekv": 7,
         "zapis": 0,
         "prishel": 0,
         "otval": 0,
@@ -415,7 +415,7 @@
       {
         "cat": "Другое",
         "count": 43,
-        "share": 82.7,
+        "share": 81.1,
         "items": [
           {
             "Имя:": "Елена, 11.04 после 18.00",
@@ -679,8 +679,8 @@
       },
       {
         "cat": "Не актуально / не нужно",
-        "count": 8,
-        "share": 15.4,
+        "count": 9,
+        "share": 17.0,
         "items": [
           {
             "Имя:": "Кристина, 11.04 в 18:00",
@@ -729,6 +729,12 @@
             "Статус:": "неактуал",
             "Имя оператора, взявшего в работу": "Наталья",
             "Комментарии:": "НИЧЕГО НЕ НАДО"
+          },
+          {
+            "Имя:": "Людмила",
+            "Статус:": "неактуал",
+            "Имя оператора, взявшего в работу": null,
+            "Комментарии:": "02.05 УСЛУГИ НЕ АКТУАЛЬНЫ"
           }
         ]
       },
@@ -1466,9 +1472,9 @@
     },
     "2026-05": {
       "kpi": {
-        "total": 10,
-        "pcp": 2,
-        "nekv": 8,
+        "total": 12,
+        "pcp": 3,
+        "nekv": 9,
         "zapis": 1,
         "prishel": 0,
         "neprishel": 0,
@@ -1476,8 +1482,8 @@
         "perezap": 0,
         "active_zapis": 1,
         "otval_zapis": 0,
-        "conv_pcp": 20.0,
-        "conv_zapis_from_pcp": 50.0,
+        "conv_pcp": 25.0,
+        "conv_zapis_from_pcp": 33.3,
         "conv_prishel_from_zapis": 0.0,
         "sum_payment": 0,
         "sum_plan": 0,
@@ -1489,15 +1495,14 @@
         "only_payment_sum": 0,
         "only_payment_count": 0,
         "refusals_total": 0,
-        "neaktual_total": 1,
+        "neaktual_total": 2,
         "ad_spend": null,
         "drr": null
       },
       "status_counts": {
-        "недозвон": 5,
-        "—": 2,
-        "в работе / переговорах": 1,
-        "неактуал": 1,
+        "недозвон": 7,
+        "в работе / переговорах": 2,
+        "неактуал": 2,
         "запись в клинику": 1
       },
       "operator_stats": {
@@ -1529,10 +1534,24 @@
           "patients_with_dep": 0,
           "patients_no_dep": 0
         },
+        "Наталья": {
+          "total": 1,
+          "pcp": 1,
+          "nekv": 0,
+          "zapis": 0,
+          "prishel": 0,
+          "otval": 0,
+          "active": 0,
+          "payment": 0,
+          "plan_with_dep": 0,
+          "plan_no_dep": 0,
+          "patients_with_dep": 0,
+          "patients_no_dep": 0
+        },
         "—": {
-          "total": 5,
+          "total": 6,
           "pcp": 0,
-          "nekv": 5,
+          "nekv": 6,
           "zapis": 0,
           "prishel": 0,
           "otval": 0,
@@ -1561,13 +1580,26 @@
         {
           "cat": "Другое",
           "count": 1,
-          "share": 100.0,
+          "share": 50.0,
           "items": [
             {
               "Имя:": "Константин ",
               "Статус:": "неактуал",
               "Имя оператора, взявшего в работу": "Галина",
               "Комментарии:": "ХОТЕЛ УСЛУГИ ПО ДМС "
+            }
+          ]
+        },
+        {
+          "cat": "Не актуально / не нужно",
+          "count": 1,
+          "share": 50.0,
+          "items": [
+            {
+              "Имя:": "Людмила",
+              "Статус:": "неактуал",
+              "Имя оператора, взявшего в работу": null,
+              "Комментарии:": "02.05 УСЛУГИ НЕ АКТУАЛЬНЫ"
             }
           ]
         }
