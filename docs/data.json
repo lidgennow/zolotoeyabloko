@@ -3,7 +3,7 @@
     "date_min": "2026-04-11",
     "date_max": "2026-05-02"
   },
-  "generated_at": "2026-05-02T12:09:48Z",
+  "generated_at": "2026-05-02T13:54:45Z",
   "months": [
     {
       "key": "2026-04",
@@ -19,8 +19,8 @@
   "all": {
     "kpi": {
       "total": 196,
-      "pcp": 84,
-      "nekv": 112,
+      "pcp": 83,
+      "nekv": 113,
       "zapis": 30,
       "prishel": 9,
       "neprishel": 5,
@@ -28,8 +28,8 @@
       "perezap": 6,
       "active_zapis": 14,
       "otval_zapis": 7,
-      "conv_pcp": 42.9,
-      "conv_zapis_from_pcp": 35.7,
+      "conv_pcp": 42.3,
+      "conv_zapis_from_pcp": 36.1,
       "conv_prishel_from_zapis": 30.0,
       "sum_payment": 776210,
       "sum_plan": 927833,
@@ -46,8 +46,8 @@
       "drr": 23.2
     },
     "status_counts": {
-      "в работе / переговорах": 49,
-      "недозвон": 44,
+      "в работе / переговорах": 48,
+      "недозвон": 45,
       "ОТКАЗ": 31,
       "запись в клинику": 30,
       "неактуал": 24,
@@ -87,8 +87,8 @@
       },
       "Наталья": {
         "total": 82,
-        "pcp": 35,
-        "nekv": 47,
+        "pcp": 34,
+        "nekv": 48,
         "zapis": 13,
         "prishel": 3,
         "otval": 3,
@@ -787,8 +787,8 @@
     "2026-04": {
       "kpi": {
         "total": 179,
-        "pcp": 78,
-        "nekv": 101,
+        "pcp": 77,
+        "nekv": 102,
         "zapis": 27,
         "prishel": 9,
         "neprishel": 5,
@@ -796,8 +796,8 @@
         "perezap": 6,
         "active_zapis": 11,
         "otval_zapis": 7,
-        "conv_pcp": 43.6,
-        "conv_zapis_from_pcp": 34.6,
+        "conv_pcp": 43.0,
+        "conv_zapis_from_pcp": 35.1,
         "conv_prishel_from_zapis": 33.3,
         "sum_payment": 776210,
         "sum_plan": 927833,
@@ -814,8 +814,8 @@
         "drr": 23.2
       },
       "status_counts": {
-        "в работе / переговорах": 46,
-        "недозвон": 37,
+        "в работе / переговорах": 45,
+        "недозвон": 38,
         "ОТКАЗ": 29,
         "запись в клинику": 27,
         "неактуал": 22,
@@ -855,8 +855,8 @@
         },
         "Наталья": {
           "total": 74,
-          "pcp": 31,
-          "nekv": 43,
+          "pcp": 30,
+          "nekv": 44,
           "zapis": 11,
           "prishel": 3,
           "otval": 3,
