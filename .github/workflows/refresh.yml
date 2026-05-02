@@ -30,10 +30,6 @@ jobs:
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
-          cp docs/data.json /tmp/fresh_data.json
-          git fetch origin main
-          git reset --hard origin/main
-          cp /tmp/fresh_data.json docs/data.json
           git add docs/data.json
           git diff --cached --quiet || git commit -m "data: refresh $(date -u '+%Y-%m-%d %H:%M UTC')"
           git push
