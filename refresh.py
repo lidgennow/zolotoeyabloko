@@ -146,7 +146,7 @@ def compute(g, ad_spend=None):
             "patients_no_dep":   int(((og["plan_total"] > 0) & (og["payment"] == 0)).sum()),
         }
 
-    cols = ["Имя:", "Телефон:", "plan_total", "payment",
+    cols = ["Имя:", "plan_total", "payment",
             "Имя оператора, взявшего в работу", "Статус:", "Явка:",
             "Дата записи", "Комментарии:"]
 
@@ -194,7 +194,7 @@ def compute(g, ad_spend=None):
         "plans_with_deposit":    with_dep[cols].sort_values("plan_total", ascending=False).to_dict("records"),
         "plans_without_deposit": no_dep[cols].sort_values("plan_total", ascending=False).to_dict("records"),
         "appointments": g[g["Статус:"] == "запись в клинику"][
-            ["Имя:", "Телефон:", "Дата записи", "Явка:", "Имя оператора, взявшего в работу",
+            ["Имя:", "Дата записи", "Явка:", "Имя оператора, взявшего в работу",
              "payment", "plan_total", "Комментарии:"]].to_dict("records"),
         "refusal_categories": refusal_cats,
     }
