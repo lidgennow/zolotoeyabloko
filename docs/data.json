@@ -3,7 +3,7 @@
     "date_min": "2026-04-11",
     "date_max": "2026-05-03"
   },
-  "generated_at": "2026-05-03T13:55:30Z",
+  "generated_at": "2026-05-03T14:56:33Z",
   "months": [
     {
       "key": "2026-04",
@@ -13,7 +13,7 @@
     {
       "key": "2026-05",
       "label": "Май 2026",
-      "count": 22
+      "count": 23
     }
   ],
   "all": {
@@ -1545,9 +1545,9 @@
     },
     "2026-05": {
       "kpi": {
-        "total": 22,
+        "total": 23,
         "pcp": 9,
-        "nekv": 13,
+        "nekv": 14,
         "zapis": 5,
         "prishel": 0,
         "neprishel": 0,
@@ -1555,7 +1555,7 @@
         "perezap": 0,
         "active_zapis": 5,
         "otval_zapis": 0,
-        "conv_pcp": 40.9,
+        "conv_pcp": 39.1,
         "conv_zapis_from_pcp": 55.6,
         "conv_prishel_from_zapis": 0.0,
         "sum_payment": 0,
@@ -1577,7 +1577,8 @@
         "запись в клинику": 5,
         "в работе / переговорах": 4,
         "ОТКАЗ": 4,
-        "неактуал": 3
+        "неактуал": 3,
+        "—": 1
       },
       "operator_stats": {
         "Галина": {
@@ -1623,9 +1624,9 @@
           "patients_no_dep": 0
         },
         "—": {
-          "total": 1,
+          "total": 2,
           "pcp": 0,
-          "nekv": 1,
+          "nekv": 2,
           "zapis": 0,
           "prishel": 0,
           "otval": 0,
