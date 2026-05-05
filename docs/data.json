@@ -1,9 +1,9 @@
 {
   "period": {
     "date_min": "2026-04-11",
-    "date_max": "2026-05-04"
+    "date_max": "2026-05-05"
   },
-  "generated_at": "2026-05-05T03:57:41Z",
+  "generated_at": "2026-05-05T06:25:59Z",
   "months": [
     {
       "key": "2026-04",
@@ -13,24 +13,24 @@
     {
       "key": "2026-05",
       "label": "Май 2026",
-      "count": 39
+      "count": 42
     }
   ],
   "all": {
     "kpi": {
-      "total": 218,
-      "pcp": 94,
-      "nekv": 124,
-      "zapis": 38,
+      "total": 221,
+      "pcp": 96,
+      "nekv": 125,
+      "zapis": 40,
       "prishel": 10,
       "neprishel": 6,
       "otmena": 2,
       "perezap": 6,
-      "active_zapis": 20,
+      "active_zapis": 22,
       "otval_zapis": 8,
-      "conv_pcp": 43.1,
-      "conv_zapis_from_pcp": 40.4,
-      "conv_prishel_from_zapis": 26.3,
+      "conv_pcp": 43.4,
+      "conv_zapis_from_pcp": 41.7,
+      "conv_prishel_from_zapis": 25.0,
       "sum_payment": 776210,
       "sum_plan": 927833,
       "plan_with_dep_sum": 927833,
@@ -47,24 +47,24 @@
     },
     "status_counts": {
       "в работе / переговорах": 51,
-      "недозвон": 48,
-      "запись в клинику": 38,
+      "недозвон": 50,
+      "запись в клинику": 40,
       "ОТКАЗ": 33,
       "неактуал": 27,
-      "дубль": 8,
+      "дубль": 9,
       "ндз финал": 5,
       "отложенный спрос": 5,
-      "—": 3
+      "—": 1
     },
     "operator_stats": {
       "Галина": {
-        "total": 10,
-        "pcp": 3,
-        "nekv": 7,
-        "zapis": 1,
+        "total": 13,
+        "pcp": 4,
+        "nekv": 9,
+        "zapis": 2,
         "prishel": 1,
         "otval": 0,
-        "active": 0,
+        "active": 1,
         "payment": 0,
         "plan_with_dep": 0,
         "plan_no_dep": 0,
@@ -72,13 +72,13 @@
         "patients_no_dep": 0
       },
       "Лена": {
-        "total": 112,
-        "pcp": 52,
-        "nekv": 60,
-        "zapis": 23,
+        "total": 114,
+        "pcp": 53,
+        "nekv": 61,
+        "zapis": 24,
         "prishel": 6,
         "otval": 5,
-        "active": 12,
+        "active": 13,
         "payment": 641843,
         "plan_with_dep": 695925,
         "plan_no_dep": 0,
@@ -100,9 +100,9 @@
         "patients_no_dep": 0
       },
       "—": {
-        "total": 7,
+        "total": 5,
         "pcp": 3,
-        "nekv": 4,
+        "nekv": 2,
         "zapis": 0,
         "prishel": 0,
         "otval": 0,
@@ -475,7 +475,7 @@
       },
       {
         "Имя:": "Евгений, 04.05 в 14:00",
-        "Дата записи": "5.05 В 14:30",
+        "Дата записи": "7.05 В 15:30",
         "Явка:": null,
         "Имя оператора, взявшего в работу": "Лена",
         "payment": 0,
@@ -499,6 +499,24 @@
         "payment": 0,
         "plan_total": 0,
         "Комментарии:": "РАБОТАЕТ. МОЖЕТ ТОЛЬКО ПОСЛЕ 10-ГО , ЛЕЧЕНИЕ "
+      },
+      {
+        "Имя:": "Алена",
+        "Дата записи": "6.06 НА 12:00",
+        "Явка:": null,
+        "Имя оператора, взявшего в работу": "Лена",
+        "payment": 0,
+        "plan_total": 0,
+        "Комментарии:": "ИМПЛАНТАЦИЯ "
+      },
+      {
+        "Имя:": "Алексей",
+        "Дата записи": "05.05 на 13.30",
+        "Явка:": null,
+        "Имя оператора, взявшего в работу": "Галина",
+        "payment": 0,
+        "plan_total": 0,
+        "Комментарии:": "слетели мосты. протезирование"
       }
     ],
     "refusal_categories": [
@@ -1620,18 +1638,18 @@
     },
     "2026-05": {
       "kpi": {
-        "total": 39,
-        "pcp": 17,
-        "nekv": 22,
-        "zapis": 10,
+        "total": 42,
+        "pcp": 19,
+        "nekv": 23,
+        "zapis": 12,
         "prishel": 0,
         "neprishel": 0,
         "otmena": 0,
         "perezap": 0,
-        "active_zapis": 10,
+        "active_zapis": 12,
         "otval_zapis": 0,
-        "conv_pcp": 43.6,
-        "conv_zapis_from_pcp": 58.8,
+        "conv_pcp": 45.2,
+        "conv_zapis_from_pcp": 63.2,
         "conv_prishel_from_zapis": 0.0,
         "sum_payment": 0,
         "sum_plan": 0,
@@ -1648,23 +1666,22 @@
         "drr": null
       },
       "status_counts": {
-        "запись в клинику": 10,
-        "недозвон": 10,
+        "запись в клинику": 12,
+        "недозвон": 12,
         "в работе / переговорах": 7,
         "неактуал": 5,
         "ОТКАЗ": 4,
-        "—": 2,
-        "дубль": 1
+        "дубль": 2
       },
       "operator_stats": {
         "Галина": {
-          "total": 4,
-          "pcp": 1,
-          "nekv": 3,
-          "zapis": 0,
+          "total": 7,
+          "pcp": 2,
+          "nekv": 5,
+          "zapis": 1,
           "prishel": 0,
           "otval": 0,
-          "active": 0,
+          "active": 1,
           "payment": 0,
           "plan_with_dep": 0,
           "plan_no_dep": 0,
@@ -1672,13 +1689,13 @@
           "patients_no_dep": 0
         },
         "Лена": {
-          "total": 17,
-          "pcp": 10,
-          "nekv": 7,
-          "zapis": 7,
+          "total": 19,
+          "pcp": 11,
+          "nekv": 8,
+          "zapis": 8,
           "prishel": 0,
           "otval": 0,
-          "active": 7,
+          "active": 8,
           "payment": 0,
           "plan_with_dep": 0,
           "plan_no_dep": 0,
@@ -1700,9 +1717,9 @@
           "patients_no_dep": 0
         },
         "—": {
-          "total": 3,
+          "total": 1,
           "pcp": 0,
-          "nekv": 3,
+          "nekv": 1,
           "zapis": 0,
           "prishel": 0,
           "otval": 0,
@@ -1782,7 +1799,7 @@
         },
         {
           "Имя:": "Евгений, 04.05 в 14:00",
-          "Дата записи": "5.05 В 14:30",
+          "Дата записи": "7.05 В 15:30",
           "Явка:": null,
           "Имя оператора, взявшего в работу": "Лена",
           "payment": 0,
@@ -1806,6 +1823,24 @@
           "payment": 0,
           "plan_total": 0,
           "Комментарии:": "РАБОТАЕТ. МОЖЕТ ТОЛЬКО ПОСЛЕ 10-ГО , ЛЕЧЕНИЕ "
+        },
+        {
+          "Имя:": "Алена",
+          "Дата записи": "6.06 НА 12:00",
+          "Явка:": null,
+          "Имя оператора, взявшего в работу": "Лена",
+          "payment": 0,
+          "plan_total": 0,
+          "Комментарии:": "ИМПЛАНТАЦИЯ "
+        },
+        {
+          "Имя:": "Алексей",
+          "Дата записи": "05.05 на 13.30",
+          "Явка:": null,
+          "Имя оператора, взявшего в работу": "Галина",
+          "payment": 0,
+          "plan_total": 0,
+          "Комментарии:": "слетели мосты. протезирование"
         }
       ],
       "refusal_categories": [
