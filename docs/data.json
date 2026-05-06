@@ -3,7 +3,7 @@
     "date_min": "2026-04-11",
     "date_max": "2026-05-06"
   },
-  "generated_at": "2026-05-06T09:31:14Z",
+  "generated_at": "2026-05-06T11:55:13Z",
   "months": [
     {
       "key": "2026-04",
@@ -13,14 +13,14 @@
     {
       "key": "2026-05",
       "label": "Май 2026",
-      "count": 67
+      "count": 74
     }
   ],
   "all": {
     "kpi": {
-      "total": 246,
-      "pcp": 109,
-      "nekv": 137,
+      "total": 253,
+      "pcp": 113,
+      "nekv": 140,
       "zapis": 44,
       "prishel": 12,
       "neprishel": 7,
@@ -28,8 +28,8 @@
       "perezap": 6,
       "active_zapis": 23,
       "otval_zapis": 9,
-      "conv_pcp": 44.3,
-      "conv_zapis_from_pcp": 40.4,
+      "conv_pcp": 44.7,
+      "conv_zapis_from_pcp": 38.9,
       "conv_prishel_from_zapis": 27.3,
       "sum_payment": 776210,
       "sum_plan": 927833,
@@ -40,16 +40,16 @@
       "plan_no_dep_count": 0,
       "only_payment_sum": 0,
       "only_payment_count": 0,
-      "refusals_total": 35,
+      "refusals_total": 36,
       "neaktual_total": 27,
       "ad_spend": 214800,
       "drr": 23.2
     },
     "status_counts": {
-      "в работе / переговорах": 60,
-      "недозвон": 60,
+      "в работе / переговорах": 64,
+      "недозвон": 62,
       "запись в клинику": 44,
-      "ОТКАЗ": 35,
+      "ОТКАЗ": 36,
       "неактуал": 27,
       "дубль": 9,
       "ндз финал": 5,
@@ -58,9 +58,9 @@
     },
     "operator_stats": {
       "Галина": {
-        "total": 28,
-        "pcp": 7,
-        "nekv": 21,
+        "total": 30,
+        "pcp": 8,
+        "nekv": 22,
         "zapis": 3,
         "prishel": 2,
         "otval": 0,
@@ -100,9 +100,9 @@
         "patients_no_dep": 0
       },
       "Наталья": {
-        "total": 89,
-        "pcp": 38,
-        "nekv": 51,
+        "total": 93,
+        "pcp": 41,
+        "nekv": 52,
         "zapis": 15,
         "prishel": 3,
         "otval": 3,
@@ -114,9 +114,9 @@
         "patients_no_dep": 0
       },
       "—": {
-        "total": 8,
+        "total": 9,
         "pcp": 3,
-        "nekv": 5,
+        "nekv": 6,
         "zapis": 0,
         "prishel": 0,
         "otval": 0,
@@ -572,8 +572,8 @@
     "refusal_categories": [
       {
         "cat": "Другое",
-        "count": 51,
-        "share": 82.3,
+        "count": 52,
+        "share": 82.5,
         "items": [
           {
             "Имя:": "Елена, 11.04 после 18.00",
@@ -880,13 +880,19 @@
             "Статус:": "ОТКАЗ",
             "Имя оператора, взявшего в работу": null,
             "Комментарии:": null
+          },
+          {
+            "Имя:": "Александр ",
+            "Статус:": "ОТКАЗ",
+            "Имя оператора, взявшего в работу": "Галина",
+            "Комментарии:": "протезипование. будет в военном госпитале делать диаб. 2 тип+ очень далеко ехать"
           }
         ]
       },
       {
         "cat": "Не актуально / не нужно",
         "count": 9,
-        "share": 14.5,
+        "share": 14.3,
         "items": [
           {
             "Имя:": "Кристина, 11.04 в 18:00",
@@ -1700,9 +1706,9 @@
     },
     "2026-05": {
       "kpi": {
-        "total": 67,
-        "pcp": 32,
-        "nekv": 35,
+        "total": 74,
+        "pcp": 36,
+        "nekv": 38,
         "zapis": 16,
         "prishel": 1,
         "neprishel": 1,
@@ -1710,8 +1716,8 @@
         "perezap": 0,
         "active_zapis": 14,
         "otval_zapis": 1,
-        "conv_pcp": 47.8,
-        "conv_zapis_from_pcp": 50.0,
+        "conv_pcp": 48.6,
+        "conv_zapis_from_pcp": 44.4,
         "conv_prishel_from_zapis": 6.2,
         "sum_payment": 0,
         "sum_plan": 0,
@@ -1722,24 +1728,24 @@
         "plan_no_dep_count": 0,
         "only_payment_sum": 0,
         "only_payment_count": 0,
-        "refusals_total": 6,
+        "refusals_total": 7,
         "neaktual_total": 5,
         "ad_spend": null,
         "drr": null
       },
       "status_counts": {
-        "недозвон": 22,
-        "в работе / переговорах": 16,
+        "недозвон": 24,
+        "в работе / переговорах": 20,
         "запись в клинику": 16,
-        "ОТКАЗ": 6,
+        "ОТКАЗ": 7,
         "неактуал": 5,
         "дубль": 2
       },
       "operator_stats": {
         "Галина": {
-          "total": 17,
-          "pcp": 5,
-          "nekv": 12,
+          "total": 19,
+          "pcp": 6,
+          "nekv": 13,
           "zapis": 2,
           "prishel": 1,
           "otval": 0,
@@ -1779,9 +1785,9 @@
           "patients_no_dep": 0
         },
         "Наталья": {
-          "total": 15,
-          "pcp": 8,
-          "nekv": 7,
+          "total": 19,
+          "pcp": 11,
+          "nekv": 8,
           "zapis": 4,
           "prishel": 0,
           "otval": 0,
@@ -1793,9 +1799,9 @@
           "patients_no_dep": 0
         },
         "—": {
-          "total": 4,
+          "total": 5,
           "pcp": 0,
-          "nekv": 4,
+          "nekv": 5,
           "zapis": 0,
           "prishel": 0,
           "otval": 0,
@@ -1958,8 +1964,8 @@
       "refusal_categories": [
         {
           "cat": "Другое",
-          "count": 9,
-          "share": 81.8,
+          "count": 10,
+          "share": 83.3,
           "items": [
             {
               "Имя:": "Константин ",
@@ -2014,13 +2020,19 @@
               "Статус:": "ОТКАЗ",
               "Имя оператора, взявшего в работу": null,
               "Комментарии:": null
+            },
+            {
+              "Имя:": "Александр ",
+              "Статус:": "ОТКАЗ",
+              "Имя оператора, взявшего в работу": "Галина",
+              "Комментарии:": "протезипование. будет в военном госпитале делать диаб. 2 тип+ очень далеко ехать"
             }
           ]
         },
         {
           "cat": "Уже лечится",
           "count": 1,
-          "share": 9.1,
+          "share": 8.3,
           "items": [
             {
               "Имя:": "Вера",
@@ -2033,7 +2045,7 @@
         {
           "cat": "Не актуально / не нужно",
           "count": 1,
-          "share": 9.1,
+          "share": 8.3,
           "items": [
             {
               "Имя:": "Людмила",
