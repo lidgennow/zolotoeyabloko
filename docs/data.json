@@ -3,7 +3,7 @@
     "date_min": "2026-04-11",
     "date_max": "2026-05-06"
   },
-  "generated_at": "2026-05-06T03:56:35Z",
+  "generated_at": "2026-05-06T06:38:55Z",
   "months": [
     {
       "key": "2026-04",
@@ -13,24 +13,24 @@
     {
       "key": "2026-05",
       "label": "Май 2026",
-      "count": 59
+      "count": 63
     }
   ],
   "all": {
     "kpi": {
-      "total": 238,
-      "pcp": 104,
-      "nekv": 134,
-      "zapis": 42,
+      "total": 242,
+      "pcp": 107,
+      "nekv": 135,
+      "zapis": 44,
       "prishel": 12,
       "neprishel": 7,
       "otmena": 2,
       "perezap": 6,
-      "active_zapis": 21,
+      "active_zapis": 23,
       "otval_zapis": 9,
-      "conv_pcp": 43.7,
-      "conv_zapis_from_pcp": 40.4,
-      "conv_prishel_from_zapis": 28.6,
+      "conv_pcp": 44.2,
+      "conv_zapis_from_pcp": 41.1,
+      "conv_prishel_from_zapis": 27.3,
       "sum_payment": 776210,
       "sum_plan": 927833,
       "plan_with_dep_sum": 927833,
@@ -46,25 +46,25 @@
       "drr": 23.2
     },
     "status_counts": {
-      "в работе / переговорах": 57,
-      "недозвон": 53,
-      "запись в клинику": 42,
+      "в работе / переговорах": 58,
+      "недозвон": 57,
+      "запись в клинику": 44,
       "ОТКАЗ": 34,
       "неактуал": 27,
       "дубль": 9,
-      "—": 6,
       "ндз финал": 5,
-      "отложенный спрос": 5
+      "отложенный спрос": 5,
+      "—": 3
     },
     "operator_stats": {
       "Галина": {
-        "total": 19,
-        "pcp": 4,
-        "nekv": 15,
-        "zapis": 2,
+        "total": 25,
+        "pcp": 6,
+        "nekv": 19,
+        "zapis": 3,
         "prishel": 2,
         "otval": 0,
-        "active": 0,
+        "active": 1,
         "payment": 0,
         "plan_with_dep": 0,
         "plan_no_dep": 0,
@@ -100,13 +100,13 @@
         "patients_no_dep": 0
       },
       "Наталья": {
-        "total": 87,
-        "pcp": 36,
+        "total": 88,
+        "pcp": 37,
         "nekv": 51,
-        "zapis": 14,
+        "zapis": 15,
         "prishel": 3,
         "otval": 3,
-        "active": 8,
+        "active": 9,
         "payment": 134367,
         "plan_with_dep": 231908,
         "plan_no_dep": 0,
@@ -114,9 +114,9 @@
         "patients_no_dep": 0
       },
       "—": {
-        "total": 11,
+        "total": 8,
         "pcp": 3,
-        "nekv": 8,
+        "nekv": 5,
         "zapis": 0,
         "prishel": 0,
         "otval": 0,
@@ -549,6 +549,24 @@
         "payment": 0,
         "plan_total": 0,
         "Комментарии:": "ЗАМЕНА СЪЕМНОГО ПРОТЕЗА . РАССМАТРИВАЕТ БЮДЖЕТНЫЙ ВАРИАНТ"
+      },
+      {
+        "Имя:": "Андрей ",
+        "Дата записи": null,
+        "Явка:": null,
+        "Имя оператора, взявшего в работу": "Наталья",
+        "payment": 0,
+        "plan_total": 0,
+        "Комментарии:": null
+      },
+      {
+        "Имя:": "Ольга",
+        "Дата записи": null,
+        "Явка:": null,
+        "Имя оператора, взявшего в работу": "Галина",
+        "payment": 0,
+        "plan_total": 0,
+        "Комментарии:": "запись на 10.05.26 в 15.30 имплантация. протезирование"
       }
     ],
     "refusal_categories": [
@@ -1676,19 +1694,19 @@
     },
     "2026-05": {
       "kpi": {
-        "total": 59,
-        "pcp": 27,
-        "nekv": 32,
-        "zapis": 14,
+        "total": 63,
+        "pcp": 30,
+        "nekv": 33,
+        "zapis": 16,
         "prishel": 1,
         "neprishel": 1,
         "otmena": 0,
         "perezap": 0,
-        "active_zapis": 12,
+        "active_zapis": 14,
         "otval_zapis": 1,
-        "conv_pcp": 45.8,
-        "conv_zapis_from_pcp": 51.9,
-        "conv_prishel_from_zapis": 7.1,
+        "conv_pcp": 47.6,
+        "conv_zapis_from_pcp": 53.3,
+        "conv_prishel_from_zapis": 6.2,
         "sum_payment": 0,
         "sum_plan": 0,
         "plan_with_dep_sum": 0,
@@ -1704,23 +1722,23 @@
         "drr": null
       },
       "status_counts": {
-        "недозвон": 15,
-        "запись в клинику": 14,
-        "в работе / переговорах": 13,
+        "недозвон": 19,
+        "запись в клинику": 16,
+        "в работе / переговорах": 14,
         "неактуал": 5,
         "ОТКАЗ": 5,
-        "—": 5,
-        "дубль": 2
+        "дубль": 2,
+        "—": 2
       },
       "operator_stats": {
         "Галина": {
-          "total": 8,
-          "pcp": 2,
-          "nekv": 6,
-          "zapis": 1,
+          "total": 14,
+          "pcp": 4,
+          "nekv": 10,
+          "zapis": 2,
           "prishel": 1,
           "otval": 0,
-          "active": 0,
+          "active": 1,
           "payment": 0,
           "plan_with_dep": 0,
           "plan_no_dep": 0,
@@ -1756,13 +1774,13 @@
           "patients_no_dep": 0
         },
         "Наталья": {
-          "total": 13,
-          "pcp": 6,
+          "total": 14,
+          "pcp": 7,
           "nekv": 7,
-          "zapis": 3,
+          "zapis": 4,
           "prishel": 0,
           "otval": 0,
-          "active": 3,
+          "active": 4,
           "payment": 0,
           "plan_with_dep": 0,
           "plan_no_dep": 0,
@@ -1770,9 +1788,9 @@
           "patients_no_dep": 0
         },
         "—": {
-          "total": 7,
+          "total": 4,
           "pcp": 0,
-          "nekv": 7,
+          "nekv": 4,
           "zapis": 0,
           "prishel": 0,
           "otval": 0,
@@ -1912,6 +1930,24 @@
           "payment": 0,
           "plan_total": 0,
           "Комментарии:": "ЗАМЕНА СЪЕМНОГО ПРОТЕЗА . РАССМАТРИВАЕТ БЮДЖЕТНЫЙ ВАРИАНТ"
+        },
+        {
+          "Имя:": "Андрей ",
+          "Дата записи": null,
+          "Явка:": null,
+          "Имя оператора, взявшего в работу": "Наталья",
+          "payment": 0,
+          "plan_total": 0,
+          "Комментарии:": null
+        },
+        {
+          "Имя:": "Ольга",
+          "Дата записи": null,
+          "Явка:": null,
+          "Имя оператора, взявшего в работу": "Галина",
+          "payment": 0,
+          "plan_total": 0,
+          "Комментарии:": "запись на 10.05.26 в 15.30 имплантация. протезирование"
         }
       ],
       "refusal_categories": [
