@@ -3,7 +3,7 @@
     "date_min": "2026-04-11",
     "date_max": "2026-05-08"
   },
-  "generated_at": "2026-05-08T14:09:23Z",
+  "generated_at": "2026-05-08T16:00:18Z",
   "months": [
     {
       "key": "2026-04",
@@ -13,14 +13,14 @@
     {
       "key": "2026-05",
       "label": "Май 2026",
-      "count": 105
+      "count": 106
     }
   ],
   "all": {
     "kpi": {
-      "total": 284,
+      "total": 285,
       "pcp": 121,
-      "nekv": 163,
+      "nekv": 164,
       "zapis": 49,
       "prishel": 12,
       "neprishel": 7,
@@ -28,7 +28,7 @@
       "perezap": 6,
       "active_zapis": 28,
       "otval_zapis": 9,
-      "conv_pcp": 42.6,
+      "conv_pcp": 42.5,
       "conv_zapis_from_pcp": 40.5,
       "conv_prishel_from_zapis": 24.5,
       "sum_payment": 776210,
@@ -54,7 +54,7 @@
       "дубль": 10,
       "ндз финал": 5,
       "отложенный спрос": 5,
-      "—": 2
+      "—": 3
     },
     "operator_stats": {
       "Галина": {
@@ -114,9 +114,9 @@
         "patients_no_dep": 0
       },
       "—": {
-        "total": 11,
+        "total": 12,
         "pcp": 3,
-        "nekv": 8,
+        "nekv": 9,
         "zapis": 0,
         "prishel": 0,
         "otval": 0,
@@ -1823,9 +1823,9 @@
     },
     "2026-05": {
       "kpi": {
-        "total": 105,
+        "total": 106,
         "pcp": 44,
-        "nekv": 61,
+        "nekv": 62,
         "zapis": 21,
         "prishel": 1,
         "neprishel": 1,
@@ -1833,7 +1833,7 @@
         "perezap": 0,
         "active_zapis": 19,
         "otval_zapis": 1,
-        "conv_pcp": 41.9,
+        "conv_pcp": 41.5,
         "conv_zapis_from_pcp": 47.7,
         "conv_prishel_from_zapis": 4.8,
         "sum_payment": 0,
@@ -1857,7 +1857,7 @@
         "неактуал": 14,
         "ОТКАЗ": 10,
         "дубль": 3,
-        "—": 1
+        "—": 2
       },
       "operator_stats": {
         "Галина": {
@@ -1917,9 +1917,9 @@
           "patients_no_dep": 0
         },
         "—": {
-          "total": 7,
+          "total": 8,
           "pcp": 0,
-          "nekv": 7,
+          "nekv": 8,
           "zapis": 0,
           "prishel": 0,
           "otval": 0,
