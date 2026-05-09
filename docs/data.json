@@ -1,9 +1,9 @@
 {
   "period": {
     "date_min": "2026-04-11",
-    "date_max": "2026-05-08"
+    "date_max": "2026-05-09"
   },
-  "generated_at": "2026-05-09T04:04:32Z",
+  "generated_at": "2026-05-09T06:33:30Z",
   "months": [
     {
       "key": "2026-04",
@@ -13,14 +13,14 @@
     {
       "key": "2026-05",
       "label": "Май 2026",
-      "count": 106
+      "count": 109
     }
   ],
   "all": {
     "kpi": {
-      "total": 285,
+      "total": 288,
       "pcp": 121,
-      "nekv": 164,
+      "nekv": 167,
       "zapis": 49,
       "prishel": 12,
       "neprishel": 7,
@@ -28,7 +28,7 @@
       "perezap": 6,
       "active_zapis": 28,
       "otval_zapis": 9,
-      "conv_pcp": 42.5,
+      "conv_pcp": 42.0,
       "conv_zapis_from_pcp": 40.5,
       "conv_prishel_from_zapis": 24.5,
       "sum_payment": 776210,
@@ -52,9 +52,9 @@
       "ОТКАЗ": 39,
       "неактуал": 36,
       "дубль": 10,
+      "—": 6,
       "ндз финал": 5,
-      "отложенный спрос": 5,
-      "—": 3
+      "отложенный спрос": 5
     },
     "operator_stats": {
       "Галина": {
@@ -114,9 +114,9 @@
         "patients_no_dep": 0
       },
       "—": {
-        "total": 12,
+        "total": 15,
         "pcp": 3,
-        "nekv": 9,
+        "nekv": 12,
         "zapis": 0,
         "prishel": 0,
         "otval": 0,
@@ -1823,9 +1823,9 @@
     },
     "2026-05": {
       "kpi": {
-        "total": 106,
+        "total": 109,
         "pcp": 44,
-        "nekv": 62,
+        "nekv": 65,
         "zapis": 21,
         "prishel": 1,
         "neprishel": 1,
@@ -1833,7 +1833,7 @@
         "perezap": 0,
         "active_zapis": 19,
         "otval_zapis": 1,
-        "conv_pcp": 41.5,
+        "conv_pcp": 40.4,
         "conv_zapis_from_pcp": 47.7,
         "conv_prishel_from_zapis": 4.8,
         "sum_payment": 0,
@@ -1856,8 +1856,8 @@
         "запись в клинику": 21,
         "неактуал": 14,
         "ОТКАЗ": 10,
-        "дубль": 3,
-        "—": 2
+        "—": 5,
+        "дубль": 3
       },
       "operator_stats": {
         "Галина": {
@@ -1917,9 +1917,9 @@
           "patients_no_dep": 0
         },
         "—": {
-          "total": 8,
+          "total": 11,
           "pcp": 0,
-          "nekv": 8,
+          "nekv": 11,
           "zapis": 0,
           "prishel": 0,
           "otval": 0,
