@@ -3,7 +3,7 @@
     "date_min": "2026-04-11",
     "date_max": "2026-05-16"
   },
-  "generated_at": "2026-05-16T08:25:36Z",
+  "generated_at": "2026-05-16T09:59:58Z",
   "months": [
     {
       "key": "2026-04",
@@ -13,24 +13,24 @@
     {
       "key": "2026-05",
       "label": "Май 2026",
-      "count": 180
+      "count": 181
     }
   ],
   "all": {
     "kpi": {
-      "total": 359,
-      "pcp": 144,
+      "total": 360,
+      "pcp": 145,
       "nekv": 215,
-      "zapis": 64,
+      "zapis": 65,
       "prishel": 18,
       "neprishel": 17,
       "otmena": 4,
       "perezap": 13,
-      "active_zapis": 25,
+      "active_zapis": 26,
       "otval_zapis": 21,
-      "conv_pcp": 40.1,
-      "conv_zapis_from_pcp": 44.4,
-      "conv_prishel_from_zapis": 28.1,
+      "conv_pcp": 40.3,
+      "conv_zapis_from_pcp": 44.8,
+      "conv_prishel_from_zapis": 27.7,
       "sum_payment": 776210,
       "sum_plan": 927833,
       "plan_with_dep_sum": 927833,
@@ -46,15 +46,15 @@
       "drr": 23.2
     },
     "status_counts": {
-      "недозвон": 100,
+      "недозвон": 103,
       "в работе / переговорах": 70,
-      "запись в клинику": 64,
+      "запись в клинику": 65,
       "неактуал": 45,
       "ОТКАЗ": 42,
       "дубль": 16,
       "отложенный спрос": 10,
       "ндз финал": 6,
-      "—": 6
+      "—": 3
     },
     "operator_stats": {
       "Галина": {
@@ -86,13 +86,13 @@
         "patients_no_dep": 0
       },
       "Лена": {
-        "total": 146,
-        "pcp": 69,
-        "nekv": 77,
-        "zapis": 30,
+        "total": 149,
+        "pcp": 70,
+        "nekv": 79,
+        "zapis": 31,
         "prishel": 7,
         "otval": 10,
-        "active": 13,
+        "active": 14,
         "payment": 641843,
         "plan_with_dep": 695925,
         "plan_no_dep": 0,
@@ -114,9 +114,9 @@
         "patients_no_dep": 0
       },
       "—": {
-        "total": 25,
+        "total": 23,
         "pcp": 4,
-        "nekv": 21,
+        "nekv": 19,
         "zapis": 0,
         "prishel": 0,
         "otval": 0,
@@ -747,6 +747,15 @@
         "payment": 0,
         "plan_total": 0,
         "Комментарии:": "протезирование"
+      },
+      {
+        "Имя:": "Клавдия  ",
+        "Дата записи": "17.05 НА 13:30",
+        "Явка:": null,
+        "Имя оператора, взявшего в работу": "Лена",
+        "payment": 0,
+        "plan_total": 0,
+        "Комментарии:": null
       }
     ],
     "refusal_categories": [
@@ -2071,19 +2080,19 @@
     },
     "2026-05": {
       "kpi": {
-        "total": 180,
-        "pcp": 70,
+        "total": 181,
+        "pcp": 71,
         "nekv": 110,
-        "zapis": 34,
+        "zapis": 35,
         "prishel": 6,
         "neprishel": 10,
         "otmena": 1,
         "perezap": 6,
-        "active_zapis": 17,
+        "active_zapis": 18,
         "otval_zapis": 11,
-        "conv_pcp": 38.9,
-        "conv_zapis_from_pcp": 48.6,
-        "conv_prishel_from_zapis": 17.6,
+        "conv_pcp": 39.2,
+        "conv_zapis_from_pcp": 49.3,
+        "conv_prishel_from_zapis": 17.1,
         "sum_payment": 0,
         "sum_plan": 0,
         "plan_with_dep_sum": 0,
@@ -2099,14 +2108,14 @@
         "drr": null
       },
       "status_counts": {
-        "недозвон": 63,
-        "запись в клинику": 34,
+        "недозвон": 66,
+        "запись в клинику": 35,
         "в работе / переговорах": 30,
         "неактуал": 20,
         "ОТКАЗ": 12,
         "дубль": 9,
         "отложенный спрос": 6,
-        "—": 6
+        "—": 3
       },
       "operator_stats": {
         "Галина": {
@@ -2138,13 +2147,13 @@
           "patients_no_dep": 0
         },
         "Лена": {
-          "total": 58,
-          "pcp": 28,
-          "nekv": 30,
-          "zapis": 14,
+          "total": 61,
+          "pcp": 29,
+          "nekv": 32,
+          "zapis": 15,
           "prishel": 0,
           "otval": 4,
-          "active": 10,
+          "active": 11,
           "payment": 0,
           "plan_with_dep": 0,
           "plan_no_dep": 0,
@@ -2166,9 +2175,9 @@
           "patients_no_dep": 0
         },
         "—": {
-          "total": 22,
+          "total": 20,
           "pcp": 1,
-          "nekv": 21,
+          "nekv": 19,
           "zapis": 0,
           "prishel": 0,
           "otval": 0,
@@ -2488,6 +2497,15 @@
           "payment": 0,
           "plan_total": 0,
           "Комментарии:": "протезирование"
+        },
+        {
+          "Имя:": "Клавдия  ",
+          "Дата записи": "17.05 НА 13:30",
+          "Явка:": null,
+          "Имя оператора, взявшего в работу": "Лена",
+          "payment": 0,
+          "plan_total": 0,
+          "Комментарии:": null
         }
       ],
       "refusal_categories": [
