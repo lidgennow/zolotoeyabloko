@@ -3,7 +3,7 @@
     "date_min": "2026-04-11",
     "date_max": "2026-05-18"
   },
-  "generated_at": "2026-05-18T08:32:34Z",
+  "generated_at": "2026-05-18T12:40:37Z",
   "months": [
     {
       "key": "2026-04",
@@ -13,24 +13,24 @@
     {
       "key": "2026-05",
       "label": "Май 2026",
-      "count": 195
+      "count": 197
     }
   ],
   "all": {
     "kpi": {
-      "total": 374,
-      "pcp": 151,
-      "nekv": 223,
-      "zapis": 67,
-      "prishel": 24,
+      "total": 376,
+      "pcp": 152,
+      "nekv": 224,
+      "zapis": 68,
+      "prishel": 25,
       "neprishel": 17,
       "otmena": 4,
       "perezap": 13,
       "active_zapis": 22,
       "otval_zapis": 21,
       "conv_pcp": 40.4,
-      "conv_zapis_from_pcp": 44.4,
-      "conv_prishel_from_zapis": 35.8,
+      "conv_zapis_from_pcp": 44.7,
+      "conv_prishel_from_zapis": 36.8,
       "sum_payment": 776210,
       "sum_plan": 927833,
       "plan_with_dep_sum": 927833,
@@ -46,9 +46,9 @@
       "drr": 23.2
     },
     "status_counts": {
-      "недозвон": 111,
+      "недозвон": 112,
       "в работе / переговорах": 73,
-      "запись в клинику": 67,
+      "запись в клинику": 68,
       "неактуал": 46,
       "ОТКАЗ": 43,
       "дубль": 16,
@@ -72,13 +72,13 @@
         "patients_no_dep": 0
       },
       "Галя": {
-        "total": 10,
-        "pcp": 6,
+        "total": 11,
+        "pcp": 7,
         "nekv": 4,
-        "zapis": 2,
+        "zapis": 3,
         "prishel": 0,
         "otval": 0,
-        "active": 2,
+        "active": 3,
         "payment": 0,
         "plan_with_dep": 0,
         "plan_no_dep": 0,
@@ -90,9 +90,9 @@
         "pcp": 73,
         "nekv": 82,
         "zapis": 32,
-        "prishel": 11,
+        "prishel": 12,
         "otval": 10,
-        "active": 11,
+        "active": 10,
         "payment": 641843,
         "plan_with_dep": 695925,
         "plan_no_dep": 0,
@@ -100,9 +100,9 @@
         "patients_no_dep": 0
       },
       "Наталья": {
-        "total": 128,
-        "pcp": 51,
-        "nekv": 77,
+        "total": 135,
+        "pcp": 52,
+        "nekv": 83,
         "zapis": 25,
         "prishel": 9,
         "otval": 9,
@@ -114,9 +114,9 @@
         "patients_no_dep": 0
       },
       "—": {
-        "total": 25,
-        "pcp": 5,
-        "nekv": 20,
+        "total": 19,
+        "pcp": 4,
+        "nekv": 15,
         "zapis": 0,
         "prishel": 0,
         "otval": 0,
@@ -760,7 +760,7 @@
       {
         "Имя:": "Галина",
         "Дата записи": "18.05 НА 15:00-16:00",
-        "Явка:": null,
+        "Явка:": "Пришел",
         "Имя оператора, взявшего в работу": "Лена",
         "payment": 0,
         "plan_total": 0,
@@ -774,6 +774,15 @@
         "payment": 0,
         "plan_total": 0,
         "Комментарии:": "протезироваие"
+      },
+      {
+        "Имя:": "Ксения",
+        "Дата записи": "на 19.05 в 11.30",
+        "Явка:": null,
+        "Имя оператора, взявшего в работу": "Галя",
+        "payment": 0,
+        "plan_total": 0,
+        "Комментарии:": "лечение"
       }
     ],
     "refusal_categories": [
@@ -2110,19 +2119,19 @@
     },
     "2026-05": {
       "kpi": {
-        "total": 195,
-        "pcp": 77,
-        "nekv": 118,
-        "zapis": 37,
-        "prishel": 11,
+        "total": 197,
+        "pcp": 78,
+        "nekv": 119,
+        "zapis": 38,
+        "prishel": 12,
         "neprishel": 12,
         "otmena": 1,
         "perezap": 6,
         "active_zapis": 13,
         "otval_zapis": 13,
-        "conv_pcp": 39.5,
-        "conv_zapis_from_pcp": 48.1,
-        "conv_prishel_from_zapis": 29.7,
+        "conv_pcp": 39.6,
+        "conv_zapis_from_pcp": 48.7,
+        "conv_prishel_from_zapis": 31.6,
         "sum_payment": 0,
         "sum_plan": 0,
         "plan_with_dep_sum": 0,
@@ -2138,8 +2147,8 @@
         "drr": null
       },
       "status_counts": {
-        "недозвон": 74,
-        "запись в клинику": 37,
+        "недозвон": 75,
+        "запись в клинику": 38,
         "в работе / переговорах": 33,
         "неактуал": 20,
         "ОТКАЗ": 14,
@@ -2163,13 +2172,13 @@
           "patients_no_dep": 0
         },
         "Галя": {
-          "total": 10,
-          "pcp": 6,
+          "total": 11,
+          "pcp": 7,
           "nekv": 4,
-          "zapis": 2,
+          "zapis": 3,
           "prishel": 0,
           "otval": 0,
-          "active": 2,
+          "active": 3,
           "payment": 0,
           "plan_with_dep": 0,
           "plan_no_dep": 0,
@@ -2181,9 +2190,9 @@
           "pcp": 32,
           "nekv": 35,
           "zapis": 16,
-          "prishel": 4,
+          "prishel": 5,
           "otval": 5,
-          "active": 7,
+          "active": 6,
           "payment": 0,
           "plan_with_dep": 0,
           "plan_no_dep": 0,
@@ -2191,9 +2200,9 @@
           "patients_no_dep": 0
         },
         "Наталья": {
-          "total": 66,
-          "pcp": 27,
-          "nekv": 39,
+          "total": 73,
+          "pcp": 28,
+          "nekv": 45,
           "zapis": 14,
           "prishel": 4,
           "otval": 7,
@@ -2205,9 +2214,9 @@
           "patients_no_dep": 0
         },
         "—": {
-          "total": 22,
-          "pcp": 2,
-          "nekv": 20,
+          "total": 16,
+          "pcp": 1,
+          "nekv": 15,
           "zapis": 0,
           "prishel": 0,
           "otval": 0,
@@ -2540,7 +2549,7 @@
         {
           "Имя:": "Галина",
           "Дата записи": "18.05 НА 15:00-16:00",
-          "Явка:": null,
+          "Явка:": "Пришел",
           "Имя оператора, взявшего в работу": "Лена",
           "payment": 0,
           "plan_total": 0,
@@ -2554,6 +2563,15 @@
           "payment": 0,
           "plan_total": 0,
           "Комментарии:": "протезироваие"
+        },
+        {
+          "Имя:": "Ксения",
+          "Дата записи": "на 19.05 в 11.30",
+          "Явка:": null,
+          "Имя оператора, взявшего в работу": "Галя",
+          "payment": 0,
+          "plan_total": 0,
+          "Комментарии:": "лечение"
         }
       ],
       "refusal_categories": [
