@@ -1,9 +1,9 @@
 {
   "period": {
     "date_min": "2026-04-11",
-    "date_max": "2026-05-23"
+    "date_max": "2026-05-24"
   },
-  "generated_at": "2026-05-24T00:02:56Z",
+  "generated_at": "2026-05-24T04:48:33Z",
   "months": [
     {
       "key": "2026-04",
@@ -13,14 +13,14 @@
     {
       "key": "2026-05",
       "label": "Май 2026",
-      "count": 242
+      "count": 244
     }
   ],
   "all": {
     "kpi": {
-      "total": 421,
+      "total": 423,
       "pcp": 170,
-      "nekv": 251,
+      "nekv": 253,
       "zapis": 73,
       "prishel": 27,
       "neprishel": 20,
@@ -28,7 +28,7 @@
       "perezap": 13,
       "active_zapis": 23,
       "otval_zapis": 23,
-      "conv_pcp": 40.4,
+      "conv_pcp": 40.2,
       "conv_zapis_from_pcp": 42.9,
       "conv_prishel_from_zapis": 37.0,
       "sum_payment": 776210,
@@ -53,8 +53,8 @@
       "ОТКАЗ": 45,
       "дубль": 17,
       "отложенный спрос": 14,
-      "ндз финал": 6,
-      "—": 5
+      "—": 7,
+      "ндз финал": 6
     },
     "operator_stats": {
       "Галина": {
@@ -114,9 +114,9 @@
         "patients_no_dep": 0
       },
       "—": {
-        "total": 33,
+        "total": 35,
         "pcp": 5,
-        "nekv": 28,
+        "nekv": 30,
         "zapis": 0,
         "prishel": 0,
         "otval": 0,
@@ -2230,9 +2230,9 @@
     },
     "2026-05": {
       "kpi": {
-        "total": 242,
+        "total": 244,
         "pcp": 96,
-        "nekv": 146,
+        "nekv": 148,
         "zapis": 43,
         "prishel": 14,
         "neprishel": 15,
@@ -2240,7 +2240,7 @@
         "perezap": 6,
         "active_zapis": 14,
         "otval_zapis": 15,
-        "conv_pcp": 39.7,
+        "conv_pcp": 39.3,
         "conv_zapis_from_pcp": 44.8,
         "conv_prishel_from_zapis": 32.6,
         "sum_payment": 0,
@@ -2265,7 +2265,7 @@
         "ОТКАЗ": 16,
         "дубль": 10,
         "отложенный спрос": 10,
-        "—": 5
+        "—": 7
       },
       "operator_stats": {
         "Галина": {
@@ -2325,9 +2325,9 @@
           "patients_no_dep": 0
         },
         "—": {
-          "total": 30,
+          "total": 32,
           "pcp": 2,
-          "nekv": 28,
+          "nekv": 30,
           "zapis": 0,
           "prishel": 0,
           "otval": 0,
