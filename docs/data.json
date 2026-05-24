@@ -3,7 +3,7 @@
     "date_min": "2026-04-11",
     "date_max": "2026-05-24"
   },
-  "generated_at": "2026-05-24T11:50:31Z",
+  "generated_at": "2026-05-24T13:50:02Z",
   "months": [
     {
       "key": "2026-04",
@@ -13,24 +13,24 @@
     {
       "key": "2026-05",
       "label": "Май 2026",
-      "count": 250
+      "count": 252
     }
   ],
   "all": {
     "kpi": {
-      "total": 429,
+      "total": 431,
       "pcp": 175,
-      "nekv": 254,
-      "zapis": 74,
+      "nekv": 256,
+      "zapis": 72,
       "prishel": 27,
       "neprishel": 20,
       "otmena": 4,
       "perezap": 13,
-      "active_zapis": 24,
+      "active_zapis": 22,
       "otval_zapis": 23,
-      "conv_pcp": 40.8,
-      "conv_zapis_from_pcp": 42.3,
-      "conv_prishel_from_zapis": 36.5,
+      "conv_pcp": 40.6,
+      "conv_zapis_from_pcp": 41.1,
+      "conv_prishel_from_zapis": 37.5,
       "sum_payment": 776210,
       "sum_plan": 927833,
       "plan_with_dep_sum": 927833,
@@ -46,13 +46,13 @@
       "drr": 23.2
     },
     "status_counts": {
-      "недозвон": 128,
+      "недозвон": 130,
       "в работе / переговорах": 87,
-      "запись в клинику": 74,
+      "запись в клинику": 72,
       "неактуал": 55,
       "ОТКАЗ": 46,
       "дубль": 17,
-      "отложенный спрос": 14,
+      "отложенный спрос": 16,
       "ндз финал": 6,
       "—": 2
     },
@@ -61,10 +61,10 @@
         "total": 75,
         "pcp": 27,
         "nekv": 48,
-        "zapis": 12,
+        "zapis": 10,
         "prishel": 5,
         "otval": 2,
-        "active": 5,
+        "active": 3,
         "payment": 0,
         "plan_with_dep": 0,
         "plan_no_dep": 0,
@@ -114,9 +114,9 @@
         "patients_no_dep": 0
       },
       "—": {
-        "total": 32,
+        "total": 34,
         "pcp": 6,
-        "nekv": 26,
+        "nekv": 28,
         "zapis": 0,
         "prishel": 0,
         "otval": 0,
@@ -810,24 +810,6 @@
         "payment": 0,
         "plan_total": 0,
         "Комментарии:": "21.05. на 14.30"
-      },
-      {
-        "Имя:": "Светлана, 21.05 после 19:00",
-        "Дата записи": "24.05. на 10.30",
-        "Явка:": null,
-        "Имя оператора, взявшего в работу": "Галина",
-        "payment": 0,
-        "plan_total": 0,
-        "Комментарии:": "протезирование съемное"
-      },
-      {
-        "Имя:": "Валентина",
-        "Дата записи": null,
-        "Явка:": null,
-        "Имя оператора, взявшего в работу": "Галина",
-        "payment": 0,
-        "plan_total": 0,
-        "Комментарии:": null
       },
       {
         "Имя:": "Людмила ",
@@ -2245,19 +2227,19 @@
     },
     "2026-05": {
       "kpi": {
-        "total": 250,
+        "total": 252,
         "pcp": 101,
-        "nekv": 149,
-        "zapis": 44,
+        "nekv": 151,
+        "zapis": 42,
         "prishel": 14,
         "neprishel": 15,
         "otmena": 1,
         "perezap": 6,
-        "active_zapis": 15,
+        "active_zapis": 13,
         "otval_zapis": 15,
-        "conv_pcp": 40.4,
-        "conv_zapis_from_pcp": 43.6,
-        "conv_prishel_from_zapis": 31.8,
+        "conv_pcp": 40.1,
+        "conv_zapis_from_pcp": 41.6,
+        "conv_prishel_from_zapis": 33.3,
         "sum_payment": 0,
         "sum_plan": 0,
         "plan_with_dep_sum": 0,
@@ -2273,13 +2255,13 @@
         "drr": null
       },
       "status_counts": {
-        "недозвон": 91,
+        "недозвон": 93,
         "в работе / переговорах": 47,
-        "запись в клинику": 44,
+        "запись в клинику": 42,
         "неактуал": 29,
         "ОТКАЗ": 17,
+        "отложенный спрос": 12,
         "дубль": 10,
-        "отложенный спрос": 10,
         "—": 2
       },
       "operator_stats": {
@@ -2287,10 +2269,10 @@
           "total": 49,
           "pcp": 21,
           "nekv": 28,
-          "zapis": 9,
+          "zapis": 7,
           "prishel": 4,
           "otval": 1,
-          "active": 4,
+          "active": 2,
           "payment": 0,
           "plan_with_dep": 0,
           "plan_no_dep": 0,
@@ -2340,9 +2322,9 @@
           "patients_no_dep": 0
         },
         "—": {
-          "total": 29,
+          "total": 31,
           "pcp": 3,
-          "nekv": 26,
+          "nekv": 28,
           "zapis": 0,
           "prishel": 0,
           "otval": 0,
@@ -2725,24 +2707,6 @@
           "payment": 0,
           "plan_total": 0,
           "Комментарии:": "21.05. на 14.30"
-        },
-        {
-          "Имя:": "Светлана, 21.05 после 19:00",
-          "Дата записи": "24.05. на 10.30",
-          "Явка:": null,
-          "Имя оператора, взявшего в работу": "Галина",
-          "payment": 0,
-          "plan_total": 0,
-          "Комментарии:": "протезирование съемное"
-        },
-        {
-          "Имя:": "Валентина",
-          "Дата записи": null,
-          "Явка:": null,
-          "Имя оператора, взявшего в работу": "Галина",
-          "payment": 0,
-          "plan_total": 0,
-          "Комментарии:": null
         },
         {
           "Имя:": "Людмила ",
