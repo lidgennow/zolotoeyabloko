@@ -3,7 +3,7 @@
     "date_min": "2026-04-11",
     "date_max": "2026-05-24"
   },
-  "generated_at": "2026-05-24T07:51:43Z",
+  "generated_at": "2026-05-24T10:01:17Z",
   "months": [
     {
       "key": "2026-04",
@@ -13,7 +13,7 @@
     {
       "key": "2026-05",
       "label": "Май 2026",
-      "count": 246
+      "count": 247
     }
   ],
   "all": {
@@ -2245,9 +2245,9 @@
     },
     "2026-05": {
       "kpi": {
-        "total": 246,
+        "total": 247,
         "pcp": 99,
-        "nekv": 147,
+        "nekv": 148,
         "zapis": 44,
         "prishel": 14,
         "neprishel": 15,
@@ -2255,7 +2255,7 @@
         "perezap": 6,
         "active_zapis": 15,
         "otval_zapis": 15,
-        "conv_pcp": 40.2,
+        "conv_pcp": 40.1,
         "conv_zapis_from_pcp": 44.4,
         "conv_prishel_from_zapis": 31.8,
         "sum_payment": 0,
@@ -2273,7 +2273,7 @@
         "drr": null
       },
       "status_counts": {
-        "недозвон": 90,
+        "недозвон": 91,
         "в работе / переговорах": 45,
         "запись в клинику": 44,
         "неактуал": 29,
@@ -2340,9 +2340,9 @@
           "patients_no_dep": 0
         },
         "—": {
-          "total": 25,
+          "total": 26,
           "pcp": 1,
-          "nekv": 24,
+          "nekv": 25,
           "zapis": 0,
           "prishel": 0,
           "otval": 0,
