@@ -1,9 +1,9 @@
 {
   "period": {
     "date_min": "2026-04-11",
-    "date_max": "2026-05-26"
+    "date_max": "2026-05-27"
   },
-  "generated_at": "2026-05-27T01:34:54Z",
+  "generated_at": "2026-05-27T06:35:30Z",
   "months": [
     {
       "key": "2026-04",
@@ -13,14 +13,14 @@
     {
       "key": "2026-05",
       "label": "Май 2026",
-      "count": 268
+      "count": 270
     }
   ],
   "all": {
     "kpi": {
-      "total": 447,
+      "total": 449,
       "pcp": 175,
-      "nekv": 272,
+      "nekv": 274,
       "zapis": 75,
       "prishel": 29,
       "neprishel": 20,
@@ -28,7 +28,7 @@
       "perezap": 13,
       "active_zapis": 23,
       "otval_zapis": 23,
-      "conv_pcp": 39.1,
+      "conv_pcp": 39.0,
       "conv_zapis_from_pcp": 42.9,
       "conv_prishel_from_zapis": 38.7,
       "sum_payment": 776210,
@@ -46,7 +46,7 @@
       "drr": 23.2
     },
     "status_counts": {
-      "недозвон": 134,
+      "недозвон": 138,
       "в работе / переговорах": 84,
       "запись в клинику": 75,
       "неактуал": 64,
@@ -54,7 +54,7 @@
       "дубль": 18,
       "отложенный спрос": 16,
       "ндз финал": 6,
-      "—": 3
+      "—": 1
     },
     "operator_stats": {
       "Галина": {
@@ -114,9 +114,9 @@
         "patients_no_dep": 0
       },
       "—": {
-        "total": 29,
+        "total": 31,
         "pcp": 4,
-        "nekv": 25,
+        "nekv": 27,
         "zapis": 0,
         "prishel": 0,
         "otval": 0,
@@ -2320,9 +2320,9 @@
     },
     "2026-05": {
       "kpi": {
-        "total": 268,
+        "total": 270,
         "pcp": 102,
-        "nekv": 166,
+        "nekv": 168,
         "zapis": 45,
         "prishel": 16,
         "neprishel": 14,
@@ -2330,7 +2330,7 @@
         "perezap": 6,
         "active_zapis": 15,
         "otval_zapis": 14,
-        "conv_pcp": 38.1,
+        "conv_pcp": 37.8,
         "conv_zapis_from_pcp": 44.1,
         "conv_prishel_from_zapis": 35.6,
         "sum_payment": 0,
@@ -2348,14 +2348,14 @@
         "drr": null
       },
       "status_counts": {
-        "недозвон": 97,
+        "недозвон": 101,
         "в работе / переговорах": 45,
         "запись в клинику": 45,
         "неактуал": 37,
         "ОТКАЗ": 18,
         "отложенный спрос": 12,
         "дубль": 11,
-        "—": 3
+        "—": 1
       },
       "operator_stats": {
         "Галина": {
@@ -2415,9 +2415,9 @@
           "patients_no_dep": 0
         },
         "—": {
-          "total": 26,
+          "total": 28,
           "pcp": 1,
-          "nekv": 25,
+          "nekv": 27,
           "zapis": 0,
           "prishel": 0,
           "otval": 0,
