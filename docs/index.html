@@ -556,7 +556,6 @@ function render(d) {
     ['Квалифицированы (ПЦП)', k.pcp, k.total],
     ['Записаны в клинику', k.zapis, k.total],
     ['Пришли на приём', k.prishel, k.total],
-    ['Внесли оплату', k.plan_with_dep_count + (k.only_payment_count||0), k.total],
   ];
   document.getElementById('funnel').innerHTML = funnel.map(([l,v,base])=>{
     const w = base ? (v/base*100) : 0;
