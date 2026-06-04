@@ -5,18 +5,52 @@
 <title>Дашборд КЦ — «Золотое Яблоко», Омск</title>
 <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js"></script>
 <style>
+  /* ===== DARK THEME (default) ===== */
   :root {
-    --bg:#0f172a; --card:#1e293b; --muted:#94a3b8; --text:#e2e8f0;
+    --bg:#0f172a; --card:#1e293b; --card2:#0f172a; --muted:#94a3b8; --text:#e2e8f0;
     --accent:#38bdf8; --good:#22c55e; --bad:#ef4444; --warn:#f59e0b;
     --border:#334155;
   }
+  /* ===== LIGHT THEME ===== */
+  :root[data-theme="light"] {
+    --bg:#eef2f7; --card:#f8fafc; --card2:#ffffff; --muted:#64748b; --text:#1e293b;
+    --accent:#0284c7; --good:#16a34a; --bad:#dc2626; --warn:#b45309;
+    --border:#cbd5e1;
+  }
+
   *{box-sizing:border-box}
   body{margin:0;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif;
-       background:var(--bg);color:var(--text);padding:24px;line-height:1.4}
+       background:var(--bg);color:var(--text);padding:24px;padding-top:88px;line-height:1.4;
+       transition:background .2s,color .2s}
   h1{margin:0 0 4px;font-size:24px}
   h2{margin:32px 0 12px;font-size:18px;color:var(--accent)}
   h3{margin:0;font-size:15px;font-weight:600}
   .sub{color:var(--muted);font-size:13px;margin-bottom:16px}
+
+  /* ===== STICKY SUMMARY BAR ===== */
+  #stickyBar {
+    position:fixed;top:-80px;left:0;right:0;z-index:100;
+    background:var(--card);border-bottom:1px solid var(--border);
+    padding:10px 24px;display:flex;align-items:center;gap:16px;flex-wrap:wrap;
+    transition:top .3s ease,background .2s,border-color .2s;
+    box-shadow:0 2px 12px rgba(0,0,0,.15);
+  }
+  #stickyBar.visible{top:0}
+  .sticky-clinic{font-weight:700;font-size:15px;margin-right:4px;white-space:nowrap}
+  .sticky-metrics{display:flex;gap:14px;flex-wrap:wrap}
+  .sticky-metric{font-size:13px;color:var(--muted)}
+  .sticky-metric b{color:var(--text)}
+  .sticky-filter{display:flex;gap:4px;flex-wrap:wrap;margin-left:auto}
+  .sticky-filter button{
+    background:transparent;color:var(--text);border:1px solid var(--border);
+    padding:4px 10px;border-radius:6px;cursor:pointer;font-size:12px;
+    font-family:inherit;transition:all .15s;
+  }
+  .sticky-filter button:hover{border-color:var(--accent)}
+  .sticky-filter button.active{background:var(--accent);color:#fff;border-color:var(--accent);font-weight:600}
+  :root[data-theme="light"] .sticky-filter button.active{color:#0f172a}
+
+  /* ===== HEADER ===== */
   .header-row{display:flex;align-items:center;justify-content:space-between;
               flex-wrap:wrap;gap:12px;margin-bottom:24px}
   .filter{display:flex;gap:6px;flex-wrap:wrap}
@@ -25,18 +59,64 @@
                  font-family:inherit;transition:all .15s}
   .filter button:hover{border-color:var(--accent)}
   .filter button.active{background:var(--accent);color:#0f172a;border-color:var(--accent);font-weight:600}
+  :root[data-theme="light"] .filter button.active{color:#fff}
   .filter button .count{color:var(--muted);font-size:11px;margin-left:6px}
   .filter button.active .count{color:#0f172a;opacity:.7}
+  :root[data-theme="light"] .filter button.active .count{color:#fff}
+
+  /* ===== THEME TOGGLE ===== */
+  #themeToggle {
+    background:var(--card);color:var(--text);border:1px solid var(--border);
+    padding:7px 12px;border-radius:8px;cursor:pointer;font-size:16px;
+    font-family:inherit;transition:all .15s;line-height:1;
+  }
+  #themeToggle:hover{border-color:var(--accent)}
+
+  /* ===== GRID / LAYOUT ===== */
   .grid{display:grid;gap:16px}
   .kpi{grid-template-columns:repeat(auto-fit,minmax(180px,1fr))}
   .row2{grid-template-columns:1fr 1fr}
   .row3{grid-template-columns:repeat(3,1fr)}
   @media(max-width:900px){.row2,.row3{grid-template-columns:1fr}}
-  .card{background:var(--card);border:1px solid var(--border);border-radius:12px;padding:18px}
-  .kpi .card{padding:14px 16px}
-  .kpi .label{color:var(--muted);font-size:12px;text-transform:uppercase;letter-spacing:.05em}
+
+  /* ===== CARD ===== */
+  .card{background:var(--card);border:1px solid var(--border);border-radius:12px;padding:18px;
+        transition:background .2s,border-color .2s}
+
+  /* ===== KPI CARDS ===== */
+  .kpi .card{
+    padding:14px 16px;
+    position:relative;
+    border-left:4px solid var(--c,var(--accent));
+    overflow:hidden;
+  }
+  .kpi .card .kpi-icon{
+    position:absolute;top:10px;right:12px;
+    font-size:18px;opacity:.55;line-height:1;
+  }
+  .kpi .label{color:var(--muted);font-size:12px;text-transform:uppercase;letter-spacing:.05em;
+              padding-right:28px}
   .kpi .value{font-size:28px;font-weight:600;margin-top:6px}
   .kpi .delta{font-size:12px;color:var(--muted);margin-top:4px}
+
+  /* Progress bar under delta */
+  .kpi .prog-wrap{
+    margin-top:6px;height:3px;border-radius:2px;
+    background:rgba(148,163,184,.15);overflow:hidden;
+  }
+  .kpi .prog-fill{
+    height:100%;border-radius:2px;
+    background:var(--c,var(--accent));
+    width:0;transition:width .8s ease;
+  }
+
+  /* Sparkline */
+  .kpi .sparkline{
+    position:absolute;bottom:10px;right:12px;
+    display:none;
+  }
+  .kpi .card.has-spark .sparkline{display:block}
+
   .good{color:var(--good)} .bad{color:var(--bad)} .warn{color:var(--warn)}
   .chart-wrap{position:relative;height:320px}
   table{width:100%;border-collapse:collapse;font-size:13px}
@@ -50,13 +130,20 @@
   .pill-bad{background:rgba(239,68,68,.15);color:var(--bad)}
   .pill-warn{background:rgba(245,158,11,.15);color:var(--warn)}
   .pill-muted{background:rgba(148,163,184,.15);color:var(--muted)}
+
+  /* ===== FUNNEL ===== */
   .funnel{display:flex;flex-direction:column;gap:8px}
   .funnel-row{display:flex;align-items:center;gap:12px}
-  .funnel-bar{flex:1;height:34px;background:rgba(56,189,248,.15);border-radius:6px;position:relative;overflow:hidden}
-  .funnel-fill{height:100%;background:linear-gradient(90deg,#38bdf8,#0ea5e9);border-radius:6px;
-               display:flex;align-items:center;padding-left:10px;font-weight:600;font-size:13px;color:#0f172a}
+  .funnel-bar{flex:1;height:34px;background:rgba(56,189,248,.10);border-radius:6px;position:relative;overflow:hidden}
+  .funnel-fill{
+    height:100%;background:linear-gradient(90deg,#38bdf8,#0ea5e9);border-radius:6px;
+    display:flex;align-items:center;padding-left:10px;font-weight:600;font-size:13px;color:#0f172a;
+    width:0;transition:width .8s ease;
+  }
+  :root[data-theme="light"] .funnel-fill{color:#fff}
   .funnel-label{width:140px;font-size:13px;color:var(--muted)}
   .funnel-num{width:90px;text-align:right;font-variant-numeric:tabular-nums}
+
   small{color:var(--muted)}
   .comment{color:var(--muted);font-size:12px;max-width:380px}
   .kpi-mini{font-size:12px;text-transform:uppercase;letter-spacing:.05em;font-weight:600}
@@ -67,6 +154,13 @@
 </style>
 </head>
 <body>
+
+<!-- ===== STICKY BAR ===== -->
+<div id="stickyBar">
+  <span class="sticky-clinic">«Золотое Яблоко»</span>
+  <div class="sticky-metrics" id="stickyMetrics"></div>
+  <div class="sticky-filter" id="stickyFilter"></div>
+</div>
 
 <div class="header-row">
   <div>
@@ -79,6 +173,7 @@
       <div>Обновится через: <span id="nextUpdate" style="color:var(--accent);font-variant-numeric:tabular-nums">—</span></div>
     </div>
     <div class="filter" id="monthFilter"></div>
+    <button id="themeToggle" onclick="toggleTheme()" title="Переключить тему">🌙</button>
   </div>
 </div>
 
@@ -131,8 +226,104 @@
 <script>
 const fmt = n => (n||0).toLocaleString('ru-RU').replace(/,/g,' ');
 const pct = (a,b) => b ? ((a/b)*100).toFixed(1)+'%' : '—';
+const pctNum = (a,b) => b ? (a/b*100) : 0;
 
 let chartStatus = null;
+
+// ===== THEME =====
+function getTheme() { return localStorage.getItem('theme') || 'dark'; }
+function applyTheme(t) {
+  document.documentElement.setAttribute('data-theme', t);
+  document.getElementById('themeToggle').textContent = t === 'light' ? '☀️' : '🌙';
+  // Update Chart.js defaults & redraw if needed
+  if (t === 'light') {
+    Chart.defaults.color = '#64748b';
+    Chart.defaults.borderColor = '#cbd5e1';
+  } else {
+    Chart.defaults.color = '#94a3b8';
+    Chart.defaults.borderColor = '#334155';
+  }
+  // Redraw chart if it exists (theme switch needs colour update)
+  if (chartStatus && window._lastStatusData) {
+    chartStatus.destroy();
+    chartStatus = null;
+    buildStatusChart(window._lastStatusData);
+  }
+}
+function toggleTheme() {
+  const next = getTheme() === 'light' ? 'dark' : 'light';
+  localStorage.setItem('theme', next);
+  applyTheme(next);
+}
+// Apply on load
+applyTheme(getTheme());
+
+// ===== STICKY BAR =====
+window.addEventListener('scroll', () => {
+  const bar = document.getElementById('stickyBar');
+  bar.classList.toggle('visible', window.scrollY > 100);
+});
+
+// ===== COUNT-UP ANIMATION =====
+function countUp(el, target, isFloat, prefix, suffix) {
+  const duration = 700;
+  const start = performance.now();
+  function tick(now) {
+    const elapsed = now - start;
+    const progress = Math.min(elapsed / duration, 1);
+    // cubic ease-out
+    const eased = 1 - Math.pow(1 - progress, 3);
+    const current = Math.round(target * eased);
+    el.textContent = prefix + fmt(current) + suffix;
+    if (progress < 1) requestAnimationFrame(tick);
+    else el.textContent = prefix + fmt(target) + suffix;
+  }
+  requestAnimationFrame(tick);
+}
+
+// ===== SPARKLINE SVG =====
+function makeSpark(prevVal, currVal) {
+  const W = 40, H = 18, pad = 2;
+  const max = Math.max(prevVal, currVal, 1);
+  const barW = (W - pad * 3) / 2;
+  const h1 = Math.max(2, ((prevVal / max) * (H - pad)));
+  const h2 = Math.max(2, ((currVal / max) * (H - pad)));
+  const x1 = pad;
+  const x2 = pad * 2 + barW;
+  return `<svg width="${W}" height="${H}" style="display:block">
+    <rect x="${x1}" y="${H - h1}" width="${barW}" height="${h1}" rx="1" fill="#475569"/>
+    <rect x="${x2}" y="${H - h2}" width="${barW}" height="${h2}" rx="1" fill="#38bdf8"/>
+  </svg>`;
+}
+
+// ===== BUILD STATUS CHART =====
+function buildStatusChart(sc) {
+  window._lastStatusData = sc;
+  const isLight = getTheme() === 'light';
+  Chart.defaults.color = isLight ? '#64748b' : '#94a3b8';
+  Chart.defaults.borderColor = isLight ? '#cbd5e1' : '#334155';
+  const colorMap = {
+    'запись в клинику':'#22c55e', 'в работе / переговорах':'#38bdf8', 'ОТКАЗ':'#ef4444',
+    'ндз финал':'#f59e0b', 'неактуал':'#a78bfa', 'отложенный спрос':'#0ea5e9',
+    'недозвон':'#fb923c', 'дубль':'#94a3b8',
+    '—':'#475569',
+  };
+  chartStatus = new Chart(document.getElementById('chStatus'), {
+    type:'doughnut',
+    data:{
+      labels:Object.keys(sc),
+      datasets:[{
+        data:Object.values(sc),
+        backgroundColor:Object.keys(sc).map(s=>colorMap[s]||'#64748b'),
+        borderWidth:0
+      }]
+    },
+    options:{
+      plugins:{legend:{position:'right',labels:{font:{size:12}}}},
+      maintainAspectRatio:false
+    }
+  });
+}
 
 const yavkaPill = v => {
   if(!v) return '<span class="pill pill-muted">—</span>';
@@ -143,34 +334,164 @@ const yavkaPill = v => {
   return `<span class="pill pill-muted">${v}</span>`;
 };
 
-function render(d) {
+// KPI definitions: [label, color, icon, progressKey]
+// progressKey: field name in kpi whose numeric value is the % (conv_pcp, etc.)
+const KPI_META = [
+  { label:'Всего заявок',           color:'#38bdf8', icon:'📋', prog:null },
+  { label:'Квалифицированы ПЦП',    color:'#38bdf8', icon:'✓',  prog:'conv_pcp' },
+  { label:'Записей в клинику',       color:'#22c55e', icon:'📅', prog:'conv_zapis_from_pcp' },
+  { label:'Запись активна',          color:'#f59e0b', icon:'⏳', prog:null },
+  { label:'Пришли на приём',         color:'#22c55e', icon:'🏥', prog:'conv_prishel_from_zapis' },
+  { label:'План с депозитом',        color:'#22c55e', icon:'💰', prog:null },
+  { label:'Рекламный расход',        color:'#94a3b8', icon:'📢', prog:null },
+  { label:'ДРР',                     color:null,      icon:'📊', prog:null },
+];
+
+function render(d, prevD) {
   const k = d.kpi;
+  const hasPrev = prevD && prevD.kpi;
 
   // ---------- KPI ----------
   const drrColor = k.drr == null ? '' :
     (k.drr <= 20 ? 'good' : (k.drr <= 40 ? 'warn' : 'bad'));
-  const drrValue = k.drr == null ? '—' :
-    `<span class="${drrColor}">${k.drr}%</span>`;
+  const drrAccentColor = k.drr == null ? '#94a3b8' :
+    (k.drr <= 20 ? '#22c55e' : (k.drr <= 40 ? '#f59e0b' : '#ef4444'));
+
   const kpis = [
-    ['Всего заявок', k.total, ''],
-    ['Квалифицированы (ПЦП)', k.pcp, `${k.conv_pcp}% от всех`],
-    ['Записей в клинику', k.zapis, `${k.conv_zapis_from_pcp}% от ПЦП`],
-    ['Запись активна', k.active_zapis, 'без отметки явки'],
-    ['Пришли на приём', k.prishel, `${k.conv_prishel_from_zapis}% от записей`],
-    ['План лечения с депозитом',
-      `<span class="good">${fmt(k.plan_with_dep_sum)} ₽</span>`,
-      `${k.plan_with_dep_count} пациент(ов)`],
-    ['Рекламный расход', k.ad_spend == null ? '—' : fmt(k.ad_spend)+' ₽', 'на инструмент'],
-    ['ДРР', drrValue,
-      k.drr == null ? 'нет данных по расходу'
-                    : 'расход / план с депозитом'],
+    {
+      meta: KPI_META[0],
+      rawValue: k.total,
+      value: String(k.total),
+      sub: '',
+      isNum: true,
+    },
+    {
+      meta: KPI_META[1],
+      rawValue: k.pcp,
+      value: String(k.pcp),
+      sub: `${k.conv_pcp}% от всех`,
+      isNum: true,
+    },
+    {
+      meta: KPI_META[2],
+      rawValue: k.zapis,
+      value: String(k.zapis),
+      sub: `${k.conv_zapis_from_pcp}% от ПЦП`,
+      isNum: true,
+    },
+    {
+      meta: KPI_META[3],
+      rawValue: k.active_zapis,
+      value: String(k.active_zapis),
+      sub: 'без отметки явки',
+      isNum: true,
+    },
+    {
+      meta: KPI_META[4],
+      rawValue: k.prishel,
+      value: String(k.prishel),
+      sub: `${k.conv_prishel_from_zapis}% от записей`,
+      isNum: true,
+    },
+    {
+      meta: KPI_META[5],
+      rawValue: k.plan_with_dep_sum,
+      value: null, // money — handled separately
+      sub: `${k.plan_with_dep_count} пациент(ов)`,
+      isMoney: true,
+    },
+    {
+      meta: KPI_META[6],
+      rawValue: k.ad_spend,
+      value: null,
+      sub: 'на инструмент',
+      isMoney: true,
+      noData: k.ad_spend == null,
+    },
+    {
+      meta: { ...KPI_META[7], color: drrAccentColor },
+      rawValue: null,
+      value: k.drr == null ? '—' : `${k.drr}%`,
+      sub: k.drr == null ? 'нет данных по расходу' : 'расход / план с депозитом',
+      isNum: false,
+      drrClass: drrColor,
+    },
   ];
-  document.getElementById('kpi').innerHTML = kpis.map(([l,v,sub])=>`
-    <div class="card">
-      <div class="label">${l}</div>
-      <div class="value">${v}</div>
-      <div class="delta">${sub}</div>
-    </div>`).join('');
+
+  const kpiEl = document.getElementById('kpi');
+  kpiEl.innerHTML = kpis.map((item, i) => {
+    const c = item.meta.color || '#94a3b8';
+    const icon = item.meta.icon;
+    const prog = item.meta.prog;
+    const progPct = prog && k[prog] != null ? parseFloat(k[prog]) : null;
+
+    // Sparkline: show only if we have prev data and this is a numeric card
+    let sparkHtml = '';
+    let hasSpark = false;
+    if (hasPrev && (item.isNum || item.isMoney) && !item.noData) {
+      const prevVal = item.isMoney
+        ? (prevD.kpi[['plan_with_dep_sum','ad_spend'][item.meta === KPI_META[5] ? 0 : 1]] || 0)
+        : (prevD.kpi[['total','pcp','zapis','active_zapis','prishel'][i]] || 0);
+      // use a simpler mapping
+      const rawPrev = (() => {
+        if (i === 0) return prevD.kpi.total || 0;
+        if (i === 1) return prevD.kpi.pcp || 0;
+        if (i === 2) return prevD.kpi.zapis || 0;
+        if (i === 3) return prevD.kpi.active_zapis || 0;
+        if (i === 4) return prevD.kpi.prishel || 0;
+        if (i === 5) return prevD.kpi.plan_with_dep_sum || 0;
+        if (i === 6) return prevD.kpi.ad_spend || 0;
+        return 0;
+      })();
+      const rawCurr = item.rawValue || 0;
+      if (rawPrev > 0 || rawCurr > 0) {
+        sparkHtml = `<span class="sparkline">${makeSpark(rawPrev, rawCurr)}</span>`;
+        hasSpark = true;
+      }
+    }
+
+    const progHtml = progPct != null ? `
+      <div class="prog-wrap"><div class="prog-fill" data-pct="${progPct}" style="width:0"></div></div>` : '';
+
+    let valueHtml;
+    if (item.isMoney && !item.noData) {
+      valueHtml = `<span class="value" data-money="${item.rawValue}" data-prefix="" data-suffix=" ₽">
+        ${fmt(item.rawValue)} ₽</span>`;
+    } else if (item.noData) {
+      valueHtml = `<div class="value">—</div>`;
+    } else if (item.drrClass) {
+      valueHtml = `<div class="value"><span class="${item.drrClass}">${item.value}</span></div>`;
+    } else {
+      valueHtml = `<span class="value" data-countup="${item.rawValue}">0</span>`;
+    }
+
+    return `<div class="card${hasSpark ? ' has-spark' : ''}" style="--c:${c}">
+      <span class="kpi-icon">${icon}</span>
+      <div class="label">${item.meta.label}</div>
+      ${valueHtml}
+      <div class="delta">${item.sub}</div>
+      ${progHtml}
+      ${sparkHtml}
+    </div>`;
+  }).join('');
+
+  // Run count-up animations
+  kpiEl.querySelectorAll('[data-countup]').forEach(el => {
+    const target = parseInt(el.dataset.countup, 10) || 0;
+    countUp(el, target, false, '', '');
+  });
+  kpiEl.querySelectorAll('[data-money]').forEach(el => {
+    const target = parseInt(el.dataset.money, 10) || 0;
+    const suffix = el.dataset.suffix || '';
+    countUp(el, target, false, '', suffix);
+  });
+
+  // Animate progress bars
+  setTimeout(() => {
+    kpiEl.querySelectorAll('.prog-fill[data-pct]').forEach(el => {
+      el.style.width = Math.min(parseFloat(el.dataset.pct), 100) + '%';
+    });
+  }, 50);
 
   // ---------- Воронка ----------
   const funnel = [
@@ -184,10 +505,19 @@ function render(d) {
     const w = base ? (v/base*100) : 0;
     return `<div class="funnel-row">
       <div class="funnel-label">${l}</div>
-      <div class="funnel-bar"><div class="funnel-fill" style="width:${Math.max(w,5)}%">${v}</div></div>
+      <div class="funnel-bar">
+        <div class="funnel-fill" data-w="${Math.max(w,5)}" style="width:0">${v}</div>
+      </div>
       <div class="funnel-num">${pct(v,base)}</div>
     </div>`;
   }).join('');
+
+  // Animate funnel bars
+  setTimeout(() => {
+    document.querySelectorAll('.funnel-fill[data-w]').forEach(el => {
+      el.style.width = el.dataset.w + '%';
+    });
+  }, 30);
 
   // ---------- Сегменты план/депозит ----------
   document.getElementById('seg1Sum').textContent = fmt(k.plan_with_dep_sum) + ' ₽';
@@ -199,24 +529,10 @@ function render(d) {
   document.getElementById('seg2Sub').textContent = `${k.plan_no_dep_count} пациент(а) с планом без оплаты`;
 
   // ---------- Donut: статусы ----------
-  Chart.defaults.color = '#94a3b8';
-  Chart.defaults.borderColor = '#334155';
-  const sc = d.status_counts;
-  const colorMap = {
-    'запись в клинику':'#22c55e', 'в работе / переговорах':'#38bdf8', 'ОТКАЗ':'#ef4444',
-    'ндз финал':'#f59e0b', 'неактуал':'#a78bfa', 'отложенный спрос':'#0ea5e9',
-    'недозвон':'#fb923c', 'дубль':'#94a3b8',
-    '—':'#475569',
-  };
-  if (chartStatus) chartStatus.destroy();
-  chartStatus = new Chart(document.getElementById('chStatus'), {
-    type:'doughnut',
-    data:{labels:Object.keys(sc), datasets:[{data:Object.values(sc),
-      backgroundColor:Object.keys(sc).map(s=>colorMap[s]||'#64748b'), borderWidth:0}]},
-    options:{plugins:{legend:{position:'right',labels:{font:{size:12}}}}, maintainAspectRatio:false}
-  });
+  if (chartStatus) { chartStatus.destroy(); chartStatus = null; }
+  buildStatusChart(d.status_counts);
 
-  // ---------- Operator table ----------
+  // ---------- Operator table (no "план без депозита" column) ----------
   const ops = d.operator_stats;
   const opRows = Object.entries(ops).map(([name,s])=>`
     <tr>
@@ -228,14 +544,12 @@ function render(d) {
       <td class="num"><span class="good">${s.prishel}</span></td>
       <td class="num"><span class="bad">${s.otval}</span> <small>${pct(s.otval, s.zapis)} от записей</small></td>
       <td class="num"><span class="warn">${s.active}</span></td>
-      <td class="num">${fmt(s.payment)} ₽</td>
       <td class="num"><span class="good">${fmt(s.plan_with_dep)} ₽</span><br><small>${s.patients_with_dep} пац.</small></td>
-      <td class="num"><span class="warn">${fmt(s.plan_no_dep)} ₽</span><br><small>${s.patients_no_dep} пац.</small></td>
     </tr>`).join('');
   document.getElementById('ops').innerHTML =
     `<thead><tr><th>Оператор</th><th>Всего</th><th>ПЦП</th><th>Неквал</th>
      <th>Записей</th><th>Пришло</th><th>Отвал</th><th>Активна</th>
-     <th>Оплата</th><th>План + депозит</th><th>План без депозита</th></tr></thead>
+     <th>План + депозит</th></tr></thead>
      <tbody>${opRows}</tbody>`;
 
   // ---------- Tables по сегментам ----------
@@ -347,12 +661,45 @@ function render(d) {
 let DATA = null;
 let activeMonth = 'all';
 
+// Returns previous month's data relative to current selection (for sparklines)
+function getPrevData(key) {
+  if (!DATA || !DATA.by_month) return null;
+  const months = DATA.months || [];
+  if (key === 'all') {
+    // Use second-to-last month as "prev" for sparklines in "all" view
+    if (months.length >= 2) {
+      return DATA.by_month[months[months.length - 2].key] || null;
+    }
+    return null;
+  }
+  const idx = months.findIndex(m => m.key === key);
+  if (idx > 0) return DATA.by_month[months[idx - 1].key] || null;
+  return null;
+}
+
+function updateStickyMetrics(k) {
+  const drrColor = k.drr == null ? 'color:var(--muted)' :
+    (k.drr <= 20 ? 'color:var(--good)' : (k.drr <= 40 ? 'color:var(--warn)' : 'color:var(--bad)'));
+  document.getElementById('stickyMetrics').innerHTML = `
+    <span class="sticky-metric">Лиды: <b>${k.total}</b></span>
+    <span class="sticky-metric">Записи: <b>${k.zapis}</b></span>
+    <span class="sticky-metric">План с деп: <b>${fmt(k.plan_with_dep_sum)} ₽</b></span>
+    <span class="sticky-metric">ДРР: <b style="${drrColor}">${k.drr != null ? k.drr+'%' : '—'}</b></span>
+  `;
+}
+
 function setActive(key) {
   activeMonth = key;
-  document.querySelectorAll('#monthFilter button').forEach(b=>{
+  document.querySelectorAll('#monthFilter button, #stickyFilter button').forEach(b=>{
     b.classList.toggle('active', b.dataset.key === key);
   });
-  render(key === 'all' ? DATA.all : DATA.by_month[key]);
+  const d = key === 'all' ? DATA.all : DATA.by_month[key];
+  const prevD = getPrevData(key);
+
+  // Show sparklines only in "all" view when multiple months exist
+  const showSpark = (DATA.months && DATA.months.length >= 2);
+  render(d, showSpark ? prevD : null);
+  updateStickyMetrics(d.kpi);
 }
 
 const UPDATE_INTERVAL_MS = 30 * 60 * 1000;
@@ -406,9 +753,14 @@ function applyData(d) {
     {key:'all', label:'Все', count: d.all.kpi.total},
     ...d.months.map(m=>({key:m.key, label:m.label, count:m.count})),
   ];
-  document.getElementById('monthFilter').innerHTML = buttons.map(b=>
+  const btnHtml = buttons.map(b=>
     `<button data-key="${b.key}" onclick="setActive('${b.key}')">${b.label}<span class="count">${b.count}</span></button>`
   ).join('');
+  document.getElementById('monthFilter').innerHTML = btnHtml;
+  document.getElementById('stickyFilter').innerHTML = buttons.map(b=>
+    `<button data-key="${b.key}" onclick="setActive('${b.key}')">${b.label}</button>`
+  ).join('');
+
   setActive(activeMonth in {'all':1, ...Object.fromEntries(d.months.map(m=>[m.key,1]))} ? activeMonth : 'all');
 }
 
