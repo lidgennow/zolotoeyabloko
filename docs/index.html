@@ -303,9 +303,6 @@ const KPI_META = [
   { label:'План с депозитом',        color:'#22c55e', icon:'💰', prog:null },
   { label:'Рекламный расход',        color:'#94a3b8', icon:'📢', prog:null },
   { label:'ДРР',                     color:null,      icon:'📊', prog:null },
-  { label:'Стоимость ПЦП',          color:'#a78bfa', icon:'🎯', prog:null },
-  { label:'Стоимость записи',        color:'#a78bfa', icon:'📅', prog:null },
-  { label:'Стоимость доезда',        color:'#a78bfa', icon:'🚗', prog:null },
 ];
 
 function render(d) {
@@ -376,27 +373,6 @@ function render(d) {
       isNum: false,
       drrClass: drrColor,
     },
-    ...(k.ad_spend && k.pcp ? [{
-      meta: KPI_META[8],
-      rawValue: Math.round(k.ad_spend / k.pcp),
-      value: null,
-      sub: 'расход / ПЦП',
-      isMoney: true,
-    }] : []),
-    ...(k.ad_spend && k.zapis ? [{
-      meta: KPI_META[9],
-      rawValue: Math.round(k.ad_spend / k.zapis),
-      value: null,
-      sub: 'расход / записей',
-      isMoney: true,
-    }] : []),
-    ...(k.ad_spend && k.prishel ? [{
-      meta: KPI_META[10],
-      rawValue: Math.round(k.ad_spend / k.prishel),
-      value: null,
-      sub: 'расход / пришли',
-      isMoney: true,
-    }] : []),
   ];
 
   const kpiEl = document.getElementById('kpi');
