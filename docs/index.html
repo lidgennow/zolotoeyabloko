@@ -112,10 +112,22 @@
     width:0;transition:width .8s ease;
   }
 
-  /* Sparkline */
-
   .good{color:var(--good)} .bad{color:var(--bad)} .warn{color:var(--warn)}
+
+  /* ===== CHART + CENTER OVERLAY ===== */
   .chart-wrap{position:relative;height:320px}
+  .chart-center{
+    position:absolute;top:50%;left:50%;
+    transform:translate(-50%,-50%);
+    text-align:center;pointer-events:none;
+    transition:opacity .18s ease;
+    min-width:110px;
+  }
+  .chart-center .cc-count{font-size:26px;font-weight:700;line-height:1}
+  .chart-center .cc-label{font-size:12px;color:var(--muted);margin-top:4px;line-height:1.3;max-width:100px}
+  .chart-center .cc-pct{font-size:13px;font-weight:600;margin-top:3px}
+
+  /* ===== TABLE ===== */
   table{width:100%;border-collapse:collapse;font-size:13px}
   th,td{padding:8px 10px;text-align:left;border-bottom:1px solid var(--border);vertical-align:top}
   th{color:var(--muted);font-weight:500;text-transform:uppercase;font-size:11px;letter-spacing:.05em;
@@ -140,6 +152,46 @@
   :root[data-theme="light"] .funnel-fill{color:#fff}
   .funnel-label{width:140px;font-size:13px;color:var(--muted)}
   .funnel-num{width:90px;text-align:right;font-variant-numeric:tabular-nums}
+
+  /* ===== OPERATOR CARDS ===== */
+  .ops-grid{display:flex;flex-direction:column;gap:10px}
+  .op-card{
+    display:grid;grid-template-columns:150px 1fr;gap:16px;
+    align-items:center;padding:14px 18px;
+    background:var(--card);border:1px solid var(--border);border-radius:10px;
+    border-left:4px solid var(--accent);
+  }
+  .op-name{font-size:16px;font-weight:700}
+  .op-role{font-size:12px;color:var(--muted);margin-top:2px}
+  .op-stats{display:flex;gap:14px;flex-wrap:wrap}
+  .op-stat{text-align:center;min-width:52px}
+  .op-stat .sv{font-size:17px;font-weight:700;line-height:1}
+  .op-stat .sl{font-size:10px;color:var(--muted);text-transform:uppercase;margin-top:2px;line-height:1.2}
+  .op-divider{width:1px;height:36px;background:var(--border);flex-shrink:0}
+
+  /* ===== APPT ROWS COLOR ===== */
+  tr.row-good td:first-child{border-left:3px solid var(--good)}
+  tr.row-bad  td:first-child{border-left:3px solid var(--bad)}
+  tr.row-warn td:first-child{border-left:3px solid var(--warn)}
+  tr.row-muted td:first-child{border-left:3px solid var(--border)}
+
+  /* ===== REFUSAL BARS ===== */
+  .ref-bar-row{display:flex;align-items:center;gap:12px;padding:10px 0;border-bottom:1px solid var(--border)}
+  .ref-bar-row:last-child{border-bottom:none}
+  .ref-bar-label{width:200px;font-size:13px;flex-shrink:0}
+  .ref-bar-track{flex:1;height:20px;background:rgba(148,163,184,.1);border-radius:4px;overflow:hidden}
+  .ref-bar-fill{height:100%;border-radius:4px;display:flex;align-items:center;padding-left:8px;
+               font-size:11px;font-weight:600;color:#fff;transition:width .8s ease;width:0}
+  .ref-bar-count{width:60px;text-align:right;font-size:13px;font-weight:600;font-variant-numeric:tabular-nums}
+  .ref-bar-pct{width:42px;text-align:right;font-size:12px;color:var(--muted)}
+  .ref-details{margin-top:6px;margin-left:212px}
+  .ref-detail-item{padding:8px 0;border-bottom:1px solid var(--border);display:flex;gap:10px;font-size:13px}
+  .ref-detail-item:last-child{border-bottom:none}
+
+  /* ===== EMPTY STATE ===== */
+  .empty-state{text-align:center;padding:40px 20px;color:var(--muted)}
+  .empty-state .es-icon{font-size:32px;margin-bottom:8px;opacity:.5}
+  .empty-state .es-text{font-size:14px}
 
   small{color:var(--muted)}
   .comment{color:var(--muted);font-size:12px;max-width:380px}
@@ -183,11 +235,18 @@
 
 <h2>Распределение по статусам</h2>
 <div class="card">
-  <div class="chart-wrap"><canvas id="chStatus"></canvas></div>
+  <div class="chart-wrap">
+    <canvas id="chStatus"></canvas>
+    <div class="chart-center" id="chartCenter" style="opacity:0">
+      <div class="cc-count" id="ccCount">—</div>
+      <div class="cc-label" id="ccLabel">—</div>
+      <div class="cc-pct" id="ccPct"></div>
+    </div>
+  </div>
 </div>
 
 <h2>Эффективность операторов</h2>
-<div class="card"><div style="overflow:auto"><table id="ops"></table></div></div>
+<div class="card"><div class="ops-grid" id="ops"></div></div>
 
 <h2>Записи в клинику <span style="color:var(--muted);font-size:13px;font-weight:400" id="apptCnt"></span></h2>
 <div class="card"><div class="scroll"><table id="appts"></table></div></div>
@@ -255,6 +314,60 @@ function countUp(el, target, isFloat, prefix, suffix) {
 
 
 // ===== BUILD STATUS CHART =====
+let _cycleTimer = null;
+let _cycleIdx = 0;
+let _cycleLabels = [];
+let _cycleCounts = [];
+let _cycleColors = [];
+let _chartObserver = null;
+
+function setCenterText(label, count, total, color, opacity) {
+  const el = document.getElementById('chartCenter');
+  if (!el) return;
+  el.style.opacity = opacity;
+  document.getElementById('ccCount').textContent = count;
+  document.getElementById('ccLabel').textContent = label;
+  const pctEl = document.getElementById('ccPct');
+  pctEl.textContent = total ? ((count / total * 100).toFixed(1) + '%') : '';
+  pctEl.style.color = color;
+}
+
+function showSegment(idx) {
+  const n = _cycleLabels.length;
+  if (!n || !chartStatus) return;
+  const total = _cycleCounts.reduce((a, b) => a + b, 0);
+  const base = _cycleColors.map((c, i) => i === idx ? c : c + '55');
+  chartStatus.data.datasets[0].backgroundColor = base;
+  chartStatus.data.datasets[0].borderWidth = _cycleColors.map((_, i) => i === idx ? 3 : 0);
+  chartStatus.data.datasets[0].borderColor = _cycleColors.map((_, i) => i === idx ? '#fff' : 'transparent');
+  chartStatus.update('none');
+  setCenterText(_cycleLabels[idx], _cycleCounts[idx], total, _cycleColors[idx], 1);
+}
+
+function startCycle() {
+  if (_cycleTimer) return;
+  showSegment(_cycleIdx);
+  _cycleTimer = setInterval(() => {
+    const center = document.getElementById('chartCenter');
+    if (center) center.style.opacity = 0;
+    setTimeout(() => {
+      _cycleIdx = (_cycleIdx + 1) % _cycleLabels.length;
+      showSegment(_cycleIdx);
+    }, 180);
+  }, 1400);
+}
+
+function stopCycle() {
+  if (_cycleTimer) { clearInterval(_cycleTimer); _cycleTimer = null; }
+  if (chartStatus) {
+    chartStatus.data.datasets[0].backgroundColor = _cycleColors;
+    chartStatus.data.datasets[0].borderWidth = 0;
+    chartStatus.update('none');
+  }
+  const center = document.getElementById('chartCenter');
+  if (center) center.style.opacity = 0;
+}
+
 function buildStatusChart(sc) {
   window._lastStatusData = sc;
   const isLight = getTheme() === 'light';
@@ -263,24 +376,37 @@ function buildStatusChart(sc) {
   const colorMap = {
     'запись в клинику':'#22c55e', 'в работе / переговорах':'#38bdf8', 'ОТКАЗ':'#ef4444',
     'ндз финал':'#f59e0b', 'неактуал':'#a78bfa', 'отложенный спрос':'#0ea5e9',
-    'недозвон':'#fb923c', 'дубль':'#94a3b8',
-    '—':'#475569',
+    'недозвон':'#fb923c', 'дубль':'#94a3b8', 'Другой город':'#64748b', '—':'#475569',
   };
+  const labels = Object.keys(sc);
+  const counts = Object.values(sc);
+  const colors = labels.map(s => colorMap[s] || '#64748b');
+
+  _cycleLabels = labels;
+  _cycleCounts = counts;
+  _cycleColors = colors;
+  _cycleIdx = 0;
+
+  if (_cycleTimer) { clearInterval(_cycleTimer); _cycleTimer = null; }
+  if (_chartObserver) _chartObserver.disconnect();
+
   chartStatus = new Chart(document.getElementById('chStatus'), {
-    type:'doughnut',
-    data:{
-      labels:Object.keys(sc),
-      datasets:[{
-        data:Object.values(sc),
-        backgroundColor:Object.keys(sc).map(s=>colorMap[s]||'#64748b'),
-        borderWidth:0
-      }]
+    type: 'doughnut',
+    data: {
+      labels,
+      datasets: [{ data: counts, backgroundColor: colors, borderWidth: 0 }]
     },
-    options:{
-      plugins:{legend:{position:'right',labels:{font:{size:12}}}},
-      maintainAspectRatio:false
+    options: {
+      plugins: { legend: { position: 'right', labels: { font: { size: 12 }, padding: 14 } } },
+      maintainAspectRatio: false,
+      cutout: '62%',
     }
   });
+
+  _chartObserver = new IntersectionObserver(entries => {
+    entries.forEach(e => e.isIntersecting ? startCycle() : stopCycle());
+  }, { threshold: 0.4 });
+  _chartObserver.observe(document.getElementById('chStatus'));
 }
 
 const yavkaPill = v => {
@@ -454,30 +580,37 @@ function render(d) {
   if (chartStatus) { chartStatus.destroy(); chartStatus = null; }
   buildStatusChart(d.status_counts);
 
-  // ---------- Operator table (no "план без депозита" column) ----------
+  // ---------- Operator cards ----------
   const ops = d.operator_stats;
-  const opRows = Object.entries(ops).map(([name,s])=>`
-    <tr>
-      <td><b>${name}</b></td>
-      <td class="num">${s.total}</td>
-      <td class="num">${s.pcp} <small>(${pct(s.pcp,s.total)})</small></td>
-      <td class="num">${s.nekv}</td>
-      <td class="num">${s.zapis} <small>(${pct(s.zapis,s.pcp)} от ПЦП)</small></td>
-      <td class="num"><span class="good">${s.prishel}</span></td>
-      <td class="num"><span class="bad">${s.otval}</span> <small>${pct(s.otval, s.zapis)} от записей</small></td>
-      <td class="num"><span class="warn">${s.active}</span></td>
-      <td class="num"><span class="good">${fmt(s.plan_with_dep)} ₽</span><br><small>${s.patients_with_dep} пац.</small></td>
-    </tr>`).join('');
-  document.getElementById('ops').innerHTML =
-    `<thead><tr><th>Оператор</th><th>Всего</th><th>ПЦП</th><th>Неквал</th>
-     <th>Записей</th><th>Пришло</th><th>Отвал</th><th>Активна</th>
-     <th>План + депозит</th></tr></thead>
-     <tbody>${opRows}</tbody>`;
+  document.getElementById('ops').innerHTML = Object.entries(ops).map(([name, s]) => {
+    const stats = [
+      { v: s.total,   l: 'Лиды',     cls: '' },
+      { v: s.pcp,     l: 'ПЦП',      cls: '', sub: pct(s.pcp, s.total) },
+      { v: s.nekv,    l: 'Неквал',   cls: '' },
+      { v: s.zapis,   l: 'Записи',   cls: '', sub: pct(s.zapis, s.pcp) + ' от ПЦП' },
+      { v: s.prishel, l: 'Пришли',   cls: 'good' },
+      { v: s.otval,   l: 'Отвал',    cls: 'bad',  sub: pct(s.otval, s.zapis) },
+      { v: s.active,  l: 'Активна',  cls: 'warn' },
+    ];
+    const statsHtml = stats.map(st => `
+      <div class="op-stat">
+        <div class="sv ${st.cls}">${st.v}</div>
+        <div class="sl">${st.l}${st.sub ? `<br><span style="color:var(--accent);font-size:9px">${st.sub}</span>` : ''}</div>
+      </div>`).join('<div class="op-divider"></div>');
+    const planHtml = s.plan_with_dep ? `<div class="op-stat" style="margin-left:auto;text-align:right">
+      <div class="sv good" style="font-size:14px">${fmt(s.plan_with_dep)} ₽</div>
+      <div class="sl">план + деп.</div></div>` : '';
+    return `<div class="op-card">
+      <div><div class="op-name">${name}</div></div>
+      <div class="op-stats">${statsHtml}${planHtml}</div>
+    </div>`;
+  }).join('');
 
   // ---------- Appointments ----------
   document.getElementById('apptCnt').textContent = `— ${d.appointments.length} заявок`;
+  const rowClass = v => v === 'Пришел' ? 'row-good' : (v === 'Не пришел' || v === 'Отмена записи') ? 'row-bad' : v === 'Перезапись' ? 'row-warn' : 'row-muted';
   const apptRows = d.appointments.length ? d.appointments.map(r=>`
-    <tr>
+    <tr class="${rowClass(r['Явка:'])}">
       <td><b>${r['Имя:']||'—'}</b><br><small>${r['Телефон:']||''}</small></td>
       <td>${r['Дата записи']||'—'}</td>
       <td>${yavkaPill(r['Явка:'])}</td>
@@ -486,7 +619,7 @@ function render(d) {
       <td class="num">${r.plan_total?fmt(r.plan_total)+' ₽':'—'}</td>
       <td class="comment">${(r['Комментарии:']||'').slice(0,200)}</td>
     </tr>`).join('') :
-    '<tr><td colspan="7" style="text-align:center;color:var(--muted);padding:24px">Нет данных за выбранный период</td></tr>';
+    `<tr><td colspan="7"><div class="empty-state"><div class="es-icon">📋</div><div class="es-text">Нет записей за выбранный период</div></div></td></tr>`;
   document.getElementById('appts').innerHTML =
     `<thead><tr><th>Пациент</th><th>Дата записи</th><th>Явка</th><th>Оператор</th>
      <th>Оплата</th><th>План</th><th>Комментарий</th></tr></thead><tbody>${apptRows}</tbody>`;
@@ -507,51 +640,39 @@ function render(d) {
   };
   if (!total) {
     document.getElementById('refCats').innerHTML =
-      '<div style="text-align:center;color:var(--muted);padding:24px">Нет отказов за выбранный период</div>';
+      '<div class="empty-state"><div class="es-icon">✅</div><div class="es-text">Нет отказов за выбранный период</div></div>';
   } else {
-    document.getElementById('refCats').innerHTML = cats.map((c,i)=>{
-      const top3badge = i<3 ? `<span style="background:rgba(56,189,248,.15);color:var(--accent);
-        padding:2px 8px;border-radius:999px;font-size:11px;font-weight:600;margin-left:8px">ТОП-${i+1}</span>` : '';
+    const bars = cats.map((c, i) => {
+      const col = catColor[c.cat] || '#94a3b8';
+      const badge = i < 3 ? `<span class="pill" style="background:rgba(56,189,248,.15);color:var(--accent);margin-left:6px;font-size:10px">ТОП-${i+1}</span>` : '';
       const items = (c.items||[]).map(it=>`
-        <div style="padding:10px 12px;border-bottom:1px solid var(--border);display:flex;gap:12px;align-items:flex-start">
-          <div style="min-width:140px">
-            <div style="font-weight:500">${it['Имя:']||'—'}</div>
-            <div style="font-size:11px;color:var(--muted);margin-top:2px">
-              <span class="pill pill-bad" style="font-size:10px">${it['Статус:']||'—'}</span>
-              <span style="margin-left:6px">${it['Имя оператора, взявшего в работу']||'—'}</span>
-            </div>
+        <div class="ref-detail-item">
+          <div style="min-width:130px">
+            <div style="font-weight:500;font-size:13px">${it['Имя:']||'—'}</div>
+            <div style="font-size:11px;color:var(--muted)">${it['Имя оператора, взявшего в работу']||'—'}</div>
           </div>
-          <div style="flex:1;font-size:13px;color:var(--muted);line-height:1.5">
-            ${it['Комментарии:'] || '<i>без комментария</i>'}
-          </div>
+          <div style="flex:1;color:var(--muted);line-height:1.5;font-size:13px">${it['Комментарии:']||'<i>без комментария</i>'}</div>
         </div>`).join('');
-      return `
-      <details style="margin-bottom:8px;background:rgba(15,23,42,.4);border:1px solid var(--border);
-                      border-radius:8px;overflow:hidden">
-        <summary style="cursor:pointer;padding:12px 14px;list-style:none;
-                        display:flex;justify-content:space-between;align-items:center;gap:12px">
-          <div style="flex:1">
-            <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:6px">
-              <div style="font-weight:500;display:flex;align-items:center">
-                <span style="display:inline-block;width:10px;height:10px;border-radius:2px;
-                             background:${catColor[c.cat]||'#94a3b8'};margin-right:8px"></span>
-                ${c.cat}${top3badge}
-                <span style="color:var(--muted);font-size:11px;margin-left:8px">▼</span>
-              </div>
-              <div style="color:var(--muted);font-size:13px;font-variant-numeric:tabular-nums">
-                <b style="color:var(--text)">${c.count}</b> · ${c.share}%
-              </div>
+      return `<details>
+        <summary style="list-style:none;cursor:pointer;outline:none">
+          <div class="ref-bar-row">
+            <div class="ref-bar-label">
+              <span style="display:inline-block;width:8px;height:8px;border-radius:2px;background:${col};margin-right:6px;vertical-align:middle"></span>${c.cat}${badge}
             </div>
-            <div style="height:8px;background:rgba(148,163,184,.1);border-radius:4px;overflow:hidden">
-              <div style="height:100%;background:${catColor[c.cat]||'#94a3b8'};width:${c.share}%;border-radius:4px"></div>
-            </div>
+            <div class="ref-bar-track"><div class="ref-bar-fill" data-w="${c.share}" style="background:${col};width:0">${c.share > 12 ? c.share+'%' : ''}</div></div>
+            <div class="ref-bar-count">${c.count}</div>
+            <div class="ref-bar-pct">${c.share}%</div>
           </div>
         </summary>
-        <div style="background:rgba(0,0,0,.15);border-top:1px solid var(--border)">
-          ${items || '<div style="padding:12px 14px;color:var(--muted);font-size:13px">Детальные комментарии будут добавлены при следующем обновлении</div>'}
-        </div>
+        ${items ? `<div class="ref-details">${items}</div>` : ''}
       </details>`;
     }).join('');
+    document.getElementById('refCats').innerHTML = bars;
+    setTimeout(() => {
+      document.querySelectorAll('.ref-bar-fill[data-w]').forEach((el, i) => {
+        setTimeout(() => { el.style.width = el.dataset.w + '%'; }, i * 60);
+      });
+    }, 30);
   }
 }
 
