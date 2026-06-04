@@ -157,8 +157,6 @@ function render(d) {
     ['Записей в клинику', k.zapis, `${k.conv_zapis_from_pcp}% от ПЦП`],
     ['Запись активна', k.active_zapis, 'без отметки явки'],
     ['Пришли на приём', k.prishel, `${k.conv_prishel_from_zapis}% от записей`],
-    ['Получено оплат', fmt(k.sum_payment)+' ₽',
-      `по ${d.plans_with_deposit.length + (k.only_payment_count||0)} клиентам`],
     ['План лечения с депозитом',
       `<span class="good">${fmt(k.plan_with_dep_sum)} ₽</span>`,
       `${k.plan_with_dep_count} пациент(ов)`],

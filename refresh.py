@@ -20,7 +20,12 @@ SHEET_GID = "903839238"
 # 2. Рекламные расходы по месяцам (None = данных нет, не считать ДРР)
 AD_SPEND = {
     "2026-04": 214800,
-    "2026-05": None,
+    "2026-05": 348000,
+}
+
+# 2b. Ручной ввод плана лечения с депозитом (если данные не в CRM)
+PLAN_WITH_DEP_OVERRIDE = {
+    "2026-05": 1399302,
 }
 
 # 3. Названия месяцев для отображения в дашборде
@@ -207,6 +212,17 @@ def clean(o):
     if isinstance(o, float) and pd.isna(o): return None
     return o
 
+def _apply_overrides(by_month):
+    for m, plan in PLAN_WITH_DEP_OVERRIDE.items():
+        if m not in by_month:
+            continue
+        k = by_month[m]["kpi"]
+        k["plan_with_dep_sum"] = plan
+        ad = k.get("ad_spend")
+        k["drr"] = round(ad / plan * 100, 1) if (ad and plan) else k.get("drr")
+    return by_month
+
+
 def main():
     print(f"⤓ Скачиваю CSV из Google Sheets…")
     CSV_PATH.parent.mkdir(parents=True, exist_ok=True)
@@ -245,7 +261,9 @@ def main():
         "months": [{"key": m, "label": MONTH_NAMES.get(m, m), "count": int((df["month"] == m).sum())}
                    for m in months],
         "all": compute(df, ad_spend=total_ad),
-        "by_month": {m: compute(df[df["month"] == m], ad_spend=AD_SPEND.get(m)) for m in months},
+        "by_month": _apply_overrides(
+            {m: compute(df[df["month"] == m], ad_spend=AD_SPEND.get(m)) for m in months}
+        ),
     }
     data = clean(data)
     OUT_PATH.write_text(json.dumps(data, ensure_ascii=False, indent=2), encoding="utf-8")
