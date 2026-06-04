@@ -111,11 +111,6 @@
   }
 
   /* Sparkline */
-  .kpi .sparkline{
-    position:absolute;bottom:10px;right:12px;
-    display:none;
-  }
-  .kpi .card.has-spark .sparkline{display:block}
 
   .good{color:var(--good)} .bad{color:var(--bad)} .warn{color:var(--warn)}
   .chart-wrap{position:relative;height:320px}
@@ -281,20 +276,6 @@ function countUp(el, target, isFloat, prefix, suffix) {
   requestAnimationFrame(tick);
 }
 
-// ===== SPARKLINE SVG =====
-function makeSpark(prevVal, currVal) {
-  const W = 40, H = 18, pad = 2;
-  const max = Math.max(prevVal, currVal, 1);
-  const barW = (W - pad * 3) / 2;
-  const h1 = Math.max(2, ((prevVal / max) * (H - pad)));
-  const h2 = Math.max(2, ((currVal / max) * (H - pad)));
-  const x1 = pad;
-  const x2 = pad * 2 + barW;
-  return `<svg width="${W}" height="${H}" style="display:block">
-    <rect x="${x1}" y="${H - h1}" width="${barW}" height="${h1}" rx="1" fill="#475569"/>
-    <rect x="${x2}" y="${H - h2}" width="${barW}" height="${h2}" rx="1" fill="#38bdf8"/>
-  </svg>`;
-}
 
 // ===== BUILD STATUS CHART =====
 function buildStatusChart(sc) {
@@ -347,9 +328,8 @@ const KPI_META = [
   { label:'ДРР',                     color:null,      icon:'📊', prog:null },
 ];
 
-function render(d, prevD) {
+function render(d) {
   const k = d.kpi;
-  const hasPrev = prevD && prevD.kpi;
 
   // ---------- KPI ----------
   const drrColor = k.drr == null ? '' :
@@ -425,31 +405,6 @@ function render(d, prevD) {
     const prog = item.meta.prog;
     const progPct = prog && k[prog] != null ? parseFloat(k[prog]) : null;
 
-    // Sparkline: show only if we have prev data and this is a numeric card
-    let sparkHtml = '';
-    let hasSpark = false;
-    if (hasPrev && (item.isNum || item.isMoney) && !item.noData) {
-      const prevVal = item.isMoney
-        ? (prevD.kpi[['plan_with_dep_sum','ad_spend'][item.meta === KPI_META[5] ? 0 : 1]] || 0)
-        : (prevD.kpi[['total','pcp','zapis','active_zapis','prishel'][i]] || 0);
-      // use a simpler mapping
-      const rawPrev = (() => {
-        if (i === 0) return prevD.kpi.total || 0;
-        if (i === 1) return prevD.kpi.pcp || 0;
-        if (i === 2) return prevD.kpi.zapis || 0;
-        if (i === 3) return prevD.kpi.active_zapis || 0;
-        if (i === 4) return prevD.kpi.prishel || 0;
-        if (i === 5) return prevD.kpi.plan_with_dep_sum || 0;
-        if (i === 6) return prevD.kpi.ad_spend || 0;
-        return 0;
-      })();
-      const rawCurr = item.rawValue || 0;
-      if (rawPrev > 0 || rawCurr > 0) {
-        sparkHtml = `<span class="sparkline">${makeSpark(rawPrev, rawCurr)}</span>`;
-        hasSpark = true;
-      }
-    }
-
     const progHtml = progPct != null ? `
       <div class="prog-wrap"><div class="prog-fill" data-pct="${progPct}" style="width:0"></div></div>` : '';
 
@@ -465,13 +420,12 @@ function render(d, prevD) {
       valueHtml = `<span class="value" data-countup="${item.rawValue}">0</span>`;
     }
 
-    return `<div class="card${hasSpark ? ' has-spark' : ''}" style="--c:${c}">
+    return `<div class="card" style="--c:${c}">
       <span class="kpi-icon">${icon}</span>
       <div class="label">${item.meta.label}</div>
       ${valueHtml}
       <div class="delta">${item.sub}</div>
       ${progHtml}
-      ${sparkHtml}
     </div>`;
   }).join('');
 
@@ -661,21 +615,6 @@ function render(d, prevD) {
 let DATA = null;
 let activeMonth = 'all';
 
-// Returns previous month's data relative to current selection (for sparklines)
-function getPrevData(key) {
-  if (!DATA || !DATA.by_month) return null;
-  const months = DATA.months || [];
-  if (key === 'all') {
-    // Use second-to-last month as "prev" for sparklines in "all" view
-    if (months.length >= 2) {
-      return DATA.by_month[months[months.length - 2].key] || null;
-    }
-    return null;
-  }
-  const idx = months.findIndex(m => m.key === key);
-  if (idx > 0) return DATA.by_month[months[idx - 1].key] || null;
-  return null;
-}
 
 function updateStickyMetrics(k) {
   const drrColor = k.drr == null ? 'color:var(--muted)' :
@@ -694,11 +633,7 @@ function setActive(key) {
     b.classList.toggle('active', b.dataset.key === key);
   });
   const d = key === 'all' ? DATA.all : DATA.by_month[key];
-  const prevD = getPrevData(key);
-
-  // Show sparklines only in "all" view when multiple months exist
-  const showSpark = (DATA.months && DATA.months.length >= 2);
-  render(d, showSpark ? prevD : null);
+  render(d);
   updateStickyMetrics(d.kpi);
 }
 
