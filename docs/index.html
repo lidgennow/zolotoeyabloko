@@ -96,7 +96,9 @@
   }
   .kpi .label{color:var(--muted);font-size:12px;text-transform:uppercase;letter-spacing:.05em;
               padding-right:28px}
-  .kpi .value{font-size:28px;font-weight:600;margin-top:6px}
+  .kpi .value{font-size:20px;font-weight:600;margin-top:6px;
+             white-space:nowrap;overflow:hidden;text-overflow:ellipsis;
+             min-height:28px;line-height:1.35}
   .kpi .delta{font-size:12px;color:var(--muted);margin-top:4px}
 
   /* Progress bar under delta */
@@ -416,7 +418,7 @@ function render(d) {
     } else if (item.drrClass) {
       valueHtml = `<div class="value"><span class="${item.drrClass}">${item.value}</span></div>`;
     } else {
-      valueHtml = `<span class="value" data-countup="${item.rawValue}">0</span>`;
+      valueHtml = `<span class="value" data-countup="${item.rawValue}">${(item.rawValue||0).toLocaleString('ru-RU')}</span>`;
     }
 
     return `<div class="card" style="--c:${c}">
