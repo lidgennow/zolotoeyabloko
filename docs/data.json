@@ -3,7 +3,7 @@
     "date_min": "2026-04-11",
     "date_max": "2026-05-29"
   },
-  "generated_at": "2026-06-04T19:17:59Z",
+  "generated_at": "2026-06-04T19:20:56Z",
   "months": [
     {
       "key": "2026-04",
@@ -33,7 +33,7 @@
       "conv_prishel_from_zapis": 42.1,
       "sum_payment": 776210,
       "sum_plan": 927833,
-      "plan_with_dep_sum": 927833,
+      "plan_with_dep_sum": 2327135,
       "plan_with_dep_count": 4,
       "plan_with_dep_paid": 776210,
       "plan_no_dep_sum": 0,
@@ -43,7 +43,7 @@
       "refusals_total": 61,
       "neaktual_total": 73,
       "ad_spend": 562800,
-      "drr": 60.7
+      "drr": 24.2
     },
     "status_counts": {
       "недозвон": 135,

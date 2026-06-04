@@ -160,9 +160,6 @@ function render(d) {
     ['План лечения с депозитом',
       `<span class="good">${fmt(k.plan_with_dep_sum)} ₽</span>`,
       `${k.plan_with_dep_count} пациент(ов)`],
-    ['План лечения без депозита',
-      `<span class="warn">${fmt(k.plan_no_dep_sum)} ₽</span>`,
-      `${k.plan_no_dep_count} пациент(ов)`],
     ['Рекламный расход', k.ad_spend == null ? '—' : fmt(k.ad_spend)+' ₽', 'на инструмент'],
     ['ДРР', drrValue,
       k.drr == null ? 'нет данных по расходу'

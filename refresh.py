@@ -223,6 +223,17 @@ def _apply_overrides(by_month):
     return by_month
 
 
+def _apply_overrides_all(all_data):
+    """Добавляет ручные override-суммы к общему итогу."""
+    override_sum = sum(PLAN_WITH_DEP_OVERRIDE.values())
+    k = all_data["kpi"]
+    k["plan_with_dep_sum"] += override_sum
+    ad = k.get("ad_spend")
+    plan = k["plan_with_dep_sum"]
+    k["drr"] = round(ad / plan * 100, 1) if (ad and plan) else k.get("drr")
+    return all_data
+
+
 def main():
     print(f"⤓ Скачиваю CSV из Google Sheets…")
     CSV_PATH.parent.mkdir(parents=True, exist_ok=True)
@@ -260,7 +271,7 @@ def main():
         "generated_at": pd.Timestamp.utcnow().strftime("%Y-%m-%dT%H:%M:%SZ"),
         "months": [{"key": m, "label": MONTH_NAMES.get(m, m), "count": int((df["month"] == m).sum())}
                    for m in months],
-        "all": compute(df, ad_spend=total_ad),
+        "all": _apply_overrides_all(compute(df, ad_spend=total_ad)),
         "by_month": _apply_overrides(
             {m: compute(df[df["month"] == m], ad_spend=AD_SPEND.get(m)) for m in months}
         ),
