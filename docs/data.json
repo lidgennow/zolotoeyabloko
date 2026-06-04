@@ -3,7 +3,7 @@
     "date_min": "2026-04-11",
     "date_max": "2026-05-29"
   },
-  "generated_at": "2026-06-04T07:07:58Z",
+  "generated_at": "2026-06-04T10:49:09Z",
   "months": [
     {
       "key": "2026-04",
@@ -19,18 +19,18 @@
   "all": {
     "kpi": {
       "total": 469,
-      "pcp": 166,
-      "nekv": 303,
-      "zapis": 74,
+      "pcp": 168,
+      "nekv": 301,
+      "zapis": 76,
       "prishel": 32,
       "neprishel": 20,
       "otmena": 5,
       "perezap": 11,
-      "active_zapis": 21,
+      "active_zapis": 23,
       "otval_zapis": 21,
-      "conv_pcp": 35.4,
-      "conv_zapis_from_pcp": 44.6,
-      "conv_prishel_from_zapis": 43.2,
+      "conv_pcp": 35.8,
+      "conv_zapis_from_pcp": 45.2,
+      "conv_prishel_from_zapis": 42.1,
       "sum_payment": 776210,
       "sum_plan": 927833,
       "plan_with_dep_sum": 927833,
@@ -46,9 +46,9 @@
       "drr": 23.2
     },
     "status_counts": {
-      "недозвон": 137,
+      "недозвон": 135,
       "в работе / переговорах": 79,
-      "запись в клинику": 74,
+      "запись в клинику": 76,
       "неактуал": 73,
       "ОТКАЗ": 61,
       "дубль": 19,
@@ -59,9 +59,9 @@
     },
     "operator_stats": {
       "Галина": {
-        "total": 85,
+        "total": 84,
         "pcp": 27,
-        "nekv": 58,
+        "nekv": 57,
         "zapis": 11,
         "prishel": 5,
         "otval": 2,
@@ -87,9 +87,9 @@
         "patients_no_dep": 0
       },
       "Лена": {
-        "total": 177,
+        "total": 174,
         "pcp": 71,
-        "nekv": 106,
+        "nekv": 103,
         "zapis": 31,
         "prishel": 14,
         "otval": 10,
@@ -101,9 +101,9 @@
         "patients_no_dep": 0
       },
       "Наталья": {
-        "total": 165,
+        "total": 163,
         "pcp": 56,
-        "nekv": 109,
+        "nekv": 107,
         "zapis": 29,
         "prishel": 12,
         "otval": 9,
@@ -114,10 +114,24 @@
         "patients_with_dep": 2,
         "patients_no_dep": 0
       },
+      "Наталья А": {
+        "total": 8,
+        "pcp": 2,
+        "nekv": 6,
+        "zapis": 2,
+        "prishel": 0,
+        "otval": 0,
+        "active": 2,
+        "payment": 0,
+        "plan_with_dep": 0,
+        "plan_no_dep": 0,
+        "patients_with_dep": 0,
+        "patients_no_dep": 0
+      },
       "—": {
-        "total": 26,
+        "total": 24,
         "pcp": 4,
-        "nekv": 22,
+        "nekv": 20,
         "zapis": 0,
         "prishel": 0,
         "otval": 0,
@@ -289,6 +303,15 @@
         "payment": 0,
         "plan_total": 0,
         "Комментарии:": null
+      },
+      {
+        "Имя:": "Анастасия, 20.04 в течение дня",
+        "Дата записи": null,
+        "Явка:": null,
+        "Имя оператора, взявшего в работу": "Наталья А",
+        "payment": 0,
+        "plan_total": 0,
+        "Комментарии:": "запись на 10.06  "
       },
       {
         "Имя:": "Николай",
@@ -775,6 +798,15 @@
         "payment": 0,
         "plan_total": 0,
         "Комментарии:": "ЗАБОЛЕЛА  сьемное протезиров сах диабет 2 типа"
+      },
+      {
+        "Имя:": "Алексей",
+        "Дата записи": null,
+        "Явка:": null,
+        "Имя оператора, взявшего в работу": "Наталья А",
+        "payment": 0,
+        "plan_total": 0,
+        "Комментарии:": "Алексей Александрович Шершнев "
       },
       {
         "Имя:": "Алексей ",
@@ -1679,18 +1711,18 @@
     "2026-04": {
       "kpi": {
         "total": 179,
-        "pcp": 72,
-        "nekv": 107,
-        "zapis": 30,
+        "pcp": 73,
+        "nekv": 106,
+        "zapis": 31,
         "prishel": 13,
         "neprishel": 6,
         "otmena": 3,
         "perezap": 7,
-        "active_zapis": 8,
+        "active_zapis": 9,
         "otval_zapis": 9,
-        "conv_pcp": 40.2,
-        "conv_zapis_from_pcp": 41.7,
-        "conv_prishel_from_zapis": 43.3,
+        "conv_pcp": 40.8,
+        "conv_zapis_from_pcp": 42.5,
+        "conv_prishel_from_zapis": 41.9,
         "sum_payment": 776210,
         "sum_plan": 927833,
         "plan_with_dep_sum": 927833,
@@ -1707,8 +1739,8 @@
       },
       "status_counts": {
         "в работе / переговорах": 38,
-        "недозвон": 36,
-        "запись в клинику": 30,
+        "недозвон": 35,
+        "запись в клинику": 31,
         "ОТКАЗ": 29,
         "неактуал": 28,
         "ндз финал": 7,
@@ -1717,9 +1749,9 @@
       },
       "operator_stats": {
         "Галина": {
-          "total": 26,
+          "total": 25,
           "pcp": 6,
-          "nekv": 20,
+          "nekv": 19,
           "zapis": 3,
           "prishel": 1,
           "otval": 1,
@@ -1731,9 +1763,9 @@
           "patients_no_dep": 0
         },
         "Лена": {
-          "total": 88,
+          "total": 87,
           "pcp": 39,
-          "nekv": 49,
+          "nekv": 48,
           "zapis": 16,
           "prishel": 7,
           "otval": 6,
@@ -1756,6 +1788,20 @@
           "plan_with_dep": 231908,
           "plan_no_dep": 0,
           "patients_with_dep": 2,
+          "patients_no_dep": 0
+        },
+        "Наталья А": {
+          "total": 2,
+          "pcp": 1,
+          "nekv": 1,
+          "zapis": 1,
+          "prishel": 0,
+          "otval": 0,
+          "active": 1,
+          "payment": 0,
+          "plan_with_dep": 0,
+          "plan_no_dep": 0,
+          "patients_with_dep": 0,
           "patients_no_dep": 0
         },
         "—": {
@@ -1933,6 +1979,15 @@
           "payment": 0,
           "plan_total": 0,
           "Комментарии:": null
+        },
+        {
+          "Имя:": "Анастасия, 20.04 в течение дня",
+          "Дата записи": null,
+          "Явка:": null,
+          "Имя оператора, взявшего в работу": "Наталья А",
+          "payment": 0,
+          "plan_total": 0,
+          "Комментарии:": "запись на 10.06  "
         },
         {
           "Имя:": "Николай",
@@ -2457,18 +2512,18 @@
     "2026-05": {
       "kpi": {
         "total": 290,
-        "pcp": 94,
-        "nekv": 196,
-        "zapis": 44,
+        "pcp": 95,
+        "nekv": 195,
+        "zapis": 45,
         "prishel": 19,
         "neprishel": 14,
         "otmena": 2,
         "perezap": 4,
-        "active_zapis": 13,
+        "active_zapis": 14,
         "otval_zapis": 12,
-        "conv_pcp": 32.4,
-        "conv_zapis_from_pcp": 46.8,
-        "conv_prishel_from_zapis": 43.2,
+        "conv_pcp": 32.8,
+        "conv_zapis_from_pcp": 47.4,
+        "conv_prishel_from_zapis": 42.2,
         "sum_payment": 0,
         "sum_plan": 0,
         "plan_with_dep_sum": 0,
@@ -2484,9 +2539,9 @@
         "drr": null
       },
       "status_counts": {
-        "недозвон": 101,
+        "недозвон": 100,
         "неактуал": 45,
-        "запись в клинику": 44,
+        "запись в клинику": 45,
         "в работе / переговорах": 41,
         "ОТКАЗ": 32,
         "дубль": 12,
@@ -2525,9 +2580,9 @@
           "patients_no_dep": 0
         },
         "Лена": {
-          "total": 89,
+          "total": 87,
           "pcp": 32,
-          "nekv": 57,
+          "nekv": 55,
           "zapis": 15,
           "prishel": 7,
           "otval": 4,
@@ -2539,9 +2594,9 @@
           "patients_no_dep": 0
         },
         "Наталья": {
-          "total": 103,
+          "total": 101,
           "pcp": 32,
-          "nekv": 71,
+          "nekv": 69,
           "zapis": 18,
           "prishel": 7,
           "otval": 7,
@@ -2552,10 +2607,24 @@
           "patients_with_dep": 0,
           "patients_no_dep": 0
         },
-        "—": {
-          "total": 23,
+        "Наталья А": {
+          "total": 6,
           "pcp": 1,
-          "nekv": 22,
+          "nekv": 5,
+          "zapis": 1,
+          "prishel": 0,
+          "otval": 0,
+          "active": 1,
+          "payment": 0,
+          "plan_with_dep": 0,
+          "plan_no_dep": 0,
+          "patients_with_dep": 0,
+          "patients_no_dep": 0
+        },
+        "—": {
+          "total": 21,
+          "pcp": 1,
+          "nekv": 20,
           "zapis": 0,
           "prishel": 0,
           "otval": 0,
@@ -2902,6 +2971,15 @@
           "payment": 0,
           "plan_total": 0,
           "Комментарии:": "ЗАБОЛЕЛА  сьемное протезиров сах диабет 2 типа"
+        },
+        {
+          "Имя:": "Алексей",
+          "Дата записи": null,
+          "Явка:": null,
+          "Имя оператора, взявшего в работу": "Наталья А",
+          "payment": 0,
+          "plan_total": 0,
+          "Комментарии:": "Алексей Александрович Шершнев "
         },
         {
           "Имя:": "Алексей ",
