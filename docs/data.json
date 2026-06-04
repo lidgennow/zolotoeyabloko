@@ -3,7 +3,7 @@
     "date_min": "2026-04-11",
     "date_max": "2026-05-29"
   },
-  "generated_at": "2026-06-04T10:49:09Z",
+  "generated_at": "2026-06-04T14:08:14Z",
   "months": [
     {
       "key": "2026-04",
@@ -59,9 +59,9 @@
     },
     "operator_stats": {
       "Галина": {
-        "total": 84,
+        "total": 82,
         "pcp": 27,
-        "nekv": 57,
+        "nekv": 55,
         "zapis": 11,
         "prishel": 5,
         "otval": 2,
@@ -87,9 +87,9 @@
         "patients_no_dep": 0
       },
       "Лена": {
-        "total": 174,
+        "total": 171,
         "pcp": 71,
-        "nekv": 103,
+        "nekv": 100,
         "zapis": 31,
         "prishel": 14,
         "otval": 10,
@@ -101,9 +101,9 @@
         "patients_no_dep": 0
       },
       "Наталья": {
-        "total": 163,
+        "total": 158,
         "pcp": 56,
-        "nekv": 107,
+        "nekv": 102,
         "zapis": 29,
         "prishel": 12,
         "otval": 9,
@@ -114,10 +114,24 @@
         "patients_with_dep": 2,
         "patients_no_dep": 0
       },
+      "Наталья  А": {
+        "total": 3,
+        "pcp": 0,
+        "nekv": 3,
+        "zapis": 0,
+        "prishel": 0,
+        "otval": 0,
+        "active": 0,
+        "payment": 0,
+        "plan_with_dep": 0,
+        "plan_no_dep": 0,
+        "patients_with_dep": 0,
+        "patients_no_dep": 0
+      },
       "Наталья А": {
-        "total": 8,
+        "total": 15,
         "pcp": 2,
-        "nekv": 6,
+        "nekv": 13,
         "zapis": 2,
         "prishel": 0,
         "otval": 0,
@@ -1749,9 +1763,9 @@
       },
       "operator_stats": {
         "Галина": {
-          "total": 25,
+          "total": 24,
           "pcp": 6,
-          "nekv": 19,
+          "nekv": 18,
           "zapis": 3,
           "prishel": 1,
           "otval": 1,
@@ -1763,9 +1777,9 @@
           "patients_no_dep": 0
         },
         "Лена": {
-          "total": 87,
+          "total": 86,
           "pcp": 39,
-          "nekv": 48,
+          "nekv": 47,
           "zapis": 16,
           "prishel": 7,
           "otval": 6,
@@ -1777,9 +1791,9 @@
           "patients_no_dep": 0
         },
         "Наталья": {
-          "total": 62,
+          "total": 59,
           "pcp": 24,
-          "nekv": 38,
+          "nekv": 35,
           "zapis": 11,
           "prishel": 5,
           "otval": 2,
@@ -1790,10 +1804,24 @@
           "patients_with_dep": 2,
           "patients_no_dep": 0
         },
-        "Наталья А": {
+        "Наталья  А": {
           "total": 2,
+          "pcp": 0,
+          "nekv": 2,
+          "zapis": 0,
+          "prishel": 0,
+          "otval": 0,
+          "active": 0,
+          "payment": 0,
+          "plan_with_dep": 0,
+          "plan_no_dep": 0,
+          "patients_with_dep": 0,
+          "patients_no_dep": 0
+        },
+        "Наталья А": {
+          "total": 5,
           "pcp": 1,
-          "nekv": 1,
+          "nekv": 4,
           "zapis": 1,
           "prishel": 0,
           "otval": 0,
@@ -2552,9 +2580,9 @@
       },
       "operator_stats": {
         "Галина": {
-          "total": 59,
+          "total": 58,
           "pcp": 21,
-          "nekv": 38,
+          "nekv": 37,
           "zapis": 8,
           "prishel": 4,
           "otval": 1,
@@ -2580,9 +2608,9 @@
           "patients_no_dep": 0
         },
         "Лена": {
-          "total": 87,
+          "total": 85,
           "pcp": 32,
-          "nekv": 55,
+          "nekv": 53,
           "zapis": 15,
           "prishel": 7,
           "otval": 4,
@@ -2594,9 +2622,9 @@
           "patients_no_dep": 0
         },
         "Наталья": {
-          "total": 101,
+          "total": 99,
           "pcp": 32,
-          "nekv": 69,
+          "nekv": 67,
           "zapis": 18,
           "prishel": 7,
           "otval": 7,
@@ -2607,10 +2635,24 @@
           "patients_with_dep": 0,
           "patients_no_dep": 0
         },
+        "Наталья  А": {
+          "total": 1,
+          "pcp": 0,
+          "nekv": 1,
+          "zapis": 0,
+          "prishel": 0,
+          "otval": 0,
+          "active": 0,
+          "payment": 0,
+          "plan_with_dep": 0,
+          "plan_no_dep": 0,
+          "patients_with_dep": 0,
+          "patients_no_dep": 0
+        },
         "Наталья А": {
-          "total": 6,
+          "total": 10,
           "pcp": 1,
-          "nekv": 5,
+          "nekv": 9,
           "zapis": 1,
           "prishel": 0,
           "otval": 0,
