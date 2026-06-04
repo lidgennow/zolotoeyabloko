@@ -178,31 +178,6 @@
 <h2>Воронка по заявкам</h2>
 <div class="card"><div class="funnel" id="funnel"></div></div>
 
-<h2>Планы лечения: внесли депозит vs без депозита</h2>
-<div class="grid row2" style="margin-bottom:16px">
-  <div class="card">
-    <div class="kpi-mini" style="color:var(--good)">С планом + депозит</div>
-    <div style="font-size:24px;font-weight:600;margin-top:8px" id="seg1Sum"></div>
-    <div style="color:var(--muted);font-size:13px;margin-top:4px" id="seg1Sub"></div>
-    <div style="margin-top:8px;font-size:13px" id="seg1Paid"></div>
-  </div>
-  <div class="card">
-    <div class="kpi-mini" style="color:var(--warn)">С планом БЕЗ депозита</div>
-    <div style="font-size:24px;font-weight:600;margin-top:8px" id="seg2Sum"></div>
-    <div style="color:var(--muted);font-size:13px;margin-top:4px" id="seg2Sub"></div>
-    <div style="margin-top:8px;font-size:13px;color:var(--warn)">потенциал «дожима»</div>
-  </div>
-</div>
-
-<div class="card" style="margin-bottom:16px">
-  <h3 style="margin-bottom:12px;color:var(--good)">Планы с внесённым депозитом — горячие клиенты</h3>
-  <div class="scroll"><table id="tblSeg1"></table></div>
-</div>
-
-<div class="card" style="margin-bottom:16px">
-  <h3 style="margin-bottom:12px;color:var(--warn)">Планы БЕЗ депозита — нужен «дожим»</h3>
-  <div class="scroll"><table id="tblSeg2"></table></div>
-</div>
 
 <h2>Распределение по статусам</h2>
 <div class="card">
@@ -326,6 +301,9 @@ const KPI_META = [
   { label:'План с депозитом',        color:'#22c55e', icon:'💰', prog:null },
   { label:'Рекламный расход',        color:'#94a3b8', icon:'📢', prog:null },
   { label:'ДРР',                     color:null,      icon:'📊', prog:null },
+  { label:'Стоимость ПЦП',          color:'#a78bfa', icon:'🎯', prog:null },
+  { label:'Стоимость записи',        color:'#a78bfa', icon:'📅', prog:null },
+  { label:'Стоимость доезда',        color:'#a78bfa', icon:'🚗', prog:null },
 ];
 
 function render(d) {
@@ -376,8 +354,8 @@ function render(d) {
     {
       meta: KPI_META[5],
       rawValue: k.plan_with_dep_sum,
-      value: null, // money — handled separately
-      sub: `${k.plan_with_dep_count} пациент(ов)`,
+      value: null,
+      sub: '',
       isMoney: true,
     },
     {
@@ -396,6 +374,27 @@ function render(d) {
       isNum: false,
       drrClass: drrColor,
     },
+    ...(k.ad_spend && k.pcp ? [{
+      meta: KPI_META[8],
+      rawValue: Math.round(k.ad_spend / k.pcp),
+      value: null,
+      sub: 'расход / ПЦП',
+      isMoney: true,
+    }] : []),
+    ...(k.ad_spend && k.zapis ? [{
+      meta: KPI_META[9],
+      rawValue: Math.round(k.ad_spend / k.zapis),
+      value: null,
+      sub: 'расход / записей',
+      isMoney: true,
+    }] : []),
+    ...(k.ad_spend && k.prishel ? [{
+      meta: KPI_META[10],
+      rawValue: Math.round(k.ad_spend / k.prishel),
+      value: null,
+      sub: 'расход / пришли',
+      isMoney: true,
+    }] : []),
   ];
 
   const kpiEl = document.getElementById('kpi');
@@ -473,15 +472,6 @@ function render(d) {
     });
   }, 30);
 
-  // ---------- Сегменты план/депозит ----------
-  document.getElementById('seg1Sum').textContent = fmt(k.plan_with_dep_sum) + ' ₽';
-  document.getElementById('seg1Sub').textContent = `${k.plan_with_dep_count} пациент(а) с планом лечения`;
-  document.getElementById('seg1Paid').innerHTML  =
-    `<span class="good">внесено: ${fmt(k.plan_with_dep_paid)} ₽</span> ` +
-    `<span style="color:var(--muted)">(${pct(k.plan_with_dep_paid, k.plan_with_dep_sum)} от плана)</span>`;
-  document.getElementById('seg2Sum').textContent = fmt(k.plan_no_dep_sum) + ' ₽';
-  document.getElementById('seg2Sub').textContent = `${k.plan_no_dep_count} пациент(а) с планом без оплаты`;
-
   // ---------- Donut: статусы ----------
   if (chartStatus) { chartStatus.destroy(); chartStatus = null; }
   buildStatusChart(d.status_counts);
@@ -505,31 +495,6 @@ function render(d) {
      <th>Записей</th><th>Пришло</th><th>Отвал</th><th>Активна</th>
      <th>План + депозит</th></tr></thead>
      <tbody>${opRows}</tbody>`;
-
-  // ---------- Tables по сегментам ----------
-  const segRow = (r, withDeposit) => `
-    <tr>
-      <td><b>${r['Имя:']||'—'}</b><br><small>${r['Телефон:']||''}</small></td>
-      <td class="num"><b>${fmt(r.plan_total)} ₽</b></td>
-      <td class="num">${withDeposit ? '<span class="good">'+fmt(r.payment)+' ₽</span>' :
-                       '<span class="warn">не внесено</span>'}</td>
-      <td class="num">${withDeposit ? '<small>'+pct(r.payment, r.plan_total)+'</small>' : ''}</td>
-      <td>${r['Имя оператора, взявшего в работу']||'—'}</td>
-      <td>${r['Статус:']||'—'} ${r['Явка:']?yavkaPill(r['Явка:']):''}</td>
-      <td class="comment">${(r['Комментарии:']||'').slice(0,200)}</td>
-    </tr>`;
-  const segHead = `<thead><tr>
-      <th>Пациент</th><th>План лечения</th><th>Депозит</th><th>%</th>
-      <th>Оператор</th><th>Статус</th><th>Комментарий</th>
-    </tr></thead>`;
-  document.getElementById('tblSeg1').innerHTML =
-    segHead + '<tbody>' + (d.plans_with_deposit.length
-      ? d.plans_with_deposit.map(r=>segRow(r,true)).join('')
-      : '<tr><td colspan="7" style="text-align:center;color:var(--muted);padding:24px">Нет данных за выбранный период</td></tr>') + '</tbody>';
-  document.getElementById('tblSeg2').innerHTML =
-    segHead + '<tbody>' + (d.plans_without_deposit.length
-      ? d.plans_without_deposit.map(r=>segRow(r,false)).join('')
-      : '<tr><td colspan="7" style="text-align:center;color:var(--muted);padding:24px">Нет данных за выбранный период</td></tr>') + '</tbody>';
 
   // ---------- Appointments ----------
   document.getElementById('apptCnt').textContent = `— ${d.appointments.length} заявок`;
