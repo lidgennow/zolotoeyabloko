@@ -1,9 +1,9 @@
 {
   "period": {
     "date_min": "2026-04-11",
-    "date_max": "2026-06-08"
+    "date_max": "2026-06-09"
   },
-  "generated_at": "2026-06-09T00:13:20Z",
+  "generated_at": "2026-06-09T04:47:38Z",
   "months": [
     {
       "key": "2026-04",
@@ -18,14 +18,14 @@
     {
       "key": "2026-06",
       "label": "2026-06",
-      "count": 54
+      "count": 58
     }
   ],
   "all": {
     "kpi": {
-      "total": 523,
+      "total": 527,
       "pcp": 183,
-      "nekv": 340,
+      "nekv": 344,
       "zapis": 87,
       "prishel": 39,
       "neprishel": 20,
@@ -33,7 +33,7 @@
       "perezap": 15,
       "active_zapis": 27,
       "otval_zapis": 21,
-      "conv_pcp": 35.0,
+      "conv_pcp": 34.7,
       "conv_zapis_from_pcp": 47.5,
       "conv_prishel_from_zapis": 44.8,
       "sum_payment": 776210,
@@ -59,8 +59,8 @@
       "дубль": 21,
       "отложенный спрос": 15,
       "ндз финал": 14,
-      "Другой город": 2,
-      "—": 2
+      "—": 6,
+      "Другой город": 2
     },
     "operator_stats": {
       "Галина": {
@@ -162,9 +162,9 @@
         "patients_no_dep": 0
       },
       "—": {
-        "total": 29,
+        "total": 33,
         "pcp": 6,
-        "nekv": 23,
+        "nekv": 27,
         "zapis": 1,
         "prishel": 0,
         "otval": 0,
@@ -3772,9 +3772,9 @@
     },
     "2026-06": {
       "kpi": {
-        "total": 54,
+        "total": 58,
         "pcp": 21,
-        "nekv": 33,
+        "nekv": 37,
         "zapis": 11,
         "prishel": 1,
         "neprishel": 0,
@@ -3782,7 +3782,7 @@
         "perezap": 0,
         "active_zapis": 10,
         "otval_zapis": 0,
-        "conv_pcp": 38.9,
+        "conv_pcp": 36.2,
         "conv_zapis_from_pcp": 52.4,
         "conv_prishel_from_zapis": 9.1,
         "sum_payment": 0,
@@ -3804,11 +3804,11 @@
         "запись в клинику": 11,
         "в работе / переговорах": 7,
         "ОТКАЗ": 6,
+        "—": 5,
         "неактуал": 4,
         "отложенный спрос": 3,
         "дубль": 2,
-        "Другой город": 1,
-        "—": 1
+        "Другой город": 1
       },
       "operator_stats": {
         "Галина": {
@@ -3882,9 +3882,9 @@
           "patients_no_dep": 0
         },
         "—": {
-          "total": 8,
+          "total": 12,
           "pcp": 1,
-          "nekv": 7,
+          "nekv": 11,
           "zapis": 1,
           "prishel": 0,
           "otval": 0,
