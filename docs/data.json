@@ -3,7 +3,7 @@
     "date_min": "2026-04-11",
     "date_max": "2026-06-09"
   },
-  "generated_at": "2026-06-09T12:10:47Z",
+  "generated_at": "2026-06-09T15:40:51Z",
   "months": [
     {
       "key": "2026-04",
@@ -18,14 +18,14 @@
     {
       "key": "2026-06",
       "label": "2026-06",
-      "count": 64
+      "count": 69
     }
   ],
   "all": {
     "kpi": {
-      "total": 533,
+      "total": 538,
       "pcp": 186,
-      "nekv": 347,
+      "nekv": 352,
       "zapis": 88,
       "prishel": 39,
       "neprishel": 20,
@@ -33,7 +33,7 @@
       "perezap": 15,
       "active_zapis": 28,
       "otval_zapis": 21,
-      "conv_pcp": 34.9,
+      "conv_pcp": 34.6,
       "conv_zapis_from_pcp": 47.3,
       "conv_prishel_from_zapis": 44.3,
       "sum_payment": 776210,
@@ -59,8 +59,8 @@
       "дубль": 23,
       "отложенный спрос": 15,
       "ндз финал": 14,
-      "Другой город": 3,
-      "—": 1
+      "—": 6,
+      "Другой город": 3
     },
     "operator_stats": {
       "Ардашева": {
@@ -176,9 +176,9 @@
         "patients_no_dep": 0
       },
       "—": {
-        "total": 27,
+        "total": 32,
         "pcp": 6,
-        "nekv": 21,
+        "nekv": 26,
         "zapis": 1,
         "prishel": 0,
         "otval": 0,
@@ -3795,9 +3795,9 @@
     },
     "2026-06": {
       "kpi": {
-        "total": 64,
+        "total": 69,
         "pcp": 24,
-        "nekv": 40,
+        "nekv": 45,
         "zapis": 12,
         "prishel": 1,
         "neprishel": 0,
@@ -3805,7 +3805,7 @@
         "perezap": 0,
         "active_zapis": 11,
         "otval_zapis": 0,
-        "conv_pcp": 37.5,
+        "conv_pcp": 34.8,
         "conv_zapis_from_pcp": 50.0,
         "conv_prishel_from_zapis": 8.3,
         "sum_payment": 0,
@@ -3827,6 +3827,7 @@
         "запись в клинику": 12,
         "в работе / переговорах": 9,
         "ОТКАЗ": 6,
+        "—": 5,
         "неактуал": 4,
         "дубль": 4,
         "отложенный спрос": 3,
@@ -3932,9 +3933,9 @@
           "patients_no_dep": 0
         },
         "—": {
-          "total": 6,
+          "total": 11,
           "pcp": 1,
-          "nekv": 5,
+          "nekv": 10,
           "zapis": 1,
           "prishel": 0,
           "otval": 0,
