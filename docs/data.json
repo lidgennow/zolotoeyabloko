@@ -3,7 +3,7 @@
     "date_min": "2026-04-11",
     "date_max": "2026-06-13"
   },
-  "generated_at": "2026-06-13T08:38:31Z",
+  "generated_at": "2026-06-13T11:21:23Z",
   "months": [
     {
       "key": "2026-04",
@@ -18,24 +18,24 @@
     {
       "key": "2026-06",
       "label": "2026-06",
-      "count": 100
+      "count": 102
     }
   ],
   "all": {
     "kpi": {
-      "total": 569,
-      "pcp": 200,
+      "total": 571,
+      "pcp": 202,
       "nekv": 369,
-      "zapis": 90,
+      "zapis": 91,
       "prishel": 41,
       "neprishel": 20,
       "otmena": 6,
       "perezap": 15,
-      "active_zapis": 27,
+      "active_zapis": 28,
       "otval_zapis": 22,
-      "conv_pcp": 35.1,
+      "conv_pcp": 35.4,
       "conv_zapis_from_pcp": 45.0,
-      "conv_prishel_from_zapis": 45.6,
+      "conv_prishel_from_zapis": 45.1,
       "sum_payment": 776210,
       "sum_plan": 927833,
       "plan_with_dep_sum": 2327135,
@@ -52,8 +52,8 @@
     },
     "status_counts": {
       "недозвон": 172,
-      "в работе / переговорах": 95,
-      "запись в клинику": 90,
+      "в работе / переговорах": 96,
+      "запись в клинику": 91,
       "неактуал": 79,
       "ОТКАЗ": 73,
       "дубль": 26,
@@ -106,13 +106,13 @@
         "patients_no_dep": 0
       },
       "Лена": {
-        "total": 194,
-        "pcp": 78,
+        "total": 196,
+        "pcp": 80,
         "nekv": 116,
-        "zapis": 35,
+        "zapis": 36,
         "prishel": 16,
         "otval": 11,
-        "active": 8,
+        "active": 9,
         "payment": 641843,
         "plan_with_dep": 695925,
         "plan_no_dep": 0,
@@ -1029,6 +1029,15 @@
         "payment": 0,
         "plan_total": 0,
         "Комментарии:": "сложная ситуация \\протезирование  "
+      },
+      {
+        "Имя:": "Любовь",
+        "Дата записи": "14.06 НА 12:30",
+        "Явка:": null,
+        "Имя оператора, взявшего в работу": "Лена",
+        "payment": 0,
+        "plan_total": 0,
+        "Комментарии:": null
       }
     ],
     "refusal_categories": [
@@ -3841,19 +3850,19 @@
     },
     "2026-06": {
       "kpi": {
-        "total": 100,
-        "pcp": 38,
+        "total": 102,
+        "pcp": 40,
         "nekv": 62,
-        "zapis": 14,
+        "zapis": 15,
         "prishel": 3,
         "neprishel": 0,
         "otmena": 1,
         "perezap": 0,
-        "active_zapis": 10,
+        "active_zapis": 11,
         "otval_zapis": 1,
-        "conv_pcp": 38.0,
-        "conv_zapis_from_pcp": 36.8,
-        "conv_prishel_from_zapis": 21.4,
+        "conv_pcp": 39.2,
+        "conv_zapis_from_pcp": 37.5,
+        "conv_prishel_from_zapis": 20.0,
         "sum_payment": 0,
         "sum_plan": 0,
         "plan_with_dep_sum": 0,
@@ -3870,8 +3879,8 @@
       },
       "status_counts": {
         "недозвон": 35,
-        "в работе / переговорах": 21,
-        "запись в клинику": 14,
+        "в работе / переговорах": 22,
+        "запись в клинику": 15,
         "ОТКАЗ": 11,
         "дубль": 7,
         "неактуал": 6,
@@ -3922,13 +3931,13 @@
           "patients_no_dep": 0
         },
         "Лена": {
-          "total": 26,
-          "pcp": 10,
+          "total": 28,
+          "pcp": 12,
           "nekv": 16,
-          "zapis": 4,
+          "zapis": 5,
           "prishel": 2,
           "otval": 1,
-          "active": 1,
+          "active": 2,
           "payment": 0,
           "plan_with_dep": 0,
           "plan_no_dep": 0,
@@ -4106,6 +4115,15 @@
           "payment": 0,
           "plan_total": 0,
           "Комментарии:": "сложная ситуация \\протезирование  "
+        },
+        {
+          "Имя:": "Любовь",
+          "Дата записи": "14.06 НА 12:30",
+          "Явка:": null,
+          "Имя оператора, взявшего в работу": "Лена",
+          "payment": 0,
+          "plan_total": 0,
+          "Комментарии:": null
         }
       ],
       "refusal_categories": [
