@@ -3,7 +3,7 @@
     "date_min": "2026-04-11",
     "date_max": "2026-06-14"
   },
-  "generated_at": "2026-06-14T06:51:02Z",
+  "generated_at": "2026-06-14T10:28:46Z",
   "months": [
     {
       "key": "2026-04",
@@ -18,14 +18,14 @@
     {
       "key": "2026-06",
       "label": "2026-06",
-      "count": 105
+      "count": 107
     }
   ],
   "all": {
     "kpi": {
-      "total": 574,
-      "pcp": 204,
-      "nekv": 370,
+      "total": 576,
+      "pcp": 205,
+      "nekv": 371,
       "zapis": 90,
       "prishel": 42,
       "neprishel": 21,
@@ -33,8 +33,8 @@
       "perezap": 15,
       "active_zapis": 25,
       "otval_zapis": 23,
-      "conv_pcp": 35.5,
-      "conv_zapis_from_pcp": 44.1,
+      "conv_pcp": 35.6,
+      "conv_zapis_from_pcp": 43.9,
       "conv_prishel_from_zapis": 46.7,
       "sum_payment": 776210,
       "sum_plan": 927833,
@@ -51,8 +51,8 @@
       "drr": 24.2
     },
     "status_counts": {
-      "недозвон": 171,
-      "в работе / переговорах": 99,
+      "недозвон": 173,
+      "в работе / переговорах": 100,
       "запись в клинику": 90,
       "неактуал": 80,
       "ОТКАЗ": 73,
@@ -60,7 +60,7 @@
       "отложенный спрос": 15,
       "ндз финал": 14,
       "Другой город": 4,
-      "—": 2
+      "—": 1
     },
     "operator_stats": {
       "Ардашева": {
@@ -92,9 +92,9 @@
         "patients_no_dep": 0
       },
       "Галя": {
-        "total": 17,
-        "pcp": 9,
-        "nekv": 8,
+        "total": 20,
+        "pcp": 10,
+        "nekv": 10,
         "zapis": 3,
         "prishel": 2,
         "otval": 0,
@@ -106,9 +106,9 @@
         "patients_no_dep": 0
       },
       "Лена": {
-        "total": 197,
+        "total": 198,
         "pcp": 81,
-        "nekv": 116,
+        "nekv": 117,
         "zapis": 35,
         "prishel": 16,
         "otval": 11,
@@ -162,9 +162,9 @@
         "patients_no_dep": 0
       },
       "—": {
-        "total": 35,
+        "total": 33,
         "pcp": 6,
-        "nekv": 29,
+        "nekv": 27,
         "zapis": 1,
         "prishel": 0,
         "otval": 1,
@@ -3847,9 +3847,9 @@
     },
     "2026-06": {
       "kpi": {
-        "total": 105,
-        "pcp": 42,
-        "nekv": 63,
+        "total": 107,
+        "pcp": 43,
+        "nekv": 64,
         "zapis": 14,
         "prishel": 4,
         "neprishel": 1,
@@ -3857,8 +3857,8 @@
         "perezap": 0,
         "active_zapis": 8,
         "otval_zapis": 2,
-        "conv_pcp": 40.0,
-        "conv_zapis_from_pcp": 33.3,
+        "conv_pcp": 40.2,
+        "conv_zapis_from_pcp": 32.6,
         "conv_prishel_from_zapis": 28.6,
         "sum_payment": 0,
         "sum_plan": 0,
@@ -3875,15 +3875,14 @@
         "drr": null
       },
       "status_counts": {
-        "недозвон": 34,
-        "в работе / переговорах": 25,
+        "недозвон": 36,
+        "в работе / переговорах": 26,
         "запись в клинику": 14,
         "ОТКАЗ": 11,
         "неактуал": 7,
         "дубль": 7,
         "отложенный спрос": 3,
-        "Другой город": 3,
-        "—": 1
+        "Другой город": 3
       },
       "operator_stats": {
         "Ардашева": {
@@ -3915,9 +3914,9 @@
           "patients_no_dep": 0
         },
         "Галя": {
-          "total": 1,
-          "pcp": 1,
-          "nekv": 0,
+          "total": 4,
+          "pcp": 2,
+          "nekv": 2,
           "zapis": 0,
           "prishel": 0,
           "otval": 0,
@@ -3929,9 +3928,9 @@
           "patients_no_dep": 0
         },
         "Лена": {
-          "total": 29,
+          "total": 30,
           "pcp": 13,
-          "nekv": 16,
+          "nekv": 17,
           "zapis": 4,
           "prishel": 2,
           "otval": 1,
@@ -3971,9 +3970,9 @@
           "patients_no_dep": 0
         },
         "—": {
-          "total": 14,
+          "total": 12,
           "pcp": 1,
-          "nekv": 13,
+          "nekv": 11,
           "zapis": 1,
           "prishel": 0,
           "otval": 1,
