@@ -3,7 +3,7 @@
     "date_min": "2026-04-11",
     "date_max": "2026-06-14"
   },
-  "generated_at": "2026-06-14T12:26:17Z",
+  "generated_at": "2026-06-14T14:56:15Z",
   "months": [
     {
       "key": "2026-04",
@@ -18,24 +18,24 @@
     {
       "key": "2026-06",
       "label": "2026-06",
-      "count": 110
+      "count": 111
     }
   ],
   "all": {
     "kpi": {
-      "total": 579,
-      "pcp": 206,
+      "total": 580,
+      "pcp": 207,
       "nekv": 373,
-      "zapis": 91,
+      "zapis": 92,
       "prishel": 42,
       "neprishel": 21,
       "otmena": 6,
       "perezap": 15,
-      "active_zapis": 26,
+      "active_zapis": 27,
       "otval_zapis": 23,
-      "conv_pcp": 35.6,
-      "conv_zapis_from_pcp": 44.2,
-      "conv_prishel_from_zapis": 46.2,
+      "conv_pcp": 35.7,
+      "conv_zapis_from_pcp": 44.4,
+      "conv_prishel_from_zapis": 45.7,
       "sum_payment": 776210,
       "sum_plan": 927833,
       "plan_with_dep_sum": 2327135,
@@ -51,16 +51,16 @@
       "drr": 24.2
     },
     "status_counts": {
-      "недозвон": 173,
+      "недозвон": 174,
       "в работе / переговорах": 99,
-      "запись в клинику": 91,
+      "запись в клинику": 92,
       "неактуал": 80,
       "ОТКАЗ": 73,
       "дубль": 26,
       "отложенный спрос": 16,
       "ндз финал": 14,
       "Другой город": 4,
-      "—": 3
+      "—": 2
     },
     "operator_stats": {
       "Ардашева": {
@@ -106,13 +106,13 @@
         "patients_no_dep": 0
       },
       "Лена": {
-        "total": 198,
-        "pcp": 80,
+        "total": 199,
+        "pcp": 81,
         "nekv": 118,
-        "zapis": 36,
+        "zapis": 37,
         "prishel": 16,
         "otval": 11,
-        "active": 9,
+        "active": 10,
         "payment": 641843,
         "plan_with_dep": 695925,
         "plan_no_dep": 0,
@@ -1038,6 +1038,15 @@
         "payment": 0,
         "plan_total": 0,
         "Комментарии:": "сложная ситуация \\протезирование  "
+      },
+      {
+        "Имя:": "Мария ",
+        "Дата записи": "НА 16.06 НА 13:30",
+        "Явка:": null,
+        "Имя оператора, взявшего в работу": "Лена",
+        "payment": 0,
+        "plan_total": 0,
+        "Комментарии:": null
       }
     ],
     "refusal_categories": [
@@ -3856,19 +3865,19 @@
     },
     "2026-06": {
       "kpi": {
-        "total": 110,
-        "pcp": 43,
+        "total": 111,
+        "pcp": 44,
         "nekv": 67,
-        "zapis": 15,
+        "zapis": 16,
         "prishel": 4,
         "neprishel": 1,
         "otmena": 1,
         "perezap": 0,
-        "active_zapis": 9,
+        "active_zapis": 10,
         "otval_zapis": 2,
-        "conv_pcp": 39.1,
-        "conv_zapis_from_pcp": 34.9,
-        "conv_prishel_from_zapis": 26.7,
+        "conv_pcp": 39.6,
+        "conv_zapis_from_pcp": 36.4,
+        "conv_prishel_from_zapis": 25.0,
         "sum_payment": 0,
         "sum_plan": 0,
         "plan_with_dep_sum": 0,
@@ -3884,15 +3893,15 @@
         "drr": null
       },
       "status_counts": {
-        "недозвон": 37,
+        "недозвон": 38,
         "в работе / переговорах": 24,
-        "запись в клинику": 15,
+        "запись в клинику": 16,
         "ОТКАЗ": 11,
         "неактуал": 7,
         "дубль": 7,
         "отложенный спрос": 4,
         "Другой город": 3,
-        "—": 2
+        "—": 1
       },
       "operator_stats": {
         "Ардашева": {
@@ -3938,13 +3947,13 @@
           "patients_no_dep": 0
         },
         "Лена": {
-          "total": 30,
-          "pcp": 12,
+          "total": 31,
+          "pcp": 13,
           "nekv": 18,
-          "zapis": 5,
+          "zapis": 6,
           "prishel": 2,
           "otval": 1,
-          "active": 2,
+          "active": 3,
           "payment": 0,
           "plan_with_dep": 0,
           "plan_no_dep": 0,
@@ -4131,6 +4140,15 @@
           "payment": 0,
           "plan_total": 0,
           "Комментарии:": "сложная ситуация \\протезирование  "
+        },
+        {
+          "Имя:": "Мария ",
+          "Дата записи": "НА 16.06 НА 13:30",
+          "Явка:": null,
+          "Имя оператора, взявшего в работу": "Лена",
+          "payment": 0,
+          "plan_total": 0,
+          "Комментарии:": null
         }
       ],
       "refusal_categories": [
