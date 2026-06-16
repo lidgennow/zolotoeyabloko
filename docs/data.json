@@ -1,9 +1,9 @@
 {
   "period": {
     "date_min": "2026-04-11",
-    "date_max": "2026-06-15"
+    "date_max": "2026-06-16"
   },
-  "generated_at": "2026-06-16T06:10:39Z",
+  "generated_at": "2026-06-16T11:42:47Z",
   "months": [
     {
       "key": "2026-04",
@@ -18,14 +18,14 @@
     {
       "key": "2026-06",
       "label": "2026-06",
-      "count": 114
+      "count": 120
     }
   ],
   "all": {
     "kpi": {
-      "total": 583,
-      "pcp": 207,
-      "nekv": 376,
+      "total": 589,
+      "pcp": 210,
+      "nekv": 379,
       "zapis": 93,
       "prishel": 42,
       "neprishel": 21,
@@ -33,8 +33,8 @@
       "perezap": 15,
       "active_zapis": 28,
       "otval_zapis": 23,
-      "conv_pcp": 35.5,
-      "conv_zapis_from_pcp": 44.9,
+      "conv_pcp": 35.7,
+      "conv_zapis_from_pcp": 44.3,
       "conv_prishel_from_zapis": 45.2,
       "sum_payment": 776210,
       "sum_plan": 927833,
@@ -51,13 +51,13 @@
       "drr": 24.2
     },
     "status_counts": {
-      "недозвон": 173,
-      "в работе / переговорах": 98,
+      "недозвон": 176,
+      "в работе / переговорах": 99,
       "запись в клинику": 93,
       "неактуал": 83,
       "ОТКАЗ": 74,
       "дубль": 27,
-      "отложенный спрос": 16,
+      "отложенный спрос": 18,
       "ндз финал": 14,
       "Другой город": 4,
       "—": 1
@@ -92,9 +92,9 @@
         "patients_no_dep": 0
       },
       "Галя": {
-        "total": 22,
+        "total": 21,
         "pcp": 11,
-        "nekv": 11,
+        "nekv": 10,
         "zapis": 3,
         "prishel": 2,
         "otval": 0,
@@ -106,9 +106,9 @@
         "patients_no_dep": 0
       },
       "Лена": {
-        "total": 198,
-        "pcp": 80,
-        "nekv": 118,
+        "total": 197,
+        "pcp": 81,
+        "nekv": 116,
         "zapis": 37,
         "prishel": 16,
         "otval": 11,
@@ -134,9 +134,9 @@
         "patients_no_dep": 0
       },
       "Наталья": {
-        "total": 179,
+        "total": 178,
         "pcp": 65,
-        "nekv": 114,
+        "nekv": 113,
         "zapis": 33,
         "prishel": 16,
         "otval": 9,
@@ -162,9 +162,9 @@
         "patients_no_dep": 0
       },
       "Наталья А": {
-        "total": 41,
+        "total": 47,
         "pcp": 9,
-        "nekv": 32,
+        "nekv": 38,
         "zapis": 4,
         "prishel": 0,
         "otval": 0,
@@ -176,9 +176,9 @@
         "patients_no_dep": 0
       },
       "—": {
-        "total": 35,
-        "pcp": 6,
-        "nekv": 29,
+        "total": 38,
+        "pcp": 8,
+        "nekv": 30,
         "zapis": 1,
         "prishel": 0,
         "otval": 1,
@@ -2938,9 +2938,9 @@
           "patients_no_dep": 0
         },
         "Лена": {
-          "total": 85,
+          "total": 84,
           "pcp": 31,
-          "nekv": 54,
+          "nekv": 53,
           "zapis": 15,
           "prishel": 7,
           "otval": 4,
@@ -2952,9 +2952,9 @@
           "patients_no_dep": 0
         },
         "Наталья": {
-          "total": 97,
+          "total": 96,
           "pcp": 30,
-          "nekv": 67,
+          "nekv": 66,
           "zapis": 18,
           "prishel": 8,
           "otval": 7,
@@ -2980,9 +2980,9 @@
           "patients_no_dep": 0
         },
         "Наталья А": {
-          "total": 16,
+          "total": 20,
           "pcp": 1,
-          "nekv": 15,
+          "nekv": 19,
           "zapis": 1,
           "prishel": 0,
           "otval": 0,
@@ -2994,9 +2994,9 @@
           "patients_no_dep": 0
         },
         "—": {
-          "total": 18,
+          "total": 16,
           "pcp": 2,
-          "nekv": 16,
+          "nekv": 14,
           "zapis": 0,
           "prishel": 0,
           "otval": 0,
@@ -3912,9 +3912,9 @@
     },
     "2026-06": {
       "kpi": {
-        "total": 114,
-        "pcp": 44,
-        "nekv": 70,
+        "total": 120,
+        "pcp": 47,
+        "nekv": 73,
         "zapis": 17,
         "prishel": 4,
         "neprishel": 1,
@@ -3922,8 +3922,8 @@
         "perezap": 0,
         "active_zapis": 11,
         "otval_zapis": 2,
-        "conv_pcp": 38.6,
-        "conv_zapis_from_pcp": 38.6,
+        "conv_pcp": 39.2,
+        "conv_zapis_from_pcp": 36.2,
         "conv_prishel_from_zapis": 23.5,
         "sum_payment": 0,
         "sum_plan": 0,
@@ -3940,13 +3940,13 @@
         "drr": null
       },
       "status_counts": {
-        "недозвон": 37,
-        "в работе / переговорах": 23,
+        "недозвон": 40,
+        "в работе / переговорах": 24,
         "запись в клинику": 17,
         "ОТКАЗ": 12,
         "неактуал": 10,
         "дубль": 8,
-        "отложенный спрос": 4,
+        "отложенный спрос": 6,
         "Другой город": 3
       },
       "operator_stats": {
@@ -3979,9 +3979,9 @@
           "patients_no_dep": 0
         },
         "Галя": {
-          "total": 6,
+          "total": 5,
           "pcp": 3,
-          "nekv": 3,
+          "nekv": 2,
           "zapis": 0,
           "prishel": 0,
           "otval": 0,
@@ -3994,8 +3994,8 @@
         },
         "Лена": {
           "total": 30,
-          "pcp": 12,
-          "nekv": 18,
+          "pcp": 13,
+          "nekv": 17,
           "zapis": 6,
           "prishel": 2,
           "otval": 1,
@@ -4035,9 +4035,9 @@
           "patients_no_dep": 0
         },
         "Наталья А": {
-          "total": 13,
+          "total": 15,
           "pcp": 7,
-          "nekv": 6,
+          "nekv": 8,
           "zapis": 2,
           "prishel": 0,
           "otval": 0,
@@ -4049,9 +4049,9 @@
           "patients_no_dep": 0
         },
         "—": {
-          "total": 14,
-          "pcp": 1,
-          "nekv": 13,
+          "total": 19,
+          "pcp": 3,
+          "nekv": 16,
           "zapis": 1,
           "prishel": 0,
           "otval": 1,
