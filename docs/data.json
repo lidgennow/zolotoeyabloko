@@ -1,9 +1,9 @@
 {
   "period": {
     "date_min": "2026-04-11",
-    "date_max": "2026-06-21"
+    "date_max": "2026-06-22"
   },
-  "generated_at": "2026-06-21T23:52:36Z",
+  "generated_at": "2026-06-22T05:10:56Z",
   "months": [
     {
       "key": "2026-04",
@@ -18,14 +18,14 @@
     {
       "key": "2026-06",
       "label": "2026-06",
-      "count": 202
+      "count": 205
     }
   ],
   "all": {
     "kpi": {
-      "total": 671,
+      "total": 674,
       "pcp": 242,
-      "nekv": 429,
+      "nekv": 432,
       "zapis": 107,
       "prishel": 46,
       "neprishel": 22,
@@ -33,7 +33,7 @@
       "perezap": 18,
       "active_zapis": 37,
       "otval_zapis": 24,
-      "conv_pcp": 36.1,
+      "conv_pcp": 35.9,
       "conv_zapis_from_pcp": 44.2,
       "conv_prishel_from_zapis": 43.0,
       "sum_payment": 776210,
@@ -59,8 +59,8 @@
       "дубль": 34,
       "отложенный спрос": 19,
       "ндз финал": 14,
-      "Другой город": 4,
-      "—": 2
+      "—": 5,
+      "Другой город": 4
     },
     "operator_stats": {
       "Ардашева": {
@@ -176,9 +176,9 @@
         "patients_no_dep": 0
       },
       "—": {
-        "total": 58,
+        "total": 61,
         "pcp": 14,
-        "nekv": 44,
+        "nekv": 47,
         "zapis": 4,
         "prishel": 0,
         "otval": 1,
@@ -4137,9 +4137,9 @@
     },
     "2026-06": {
       "kpi": {
-        "total": 202,
+        "total": 205,
         "pcp": 79,
-        "nekv": 123,
+        "nekv": 126,
         "zapis": 30,
         "prishel": 8,
         "neprishel": 2,
@@ -4147,7 +4147,7 @@
         "perezap": 3,
         "active_zapis": 19,
         "otval_zapis": 3,
-        "conv_pcp": 39.1,
+        "conv_pcp": 38.5,
         "conv_zapis_from_pcp": 38.0,
         "conv_prishel_from_zapis": 26.7,
         "sum_payment": 0,
@@ -4172,8 +4172,8 @@
         "неактуал": 15,
         "дубль": 15,
         "отложенный спрос": 8,
-        "Другой город": 3,
-        "—": 1
+        "—": 4,
+        "Другой город": 3
       },
       "operator_stats": {
         "Ардашева": {
@@ -4275,9 +4275,9 @@
           "patients_no_dep": 0
         },
         "—": {
-          "total": 40,
+          "total": 43,
           "pcp": 9,
-          "nekv": 31,
+          "nekv": 34,
           "zapis": 4,
           "prishel": 0,
           "otval": 1,
