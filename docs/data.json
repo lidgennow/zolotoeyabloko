@@ -1,9 +1,9 @@
 {
   "period": {
     "date_min": "2026-04-11",
-    "date_max": "2026-06-23"
+    "date_max": "2026-06-24"
   },
-  "generated_at": "2026-06-24T00:04:07Z",
+  "generated_at": "2026-06-24T04:47:47Z",
   "months": [
     {
       "key": "2026-04",
@@ -18,14 +18,14 @@
     {
       "key": "2026-06",
       "label": "2026-06",
-      "count": 220
+      "count": 221
     }
   ],
   "all": {
     "kpi": {
-      "total": 689,
+      "total": 690,
       "pcp": 249,
-      "nekv": 440,
+      "nekv": 441,
       "zapis": 109,
       "prishel": 48,
       "neprishel": 23,
@@ -60,7 +60,7 @@
       "отложенный спрос": 21,
       "ндз финал": 14,
       "Другой город": 4,
-      "—": 1
+      "—": 2
     },
     "operator_stats": {
       "Ардашева": {
@@ -176,9 +176,9 @@
         "patients_no_dep": 0
       },
       "—": {
-        "total": 41,
+        "total": 42,
         "pcp": 10,
-        "nekv": 31,
+        "nekv": 32,
         "zapis": 1,
         "prishel": 0,
         "otval": 1,
@@ -4197,9 +4197,9 @@
     },
     "2026-06": {
       "kpi": {
-        "total": 220,
+        "total": 221,
         "pcp": 87,
-        "nekv": 133,
+        "nekv": 134,
         "zapis": 32,
         "prishel": 9,
         "neprishel": 3,
@@ -4207,7 +4207,7 @@
         "perezap": 4,
         "active_zapis": 19,
         "otval_zapis": 4,
-        "conv_pcp": 39.5,
+        "conv_pcp": 39.4,
         "conv_zapis_from_pcp": 36.8,
         "conv_prishel_from_zapis": 28.1,
         "sum_payment": 0,
@@ -4232,7 +4232,8 @@
         "дубль": 18,
         "неактуал": 17,
         "отложенный спрос": 10,
-        "Другой город": 3
+        "Другой город": 3,
+        "—": 1
       },
       "operator_stats": {
         "Ардашева": {
@@ -4334,9 +4335,9 @@
           "patients_no_dep": 0
         },
         "—": {
-          "total": 23,
+          "total": 24,
           "pcp": 5,
-          "nekv": 18,
+          "nekv": 19,
           "zapis": 1,
           "prishel": 0,
           "otval": 1,
