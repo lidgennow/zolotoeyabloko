@@ -1,9 +1,9 @@
 {
   "period": {
     "date_min": "2026-04-11",
-    "date_max": "2026-06-26"
+    "date_max": "2026-06-27"
   },
-  "generated_at": "2026-06-27T01:29:51Z",
+  "generated_at": "2026-06-27T05:34:10Z",
   "months": [
     {
       "key": "2026-04",
@@ -18,24 +18,24 @@
     {
       "key": "2026-06",
       "label": "2026-06",
-      "count": 253
+      "count": 257
     }
   ],
   "all": {
     "kpi": {
-      "total": 722,
-      "pcp": 266,
-      "nekv": 456,
-      "zapis": 118,
+      "total": 726,
+      "pcp": 267,
+      "nekv": 459,
+      "zapis": 119,
       "prishel": 51,
       "neprishel": 27,
       "otmena": 8,
       "perezap": 19,
-      "active_zapis": 36,
+      "active_zapis": 37,
       "otval_zapis": 31,
       "conv_pcp": 36.8,
-      "conv_zapis_from_pcp": 44.4,
-      "conv_prishel_from_zapis": 43.2,
+      "conv_zapis_from_pcp": 44.6,
+      "conv_prishel_from_zapis": 42.9,
       "sum_payment": 776210,
       "sum_plan": 927833,
       "plan_with_dep_sum": 2327135,
@@ -51,16 +51,16 @@
       "drr": 24.2
     },
     "status_counts": {
-      "недозвон": 215,
+      "недозвон": 220,
       "в работе / переговорах": 126,
-      "запись в клинику": 118,
+      "запись в клинику": 119,
       "неактуал": 97,
       "ОТКАЗ": 84,
-      "дубль": 37,
+      "дубль": 38,
       "отложенный спрос": 22,
       "ндз финал": 14,
-      "—": 5,
-      "Другой город": 4
+      "Другой город": 4,
+      "—": 2
     },
     "operator_stats": {
       "Ардашева": {
@@ -78,9 +78,9 @@
         "patients_no_dep": 0
       },
       "Галина": {
-        "total": 115,
+        "total": 118,
         "pcp": 42,
-        "nekv": 73,
+        "nekv": 76,
         "zapis": 15,
         "prishel": 8,
         "otval": 2,
@@ -134,13 +134,13 @@
         "patients_no_dep": 0
       },
       "Наталья": {
-        "total": 191,
-        "pcp": 76,
-        "nekv": 115,
-        "zapis": 39,
+        "total": 195,
+        "pcp": 77,
+        "nekv": 118,
+        "zapis": 40,
         "prishel": 16,
         "otval": 10,
-        "active": 13,
+        "active": 14,
         "payment": 134367,
         "plan_with_dep": 231908,
         "plan_no_dep": 0,
@@ -176,9 +176,9 @@
         "patients_no_dep": 0
       },
       "—": {
-        "total": 50,
+        "total": 47,
         "pcp": 12,
-        "nekv": 38,
+        "nekv": 35,
         "zapis": 1,
         "prishel": 0,
         "otval": 1,
@@ -1292,6 +1292,15 @@
         "Дата записи": "27.06 НА 10:30",
         "Явка:": "Отмена записи",
         "Имя оператора, взявшего в работу": "Наталья А",
+        "payment": 0,
+        "plan_total": 0,
+        "Комментарии:": null
+      },
+      {
+        "Имя:": "Елена",
+        "Дата записи": null,
+        "Явка:": null,
+        "Имя оператора, взявшего в работу": "Наталья",
         "payment": 0,
         "plan_total": 0,
         "Комментарии:": null
@@ -4317,19 +4326,19 @@
     },
     "2026-06": {
       "kpi": {
-        "total": 253,
-        "pcp": 103,
-        "nekv": 150,
-        "zapis": 40,
+        "total": 257,
+        "pcp": 104,
+        "nekv": 153,
+        "zapis": 41,
         "prishel": 12,
         "neprishel": 7,
         "otmena": 3,
         "perezap": 4,
-        "active_zapis": 18,
+        "active_zapis": 19,
         "otval_zapis": 10,
-        "conv_pcp": 40.7,
-        "conv_zapis_from_pcp": 38.8,
-        "conv_prishel_from_zapis": 30.0,
+        "conv_pcp": 40.5,
+        "conv_zapis_from_pcp": 39.4,
+        "conv_prishel_from_zapis": 29.3,
         "sum_payment": 0,
         "sum_plan": 0,
         "plan_with_dep_sum": 0,
@@ -4345,15 +4354,15 @@
         "drr": null
       },
       "status_counts": {
-        "недозвон": 82,
+        "недозвон": 87,
         "в работе / переговорах": 52,
-        "запись в клинику": 40,
+        "запись в клинику": 41,
         "ОТКАЗ": 22,
         "неактуал": 21,
-        "дубль": 18,
+        "дубль": 19,
         "отложенный спрос": 11,
-        "—": 4,
-        "Другой город": 3
+        "Другой город": 3,
+        "—": 1
       },
       "operator_stats": {
         "Ардашева": {
@@ -4371,9 +4380,9 @@
           "patients_no_dep": 0
         },
         "Галина": {
-          "total": 38,
+          "total": 41,
           "pcp": 15,
-          "nekv": 23,
+          "nekv": 26,
           "zapis": 4,
           "prishel": 0,
           "otval": 0,
@@ -4427,13 +4436,13 @@
           "patients_no_dep": 0
         },
         "Наталья": {
-          "total": 43,
-          "pcp": 23,
-          "nekv": 20,
-          "zapis": 10,
+          "total": 47,
+          "pcp": 24,
+          "nekv": 23,
+          "zapis": 11,
           "prishel": 2,
           "otval": 1,
-          "active": 7,
+          "active": 8,
           "payment": 0,
           "plan_with_dep": 0,
           "plan_no_dep": 0,
@@ -4469,9 +4478,9 @@
           "patients_no_dep": 0
         },
         "—": {
-          "total": 32,
+          "total": 29,
           "pcp": 7,
-          "nekv": 25,
+          "nekv": 22,
           "zapis": 1,
           "prishel": 0,
           "otval": 1,
@@ -4842,6 +4851,15 @@
           "Дата записи": "27.06 НА 10:30",
           "Явка:": "Отмена записи",
           "Имя оператора, взявшего в работу": "Наталья А",
+          "payment": 0,
+          "plan_total": 0,
+          "Комментарии:": null
+        },
+        {
+          "Имя:": "Елена",
+          "Дата записи": null,
+          "Явка:": null,
+          "Имя оператора, взявшего в работу": "Наталья",
           "payment": 0,
           "plan_total": 0,
           "Комментарии:": null
