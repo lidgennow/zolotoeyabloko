@@ -1,4 +1,5 @@
 data/sheet.csv
+data/sheet_*.csv
 dashboard/sc_*.png
 dashboard/screenshot*.png
 *.pyc

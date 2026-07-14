@@ -497,6 +497,7 @@ function render(d) {
       value: k.drr == null ? '—' : `${k.drr}%`,
       sub: k.drr == null ? 'нет данных по расходу' : 'расход / план с депозитом',
       isNum: false,
+      noData: k.drr == null,
       drrClass: drrColor,
     },
   ];

@@ -15,7 +15,12 @@ OUT_PATH = ROOT / "docs" / "data.json"
 
 # 1. ID таблицы Google Sheets (из URL: .../spreadsheets/d/ВОТ_ЭТО/edit)
 SHEET_ID = "1nlz9_J_AF-9I4i9GA0y1UQWwud_uEfnpHDyThiHLR-0"
-SHEET_GID = "903839238"
+# Вкладки (gid) с заявками. Клиника периодически заводит новую вкладку —
+# просто добавь новый gid в конец списка, данные склеятся автоматически.
+SHEET_GIDS = [
+    "903839238",   # апрель–27 июня
+    "1933060386",  # 28 июня — далее
+]
 
 # 2. Рекламные расходы по месяцам (None = данных нет, не считать ДРР)
 AD_SPEND = {
@@ -40,7 +45,8 @@ MONTH_NAMES = {
 
 # ============================================================
 
-SHEET_URL = f"https://docs.google.com/spreadsheets/d/{SHEET_ID}/export?format=csv&gid={SHEET_GID}"
+def _sheet_url(gid):
+    return f"https://docs.google.com/spreadsheets/d/{SHEET_ID}/export?format=csv&gid={gid}"
 ROOTS = {
     "Имплантация": r"имплант\w*", "Ортопедия": r"ортопед\w*",
     "Терапия": r"тера(?:п|пи)\w*", "Хирургия": r"хирург\w*",
@@ -242,15 +248,29 @@ def _apply_overrides_all(all_data):
 
 
 def main():
-    print(f"⤓ Скачиваю CSV из Google Sheets…")
+    print(f"⤓ Скачиваю CSV из Google Sheets ({len(SHEET_GIDS)} вкладок)…")
     CSV_PATH.parent.mkdir(parents=True, exist_ok=True)
-    r = subprocess.run(["curl", "-sSL", "-o", str(CSV_PATH), SHEET_URL],
-                       capture_output=True, text=True)
-    if r.returncode != 0:
-        sys.exit(f"curl failed: {r.stderr}")
+    frames = []
+    for gid in SHEET_GIDS:
+        tmp = CSV_PATH.parent / f"sheet_{gid}.csv"
+        r = subprocess.run(["curl", "-sSL", "-o", str(tmp), _sheet_url(gid)],
+                           capture_output=True, text=True)
+        if r.returncode != 0:
+            sys.exit(f"curl failed (gid {gid}): {r.stderr}")
+        f = pd.read_csv(tmp)
+        f.columns = f.columns.str.strip()
+        print(f"  вкладка {gid}: {len(f)} строк")
+        frames.append(f)
 
-    df = pd.read_csv(CSV_PATH)
-    df.columns = df.columns.str.strip()
+    df = pd.concat(frames, ignore_index=True)
+    # '№' у каждой вкладки своя нумерация — исключаем из ключа дедупликации
+    dedup_cols = [c for c in df.columns if c != "№"]
+    before = len(df)
+    df = df.drop_duplicates(subset=dedup_cols).reset_index(drop=True)
+    if before != len(df):
+        print(f"  дубли между вкладками удалены: {before - len(df)}")
+    df.to_csv(CSV_PATH, index=False)   # склеенный CSV для отладки
+
     df = df.rename(columns={"продажа": "Чек"})
     # Нормализуем имена операторов: ЛЕНА/лена/Лена → Лена, Наталья Ш → Наталья
     OPERATOR_MAP = {"Наталья Ш": "Наталья"}
