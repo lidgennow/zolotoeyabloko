@@ -1,9 +1,9 @@
 {
   "period": {
     "date_min": "2026-04-11",
-    "date_max": "2026-07-14"
+    "date_max": "2026-07-15"
   },
-  "generated_at": "2026-07-15T03:22:46Z",
+  "generated_at": "2026-07-15T05:54:33Z",
   "months": [
     {
       "key": "2026-04",
@@ -23,14 +23,14 @@
     {
       "key": "2026-07",
       "label": "Июль 2026",
-      "count": 127
+      "count": 128
     }
   ],
   "all": {
     "kpi": {
-      "total": 900,
+      "total": 901,
       "pcp": 331,
-      "nekv": 569,
+      "nekv": 570,
       "zapis": 154,
       "prishel": 61,
       "neprishel": 40,
@@ -38,7 +38,7 @@
       "perezap": 19,
       "active_zapis": 49,
       "otval_zapis": 44,
-      "conv_pcp": 36.8,
+      "conv_pcp": 36.7,
       "conv_zapis_from_pcp": 46.5,
       "conv_prishel_from_zapis": 39.6,
       "sum_payment": 776210,
@@ -65,7 +65,7 @@
       "отложенный спрос": 28,
       "ндз финал": 17,
       "Другой город": 5,
-      "—": 2
+      "—": 3
     },
     "operator_stats": {
       "Ардашева": {
@@ -181,9 +181,9 @@
         "patients_no_dep": 0
       },
       "Наталья А": {
-        "total": 121,
+        "total": 124,
         "pcp": 36,
-        "nekv": 85,
+        "nekv": 88,
         "zapis": 16,
         "prishel": 2,
         "otval": 5,
@@ -237,9 +237,9 @@
         "patients_no_dep": 0
       },
       "—": {
-        "total": 54,
+        "total": 52,
         "pcp": 14,
-        "nekv": 40,
+        "nekv": 38,
         "zapis": 1,
         "prishel": 0,
         "otval": 1,
@@ -6191,9 +6191,9 @@
     },
     "2026-07": {
       "kpi": {
-        "total": 127,
+        "total": 128,
         "pcp": 54,
-        "nekv": 73,
+        "nekv": 74,
         "zapis": 25,
         "prishel": 6,
         "neprishel": 6,
@@ -6201,7 +6201,7 @@
         "perezap": 1,
         "active_zapis": 13,
         "otval_zapis": 6,
-        "conv_pcp": 42.5,
+        "conv_pcp": 42.2,
         "conv_zapis_from_pcp": 46.3,
         "conv_prishel_from_zapis": 24.0,
         "sum_payment": 0,
@@ -6226,9 +6226,9 @@
         "ОТКАЗ": 10,
         "отложенный спрос": 5,
         "дубль": 2,
+        "—": 2,
         "Другой город": 1,
-        "ндз финал": 1,
-        "—": 1
+        "ндз финал": 1
       },
       "operator_stats": {
         "Галина": {
@@ -6302,9 +6302,9 @@
           "patients_no_dep": 0
         },
         "Наталья А": {
-          "total": 23,
+          "total": 26,
           "pcp": 14,
-          "nekv": 9,
+          "nekv": 12,
           "zapis": 3,
           "prishel": 0,
           "otval": 0,
@@ -6344,9 +6344,9 @@
           "patients_no_dep": 0
         },
         "—": {
-          "total": 11,
+          "total": 9,
           "pcp": 3,
-          "nekv": 8,
+          "nekv": 6,
           "zapis": 0,
           "prishel": 0,
           "otval": 0,
