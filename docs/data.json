@@ -3,7 +3,7 @@
     "date_min": "2026-04-11",
     "date_max": "2026-07-17"
   },
-  "generated_at": "2026-07-17T12:44:28Z",
+  "generated_at": "2026-07-17T14:48:14Z",
   "months": [
     {
       "key": "2026-04",
@@ -153,13 +153,13 @@
         "patients_no_dep": 0
       },
       "Наталья": {
-        "total": 226,
-        "pcp": 88,
+        "total": 227,
+        "pcp": 89,
         "nekv": 138,
-        "zapis": 48,
+        "zapis": 49,
         "prishel": 18,
         "otval": 15,
-        "active": 15,
+        "active": 16,
         "payment": 134367,
         "plan_with_dep": 231908,
         "plan_no_dep": 0,
@@ -237,13 +237,13 @@
         "patients_no_dep": 0
       },
       "—": {
-        "total": 53,
-        "pcp": 16,
+        "total": 52,
+        "pcp": 15,
         "nekv": 37,
-        "zapis": 3,
+        "zapis": 2,
         "prishel": 0,
         "otval": 1,
-        "active": 2,
+        "active": 1,
         "payment": 0,
         "plan_with_dep": 0,
         "plan_no_dep": 0,
@@ -1712,7 +1712,7 @@
         "Имя:": "Алина ",
         "Дата записи": null,
         "Явка:": null,
-        "Имя оператора, взявшего в работу": null,
+        "Имя оператора, взявшего в работу": "Наталья",
         "payment": 0,
         "plan_total": 0,
         "Комментарии:": null
@@ -6354,13 +6354,13 @@
           "patients_no_dep": 0
         },
         "Наталья": {
-          "total": 24,
-          "pcp": 8,
+          "total": 25,
+          "pcp": 9,
           "nekv": 16,
-          "zapis": 6,
+          "zapis": 7,
           "prishel": 1,
           "otval": 1,
-          "active": 4,
+          "active": 5,
           "payment": 0,
           "plan_with_dep": 0,
           "plan_no_dep": 0,
@@ -6410,13 +6410,13 @@
           "patients_no_dep": 0
         },
         "—": {
-          "total": 10,
-          "pcp": 5,
+          "total": 9,
+          "pcp": 4,
           "nekv": 5,
-          "zapis": 2,
+          "zapis": 1,
           "prishel": 0,
           "otval": 0,
-          "active": 2,
+          "active": 1,
           "payment": 0,
           "plan_with_dep": 0,
           "plan_no_dep": 0,
@@ -6683,7 +6683,7 @@
           "Имя:": "Алина ",
           "Дата записи": null,
           "Явка:": null,
-          "Имя оператора, взявшего в работу": null,
+          "Имя оператора, взявшего в работу": "Наталья",
           "payment": 0,
           "plan_total": 0,
           "Комментарии:": null
