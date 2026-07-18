@@ -1,9 +1,9 @@
 {
   "period": {
     "date_min": "2026-04-11",
-    "date_max": "2026-07-17"
+    "date_max": "2026-07-18"
   },
-  "generated_at": "2026-07-18T04:09:56Z",
+  "generated_at": "2026-07-18T06:29:13Z",
   "months": [
     {
       "key": "2026-04",
@@ -23,14 +23,14 @@
     {
       "key": "2026-07",
       "label": "Июль 2026",
-      "count": 140
+      "count": 142
     }
   ],
   "all": {
     "kpi": {
-      "total": 913,
+      "total": 915,
       "pcp": 337,
-      "nekv": 576,
+      "nekv": 578,
       "zapis": 158,
       "prishel": 63,
       "neprishel": 42,
@@ -38,7 +38,7 @@
       "perezap": 19,
       "active_zapis": 49,
       "otval_zapis": 46,
-      "conv_pcp": 36.9,
+      "conv_pcp": 36.8,
       "conv_zapis_from_pcp": 46.9,
       "conv_prishel_from_zapis": 39.9,
       "sum_payment": 776210,
@@ -51,14 +51,14 @@
       "only_payment_sum": 0,
       "only_payment_count": 0,
       "refusals_total": 102,
-      "neaktual_total": 151,
+      "neaktual_total": 152,
       "ad_spend": 930000,
       "drr": 20.6
     },
     "status_counts": {
-      "недозвон": 251,
+      "недозвон": 252,
       "запись в клинику": 158,
-      "неактуал": 151,
+      "неактуал": 152,
       "в работе / переговорах": 150,
       "ОТКАЗ": 102,
       "дубль": 44,
@@ -153,9 +153,9 @@
         "patients_no_dep": 0
       },
       "Наталья": {
-        "total": 227,
+        "total": 228,
         "pcp": 89,
-        "nekv": 138,
+        "nekv": 139,
         "zapis": 49,
         "prishel": 18,
         "otval": 15,
@@ -237,9 +237,9 @@
         "patients_no_dep": 0
       },
       "—": {
-        "total": 53,
+        "total": 54,
         "pcp": 15,
-        "nekv": 38,
+        "nekv": 39,
         "zapis": 2,
         "prishel": 0,
         "otval": 1,
@@ -1721,7 +1721,7 @@
     "refusal_categories": [
       {
         "cat": "Другое",
-        "count": 238,
+        "count": 239,
         "share": 94.1,
         "items": [
           {
@@ -3148,6 +3148,12 @@
           },
           {
             "Имя:": "Светлана ",
+            "Статус:": "неактуал",
+            "Имя оператора, взявшего в работу": "Наталья",
+            "Комментарии:": null
+          },
+          {
+            "Имя:": "Антон",
             "Статус:": "неактуал",
             "Имя оператора, взявшего в работу": "Наталья",
             "Комментарии:": null
@@ -6257,9 +6263,9 @@
     },
     "2026-07": {
       "kpi": {
-        "total": 140,
+        "total": 142,
         "pcp": 60,
-        "nekv": 80,
+        "nekv": 82,
         "zapis": 29,
         "prishel": 8,
         "neprishel": 8,
@@ -6267,7 +6273,7 @@
         "perezap": 1,
         "active_zapis": 13,
         "otval_zapis": 8,
-        "conv_pcp": 42.9,
+        "conv_pcp": 42.3,
         "conv_zapis_from_pcp": 48.3,
         "conv_prishel_from_zapis": 27.6,
         "sum_payment": 0,
@@ -6280,14 +6286,14 @@
         "only_payment_sum": 0,
         "only_payment_count": 0,
         "refusals_total": 10,
-        "neaktual_total": 33,
+        "neaktual_total": 34,
         "ad_spend": null,
         "drr": null
       },
       "status_counts": {
-        "неактуал": 33,
+        "неактуал": 34,
         "запись в клинику": 29,
-        "недозвон": 28,
+        "недозвон": 29,
         "в работе / переговорах": 25,
         "ОТКАЗ": 10,
         "отложенный спрос": 6,
@@ -6354,9 +6360,9 @@
           "patients_no_dep": 0
         },
         "Наталья": {
-          "total": 25,
+          "total": 26,
           "pcp": 9,
-          "nekv": 16,
+          "nekv": 17,
           "zapis": 7,
           "prishel": 1,
           "otval": 1,
@@ -6410,9 +6416,9 @@
           "patients_no_dep": 0
         },
         "—": {
-          "total": 10,
+          "total": 11,
           "pcp": 4,
-          "nekv": 6,
+          "nekv": 7,
           "zapis": 1,
           "prishel": 0,
           "otval": 0,
@@ -6692,7 +6698,7 @@
       "refusal_categories": [
         {
           "cat": "Другое",
-          "count": 43,
+          "count": 44,
           "share": 100.0,
           "items": [
             {
@@ -6949,6 +6955,12 @@
             },
             {
               "Имя:": "Светлана ",
+              "Статус:": "неактуал",
+              "Имя оператора, взявшего в работу": "Наталья",
+              "Комментарии:": null
+            },
+            {
+              "Имя:": "Антон",
               "Статус:": "неактуал",
               "Имя оператора, взявшего в работу": "Наталья",
               "Комментарии:": null
