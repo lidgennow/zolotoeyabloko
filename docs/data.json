@@ -1,9 +1,9 @@
 {
   "period": {
     "date_min": "2026-04-11",
-    "date_max": "2026-07-26"
+    "date_max": "2026-07-27"
   },
-  "generated_at": "2026-07-27T03:46:56Z",
+  "generated_at": "2026-07-27T07:39:26Z",
   "months": [
     {
       "key": "2026-04",
@@ -23,14 +23,14 @@
     {
       "key": "2026-07",
       "label": "Июль 2026",
-      "count": 207
+      "count": 208
     }
   ],
   "all": {
     "kpi": {
-      "total": 983,
+      "total": 982,
       "pcp": 376,
-      "nekv": 607,
+      "nekv": 606,
       "zapis": 183,
       "prishel": 69,
       "neprishel": 48,
@@ -65,7 +65,7 @@
       "отложенный спрос": 35,
       "ндз финал": 25,
       "Другой город": 6,
-      "—": 5
+      "—": 4
     },
     "operator_stats": {
       "Ардашева": {
@@ -111,13 +111,13 @@
         "patients_no_dep": 0
       },
       "Лена": {
-        "total": 306,
-        "pcp": 124,
-        "nekv": 182,
-        "zapis": 62,
+        "total": 308,
+        "pcp": 125,
+        "nekv": 183,
+        "zapis": 63,
         "prishel": 32,
         "otval": 17,
-        "active": 13,
+        "active": 14,
         "payment": 641843,
         "plan_with_dep": 695925,
         "plan_no_dep": 0,
@@ -251,13 +251,13 @@
         "patients_no_dep": 0
       },
       "—": {
-        "total": 59,
-        "pcp": 17,
-        "nekv": 42,
-        "zapis": 3,
+        "total": 56,
+        "pcp": 16,
+        "nekv": 40,
+        "zapis": 2,
         "prishel": 0,
         "otval": 1,
-        "active": 2,
+        "active": 1,
         "payment": 0,
         "plan_with_dep": 0,
         "plan_no_dep": 0,
@@ -1948,10 +1948,10 @@
         "Комментарии:": null
       },
       {
-        "Имя:": null,
-        "Дата записи": null,
+        "Имя:": "Наталья",
+        "Дата записи": "31.07 НА 12.30",
         "Явка:": null,
-        "Имя оператора, взявшего в работу": null,
+        "Имя оператора, взявшего в работу": "Лена",
         "payment": 0,
         "plan_total": 0,
         "Комментарии:": null
@@ -6581,19 +6581,19 @@
     },
     "2026-07": {
       "kpi": {
-        "total": 207,
-        "pcp": 101,
+        "total": 208,
+        "pcp": 102,
         "nekv": 106,
-        "zapis": 52,
+        "zapis": 53,
         "prishel": 14,
         "neprishel": 14,
         "otmena": 0,
         "perezap": 2,
-        "active_zapis": 24,
+        "active_zapis": 25,
         "otval_zapis": 14,
-        "conv_pcp": 48.8,
-        "conv_zapis_from_pcp": 51.5,
-        "conv_prishel_from_zapis": 26.9,
+        "conv_pcp": 49.0,
+        "conv_zapis_from_pcp": 52.0,
+        "conv_prishel_from_zapis": 26.4,
         "sum_payment": 0,
         "sum_plan": 0,
         "plan_with_dep_sum": 0,
@@ -6609,7 +6609,7 @@
         "drr": null
       },
       "status_counts": {
-        "запись в клинику": 52,
+        "запись в клинику": 53,
         "неактуал": 41,
         "в работе / переговорах": 37,
         "недозвон": 37,
@@ -6650,13 +6650,13 @@
           "patients_no_dep": 0
         },
         "Лена": {
-          "total": 57,
-          "pcp": 25,
-          "nekv": 32,
-          "zapis": 14,
+          "total": 59,
+          "pcp": 26,
+          "nekv": 33,
+          "zapis": 15,
           "prishel": 6,
           "otval": 4,
-          "active": 4,
+          "active": 5,
           "payment": 0,
           "plan_with_dep": 0,
           "plan_no_dep": 0,
@@ -6748,9 +6748,9 @@
           "patients_no_dep": 0
         },
         "—": {
-          "total": 14,
+          "total": 13,
           "pcp": 5,
-          "nekv": 9,
+          "nekv": 8,
           "zapis": 1,
           "prishel": 0,
           "otval": 0,
@@ -7229,6 +7229,15 @@
           "Дата записи": null,
           "Явка:": null,
           "Имя оператора, взявшего в работу": "Наталья",
+          "payment": 0,
+          "plan_total": 0,
+          "Комментарии:": null
+        },
+        {
+          "Имя:": "Наталья",
+          "Дата записи": "31.07 НА 12.30",
+          "Явка:": null,
+          "Имя оператора, взявшего в работу": "Лена",
           "payment": 0,
           "plan_total": 0,
           "Комментарии:": null
