@@ -3,7 +3,7 @@
     "date_min": "2026-04-11",
     "date_max": "2026-07-29"
   },
-  "generated_at": "2026-07-29T06:37:55Z",
+  "generated_at": "2026-07-29T09:42:28Z",
   "months": [
     {
       "key": "2026-04",
@@ -23,14 +23,14 @@
     {
       "key": "2026-07",
       "label": "Июль 2026",
-      "count": 219
+      "count": 226
     }
   ],
   "all": {
     "kpi": {
-      "total": 993,
-      "pcp": 384,
-      "nekv": 609,
+      "total": 1000,
+      "pcp": 386,
+      "nekv": 614,
       "zapis": 187,
       "prishel": 70,
       "neprishel": 49,
@@ -38,8 +38,8 @@
       "perezap": 20,
       "active_zapis": 62,
       "otval_zapis": 55,
-      "conv_pcp": 38.7,
-      "conv_zapis_from_pcp": 48.7,
+      "conv_pcp": 38.6,
+      "conv_zapis_from_pcp": 48.4,
       "conv_prishel_from_zapis": 37.4,
       "sum_payment": 776210,
       "sum_plan": 927833,
@@ -50,17 +50,17 @@
       "plan_no_dep_count": 0,
       "only_payment_sum": 0,
       "only_payment_count": 0,
-      "refusals_total": 104,
-      "neaktual_total": 163,
+      "refusals_total": 105,
+      "neaktual_total": 164,
       "ad_spend": 930000,
       "drr": 20.6
     },
     "status_counts": {
-      "недозвон": 261,
+      "недозвон": 264,
       "запись в клинику": 187,
-      "неактуал": 163,
-      "в работе / переговорах": 162,
-      "ОТКАЗ": 104,
+      "неактуал": 164,
+      "в работе / переговорах": 164,
+      "ОТКАЗ": 105,
       "дубль": 47,
       "отложенный спрос": 35,
       "ндз финал": 25,
@@ -138,6 +138,20 @@
         "patients_with_dep": 0,
         "patients_no_dep": 0
       },
+      "Наталбя": {
+        "total": 1,
+        "pcp": 0,
+        "nekv": 1,
+        "zapis": 0,
+        "prishel": 0,
+        "otval": 0,
+        "active": 0,
+        "payment": 0,
+        "plan_with_dep": 0,
+        "plan_no_dep": 0,
+        "patients_with_dep": 0,
+        "patients_no_dep": 0
+      },
       "Наталь": {
         "total": 1,
         "pcp": 0,
@@ -153,9 +167,9 @@
         "patients_no_dep": 0
       },
       "Наталья": {
-        "total": 251,
-        "pcp": 104,
-        "nekv": 147,
+        "total": 257,
+        "pcp": 106,
+        "nekv": 151,
         "zapis": 59,
         "prishel": 21,
         "otval": 18,
@@ -1996,7 +2010,7 @@
     "refusal_categories": [
       {
         "cat": "Другое",
-        "count": 252,
+        "count": 254,
         "share": 94.4,
         "items": [
           {
@@ -3507,6 +3521,18 @@
           },
           {
             "Имя:": "Александр",
+            "Статус:": "неактуал",
+            "Имя оператора, взявшего в работу": "Наталья",
+            "Комментарии:": null
+          },
+          {
+            "Имя:": "Гульнара ",
+            "Статус:": "ОТКАЗ",
+            "Имя оператора, взявшего в работу": "Наталья",
+            "Комментарии:": null
+          },
+          {
+            "Имя:": "Максим",
             "Статус:": "неактуал",
             "Имя оператора, взявшего в работу": "Наталья",
             "Комментарии:": null
@@ -6629,9 +6655,9 @@
     },
     "2026-07": {
       "kpi": {
-        "total": 219,
-        "pcp": 110,
-        "nekv": 109,
+        "total": 226,
+        "pcp": 112,
+        "nekv": 114,
         "zapis": 57,
         "prishel": 15,
         "neprishel": 15,
@@ -6639,8 +6665,8 @@
         "perezap": 2,
         "active_zapis": 25,
         "otval_zapis": 17,
-        "conv_pcp": 50.2,
-        "conv_zapis_from_pcp": 51.8,
+        "conv_pcp": 49.6,
+        "conv_zapis_from_pcp": 50.9,
         "conv_prishel_from_zapis": 26.3,
         "sum_payment": 0,
         "sum_plan": 0,
@@ -6651,17 +6677,17 @@
         "plan_no_dep_count": 0,
         "only_payment_sum": 0,
         "only_payment_count": 0,
-        "refusals_total": 12,
-        "neaktual_total": 43,
+        "refusals_total": 13,
+        "neaktual_total": 44,
         "ad_spend": null,
         "drr": null
       },
       "status_counts": {
         "запись в клинику": 57,
-        "неактуал": 43,
-        "в работе / переговорах": 41,
-        "недозвон": 39,
-        "ОТКАЗ": 12,
+        "неактуал": 44,
+        "в работе / переговорах": 43,
+        "недозвон": 42,
+        "ОТКАЗ": 13,
         "отложенный спрос": 12,
         "ндз финал": 8,
         "дубль": 4,
@@ -6711,6 +6737,20 @@
           "patients_with_dep": 0,
           "patients_no_dep": 0
         },
+        "Наталбя": {
+          "total": 1,
+          "pcp": 0,
+          "nekv": 1,
+          "zapis": 0,
+          "prishel": 0,
+          "otval": 0,
+          "active": 0,
+          "payment": 0,
+          "plan_with_dep": 0,
+          "plan_no_dep": 0,
+          "patients_with_dep": 0,
+          "patients_no_dep": 0
+        },
         "Наталь": {
           "total": 1,
           "pcp": 0,
@@ -6726,9 +6766,9 @@
           "patients_no_dep": 0
         },
         "Наталья": {
-          "total": 48,
-          "pcp": 23,
-          "nekv": 25,
+          "total": 54,
+          "pcp": 25,
+          "nekv": 29,
           "zapis": 17,
           "prishel": 4,
           "otval": 4,
@@ -7330,7 +7370,7 @@
       "refusal_categories": [
         {
           "cat": "Другое",
-          "count": 55,
+          "count": 57,
           "share": 100.0,
           "items": [
             {
@@ -7659,6 +7699,18 @@
             },
             {
               "Имя:": "Александр",
+              "Статус:": "неактуал",
+              "Имя оператора, взявшего в работу": "Наталья",
+              "Комментарии:": null
+            },
+            {
+              "Имя:": "Гульнара ",
+              "Статус:": "ОТКАЗ",
+              "Имя оператора, взявшего в работу": "Наталья",
+              "Комментарии:": null
+            },
+            {
+              "Имя:": "Максим",
               "Статус:": "неактуал",
               "Имя оператора, взявшего в работу": "Наталья",
               "Комментарии:": null
