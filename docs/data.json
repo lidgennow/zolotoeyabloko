@@ -3,7 +3,7 @@
     "date_min": "2026-04-11",
     "date_max": "2026-08-01"
   },
-  "generated_at": "2026-08-01T10:05:05Z",
+  "generated_at": "2026-08-01T11:43:56Z",
   "months": [
     {
       "key": "2026-04",
@@ -28,14 +28,14 @@
     {
       "key": "2026-08",
       "label": "2026-08",
-      "count": 2
+      "count": 3
     }
   ],
   "all": {
     "kpi": {
-      "total": 1016,
+      "total": 1017,
       "pcp": 401,
-      "nekv": 615,
+      "nekv": 616,
       "zapis": 193,
       "prishel": 71,
       "neprishel": 50,
@@ -43,7 +43,7 @@
       "perezap": 20,
       "active_zapis": 65,
       "otval_zapis": 57,
-      "conv_pcp": 39.5,
+      "conv_pcp": 39.4,
       "conv_zapis_from_pcp": 48.1,
       "conv_prishel_from_zapis": 36.8,
       "sum_payment": 776210,
@@ -56,7 +56,7 @@
       "only_payment_sum": 0,
       "only_payment_count": 0,
       "refusals_total": 104,
-      "neaktual_total": 166,
+      "neaktual_total": 167,
       "ad_spend": 930000,
       "drr": 20.6
     },
@@ -64,7 +64,7 @@
       "недозвон": 263,
       "запись в клинику": 193,
       "в работе / переговорах": 172,
-      "неактуал": 166,
+      "неактуал": 167,
       "ОТКАЗ": 104,
       "дубль": 48,
       "отложенный спрос": 36,
@@ -116,9 +116,9 @@
         "patients_no_dep": 0
       },
       "Лена": {
-        "total": 319,
+        "total": 320,
         "pcp": 135,
-        "nekv": 184,
+        "nekv": 185,
         "zapis": 67,
         "prishel": 32,
         "otval": 18,
@@ -2069,8 +2069,8 @@
     "refusal_categories": [
       {
         "cat": "Другое",
-        "count": 255,
-        "share": 94.4,
+        "count": 256,
+        "share": 94.5,
         "items": [
           {
             "Имя:": "Гульнира ",
@@ -3598,6 +3598,12 @@
           },
           {
             "Имя:": "Наталья ",
+            "Статус:": "неактуал",
+            "Имя оператора, взявшего в работу": "Лена",
+            "Комментарии:": null
+          },
+          {
+            "Имя:": "Александр",
             "Статус:": "неактуал",
             "Имя оператора, взявшего в работу": "Лена",
             "Комментарии:": null
@@ -7846,9 +7852,9 @@
     },
     "2026-08": {
       "kpi": {
-        "total": 2,
+        "total": 3,
         "pcp": 2,
-        "nekv": 0,
+        "nekv": 1,
         "zapis": 0,
         "prishel": 0,
         "neprishel": 0,
@@ -7856,7 +7862,7 @@
         "perezap": 0,
         "active_zapis": 0,
         "otval_zapis": 0,
-        "conv_pcp": 100.0,
+        "conv_pcp": 66.7,
         "conv_zapis_from_pcp": 0.0,
         "conv_prishel_from_zapis": 0,
         "sum_payment": 0,
@@ -7869,19 +7875,20 @@
         "only_payment_sum": 0,
         "only_payment_count": 0,
         "refusals_total": 0,
-        "neaktual_total": 0,
+        "neaktual_total": 1,
         "ad_spend": null,
         "drr": null
       },
       "status_counts": {
         "отложенный спрос": 1,
-        "в работе / переговорах": 1
+        "в работе / переговорах": 1,
+        "неактуал": 1
       },
       "operator_stats": {
         "Лена": {
-          "total": 2,
+          "total": 3,
           "pcp": 2,
-          "nekv": 0,
+          "nekv": 1,
           "zapis": 0,
           "prishel": 0,
           "otval": 0,
@@ -7896,7 +7903,21 @@
       "plans_with_deposit": [],
       "plans_without_deposit": [],
       "appointments": [],
-      "refusal_categories": []
+      "refusal_categories": [
+        {
+          "cat": "Другое",
+          "count": 1,
+          "share": 100.0,
+          "items": [
+            {
+              "Имя:": "Александр",
+              "Статус:": "неактуал",
+              "Имя оператора, взявшего в работу": "Лена",
+              "Комментарии:": null
+            }
+          ]
+        }
+      ]
     }
   }
 }
