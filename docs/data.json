@@ -3,7 +3,7 @@
     "date_min": "2026-04-11",
     "date_max": "2026-08-03"
   },
-  "generated_at": "2026-08-04T09:22:27Z",
+  "generated_at": "2026-08-04T11:41:01Z",
   "months": [
     {
       "key": "2026-04",
@@ -172,8 +172,8 @@
         "patients_no_dep": 0
       },
       "Наталья": {
-        "total": 265,
-        "pcp": 114,
+        "total": 266,
+        "pcp": 115,
         "nekv": 151,
         "zapis": 65,
         "prishel": 21,
@@ -200,9 +200,9 @@
         "patients_no_dep": 0
       },
       "Наталья А": {
-        "total": 156,
+        "total": 157,
         "pcp": 58,
-        "nekv": 98,
+        "nekv": 99,
         "zapis": 24,
         "prishel": 6,
         "otval": 8,
@@ -270,9 +270,9 @@
         "patients_no_dep": 0
       },
       "—": {
-        "total": 57,
-        "pcp": 16,
-        "nekv": 41,
+        "total": 55,
+        "pcp": 15,
+        "nekv": 40,
         "zapis": 2,
         "prishel": 0,
         "otval": 1,
@@ -7992,8 +7992,8 @@
           "patients_no_dep": 0
         },
         "Наталья": {
-          "total": 6,
-          "pcp": 3,
+          "total": 7,
+          "pcp": 4,
           "nekv": 3,
           "zapis": 2,
           "prishel": 0,
@@ -8006,23 +8006,9 @@
           "patients_no_dep": 0
         },
         "Наталья А": {
-          "total": 1,
-          "pcp": 0,
-          "nekv": 1,
-          "zapis": 0,
-          "prishel": 0,
-          "otval": 0,
-          "active": 0,
-          "payment": 0,
-          "plan_with_dep": 0,
-          "plan_no_dep": 0,
-          "patients_with_dep": 0,
-          "patients_no_dep": 0
-        },
-        "—": {
           "total": 2,
-          "pcp": 1,
-          "nekv": 1,
+          "pcp": 0,
+          "nekv": 2,
           "zapis": 0,
           "prishel": 0,
           "otval": 0,
