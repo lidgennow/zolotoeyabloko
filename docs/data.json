@@ -1,9 +1,9 @@
 {
   "period": {
     "date_min": "2026-04-11",
-    "date_max": "2026-08-03"
+    "date_max": "2026-08-05"
   },
-  "generated_at": "2026-08-05T06:07:34Z",
+  "generated_at": "2026-08-05T08:23:44Z",
   "months": [
     {
       "key": "2026-04",
@@ -28,14 +28,14 @@
     {
       "key": "2026-08",
       "label": "Август 2026",
-      "count": 12
+      "count": 41
     }
   ],
   "all": {
     "kpi": {
-      "total": 1026,
+      "total": 1055,
       "pcp": 405,
-      "nekv": 621,
+      "nekv": 650,
       "zapis": 197,
       "prishel": 71,
       "neprishel": 50,
@@ -43,12 +43,12 @@
       "perezap": 20,
       "active_zapis": 69,
       "otval_zapis": 57,
-      "conv_pcp": 39.5,
+      "conv_pcp": 38.4,
       "conv_zapis_from_pcp": 48.6,
       "conv_prishel_from_zapis": 36.0,
       "sum_payment": 776210,
       "sum_plan": 927833,
-      "plan_with_dep_sum": 4504112,
+      "plan_with_dep_sum": 6667670,
       "plan_with_dep_count": 4,
       "plan_with_dep_paid": 776210,
       "plan_no_dep_sum": 0,
@@ -57,8 +57,8 @@
       "only_payment_count": 0,
       "refusals_total": 104,
       "neaktual_total": 170,
-      "ad_spend": 930000,
-      "drr": 20.6
+      "ad_spend": 1272600,
+      "drr": 19.1
     },
     "status_counts": {
       "недозвон": 265,
@@ -68,9 +68,9 @@
       "ОТКАЗ": 104,
       "дубль": 48,
       "отложенный спрос": 36,
+      "—": 32,
       "ндз финал": 25,
-      "Другой город": 6,
-      "—": 3
+      "Другой город": 6
     },
     "operator_stats": {
       "Ардашева": {
@@ -270,9 +270,9 @@
         "patients_no_dep": 0
       },
       "—": {
-        "total": 55,
+        "total": 84,
         "pcp": 15,
-        "nekv": 40,
+        "nekv": 69,
         "zapis": 2,
         "prishel": 0,
         "otval": 1,
@@ -6795,7 +6795,7 @@
         "conv_prishel_from_zapis": 24.6,
         "sum_payment": 0,
         "sum_plan": 0,
-        "plan_with_dep_sum": 0,
+        "plan_with_dep_sum": 2163558,
         "plan_with_dep_count": 0,
         "plan_with_dep_paid": 0,
         "plan_no_dep_sum": 0,
@@ -6804,8 +6804,8 @@
         "only_payment_count": 0,
         "refusals_total": 12,
         "neaktual_total": 49,
-        "ad_spend": null,
-        "drr": null
+        "ad_spend": 342600,
+        "drr": 15.8
       },
       "status_counts": {
         "запись в клинику": 65,
@@ -7942,9 +7942,9 @@
     },
     "2026-08": {
       "kpi": {
-        "total": 12,
+        "total": 41,
         "pcp": 6,
-        "nekv": 6,
+        "nekv": 35,
         "zapis": 2,
         "prishel": 0,
         "neprishel": 0,
@@ -7952,7 +7952,7 @@
         "perezap": 0,
         "active_zapis": 2,
         "otval_zapis": 0,
-        "conv_pcp": 50.0,
+        "conv_pcp": 14.6,
         "conv_zapis_from_pcp": 33.3,
         "conv_prishel_from_zapis": 0.0,
         "sum_payment": 0,
@@ -7970,6 +7970,7 @@
         "drr": null
       },
       "status_counts": {
+        "—": 29,
         "недозвон": 5,
         "в работе / переговорах": 3,
         "запись в клинику": 2,
@@ -8009,6 +8010,20 @@
           "total": 2,
           "pcp": 0,
           "nekv": 2,
+          "zapis": 0,
+          "prishel": 0,
+          "otval": 0,
+          "active": 0,
+          "payment": 0,
+          "plan_with_dep": 0,
+          "plan_no_dep": 0,
+          "patients_with_dep": 0,
+          "patients_no_dep": 0
+        },
+        "—": {
+          "total": 29,
+          "pcp": 0,
+          "nekv": 29,
           "zapis": 0,
           "prishel": 0,
           "otval": 0,
