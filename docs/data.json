@@ -3,7 +3,7 @@
     "date_min": "2026-04-11",
     "date_max": "2026-08-06"
   },
-  "generated_at": "2026-08-06T12:27:10Z",
+  "generated_at": "2026-08-06T14:56:37Z",
   "months": [
     {
       "key": "2026-04",
@@ -28,14 +28,14 @@
     {
       "key": "2026-08",
       "label": "Август 2026",
-      "count": 64
+      "count": 67
     }
   ],
   "all": {
     "kpi": {
-      "total": 1078,
+      "total": 1081,
       "pcp": 431,
-      "nekv": 647,
+      "nekv": 650,
       "zapis": 211,
       "prishel": 74,
       "neprishel": 50,
@@ -43,7 +43,7 @@
       "perezap": 20,
       "active_zapis": 80,
       "otval_zapis": 57,
-      "conv_pcp": 40.0,
+      "conv_pcp": 39.9,
       "conv_zapis_from_pcp": 49.0,
       "conv_prishel_from_zapis": 35.1,
       "sum_payment": 776210,
@@ -70,7 +70,7 @@
       "отложенный спрос": 38,
       "ндз финал": 25,
       "Другой город": 6,
-      "—": 3
+      "—": 6
     },
     "operator_stats": {
       "Ардашева": {
@@ -284,9 +284,9 @@
         "patients_no_dep": 0
       },
       "—": {
-        "total": 55,
+        "total": 58,
         "pcp": 15,
-        "nekv": 40,
+        "nekv": 43,
         "zapis": 2,
         "prishel": 0,
         "otval": 1,
@@ -8142,9 +8142,9 @@
     },
     "2026-08": {
       "kpi": {
-        "total": 64,
+        "total": 67,
         "pcp": 32,
-        "nekv": 32,
+        "nekv": 35,
         "zapis": 16,
         "prishel": 3,
         "neprishel": 0,
@@ -8152,7 +8152,7 @@
         "perezap": 0,
         "active_zapis": 13,
         "otval_zapis": 0,
-        "conv_pcp": 50.0,
+        "conv_pcp": 47.8,
         "conv_zapis_from_pcp": 50.0,
         "conv_prishel_from_zapis": 18.8,
         "sum_payment": 0,
@@ -8175,7 +8175,8 @@
         "в работе / переговорах": 13,
         "ОТКАЗ": 6,
         "неактуал": 5,
-        "отложенный спрос": 3
+        "отложенный спрос": 3,
+        "—": 3
       },
       "operator_stats": {
         "Елена": {
@@ -8228,6 +8229,20 @@
           "prishel": 2,
           "otval": 0,
           "active": 3,
+          "payment": 0,
+          "plan_with_dep": 0,
+          "plan_no_dep": 0,
+          "patients_with_dep": 0,
+          "patients_no_dep": 0
+        },
+        "—": {
+          "total": 3,
+          "pcp": 0,
+          "nekv": 3,
+          "zapis": 0,
+          "prishel": 0,
+          "otval": 0,
+          "active": 0,
           "payment": 0,
           "plan_with_dep": 0,
           "plan_no_dep": 0,
