@@ -1,9 +1,9 @@
 {
   "period": {
     "date_min": "2026-04-11",
-    "date_max": "2026-08-06"
+    "date_max": "2026-08-07"
   },
-  "generated_at": "2026-08-07T00:43:04Z",
+  "generated_at": "2026-08-07T03:54:03Z",
   "months": [
     {
       "key": "2026-04",
@@ -28,14 +28,14 @@
     {
       "key": "2026-08",
       "label": "Август 2026",
-      "count": 67
+      "count": 68
     }
   ],
   "all": {
     "kpi": {
-      "total": 1081,
+      "total": 1082,
       "pcp": 431,
-      "nekv": 650,
+      "nekv": 651,
       "zapis": 211,
       "prishel": 74,
       "neprishel": 50,
@@ -43,7 +43,7 @@
       "perezap": 20,
       "active_zapis": 80,
       "otval_zapis": 57,
-      "conv_pcp": 39.9,
+      "conv_pcp": 39.8,
       "conv_zapis_from_pcp": 49.0,
       "conv_prishel_from_zapis": 35.1,
       "sum_payment": 776210,
@@ -69,8 +69,8 @@
       "дубль": 48,
       "отложенный спрос": 38,
       "ндз финал": 25,
-      "Другой город": 6,
-      "—": 6
+      "—": 7,
+      "Другой город": 6
     },
     "operator_stats": {
       "Ардашева": {
@@ -284,9 +284,9 @@
         "patients_no_dep": 0
       },
       "—": {
-        "total": 58,
+        "total": 59,
         "pcp": 15,
-        "nekv": 43,
+        "nekv": 44,
         "zapis": 2,
         "prishel": 0,
         "otval": 1,
@@ -8142,9 +8142,9 @@
     },
     "2026-08": {
       "kpi": {
-        "total": 67,
+        "total": 68,
         "pcp": 32,
-        "nekv": 35,
+        "nekv": 36,
         "zapis": 16,
         "prishel": 3,
         "neprishel": 0,
@@ -8152,7 +8152,7 @@
         "perezap": 0,
         "active_zapis": 13,
         "otval_zapis": 0,
-        "conv_pcp": 47.8,
+        "conv_pcp": 47.1,
         "conv_zapis_from_pcp": 50.0,
         "conv_prishel_from_zapis": 18.8,
         "sum_payment": 0,
@@ -8175,8 +8175,8 @@
         "в работе / переговорах": 13,
         "ОТКАЗ": 6,
         "неактуал": 5,
-        "отложенный спрос": 3,
-        "—": 3
+        "—": 4,
+        "отложенный спрос": 3
       },
       "operator_stats": {
         "Елена": {
@@ -8236,9 +8236,9 @@
           "patients_no_dep": 0
         },
         "—": {
-          "total": 3,
+          "total": 4,
           "pcp": 0,
-          "nekv": 3,
+          "nekv": 4,
           "zapis": 0,
           "prishel": 0,
           "otval": 0,
