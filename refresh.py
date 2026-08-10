@@ -127,6 +127,29 @@ def normalize_status(s):
     if s in ("в работе", "в переговорах"): return "в работе / переговорах"
     return s
 
+def normalize_operator(value):
+    """Склеивает варианты имени одного оператора, сохраняя Наталью А отдельно."""
+    if pd.isna(value):
+        return value
+
+    name = re.sub(r"\s+", " ", str(value).strip())
+    folded = name.casefold().replace("ё", "е")
+    tokens = re.findall(r"[а-яa-z]+", folded)
+    compact = "".join(tokens)
+
+    # В таблице встречаются опечатки: Накталья, Наталбя, Натальч,
+    # Наташлья, Натлья. Отдельная конечная «А» обозначает второго оператора.
+    is_natalia = compact.startswith("нат") or compact.startswith("накт")
+    if is_natalia:
+        has_a_marker = len(tokens) > 1 and tokens[-1] in {"а", "a"}
+        return "Наталья А" if has_a_marker else "Наталья"
+
+    # Галя, Галина и их производные — один оператор.
+    if compact.startswith("гал"):
+        return "Галина"
+
+    return name.title()
+
 def compute(g, ad_spend=None):
     total = len(g)
     pcp_mask = g["Статус:"].isin(PCP_STATUSES)
@@ -276,12 +299,9 @@ def main():
     df.to_csv(CSV_PATH, index=False)   # склеенный CSV для отладки
 
     df = df.rename(columns={"продажа": "Чек"})
-    # Нормализуем имена операторов: ЛЕНА/лена/Лена → Лена, Наталья Ш → Наталья
-    OPERATOR_MAP = {"Наталья Ш": "Наталья"}
+    # Нормализуем регистр, опечатки и варианты имён до расчёта всех показателей.
     df["Имя оператора, взявшего в работу"] = (
-        df["Имя оператора, взявшего в работу"]
-        .str.strip().str.title()
-        .replace(OPERATOR_MAP)
+        df["Имя оператора, взявшего в работу"].apply(normalize_operator)
     )
     parsed = df["Чек"].apply(lambda s: pd.Series(parse_payment_plan(s), index=["payment","plan_total"]))
     df["payment"]    = parsed["payment"]
