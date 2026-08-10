@@ -7,26 +7,26 @@ const dateFormatter = new Intl.DateTimeFormat("ru-RU", {
 });
 
 const STATUS_COLORS = {
-  "запись в клинику": "#4f8b68",
-  "в работе / переговорах": "#82aa92",
-  "ОТКАЗ": "#b96a70",
-  "ндз финал": "#c6924d",
-  "неактуал": "#b39a75",
-  "отложенный спрос": "#83aaa6",
-  "недозвон": "#71958a",
-  "дубль": "#aebdb4",
-  "Другой город": "#90a19a",
-  "—": "#c5d1ca"
+  "запись в клинику": "#72c58d",
+  "в работе / переговорах": "#8bb9a0",
+  "ОТКАЗ": "#df7d86",
+  "ндз финал": "#d6a258",
+  "неактуал": "#c3a977",
+  "отложенный спрос": "#79aaa6",
+  "недозвон": "#679885",
+  "дубль": "#8fa69a",
+  "Другой город": "#71887d",
+  "—": "#536b60"
 };
 
 const REFUSAL_COLORS = {
-  "Не актуально / не нужно": "#8eab98",
-  "Цена / финансы": "#b96a70",
-  "Не оставлял заявку": "#c6924d",
-  "Уже лечится": "#6e9d94",
-  "Медицинские причины": "#6f987c",
-  "Технические/мусор": "#9aaba1",
-  "Другое": "#a7b7ad"
+  "Не актуально / не нужно": "#8fbea0",
+  "Цена / финансы": "#df7d86",
+  "Не оставлял заявку": "#d6a258",
+  "Уже лечится": "#75aaa2",
+  "Медицинские причины": "#72b58a",
+  "Технические/мусор": "#789085",
+  "Другое": "#96ab9f"
 };
 
 let DATA = null;
@@ -409,7 +409,7 @@ function renderStatus() {
   const total = entries.reduce(function (sum, entry) {
     return sum + Number(entry[1] || 0);
   }, 0);
-  const fallbackColors = ["#5f9172", "#88a896", "#b29d7b", "#769e99", "#a6b4ab"];
+  const fallbackColors = ["#72b58a", "#8fbea0", "#d2ad70", "#75aaa2", "#879c91"];
   const colors = entries.map(function (entry, index) {
     return STATUS_COLORS[entry[0]] || fallbackColors[index % fallbackColors.length];
   });
@@ -432,6 +432,8 @@ function renderStatus() {
     return;
   }
   document.querySelector(".chart-wrap").style.display = "";
+  const chartSurface = getComputedStyle(document.documentElement)
+    .getPropertyValue("--surface").trim() || "#13241e";
   statusChart = new Chart(document.getElementById("chStatus"), {
     type: "doughnut",
     data: {
@@ -439,7 +441,7 @@ function renderStatus() {
       datasets: [{
         data: entries.map(function (entry) { return entry[1]; }),
         backgroundColor: colors,
-        borderColor: "#ffffff",
+        borderColor: chartSurface,
         borderWidth: 3,
         hoverOffset: 5
       }]

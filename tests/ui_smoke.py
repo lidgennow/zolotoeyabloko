@@ -24,7 +24,8 @@ with sync_playwright() as playwright:
 
     page.goto("http://127.0.0.1:8765")
     page.wait_for_load_state("networkidle")
-    expect(page).to_have_title("Пульс месяца — «Золотое Яблоко», Омск")
+    expect(page).to_have_title("Пульс месяца — Омск")
+    expect(page.locator(".brand")).not_to_contain_text("Золотое Яблоко")
     expect(page.locator("#monthFilter button")).to_have_count(6)
     expect(page.locator(".kpi-card")).to_have_count(8)
     expect(page.locator("#monthFilter button.active")).to_have_count(1)
