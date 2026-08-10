@@ -653,10 +653,6 @@ function renderOperators() {
   const leader = Object.entries(currentSlice.operator_stats || {}).sort(function (a, b) {
     return Number(b[1].zapis || 0) - Number(a[1].zapis || 0);
   })[0];
-  document.getElementById("operatorInsight").textContent = leader
-    ? fmt(entries.length) + " операторов · цвет — позиция внутри команды"
-    : "Нет данных по операторам";
-
   const header = columns.map(function (column) {
     const active = column.key === sortState.key;
     const ariaSort = active ? (sortState.direction === 1 ? "ascending" : "descending") : "none";
@@ -852,7 +848,32 @@ function loadData() {
     });
 }
 
+function applyTheme(theme, persist) {
+  const selected = theme === "dark" ? "dark" : "light";
+  const isDark = selected === "dark";
+  document.documentElement.dataset.theme = selected;
+
+  const toggle = document.getElementById("themeToggle");
+  toggle.setAttribute("aria-pressed", String(isDark));
+  toggle.setAttribute("aria-label", isDark ? "Включить светлую тему" : "Включить тёмную тему");
+  toggle.querySelector(".theme-symbol").textContent = isDark ? "☀" : "☾";
+  document.getElementById("themeToggleLabel").textContent = isDark ? "Светлая" : "Тёмная";
+  document.getElementById("themeColor").setAttribute("content", isDark ? "#0b1713" : "#eef5f0");
+
+  if (persist) localStorage.setItem("dashboardTheme", selected);
+  if (statusChart && currentSlice) renderStatus();
+}
+
+function initTheme() {
+  const initial = document.documentElement.dataset.theme === "dark" ? "dark" : "light";
+  applyTheme(initial, false);
+  document.getElementById("themeToggle").addEventListener("click", function () {
+    applyTheme(document.documentElement.dataset.theme === "dark" ? "light" : "dark", true);
+  });
+}
+
 function init() {
+  initTheme();
   renderSkeletons();
   document.getElementById("appointmentSearch").addEventListener("input", function () {
     if (currentSlice) renderAppointments();

@@ -29,6 +29,14 @@ with sync_playwright() as playwright:
     page.goto("http://127.0.0.1:8765")
     page.wait_for_load_state("networkidle")
     expect(page).to_have_title("Пульс месяца — Омск")
+    expect(page.locator("html")).to_have_attribute("data-theme", "light")
+    expect(page.locator("#themeToggle")).to_be_visible()
+    expect(page.locator("#themeToggleLabel")).to_have_text("Тёмная")
+    page.locator("#themeToggle").click()
+    expect(page.locator("html")).to_have_attribute("data-theme", "dark")
+    expect(page.locator("#themeToggleLabel")).to_have_text("Светлая")
+    page.locator("#themeToggle").click()
+    expect(page.locator("html")).to_have_attribute("data-theme", "light")
     expect(page.locator(".brand")).not_to_contain_text("Золотое Яблоко")
     expect(page.locator("#monthFilter button")).to_have_count(EXPECTED_MONTH_BUTTONS)
     expect(page.locator(".kpi-card")).to_have_count(8)
@@ -40,6 +48,8 @@ with sync_playwright() as playwright:
     )
     assert page.locator("#operatorHeatmap .heat-cell").count() > 0
     assert page.locator("#operatorHeatmap .low-sample").count() > 0
+    expect(page.locator(".heatmap-legend")).to_have_count(0)
+    expect(page.locator(".operator-details-heading span")).to_have_count(0)
     page.locator(".comparison-section").screenshot(
         path=OUTPUT_DIR / "comparison.png"
     )
@@ -53,6 +63,13 @@ with sync_playwright() as playwright:
     expect(page.locator("#heroTotal")).to_have_text(
         f"{EXPECTED_TOTAL:,}".replace(",", " "), timeout=2_000
     )
+    operator_names = set(
+        page.locator("#ops tbody tr td:first-child strong").all_inner_texts()
+    )
+    assert "Лена" in operator_names
+    assert "Елена" not in operator_names
+    assert "Галина" in operator_names
+    assert "Галя" not in operator_names
 
     page.locator("#ops [data-sort='zapis']").click()
     expect(page.locator("#ops th").nth(3)).to_have_attribute("aria-sort", "descending")
@@ -72,6 +89,9 @@ with sync_playwright() as playwright:
     mobile.wait_for_load_state("networkidle")
     expect(mobile.locator(".kpi-card")).to_have_count(8)
     expect(mobile.locator("#monthFilter button")).to_have_count(EXPECTED_MONTH_BUTTONS)
+    expect(mobile.locator("html")).to_have_attribute("data-theme", "light")
+    expect(mobile.locator("#themeToggle")).to_be_visible()
+    expect(mobile.locator(".heatmap-legend")).to_have_count(0)
     body_widths = mobile.evaluate(
         "() => ({scroll: document.documentElement.scrollWidth, client: document.documentElement.clientWidth})"
     )

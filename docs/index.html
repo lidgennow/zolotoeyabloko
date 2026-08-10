@@ -3,11 +3,18 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="theme-color" content="#0b1713">
+  <meta id="themeColor" name="theme-color" content="#eef5f0">
   <title>Пульс месяца — Омск</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@500;600&family=Onest:wght@400;500;600;700;800&family=Unbounded:wght@600;700&display=swap" rel="stylesheet">
+  <script>
+    try {
+      document.documentElement.dataset.theme = localStorage.getItem("dashboardTheme") === "dark" ? "dark" : "light";
+    } catch (error) {
+      document.documentElement.dataset.theme = "light";
+    }
+  </script>
   <link rel="stylesheet" href="assets/styles.css">
   <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js" defer></script>
   <script src="assets/app.js" defer></script>
@@ -26,17 +33,23 @@
         </span>
       </a>
 
-      <div class="sync-state" aria-live="polite">
-        <span class="sync-dot" aria-hidden="true"></span>
-        <span>
-          <small>Данные обновлены</small>
-          <strong id="generatedAt">—</strong>
-        </span>
-        <span class="sync-divider" aria-hidden="true"></span>
-        <span class="next-update">
-          <small>Следующее обновление</small>
-          <strong id="nextUpdate">—</strong>
-        </span>
+      <div class="topbar-actions">
+        <button class="theme-toggle" id="themeToggle" type="button" aria-label="Включить тёмную тему" aria-pressed="false">
+          <span class="theme-symbol" aria-hidden="true">☾</span>
+          <span id="themeToggleLabel">Тёмная</span>
+        </button>
+        <div class="sync-state" aria-live="polite">
+          <span class="sync-dot" aria-hidden="true"></span>
+          <span>
+            <small>Данные обновлены</small>
+            <strong id="generatedAt">—</strong>
+          </span>
+          <span class="sync-divider" aria-hidden="true"></span>
+          <span class="next-update">
+            <small>Следующее обновление</small>
+            <strong id="nextUpdate">—</strong>
+          </span>
+        </div>
       </div>
     </div>
   </header>
@@ -165,22 +178,14 @@
           <div class="section-kicker"><span></span> Команда</div>
           <h2 id="operatorsTitle">Эффективность операторов</h2>
         </div>
-        <p id="operatorInsight">Цвет показывает результат относительно команды</p>
       </div>
       <div class="panel-card heatmap-card">
-        <div class="heatmap-legend" aria-label="Легенда тепловой карты">
-          <span>Слабее</span>
-          <span class="heatmap-gradient" aria-hidden="true"></span>
-          <span>Сильнее</span>
-          <span class="sample-key"><i aria-hidden="true"></i> выборка меньше 5</span>
-        </div>
         <div class="table-scroll heatmap-scroll">
           <table id="operatorHeatmap" aria-label="Тепловая карта операторов"></table>
         </div>
       </div>
       <div class="operator-details-heading">
         <strong>Подробные показатели</strong>
-        <span>Нажмите на заголовок, чтобы изменить сортировку</span>
       </div>
       <div class="panel-card table-card operator-table-card">
         <div class="table-scroll">

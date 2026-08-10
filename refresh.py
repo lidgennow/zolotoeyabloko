@@ -148,6 +148,10 @@ def normalize_operator(value):
     if compact.startswith("гал"):
         return "Галина"
 
+    # Лена и Елена — один оператор.
+    if compact.startswith("лен") or compact.startswith("елен"):
+        return "Лена"
+
     return name.title()
 
 def compute(g, ad_spend=None):

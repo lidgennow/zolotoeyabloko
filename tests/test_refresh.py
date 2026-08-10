@@ -41,8 +41,15 @@ class NormalizeOperatorTest(unittest.TestCase):
             ["Галина"] * len(variants),
         )
 
+    def test_lena_and_elena_are_one_operator(self):
+        variants = ["Лена", "лена", "Елена", "елена"]
+        self.assertEqual(
+            [normalize_operator(value) for value in variants],
+            ["Лена"] * len(variants),
+        )
+
     def test_other_names_and_empty_values_are_preserved(self):
-        self.assertEqual(normalize_operator("  елена  "), "Елена")
+        self.assertEqual(normalize_operator("  ардашева  "), "Ардашева")
         self.assertEqual(normalize_operator("—"), "—")
         self.assertIsNone(normalize_operator(None))
         self.assertTrue(math.isnan(normalize_operator(float("nan"))))
