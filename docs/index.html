@@ -15,9 +15,9 @@
       document.documentElement.dataset.theme = "light";
     }
   </script>
-  <link rel="stylesheet" href="assets/styles.css">
+  <link rel="stylesheet" href="assets/styles.css?v=20260810-3">
   <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js" defer></script>
-  <script src="assets/app.js" defer></script>
+  <script src="assets/app.js?v=20260810-3" defer></script>
 </head>
 <body>
   <a class="skip-link" href="#main">К содержанию</a>
@@ -34,10 +34,10 @@
       </a>
 
       <div class="topbar-actions">
-        <button class="theme-toggle" id="themeToggle" type="button" aria-label="Включить тёмную тему" aria-pressed="false">
-          <span class="theme-symbol" aria-hidden="true">☾</span>
-          <span id="themeToggleLabel">Тёмная</span>
-        </button>
+        <div class="theme-switch" role="group" aria-label="Тема оформления">
+          <button class="theme-option" id="themeLight" type="button" data-theme-choice="light" aria-pressed="true">Светлая</button>
+          <button class="theme-option" id="themeDark" type="button" data-theme-choice="dark" aria-pressed="false">Тёмная</button>
+        </div>
         <div class="sync-state" aria-live="polite">
           <span class="sync-dot" aria-hidden="true"></span>
           <span>

@@ -30,12 +30,15 @@ with sync_playwright() as playwright:
     page.wait_for_load_state("networkidle")
     expect(page).to_have_title("Пульс месяца — Омск")
     expect(page.locator("html")).to_have_attribute("data-theme", "light")
-    expect(page.locator("#themeToggle")).to_be_visible()
-    expect(page.locator("#themeToggleLabel")).to_have_text("Тёмная")
-    page.locator("#themeToggle").click()
+    expect(page.locator(".theme-option")).to_have_count(2)
+    expect(page.locator("#themeLight")).to_be_visible()
+    expect(page.locator("#themeDark")).to_be_visible()
+    expect(page.locator("#themeLight")).to_have_attribute("aria-pressed", "true")
+    expect(page.locator("#themeDark")).to_have_attribute("aria-pressed", "false")
+    page.locator("#themeDark").click()
     expect(page.locator("html")).to_have_attribute("data-theme", "dark")
-    expect(page.locator("#themeToggleLabel")).to_have_text("Светлая")
-    page.locator("#themeToggle").click()
+    expect(page.locator("#themeDark")).to_have_attribute("aria-pressed", "true")
+    page.locator("#themeLight").click()
     expect(page.locator("html")).to_have_attribute("data-theme", "light")
     expect(page.locator(".brand")).not_to_contain_text("Золотое Яблоко")
     expect(page.locator("#monthFilter button")).to_have_count(EXPECTED_MONTH_BUTTONS)
@@ -82,6 +85,17 @@ with sync_playwright() as playwright:
     expect(page.locator(".refusal-group").first).to_have_attribute("open", "")
     page.screenshot(path=OUTPUT_DIR / "desktop.png", full_page=True)
 
+    assert not console_errors, console_errors
+    assert not page_errors, page_errors
+    page.route("**/data.json*", lambda route: route.abort())
+    page.evaluate("loadData()")
+    page.wait_for_timeout(1_800)
+    expect(page.locator("#nextUpdate")).to_have_text("повтор через 2 мин")
+    assert "visible" not in page.locator("#toast").get_attribute("class").split()
+    page.unroute("**/data.json*")
+    assert all("ERR_FAILED" in error for error in console_errors), console_errors
+    console_errors.clear()
+
     mobile = browser.new_page(viewport={"width": 390, "height": 844})
     mobile_errors = []
     mobile.on("pageerror", lambda error: mobile_errors.append(str(error)))
@@ -90,7 +104,8 @@ with sync_playwright() as playwright:
     expect(mobile.locator(".kpi-card")).to_have_count(8)
     expect(mobile.locator("#monthFilter button")).to_have_count(EXPECTED_MONTH_BUTTONS)
     expect(mobile.locator("html")).to_have_attribute("data-theme", "light")
-    expect(mobile.locator("#themeToggle")).to_be_visible()
+    expect(mobile.locator("#themeLight")).to_be_visible()
+    expect(mobile.locator("#themeDark")).to_be_visible()
     expect(mobile.locator(".heatmap-legend")).to_have_count(0)
     body_widths = mobile.evaluate(
         "() => ({scroll: document.documentElement.scrollWidth, client: document.documentElement.clientWidth})"

@@ -834,7 +834,8 @@ function applyData(data) {
   setActive(initialMonth);
 }
 
-function loadData() {
+function loadData(attempt) {
+  const retryAttempt = Number(attempt || 0);
   fetch("data.json?t=" + Date.now(), { cache: "no-store" })
     .then(function (response) {
       if (!response.ok) throw new Error("HTTP " + response.status);
@@ -842,23 +843,30 @@ function loadData() {
     })
     .then(applyData)
     .catch(function (error) {
+      if (retryAttempt < 1) {
+        countdownTimer = setTimeout(function () { loadData(retryAttempt + 1); }, 1200);
+        return;
+      }
+      if (DATA) {
+        console.warn("Фоновое обновление данных временно недоступно", error);
+        document.getElementById("nextUpdate").textContent = "повтор через 2 мин";
+        countdownTimer = setTimeout(function () { loadData(0); }, 2 * 60 * 1000);
+        return;
+      }
       console.error("Не удалось загрузить data.json", error);
-      document.getElementById("nextUpdate").textContent = "ошибка";
-      showToast("Не удалось загрузить данные. Проверьте data.json и обновите страницу.");
+      document.getElementById("nextUpdate").textContent = "временно недоступно";
+      showToast("Данные временно недоступны. Обновите страницу через минуту.");
     });
 }
 
 function applyTheme(theme, persist) {
   const selected = theme === "dark" ? "dark" : "light";
-  const isDark = selected === "dark";
   document.documentElement.dataset.theme = selected;
 
-  const toggle = document.getElementById("themeToggle");
-  toggle.setAttribute("aria-pressed", String(isDark));
-  toggle.setAttribute("aria-label", isDark ? "Включить светлую тему" : "Включить тёмную тему");
-  toggle.querySelector(".theme-symbol").textContent = isDark ? "☀" : "☾";
-  document.getElementById("themeToggleLabel").textContent = isDark ? "Светлая" : "Тёмная";
-  document.getElementById("themeColor").setAttribute("content", isDark ? "#0b1713" : "#eef5f0");
+  document.querySelectorAll("[data-theme-choice]").forEach(function (button) {
+    button.setAttribute("aria-pressed", String(button.dataset.themeChoice === selected));
+  });
+  document.getElementById("themeColor").setAttribute("content", selected === "dark" ? "#0b1713" : "#eef5f0");
 
   if (persist) localStorage.setItem("dashboardTheme", selected);
   if (statusChart && currentSlice) renderStatus();
@@ -867,8 +875,10 @@ function applyTheme(theme, persist) {
 function initTheme() {
   const initial = document.documentElement.dataset.theme === "dark" ? "dark" : "light";
   applyTheme(initial, false);
-  document.getElementById("themeToggle").addEventListener("click", function () {
-    applyTheme(document.documentElement.dataset.theme === "dark" ? "light" : "dark", true);
+  document.querySelectorAll("[data-theme-choice]").forEach(function (button) {
+    button.addEventListener("click", function () {
+      applyTheme(button.dataset.themeChoice, true);
+    });
   });
 }
 
