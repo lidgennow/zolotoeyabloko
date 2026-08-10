@@ -1,773 +1,215 @@
 <!doctype html>
 <html lang="ru">
 <head>
-<meta charset="utf-8">
-<title>Дашборд КЦ — «Золотое Яблоко», Омск</title>
-<script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js"></script>
-<style>
-  /* ===== DARK THEME (default) ===== */
-  :root {
-    --bg:#0f172a; --card:#1e293b; --card2:#0f172a; --muted:#94a3b8; --text:#e2e8f0;
-    --accent:#38bdf8; --good:#22c55e; --bad:#ef4444; --warn:#f59e0b;
-    --border:#334155;
-  }
-  /* ===== LIGHT THEME ===== */
-  :root[data-theme="light"] {
-    --bg:#eef2f7; --card:#f8fafc; --card2:#ffffff; --muted:#64748b; --text:#1e293b;
-    --accent:#0284c7; --good:#16a34a; --bad:#dc2626; --warn:#b45309;
-    --border:#cbd5e1;
-  }
-
-  *{box-sizing:border-box}
-  body{margin:0;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif;
-       background:var(--bg);color:var(--text);padding:24px;padding-top:88px;line-height:1.4;
-       transition:background .2s,color .2s}
-  h1{margin:0 0 4px;font-size:24px}
-  h2{margin:32px 0 12px;font-size:18px;color:var(--accent)}
-  h3{margin:0;font-size:15px;font-weight:600}
-  .sub{color:var(--muted);font-size:13px;margin-bottom:16px}
-
-  /* ===== STICKY SUMMARY BAR ===== */
-  #stickyBar {
-    position:fixed;top:-80px;left:0;right:0;z-index:100;
-    background:var(--card);border-bottom:1px solid var(--border);
-    padding:10px 24px;display:flex;align-items:center;gap:16px;flex-wrap:wrap;
-    transition:top .3s ease,background .2s,border-color .2s;
-    box-shadow:0 2px 12px rgba(0,0,0,.15);
-  }
-  #stickyBar.visible{top:0}
-  .sticky-clinic{font-weight:700;font-size:15px;margin-right:4px;white-space:nowrap}
-  .sticky-metrics{display:flex;gap:14px;flex-wrap:wrap}
-  .sticky-metric{font-size:13px;color:var(--muted)}
-  .sticky-metric b{color:var(--text)}
-  .sticky-filter{display:flex;gap:4px;flex-wrap:wrap;margin-left:auto}
-  .sticky-filter button{
-    background:transparent;color:var(--text);border:1px solid var(--border);
-    padding:4px 10px;border-radius:6px;cursor:pointer;font-size:12px;
-    font-family:inherit;transition:all .15s;
-  }
-  .sticky-filter button:hover{border-color:var(--accent)}
-  .sticky-filter button.active{background:var(--accent);color:#fff;border-color:var(--accent);font-weight:600}
-  :root[data-theme="light"] .sticky-filter button.active{color:#0f172a}
-
-  /* ===== HEADER ===== */
-  .header-row{display:flex;align-items:center;justify-content:space-between;
-              flex-wrap:wrap;gap:12px;margin-bottom:24px}
-  .filter{display:flex;gap:6px;flex-wrap:wrap}
-  .filter button{background:var(--card);color:var(--text);border:1px solid var(--border);
-                 padding:8px 14px;border-radius:8px;cursor:pointer;font-size:13px;
-                 font-family:inherit;transition:all .15s}
-  .filter button:hover{border-color:var(--accent)}
-  .filter button.active{background:var(--accent);color:#0f172a;border-color:var(--accent);font-weight:600}
-  :root[data-theme="light"] .filter button.active{color:#fff}
-  .filter button .count{color:var(--muted);font-size:11px;margin-left:6px}
-  .filter button.active .count{color:#0f172a;opacity:.7}
-  :root[data-theme="light"] .filter button.active .count{color:#fff}
-
-  /* ===== THEME TOGGLE ===== */
-  #themeToggle {
-    background:var(--card);color:var(--text);border:1px solid var(--border);
-    padding:7px 12px;border-radius:8px;cursor:pointer;font-size:16px;
-    font-family:inherit;transition:all .15s;line-height:1;
-  }
-  #themeToggle:hover{border-color:var(--accent)}
-
-  /* ===== GRID / LAYOUT ===== */
-  .grid{display:grid;gap:16px}
-  .kpi{grid-template-columns:repeat(auto-fit,minmax(180px,1fr))}
-  .row2{grid-template-columns:1fr 1fr}
-  .row3{grid-template-columns:repeat(3,1fr)}
-  @media(max-width:900px){.row2,.row3{grid-template-columns:1fr}}
-
-  /* ===== CARD ===== */
-  .card{background:var(--card);border:1px solid var(--border);border-radius:12px;padding:18px;
-        transition:background .2s,border-color .2s}
-
-  /* ===== KPI CARDS ===== */
-  .kpi .card{
-    padding:14px 16px;
-    position:relative;
-    border-left:4px solid var(--c,var(--accent));
-    overflow:hidden;
-  }
-  .kpi .card .kpi-icon{
-    position:absolute;top:10px;right:12px;
-    font-size:18px;opacity:.55;line-height:1;
-  }
-  .kpi .label{color:var(--muted);font-size:12px;text-transform:uppercase;letter-spacing:.05em;
-              padding-right:28px}
-  .kpi .value{font-size:20px;font-weight:600;margin-top:6px;
-             white-space:nowrap;overflow:hidden;text-overflow:ellipsis;
-             min-height:28px;line-height:1.35}
-  .kpi .delta{font-size:12px;color:var(--muted);margin-top:4px}
-
-  /* Progress bar under delta */
-  .kpi .prog-wrap{
-    margin-top:6px;height:3px;border-radius:2px;
-    background:rgba(148,163,184,.15);overflow:hidden;
-  }
-  .kpi .prog-fill{
-    height:100%;border-radius:2px;
-    background:var(--c,var(--accent));
-    width:0;transition:width .8s ease;
-  }
-
-  .good{color:var(--good)} .bad{color:var(--bad)} .warn{color:var(--warn)}
-
-  /* ===== CHART + CENTER OVERLAY ===== */
-  .chart-wrap{position:relative;height:380px}
-  .chart-center{
-    position:absolute;top:40%;left:50%;
-    transform:translate(-50%,-50%);
-    text-align:center;pointer-events:none;
-    transition:opacity .18s ease;
-    min-width:120px;
-  }
-  .chart-center .cc-count{font-size:26px;font-weight:700;line-height:1}
-  .chart-center .cc-label{font-size:12px;color:var(--muted);margin-top:4px;line-height:1.3;max-width:100px}
-  .chart-center .cc-pct{font-size:13px;font-weight:600;margin-top:3px}
-
-  /* ===== TABLE ===== */
-  table{width:100%;border-collapse:collapse;font-size:13px}
-  th,td{padding:8px 10px;text-align:left;border-bottom:1px solid var(--border);vertical-align:top}
-  th{color:var(--muted);font-weight:500;text-transform:uppercase;font-size:11px;letter-spacing:.05em;
-     position:sticky;top:0;background:var(--card)}
-  td.num{text-align:right;font-variant-numeric:tabular-nums;white-space:nowrap}
-  .scroll{max-height:420px;overflow:auto}
-  .pill{display:inline-block;padding:2px 8px;border-radius:999px;font-size:11px;font-weight:500}
-  .pill-good{background:rgba(34,197,94,.15);color:var(--good)}
-  .pill-bad{background:rgba(239,68,68,.15);color:var(--bad)}
-  .pill-warn{background:rgba(245,158,11,.15);color:var(--warn)}
-  .pill-muted{background:rgba(148,163,184,.15);color:var(--muted)}
-
-  /* ===== FUNNEL ===== */
-  .funnel{display:flex;flex-direction:column;gap:8px}
-  .funnel-row{display:flex;align-items:center;gap:12px}
-  .funnel-bar{flex:1;height:34px;background:rgba(56,189,248,.10);border-radius:6px;position:relative;overflow:hidden}
-  .funnel-fill{
-    height:100%;background:linear-gradient(90deg,#38bdf8,#0ea5e9);border-radius:6px;
-    display:flex;align-items:center;padding-left:10px;font-weight:600;font-size:13px;color:#0f172a;
-    width:0;transition:width .8s ease;
-  }
-  :root[data-theme="light"] .funnel-fill{color:#fff}
-  .funnel-label{width:140px;font-size:13px;color:var(--muted)}
-  .funnel-num{width:90px;text-align:right;font-variant-numeric:tabular-nums}
-
-  /* ===== OPERATOR CARDS ===== */
-  .ops-grid{display:flex;flex-direction:column;gap:10px}
-  .op-card{
-    display:grid;grid-template-columns:150px 1fr;gap:16px;
-    align-items:center;padding:14px 18px;
-    background:var(--card);border:1px solid var(--border);border-radius:10px;
-    border-left:4px solid var(--accent);
-  }
-  .op-name{font-size:16px;font-weight:700}
-  .op-role{font-size:12px;color:var(--muted);margin-top:2px}
-  .op-stats{display:flex;gap:14px;flex-wrap:wrap}
-  .op-stat{text-align:center;min-width:52px}
-  .op-stat .sv{font-size:17px;font-weight:700;line-height:1}
-  .op-stat .sl{font-size:10px;color:var(--muted);text-transform:uppercase;margin-top:2px;line-height:1.2}
-  .op-divider{width:1px;height:36px;background:var(--border);flex-shrink:0}
-
-  /* ===== APPT ROWS COLOR ===== */
-  tr.row-good td:first-child{border-left:3px solid var(--good)}
-  tr.row-bad  td:first-child{border-left:3px solid var(--bad)}
-  tr.row-warn td:first-child{border-left:3px solid var(--warn)}
-  tr.row-muted td:first-child{border-left:3px solid var(--border)}
-
-  /* ===== REFUSAL BARS ===== */
-  .ref-bar-row{display:flex;align-items:center;gap:12px;padding:10px 0;border-bottom:1px solid var(--border)}
-  .ref-bar-row:last-child{border-bottom:none}
-  .ref-bar-label{width:200px;font-size:13px;flex-shrink:0}
-  .ref-bar-track{flex:1;height:20px;background:rgba(148,163,184,.1);border-radius:4px;overflow:hidden}
-  .ref-bar-fill{height:100%;border-radius:4px;display:flex;align-items:center;padding-left:8px;
-               font-size:11px;font-weight:600;color:#fff;transition:width .8s ease;width:0}
-  .ref-bar-count{width:60px;text-align:right;font-size:13px;font-weight:600;font-variant-numeric:tabular-nums}
-  .ref-bar-pct{width:42px;text-align:right;font-size:12px;color:var(--muted)}
-  .ref-details{margin-top:6px;margin-left:212px}
-  .ref-detail-item{padding:8px 0;border-bottom:1px solid var(--border);display:flex;gap:10px;font-size:13px}
-  .ref-detail-item:last-child{border-bottom:none}
-
-  /* ===== EMPTY STATE ===== */
-  .empty-state{text-align:center;padding:40px 20px;color:var(--muted)}
-  .empty-state .es-icon{font-size:32px;margin-bottom:8px;opacity:.5}
-  .empty-state .es-text{font-size:14px}
-
-  small{color:var(--muted)}
-  .comment{color:var(--muted);font-size:12px;max-width:380px}
-  .kpi-mini{font-size:12px;text-transform:uppercase;letter-spacing:.05em;font-weight:600}
-  details summary::-webkit-details-marker{display:none}
-  details summary{user-select:none}
-  details summary:hover{background:rgba(56,189,248,.05)}
-  details[open] summary{border-bottom:1px solid var(--border)}
-</style>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#edf5ef">
+  <title>Пульс месяца — «Золотое Яблоко», Омск</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@500;600&family=Onest:wght@400;500;600;700&family=Unbounded:wght@600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/styles.css">
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js" defer></script>
+  <script src="assets/app.js" defer></script>
 </head>
 <body>
+  <a class="skip-link" href="#main">К содержанию</a>
 
-<!-- ===== STICKY BAR ===== -->
-<div id="stickyBar">
-  <span class="sticky-clinic">«Золотое Яблоко»</span>
-  <div class="sticky-metrics" id="stickyMetrics"></div>
-  <div class="sticky-filter" id="stickyFilter"></div>
-</div>
+  <header class="topbar">
+    <div class="topbar-inner">
+      <a class="brand" href="#" aria-label="Золотое Яблоко — начало страницы">
+        <span class="brand-mark" aria-hidden="true">
+          <svg viewBox="0 0 32 32" role="img">
+            <path d="M17.2 8.2c.2-3 2-5.1 5.4-6.2.2 3.4-1.6 5.6-5.4 6.2Z"/>
+            <path d="M16 9.2c-6.9-4.5-13.2.6-12 8.7 1 7.1 7.7 12.6 12 12.6s11-5.5 12-12.6c1.2-8.1-5.1-13.2-12-8.7Z"/>
+          </svg>
+        </span>
+        <span>
+          <strong>Золотое Яблоко</strong>
+          <small>Омск · колл-центр</small>
+        </span>
+      </a>
 
-<div class="header-row">
-  <div>
-    <h1>«Золотое Яблоко» — Омск</h1>
-    <div class="sub" id="period"></div>
-  </div>
-  <div style="display:flex;align-items:center;gap:12px;flex-wrap:wrap">
-    <div style="text-align:right;font-size:12px;color:var(--muted);line-height:1.7">
-      <div>Обновлено: <span id="generatedAt" style="color:var(--text);font-variant-numeric:tabular-nums">—</span></div>
-      <div>Обновится через: <span id="nextUpdate" style="color:var(--accent);font-variant-numeric:tabular-nums">—</span></div>
-    </div>
-    <div class="filter" id="monthFilter"></div>
-    <button id="themeToggle" onclick="toggleTheme()" title="Переключить тему">🌙</button>
-  </div>
-</div>
-
-<h2>Ключевые показатели</h2>
-<div class="grid kpi" id="kpi"></div>
-
-<h2>Воронка по заявкам</h2>
-<div class="card"><div class="funnel" id="funnel"></div></div>
-
-
-<h2>Распределение по статусам</h2>
-<div class="card">
-  <div class="chart-wrap">
-    <canvas id="chStatus"></canvas>
-    <div class="chart-center" id="chartCenter" style="opacity:0">
-      <div class="cc-count" id="ccCount">—</div>
-      <div class="cc-label" id="ccLabel">—</div>
-      <div class="cc-pct" id="ccPct"></div>
-    </div>
-  </div>
-</div>
-
-<h2>Эффективность операторов</h2>
-<div class="card"><div class="ops-grid" id="ops"></div></div>
-
-<h2>Записи в клинику <span style="color:var(--muted);font-size:13px;font-weight:400" id="apptCnt"></span></h2>
-<div class="card"><div class="scroll"><table id="appts"></table></div></div>
-
-<h2>Причины отказов и неактуала <span style="color:var(--muted);font-size:13px;font-weight:400" id="refTotal"></span></h2>
-<div class="card"><div id="refCats"></div></div>
-
-<script>
-const fmt = n => (n||0).toLocaleString('ru-RU').replace(/,/g,' ');
-const pct = (a,b) => b ? ((a/b)*100).toFixed(1)+'%' : '—';
-const pctNum = (a,b) => b ? (a/b*100) : 0;
-
-let chartStatus = null;
-
-// ===== THEME =====
-function getTheme() { return localStorage.getItem('theme') || 'dark'; }
-function applyTheme(t) {
-  document.documentElement.setAttribute('data-theme', t);
-  document.getElementById('themeToggle').textContent = t === 'light' ? '☀️' : '🌙';
-  // Update Chart.js defaults & redraw if needed
-  if (t === 'light') {
-    Chart.defaults.color = '#64748b';
-    Chart.defaults.borderColor = '#cbd5e1';
-  } else {
-    Chart.defaults.color = '#94a3b8';
-    Chart.defaults.borderColor = '#334155';
-  }
-  // Redraw chart if it exists (theme switch needs colour update)
-  if (chartStatus && window._lastStatusData) {
-    chartStatus.destroy();
-    chartStatus = null;
-    buildStatusChart(window._lastStatusData);
-  }
-}
-function toggleTheme() {
-  const next = getTheme() === 'light' ? 'dark' : 'light';
-  localStorage.setItem('theme', next);
-  applyTheme(next);
-}
-// Apply on load
-applyTheme(getTheme());
-
-// ===== STICKY BAR =====
-window.addEventListener('scroll', () => {
-  const bar = document.getElementById('stickyBar');
-  bar.classList.toggle('visible', window.scrollY > 100);
-});
-
-// ===== COUNT-UP ANIMATION =====
-function countUp(el, target, isFloat, prefix, suffix) {
-  const duration = 700;
-  const start = performance.now();
-  function tick(now) {
-    const elapsed = now - start;
-    const progress = Math.min(elapsed / duration, 1);
-    // cubic ease-out
-    const eased = 1 - Math.pow(1 - progress, 3);
-    const current = Math.round(target * eased);
-    el.textContent = prefix + fmt(current) + suffix;
-    if (progress < 1) requestAnimationFrame(tick);
-    else el.textContent = prefix + fmt(target) + suffix;
-  }
-  requestAnimationFrame(tick);
-}
-
-
-// ===== BUILD STATUS CHART =====
-let _cycleTimer = null;
-let _cycleIdx = 0;
-let _cycleLabels = [];
-let _cycleCounts = [];
-let _cycleColors = [];
-let _chartObserver = null;
-
-function setCenterText(label, count, total, color, opacity) {
-  const el = document.getElementById('chartCenter');
-  if (!el) return;
-  el.style.opacity = opacity;
-  document.getElementById('ccCount').textContent = count;
-  document.getElementById('ccLabel').textContent = label;
-  const pctEl = document.getElementById('ccPct');
-  pctEl.textContent = total ? ((count / total * 100).toFixed(1) + '%') : '';
-  pctEl.style.color = color;
-}
-
-function showSegment(idx) {
-  const n = _cycleLabels.length;
-  if (!n || !chartStatus) return;
-  const total = _cycleCounts.reduce((a, b) => a + b, 0);
-  const base = _cycleColors.map((c, i) => i === idx ? c : c + '55');
-  chartStatus.data.datasets[0].backgroundColor = base;
-  chartStatus.data.datasets[0].borderWidth = _cycleColors.map((_, i) => i === idx ? 3 : 0);
-  chartStatus.data.datasets[0].borderColor = _cycleColors.map((_, i) => i === idx ? '#fff' : 'transparent');
-  chartStatus.update('none');
-  setCenterText(_cycleLabels[idx], _cycleCounts[idx], total, _cycleColors[idx], 1);
-}
-
-function startCycle() {
-  if (_cycleTimer) return;
-  showSegment(_cycleIdx);
-  _cycleTimer = setInterval(() => {
-    const center = document.getElementById('chartCenter');
-    if (center) center.style.opacity = 0;
-    setTimeout(() => {
-      _cycleIdx = (_cycleIdx + 1) % _cycleLabels.length;
-      showSegment(_cycleIdx);
-    }, 180);
-  }, 1400);
-}
-
-function stopCycle() {
-  if (_cycleTimer) { clearInterval(_cycleTimer); _cycleTimer = null; }
-  if (chartStatus) {
-    chartStatus.data.datasets[0].backgroundColor = _cycleColors;
-    chartStatus.data.datasets[0].borderWidth = 0;
-    chartStatus.update('none');
-  }
-  const center = document.getElementById('chartCenter');
-  if (center) center.style.opacity = 0;
-}
-
-function buildStatusChart(sc) {
-  window._lastStatusData = sc;
-  const isLight = getTheme() === 'light';
-  Chart.defaults.color = isLight ? '#64748b' : '#94a3b8';
-  Chart.defaults.borderColor = isLight ? '#cbd5e1' : '#334155';
-  const colorMap = {
-    'запись в клинику':'#22c55e', 'в работе / переговорах':'#38bdf8', 'ОТКАЗ':'#ef4444',
-    'ндз финал':'#f59e0b', 'неактуал':'#a78bfa', 'отложенный спрос':'#0ea5e9',
-    'недозвон':'#fb923c', 'дубль':'#94a3b8', 'Другой город':'#64748b', '—':'#475569',
-  };
-  const labels = Object.keys(sc);
-  const counts = Object.values(sc);
-  const colors = labels.map(s => colorMap[s] || '#64748b');
-
-  _cycleLabels = labels;
-  _cycleCounts = counts;
-  _cycleColors = colors;
-  _cycleIdx = 0;
-
-  if (_cycleTimer) { clearInterval(_cycleTimer); _cycleTimer = null; }
-  if (_chartObserver) _chartObserver.disconnect();
-
-  chartStatus = new Chart(document.getElementById('chStatus'), {
-    type: 'doughnut',
-    data: {
-      labels,
-      datasets: [{ data: counts, backgroundColor: colors, borderWidth: 0 }]
-    },
-    options: {
-      plugins: { legend: { position: 'bottom', labels: { font: { size: 12 }, padding: 16, boxWidth: 12, boxHeight: 12 } } },
-      maintainAspectRatio: false,
-      cutout: '60%',
-    }
-  });
-
-  _chartObserver = new IntersectionObserver(entries => {
-    entries.forEach(e => e.isIntersecting ? startCycle() : stopCycle());
-  }, { threshold: 0.4 });
-  _chartObserver.observe(document.getElementById('chStatus'));
-}
-
-const yavkaPill = v => {
-  if(!v) return '<span class="pill pill-muted">—</span>';
-  if(v==='Пришел') return '<span class="pill pill-good">Пришёл</span>';
-  if(v==='Не пришел') return '<span class="pill pill-bad">Не пришёл</span>';
-  if(v==='Отмена записи') return '<span class="pill pill-bad">Отмена</span>';
-  if(v==='Перезапись') return '<span class="pill pill-warn">Перезапись</span>';
-  return `<span class="pill pill-muted">${v}</span>`;
-};
-
-// KPI definitions: [label, color, icon, progressKey]
-// progressKey: field name in kpi whose numeric value is the % (conv_pcp, etc.)
-const KPI_META = [
-  { label:'Всего заявок',           color:'#38bdf8', icon:'📋', prog:null },
-  { label:'Квалифицированы ПЦП',    color:'#38bdf8', icon:'✓',  prog:'conv_pcp' },
-  { label:'Записей в клинику',       color:'#22c55e', icon:'📅', prog:'conv_zapis_from_pcp' },
-  { label:'Запись активна',          color:'#f59e0b', icon:'⏳', prog:null },
-  { label:'Пришли на приём',         color:'#22c55e', icon:'🏥', prog:'conv_prishel_from_zapis' },
-  { label:'План с депозитом',        color:'#22c55e', icon:'💰', prog:null },
-  { label:'Рекламный расход',        color:'#94a3b8', icon:'📢', prog:null },
-  { label:'ДРР',                     color:null,      icon:'📊', prog:null },
-];
-
-function render(d) {
-  const k = d.kpi;
-
-  // ---------- KPI ----------
-  const drrColor = k.drr == null ? '' :
-    (k.drr <= 20 ? 'good' : (k.drr <= 40 ? 'warn' : 'bad'));
-  const drrAccentColor = k.drr == null ? '#94a3b8' :
-    (k.drr <= 20 ? '#22c55e' : (k.drr <= 40 ? '#f59e0b' : '#ef4444'));
-
-  const kpis = [
-    {
-      meta: KPI_META[0],
-      rawValue: k.total,
-      value: String(k.total),
-      sub: '',
-      isNum: true,
-    },
-    {
-      meta: KPI_META[1],
-      rawValue: k.pcp,
-      value: String(k.pcp),
-      sub: `${k.conv_pcp}% от всех`,
-      isNum: true,
-    },
-    {
-      meta: KPI_META[2],
-      rawValue: k.zapis,
-      value: String(k.zapis),
-      sub: `${k.conv_zapis_from_pcp}% от ПЦП`,
-      isNum: true,
-    },
-    {
-      meta: KPI_META[3],
-      rawValue: k.active_zapis,
-      value: String(k.active_zapis),
-      sub: 'без отметки явки',
-      isNum: true,
-    },
-    {
-      meta: KPI_META[4],
-      rawValue: k.prishel,
-      value: String(k.prishel),
-      sub: `${k.conv_prishel_from_zapis}% от записей`,
-      isNum: true,
-    },
-    {
-      meta: KPI_META[5],
-      rawValue: k.plan_with_dep_sum,
-      value: null,
-      sub: '',
-      isMoney: true,
-    },
-    {
-      meta: KPI_META[6],
-      rawValue: k.ad_spend,
-      value: null,
-      sub: 'на инструмент',
-      isMoney: true,
-      noData: k.ad_spend == null,
-    },
-    {
-      meta: { ...KPI_META[7], color: drrAccentColor },
-      rawValue: null,
-      value: k.drr == null ? '—' : `${k.drr}%`,
-      sub: k.drr == null ? 'нет данных по расходу' : 'расход / план с депозитом',
-      isNum: false,
-      noData: k.drr == null,
-      drrClass: drrColor,
-    },
-  ];
-
-  const kpiEl = document.getElementById('kpi');
-  kpiEl.innerHTML = kpis.map((item, i) => {
-    const c = item.meta.color || '#94a3b8';
-    const icon = item.meta.icon;
-    const prog = item.meta.prog;
-    const progPct = prog && k[prog] != null ? parseFloat(k[prog]) : null;
-
-    const progHtml = progPct != null ? `
-      <div class="prog-wrap"><div class="prog-fill" data-pct="${progPct}" style="width:0"></div></div>` : '';
-
-    let valueHtml;
-    if (item.isMoney && !item.noData) {
-      valueHtml = `<span class="value" data-money="${item.rawValue}" data-prefix="" data-suffix=" ₽">
-        ${fmt(item.rawValue)} ₽</span>`;
-    } else if (item.noData) {
-      valueHtml = `<div class="value">—</div>`;
-    } else if (item.drrClass) {
-      valueHtml = `<div class="value"><span class="${item.drrClass}">${item.value}</span></div>`;
-    } else {
-      valueHtml = `<span class="value" data-countup="${item.rawValue}">${(item.rawValue||0).toLocaleString('ru-RU')}</span>`;
-    }
-
-    return `<div class="card" style="--c:${c}">
-      <span class="kpi-icon">${icon}</span>
-      <div class="label">${item.meta.label}</div>
-      ${valueHtml}
-      <div class="delta">${item.sub}</div>
-      ${progHtml}
-    </div>`;
-  }).join('');
-
-  // Run count-up animations
-  kpiEl.querySelectorAll('[data-countup]').forEach(el => {
-    const target = parseInt(el.dataset.countup, 10) || 0;
-    countUp(el, target, false, '', '');
-  });
-  kpiEl.querySelectorAll('[data-money]').forEach(el => {
-    const target = parseInt(el.dataset.money, 10) || 0;
-    const suffix = el.dataset.suffix || '';
-    countUp(el, target, false, '', suffix);
-  });
-
-  // Animate progress bars
-  setTimeout(() => {
-    kpiEl.querySelectorAll('.prog-fill[data-pct]').forEach(el => {
-      el.style.width = Math.min(parseFloat(el.dataset.pct), 100) + '%';
-    });
-  }, 50);
-
-  // ---------- Воронка ----------
-  const funnel = [
-    ['Всего заявок', k.total, k.total],
-    ['Квалифицированы (ПЦП)', k.pcp, k.total],
-    ['Записаны в клинику', k.zapis, k.total],
-    ['Пришли на приём', k.prishel, k.total],
-  ];
-  document.getElementById('funnel').innerHTML = funnel.map(([l,v,base])=>{
-    const w = base ? (v/base*100) : 0;
-    return `<div class="funnel-row">
-      <div class="funnel-label">${l}</div>
-      <div class="funnel-bar">
-        <div class="funnel-fill" data-w="${Math.max(w,5)}" style="width:0">${v}</div>
+      <div class="sync-state" aria-live="polite">
+        <span class="sync-dot" aria-hidden="true"></span>
+        <span>
+          <small>Данные обновлены</small>
+          <strong id="generatedAt">—</strong>
+        </span>
+        <span class="sync-divider" aria-hidden="true"></span>
+        <span class="next-update">
+          <small>Следующее обновление</small>
+          <strong id="nextUpdate">—</strong>
+        </span>
       </div>
-      <div class="funnel-num">${pct(v,base)}</div>
-    </div>`;
-  }).join('');
+    </div>
+  </header>
 
-  // Animate funnel bars
-  setTimeout(() => {
-    document.querySelectorAll('.funnel-fill[data-w]').forEach(el => {
-      el.style.width = el.dataset.w + '%';
-    });
-  }, 30);
+  <main id="main" class="page-shell">
+    <section class="hero" aria-labelledby="pageTitle">
+      <div class="hero-orbit" aria-hidden="true"></div>
+      <div class="hero-top">
+        <div class="hero-copy">
+          <div class="eyebrow"><span></span> Операционная аналитика</div>
+          <h1 id="pageTitle">Пульс месяца</h1>
+          <p id="heroSubtitle">Загрузка данных из таблицы…</p>
+        </div>
 
-  // ---------- Donut: статусы ----------
-  if (chartStatus) { chartStatus.destroy(); chartStatus = null; }
-  buildStatusChart(d.status_counts);
-
-  // ---------- Operator cards ----------
-  const ops = d.operator_stats;
-  document.getElementById('ops').innerHTML = Object.entries(ops).map(([name, s]) => {
-    const stats = [
-      { v: s.total,   l: 'Лиды',     cls: '' },
-      { v: s.pcp,     l: 'ПЦП',      cls: '', sub: pct(s.pcp, s.total) },
-      { v: s.nekv,    l: 'Неквал',   cls: '' },
-      { v: s.zapis,   l: 'Записи',   cls: '', sub: pct(s.zapis, s.pcp) + ' от ПЦП' },
-      { v: s.prishel, l: 'Пришли',   cls: 'good' },
-      { v: s.otval,   l: 'Отвал',    cls: 'bad',  sub: pct(s.otval, s.zapis) },
-      { v: s.active,  l: 'Активна',  cls: 'warn' },
-    ];
-    const statsHtml = stats.map(st => `
-      <div class="op-stat">
-        <div class="sv ${st.cls}">${st.v}</div>
-        <div class="sl">${st.l}${st.sub ? `<br><span style="color:var(--accent);font-size:9px">${st.sub}</span>` : ''}</div>
-      </div>`).join('<div class="op-divider"></div>');
-    const planHtml = s.plan_with_dep ? `<div class="op-stat" style="margin-left:auto;text-align:right">
-      <div class="sv good" style="font-size:14px">${fmt(s.plan_with_dep)} ₽</div>
-      <div class="sl">план + деп.</div></div>` : '';
-    return `<div class="op-card">
-      <div><div class="op-name">${name}</div></div>
-      <div class="op-stats">${statsHtml}${planHtml}</div>
-    </div>`;
-  }).join('');
-
-  // ---------- Appointments ----------
-  document.getElementById('apptCnt').textContent = `— ${d.appointments.length} заявок`;
-  const rowClass = v => v === 'Пришел' ? 'row-good' : (v === 'Не пришел' || v === 'Отмена записи') ? 'row-bad' : v === 'Перезапись' ? 'row-warn' : 'row-muted';
-  const apptRows = d.appointments.length ? d.appointments.map(r=>`
-    <tr class="${rowClass(r['Явка:'])}">
-      <td><b>${r['Имя:']||'—'}</b><br><small>${r['Телефон:']||''}</small></td>
-      <td>${r['Дата записи']||'—'}</td>
-      <td>${yavkaPill(r['Явка:'])}</td>
-      <td>${r['Имя оператора, взявшего в работу']||'—'}</td>
-      <td class="num">${r.payment?fmt(r.payment)+' ₽':'—'}</td>
-      <td class="num">${r.plan_total?fmt(r.plan_total)+' ₽':'—'}</td>
-      <td class="comment">${(r['Комментарии:']||'').slice(0,200)}</td>
-    </tr>`).join('') :
-    `<tr><td colspan="7"><div class="empty-state"><div class="es-icon">📋</div><div class="es-text">Нет записей за выбранный период</div></div></td></tr>`;
-  document.getElementById('appts').innerHTML =
-    `<thead><tr><th>Пациент</th><th>Дата записи</th><th>Явка</th><th>Оператор</th>
-     <th>Оплата</th><th>План</th><th>Комментарий</th></tr></thead><tbody>${apptRows}</tbody>`;
-
-  // ---------- Refusal categories ----------
-  const cats = d.refusal_categories || [];
-  const total = cats.reduce((s,c)=>s+c.count, 0);
-  document.getElementById('refTotal').textContent =
-    total ? `— всего ${total} (отказ: ${k.refusals_total||0}, неактуал: ${k.neaktual_total||0})` : '';
-  const catColor = {
-    'Не актуально / не нужно':'#a78bfa',
-    'Цена / финансы':         '#ef4444',
-    'Не оставлял заявку':     '#f59e0b',
-    'Уже лечится':            '#0ea5e9',
-    'Медицинские причины':    '#22c55e',
-    'Технические/мусор':      '#64748b',
-    'Другое':                 '#94a3b8',
-  };
-  if (!total) {
-    document.getElementById('refCats').innerHTML =
-      '<div class="empty-state"><div class="es-icon">✅</div><div class="es-text">Нет отказов за выбранный период</div></div>';
-  } else {
-    const bars = cats.map((c, i) => {
-      const col = catColor[c.cat] || '#94a3b8';
-      const badge = i < 3 ? `<span class="pill" style="background:rgba(56,189,248,.15);color:var(--accent);margin-left:6px;font-size:10px">ТОП-${i+1}</span>` : '';
-      const items = (c.items||[]).map(it=>`
-        <div class="ref-detail-item">
-          <div style="min-width:130px">
-            <div style="font-weight:500;font-size:13px">${it['Имя:']||'—'}</div>
-            <div style="font-size:11px;color:var(--muted)">${it['Имя оператора, взявшего в работу']||'—'}</div>
+        <div class="period-control">
+          <div class="period-label">
+            <span>Период анализа</span>
+            <strong id="activePeriodLabel">—</strong>
           </div>
-          <div style="flex:1;color:var(--muted);line-height:1.5;font-size:13px">${it['Комментарии:']||'<i>без комментария</i>'}</div>
-        </div>`).join('');
-      return `<details>
-        <summary style="list-style:none;cursor:pointer;outline:none">
-          <div class="ref-bar-row">
-            <div class="ref-bar-label">
-              <span style="display:inline-block;width:8px;height:8px;border-radius:2px;background:${col};margin-right:6px;vertical-align:middle"></span>${c.cat}${badge}
+          <div class="month-filter" id="monthFilter" role="group" aria-label="Выбор месяца"></div>
+        </div>
+      </div>
+
+      <div class="month-route" aria-label="Путь заявки за выбранный месяц">
+        <div class="route-step">
+          <span class="route-index">01</span>
+          <strong id="heroTotal">—</strong>
+          <small>заявок</small>
+          <span class="route-note" id="heroTotalNote">входящий поток</span>
+        </div>
+        <span class="route-connector" aria-hidden="true"></span>
+        <div class="route-step">
+          <span class="route-index">02</span>
+          <strong id="heroPcp">—</strong>
+          <small>ПЦП</small>
+          <span class="route-note" id="heroPcpNote">—</span>
+        </div>
+        <span class="route-connector" aria-hidden="true"></span>
+        <div class="route-step">
+          <span class="route-index">03</span>
+          <strong id="heroZapis">—</strong>
+          <small>записей</small>
+          <span class="route-note" id="heroZapisNote">—</span>
+        </div>
+        <span class="route-connector" aria-hidden="true"></span>
+        <div class="route-step">
+          <span class="route-index">04</span>
+          <strong id="heroPrishel">—</strong>
+          <small>приёмов</small>
+          <span class="route-note" id="heroPrishelNote">—</span>
+        </div>
+      </div>
+
+      <div class="hero-foot">
+        <span id="period">—</span>
+        <span class="hero-source">Источник: рабочая таблица</span>
+      </div>
+    </section>
+
+    <section class="dashboard-section" aria-labelledby="kpiTitle">
+      <div class="section-heading">
+        <div>
+          <div class="section-kicker"><span></span> Главное</div>
+          <h2 id="kpiTitle">Ключевые показатели</h2>
+        </div>
+        <p id="comparisonNote">Сравнение с предыдущим месяцем</p>
+      </div>
+      <div class="kpi-grid" id="kpi" aria-live="polite"></div>
+    </section>
+
+    <section class="overview-grid" aria-label="Движение заявок и статусы">
+      <article class="dashboard-section overview-panel funnel-panel">
+        <div class="section-heading compact">
+          <div>
+            <div class="section-kicker"><span></span> Конверсия</div>
+            <h2>Движение заявок</h2>
+          </div>
+          <p>Переход между этапами месяца</p>
+        </div>
+        <div class="panel-card funnel-card">
+          <div class="funnel-head" aria-hidden="true">
+            <span>Этап</span><span>Количество</span><span>Переход</span>
+          </div>
+          <div class="funnel" id="funnel"></div>
+        </div>
+      </article>
+
+      <article class="dashboard-section overview-panel status-panel">
+        <div class="section-heading compact">
+          <div>
+            <div class="section-kicker"><span></span> Структура базы</div>
+            <h2>Статусы заявок</h2>
+          </div>
+          <p>Состояние на момент обновления</p>
+        </div>
+        <div class="panel-card status-card">
+          <div class="chart-wrap">
+            <canvas id="chStatus" aria-label="Распределение заявок по статусам"></canvas>
+            <div class="chart-center" aria-hidden="true">
+              <strong id="statusTotal">—</strong>
+              <span>заявок</span>
             </div>
-            <div class="ref-bar-track"><div class="ref-bar-fill" data-w="${c.share}" style="background:${col};width:0">${c.share > 12 ? c.share+'%' : ''}</div></div>
-            <div class="ref-bar-count">${c.count}</div>
-            <div class="ref-bar-pct">${c.share}%</div>
           </div>
-        </summary>
-        ${items ? `<div class="ref-details">${items}</div>` : ''}
-      </details>`;
-    }).join('');
-    document.getElementById('refCats').innerHTML = bars;
-    setTimeout(() => {
-      document.querySelectorAll('.ref-bar-fill[data-w]').forEach((el, i) => {
-        setTimeout(() => { el.style.width = el.dataset.w + '%'; }, i * 60);
-      });
-    }, 30);
-  }
-}
+          <div class="status-legend" id="statusLegend"></div>
+        </div>
+      </article>
+    </section>
 
-let DATA = null;
-let activeMonth = 'all';
+    <section class="dashboard-section" aria-labelledby="operatorsTitle">
+      <div class="section-heading">
+        <div>
+          <div class="section-kicker"><span></span> Команда</div>
+          <h2 id="operatorsTitle">Эффективность операторов</h2>
+        </div>
+        <p id="operatorInsight">Нажмите на заголовок, чтобы изменить сортировку</p>
+      </div>
+      <div class="panel-card table-card">
+        <div class="table-scroll">
+          <table id="ops"></table>
+        </div>
+      </div>
+    </section>
 
+    <section class="dashboard-section" aria-labelledby="appointmentsTitle">
+      <div class="section-heading appointments-heading">
+        <div>
+          <div class="section-kicker"><span></span> Пациенты</div>
+          <h2 id="appointmentsTitle">Записи в клинику <small id="apptCnt"></small></h2>
+        </div>
+        <div class="table-tools">
+          <label class="search-field">
+            <span class="sr-only">Поиск по записям</span>
+            <svg viewBox="0 0 20 20" aria-hidden="true"><circle cx="8.5" cy="8.5" r="5.5"/><path d="m13 13 4 4"/></svg>
+            <input id="appointmentSearch" type="search" placeholder="Пациент, оператор, комментарий">
+          </label>
+          <label class="select-field">
+            <span class="sr-only">Фильтр по явке</span>
+            <select id="attendanceFilter">
+              <option value="">Все статусы явки</option>
+              <option value="Пришел">Пришёл</option>
+              <option value="Не пришел">Не пришёл</option>
+              <option value="Отмена записи">Отмена</option>
+              <option value="Перезапись">Перезапись</option>
+              <option value="__empty">Без отметки</option>
+            </select>
+          </label>
+        </div>
+      </div>
+      <div class="panel-card table-card">
+        <div class="table-scroll appointments-scroll">
+          <table id="appts"></table>
+        </div>
+      </div>
+    </section>
 
-function updateStickyMetrics(k) {
-  const drrColor = k.drr == null ? 'color:var(--muted)' :
-    (k.drr <= 20 ? 'color:var(--good)' : (k.drr <= 40 ? 'color:var(--warn)' : 'color:var(--bad)'));
-  document.getElementById('stickyMetrics').innerHTML = `
-    <span class="sticky-metric">Лиды: <b>${k.total}</b></span>
-    <span class="sticky-metric">Записи: <b>${k.zapis}</b></span>
-    <span class="sticky-metric">План с деп: <b>${fmt(k.plan_with_dep_sum)} ₽</b></span>
-    <span class="sticky-metric">ДРР: <b style="${drrColor}">${k.drr != null ? k.drr+'%' : '—'}</b></span>
-  `;
-}
+    <section class="dashboard-section refusals-section" aria-labelledby="refusalsTitle">
+      <div class="section-heading">
+        <div>
+          <div class="section-kicker"><span></span> Точки потерь</div>
+          <h2 id="refusalsTitle">Причины отказов <small id="refTotal"></small></h2>
+        </div>
+        <p>Разверните категорию, чтобы увидеть пациентов и комментарии</p>
+      </div>
+      <div class="panel-card refusal-card">
+        <div id="refCats"></div>
+      </div>
+    </section>
+  </main>
 
-function setActive(key) {
-  activeMonth = key;
-  document.querySelectorAll('#monthFilter button, #stickyFilter button').forEach(b=>{
-    b.classList.toggle('active', b.dataset.key === key);
-  });
-  const d = key === 'all' ? DATA.all : DATA.by_month[key];
-  render(d);
-  updateStickyMetrics(d.kpi);
-}
-
-const UPDATE_INTERVAL_MS = 30 * 60 * 1000;
-let _countdownTimer = null;
-
-function formatMoscow(date) {
-  return date.toLocaleString('ru-RU', {
-    timeZone: 'Europe/Moscow',
-    day: '2-digit', month: '2-digit',
-    hour: '2-digit', minute: '2-digit',
-  }) + ' МСК';
-}
-
-function scheduleRetry(el, delayMs) {
-  el.textContent = 'скоро…';
-  _countdownTimer = setTimeout(() => loadData(), delayMs);
-}
-
-function startCountdown(nextUpdateAt) {
-  if (_countdownTimer) { clearInterval(_countdownTimer); clearTimeout(_countdownTimer); }
-  const el = document.getElementById('nextUpdate');
-  if (nextUpdateAt <= Date.now()) {
-    scheduleRetry(el, 2 * 60 * 1000);
-    return;
-  }
-  _countdownTimer = setInterval(() => {
-    const rem = nextUpdateAt - Date.now();
-    if (rem <= 0) {
-      clearInterval(_countdownTimer);
-      el.textContent = 'обновляется…';
-      _countdownTimer = setTimeout(() => loadData(), 45 * 1000);
-      return;
-    }
-    const m = Math.floor(rem / 60000);
-    const s = Math.floor((rem % 60000) / 1000);
-    el.textContent = m > 0 ? `${m}м ${s}с` : `${s}с`;
-  }, 1000);
-}
-
-function applyData(d) {
-  DATA = d;
-  document.getElementById('period').textContent =
-    `Период данных: ${d.period.date_min} — ${d.period.date_max}`;
-
-  const genAt = new Date(d.generated_at);
-  const valid = !isNaN(genAt.getTime());
-  document.getElementById('generatedAt').textContent = valid ? formatMoscow(genAt) : d.generated_at || '—';
-  startCountdown(valid ? genAt.getTime() + UPDATE_INTERVAL_MS : Date.now() + UPDATE_INTERVAL_MS);
-
-  const buttons = [
-    {key:'all', label:'Все', count: d.all.kpi.total},
-    ...d.months.map(m=>({key:m.key, label:m.label, count:m.count})),
-  ];
-  const btnHtml = buttons.map(b=>
-    `<button data-key="${b.key}" onclick="setActive('${b.key}')">${b.label}<span class="count">${b.count}</span></button>`
-  ).join('');
-  document.getElementById('monthFilter').innerHTML = btnHtml;
-  document.getElementById('stickyFilter').innerHTML = buttons.map(b=>
-    `<button data-key="${b.key}" onclick="setActive('${b.key}')">${b.label}</button>`
-  ).join('');
-
-  setActive(activeMonth in {'all':1, ...Object.fromEntries(d.months.map(m=>[m.key,1]))} ? activeMonth : 'all');
-}
-
-function loadData() {
-  fetch('data.json?t=' + Date.now()).then(r=>r.json()).then(applyData);
-}
-
-loadData();
-</script>
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
 </body>
 </html>
