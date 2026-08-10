@@ -6,7 +6,11 @@ from playwright.sync_api import expect, sync_playwright
 
 OUTPUT_DIR = Path("/tmp/zolotoeyabloko-ui")
 OUTPUT_DIR.mkdir(parents=True, exist_ok=True)
-EXPECTED_TOTAL = json.loads(Path("docs/data.json").read_text())["all"]["kpi"]["total"]
+DATA = json.loads(Path("docs/data.json").read_text())
+EXPECTED_TOTAL = DATA["all"]["kpi"]["total"]
+EXPECTED_MONTH_BUTTONS = len(DATA["months"]) + 1
+LATEST_MONTH = DATA["months"][-1]["key"]
+EXPECTED_LATEST_OPERATORS = len(DATA["by_month"][LATEST_MONTH]["operator_stats"])
 
 
 with sync_playwright() as playwright:
@@ -26,12 +30,26 @@ with sync_playwright() as playwright:
     page.wait_for_load_state("networkidle")
     expect(page).to_have_title("Пульс месяца — Омск")
     expect(page.locator(".brand")).not_to_contain_text("Золотое Яблоко")
-    expect(page.locator("#monthFilter button")).to_have_count(6)
+    expect(page.locator("#monthFilter button")).to_have_count(EXPECTED_MONTH_BUTTONS)
     expect(page.locator(".kpi-card")).to_have_count(8)
     expect(page.locator("#monthFilter button.active")).to_have_count(1)
+    expect(page.locator(".compare-row")).to_have_count(6)
+    expect(page.locator("#monthComparisonSummary")).to_contain_text("против")
+    expect(page.locator("#operatorHeatmap tbody tr")).to_have_count(
+        EXPECTED_LATEST_OPERATORS
+    )
+    assert page.locator("#operatorHeatmap .heat-cell").count() > 0
+    assert page.locator("#operatorHeatmap .low-sample").count() > 0
+    page.locator(".comparison-section").screenshot(
+        path=OUTPUT_DIR / "comparison.png"
+    )
+    page.locator(".heatmap-card").screenshot(path=OUTPUT_DIR / "heatmap.png")
 
     page.get_by_role("button", name="Весь период").click()
     expect(page.locator("#activePeriodLabel")).to_have_text("Весь период")
+    expect(page.locator("#monthComparison")).to_contain_text(
+        "Сравнение пока недоступно"
+    )
     expect(page.locator("#heroTotal")).to_have_text(
         f"{EXPECTED_TOTAL:,}".replace(",", " "), timeout=2_000
     )
@@ -53,7 +71,7 @@ with sync_playwright() as playwright:
     mobile.goto("http://127.0.0.1:8765")
     mobile.wait_for_load_state("networkidle")
     expect(mobile.locator(".kpi-card")).to_have_count(8)
-    expect(mobile.locator("#monthFilter button")).to_have_count(6)
+    expect(mobile.locator("#monthFilter button")).to_have_count(EXPECTED_MONTH_BUTTONS)
     body_widths = mobile.evaluate(
         "() => ({scroll: document.documentElement.scrollWidth, client: document.documentElement.clientWidth})"
     )

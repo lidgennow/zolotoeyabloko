@@ -163,8 +163,10 @@ function setActive(key) {
 function renderDashboard(previousMeta) {
   renderHero(previousMeta);
   renderKpis(previousMeta);
+  renderMonthComparison(previousMeta);
   renderFunnel();
   renderStatus();
+  renderOperatorHeatmap();
   renderOperators();
   renderAppointments();
   renderRefusals();
@@ -344,6 +346,94 @@ function renderKpis() {
   });
 }
 
+function comparisonDelta(current, previous, isRate) {
+  const difference = Number(current || 0) - Number(previous || 0);
+  if (Math.abs(difference) < 0.05) {
+    return { label: "0", className: "neutral" };
+  }
+
+  if (isRate) {
+    return {
+      label: (difference > 0 ? "+" : "−") + Math.abs(difference).toFixed(1) + " п.п.",
+      className: difference > 0 ? "good" : "bad"
+    };
+  }
+
+  if (!previous) {
+    return {
+      label: current ? "новое" : "0",
+      className: current ? "good" : "neutral"
+    };
+  }
+
+  const percentChange = difference / Number(previous) * 100;
+  return {
+    label: (percentChange > 0 ? "+" : "−") + Math.abs(percentChange).toFixed(0) + "%",
+    className: percentChange > 0 ? "good" : "bad"
+  };
+}
+
+function renderMonthComparison(previousMeta) {
+  const head = document.getElementById("comparisonHead");
+  const container = document.getElementById("monthComparison");
+  const summary = document.getElementById("monthComparisonSummary");
+
+  if (!previousSlice || !previousMeta) {
+    head.innerHTML = "";
+    summary.textContent = activeMonth === "all"
+      ? "Выберите конкретный месяц"
+      : "Нет данных за предыдущий месяц";
+    container.innerHTML = "<div class='empty-state'><div><strong>Сравнение пока недоступно</strong>Выберите месяц, перед которым есть данные</div></div>";
+    return;
+  }
+
+  const currentMeta = getMonthMeta(activeMonth);
+  const currentKpi = currentSlice.kpi;
+  const previousKpi = previousSlice.kpi;
+  const partial = isPartialMonth(activeMonth);
+  const metrics = [
+    { label: "Заявки", note: "входящий поток", current: currentKpi.total, previous: previousKpi.total },
+    { label: "ПЦП", note: "квалифицированы", current: currentKpi.pcp, previous: previousKpi.pcp },
+    { label: "Записи", note: "записаны в клинику", current: currentKpi.zapis, previous: previousKpi.zapis },
+    { label: "Приёмы", note: "пришли на приём", current: currentKpi.prishel, previous: previousKpi.prishel },
+    { label: "ПЦП → запись", note: "конверсия", current: currentKpi.conv_zapis_from_pcp, previous: previousKpi.conv_zapis_from_pcp, rate: true },
+    { label: "Явка", note: "конверсия", current: currentKpi.conv_prishel_from_zapis, previous: previousKpi.conv_prishel_from_zapis, rate: true }
+  ];
+
+  summary.textContent = currentMeta.label + " против " + previousMeta.label.toLowerCase() +
+    (partial ? " · текущий месяц неполный" : "");
+  head.innerHTML = "<span></span><span>" + escapeHtml(previousMeta.label) +
+    "</span><span>Δ</span><span>" + escapeHtml(currentMeta.label) + "</span>";
+
+  container.innerHTML = metrics.map(function (metric) {
+    const maximum = metric.rate
+      ? 100
+      : Math.max(Number(metric.current || 0), Number(metric.previous || 0), 1);
+    const previousWidth = Math.min(Number(metric.previous || 0) / maximum * 100, 100);
+    const currentWidth = Math.min(Number(metric.current || 0) / maximum * 100, 100);
+    const delta = comparisonDelta(metric.current, metric.previous, metric.rate);
+    const previousValue = metric.rate ? Number(metric.previous || 0).toFixed(1) + "%" : fmt(metric.previous);
+    const currentValue = metric.rate ? Number(metric.current || 0).toFixed(1) + "%" : fmt(metric.current);
+
+    return "<div class='compare-row'>" +
+      "<div class='compare-metric'><strong>" + escapeHtml(metric.label) + "</strong><small>" + escapeHtml(metric.note) + "</small></div>" +
+      "<div class='compare-side previous'><div class='compare-track'><span class='compare-fill' data-width='" + previousWidth.toFixed(2) +
+        "'></span><span class='compare-value'>" + previousValue + "</span></div></div>" +
+      "<div class='compare-delta " + delta.className + "'>" + delta.label + "</div>" +
+      "<div class='compare-side current'><div class='compare-track'><span class='compare-fill' data-width='" + currentWidth.toFixed(2) +
+        "'></span><span class='compare-value'>" + currentValue + "</span></div></div>" +
+      "</div>";
+  }).join("");
+
+  requestAnimationFrame(function () {
+    requestAnimationFrame(function () {
+      document.querySelectorAll(".compare-fill").forEach(function (bar) {
+        bar.style.width = bar.dataset.width + "%";
+      });
+    });
+  });
+}
+
 function animateNumber(element, target, suffix, decimals) {
   const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
   const ending = suffix || "";
@@ -466,6 +556,78 @@ function renderStatus() {
   });
 }
 
+function renderOperatorHeatmap() {
+  const entries = Object.entries(currentSlice.operator_stats || {}).sort(function (a, b) {
+    return Number(b[1].total || 0) - Number(a[1].total || 0);
+  });
+  const table = document.getElementById("operatorHeatmap");
+
+  if (!entries.length) {
+    table.innerHTML = "<tbody><tr><td colspan='6'><div class='empty-state'><div><strong>Нет данных</strong>За выбранный месяц операторы не найдены</div></div></td></tr></tbody>";
+    return;
+  }
+
+  const definitions = [
+    { key: "pcp", label: "ПЦП", value: "pcp", base: "total", lowerBetter: false },
+    { key: "zapis", label: "Запись", value: "zapis", base: "pcp", lowerBetter: false },
+    { key: "prishel", label: "Явка", value: "prishel", base: "zapis", lowerBetter: false },
+    { key: "otval", label: "Отвал", value: "otval", base: "zapis", lowerBetter: true }
+  ];
+
+  const ranges = {};
+  definitions.forEach(function (definition) {
+    const validRates = entries.map(function (entry) {
+      const stats = entry[1];
+      const base = Number(stats[definition.base] || 0);
+      return base >= 5 ? Number(stats[definition.value] || 0) / base * 100 : null;
+    }).filter(function (value) { return value != null; });
+    ranges[definition.key] = validRates.length
+      ? { min: Math.min.apply(null, validRates), max: Math.max.apply(null, validRates) }
+      : null;
+  });
+
+  const maxWorkload = Math.max.apply(null, entries.map(function (entry) {
+    return Number(entry[1].total || 0);
+  }).concat([1]));
+
+  function heatCell(stats, definition) {
+    const count = Number(stats[definition.value] || 0);
+    const base = Number(stats[definition.base] || 0);
+    if (!base) {
+      return "<td class='heat-cell low-sample' title='Нет базы для расчёта'><strong>—</strong><small>нет базы</small></td>";
+    }
+
+    const rate = count / base * 100;
+    if (base < 5 || !ranges[definition.key]) {
+      return "<td class='heat-cell low-sample' title='Малая выборка: " + fmt(count) + " из " + fmt(base) + "'><strong>" +
+        rate.toFixed(1) + "%</strong><small>" + fmt(count) + " из " + fmt(base) + "</small></td>";
+    }
+
+    const range = ranges[definition.key];
+    let score = range.max === range.min ? 50 : (rate - range.min) / (range.max - range.min) * 100;
+    if (definition.lowerBetter) score = 100 - score;
+    return "<td class='heat-cell' style='--heat:" + score.toFixed(1) + "' title='" + fmt(count) + " из " + fmt(base) +
+      "'><strong>" + rate.toFixed(1) + "%</strong><small>" + fmt(count) + " из " + fmt(base) + "</small></td>";
+  }
+
+  const header = "<thead><tr><th scope='col'>Оператор</th><th scope='col'>Нагрузка</th>" +
+    definitions.map(function (definition) {
+      return "<th scope='col'>" + escapeHtml(definition.label) + "</th>";
+    }).join("") + "</tr></thead>";
+  const rows = entries.map(function (entry) {
+    const name = entry[0] === "—" ? "Без оператора" : entry[0];
+    const stats = entry[1];
+    const workload = Number(stats.total || 0) / maxWorkload * 100;
+    return "<tr><td class='heat-operator'><strong>" + escapeHtml(name || "Без оператора") + "</strong><small>оператор</small></td>" +
+      "<td class='workload-cell'><div class='workload-number'><strong>" + fmt(stats.total) + "</strong><small>заявок</small></div>" +
+        "<div class='workload-track'><span style='width:" + workload.toFixed(2) + "%'></span></div></td>" +
+      definitions.map(function (definition) { return heatCell(stats, definition); }).join("") +
+      "</tr>";
+  }).join("");
+
+  table.innerHTML = header + "<tbody>" + rows + "</tbody>";
+}
+
 function renderOperators() {
   const entries = Object.entries(currentSlice.operator_stats || {});
   const columns = [
@@ -492,7 +654,7 @@ function renderOperators() {
     return Number(b[1].zapis || 0) - Number(a[1].zapis || 0);
   })[0];
   document.getElementById("operatorInsight").textContent = leader
-    ? fmt(entries.length) + " операторов · лидер по записям — " + leader[0]
+    ? fmt(entries.length) + " операторов · цвет — позиция внутри команды"
     : "Нет данных по операторам";
 
   const header = columns.map(function (column) {
