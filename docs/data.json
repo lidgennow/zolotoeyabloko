@@ -3,7 +3,7 @@
     "date_min": "2026-04-11",
     "date_max": "2026-08-11"
   },
-  "generated_at": "2026-08-11T12:11:29Z",
+  "generated_at": "2026-08-11T13:57:29Z",
   "months": [
     {
       "key": "2026-04",
@@ -28,13 +28,13 @@
     {
       "key": "2026-08",
       "label": "Август 2026",
-      "count": 148
+      "count": 149
     }
   ],
   "all": {
     "kpi": {
-      "total": 1162,
-      "pcp": 473,
+      "total": 1163,
+      "pcp": 474,
       "nekv": 689,
       "zapis": 233,
       "prishel": 79,
@@ -43,8 +43,8 @@
       "perezap": 20,
       "active_zapis": 92,
       "otval_zapis": 62,
-      "conv_pcp": 40.7,
-      "conv_zapis_from_pcp": 49.3,
+      "conv_pcp": 40.8,
+      "conv_zapis_from_pcp": 49.2,
       "conv_prishel_from_zapis": 33.9,
       "sum_payment": 776210,
       "sum_plan": 927833,
@@ -63,7 +63,7 @@
     "status_counts": {
       "недозвон": 298,
       "запись в клинику": 233,
-      "в работе / переговорах": 199,
+      "в работе / переговорах": 200,
       "неактуал": 190,
       "ОТКАЗ": 116,
       "дубль": 49,
@@ -116,8 +116,8 @@
         "patients_no_dep": 0
       },
       "Наталья": {
-        "total": 336,
-        "pcp": 149,
+        "total": 337,
+        "pcp": 150,
         "nekv": 187,
         "zapis": 85,
         "prishel": 24,
@@ -8159,8 +8159,8 @@
     },
     "2026-08": {
       "kpi": {
-        "total": 148,
-        "pcp": 74,
+        "total": 149,
+        "pcp": 75,
         "nekv": 74,
         "zapis": 37,
         "prishel": 8,
@@ -8169,8 +8169,8 @@
         "perezap": 0,
         "active_zapis": 24,
         "otval_zapis": 5,
-        "conv_pcp": 50.0,
-        "conv_zapis_from_pcp": 50.0,
+        "conv_pcp": 50.3,
+        "conv_zapis_from_pcp": 49.3,
         "conv_prishel_from_zapis": 21.6,
         "sum_payment": 0,
         "sum_plan": 0,
@@ -8189,7 +8189,7 @@
       "status_counts": {
         "недозвон": 38,
         "запись в клинику": 37,
-        "в работе / переговорах": 31,
+        "в работе / переговорах": 32,
         "неактуал": 21,
         "ОТКАЗ": 12,
         "отложенный спрос": 6,
@@ -8212,8 +8212,8 @@
           "patients_no_dep": 0
         },
         "Наталья": {
-          "total": 73,
-          "pcp": 37,
+          "total": 74,
+          "pcp": 38,
           "nekv": 36,
           "zapis": 21,
           "prishel": 3,
