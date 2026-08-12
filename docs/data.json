@@ -3,7 +3,7 @@
     "date_min": "2026-04-11",
     "date_max": "2026-08-12"
   },
-  "generated_at": "2026-08-12T11:03:30Z",
+  "generated_at": "2026-08-12T12:25:33Z",
   "months": [
     {
       "key": "2026-04",
@@ -28,14 +28,14 @@
     {
       "key": "2026-08",
       "label": "Август 2026",
-      "count": 156
+      "count": 157
     }
   ],
   "all": {
     "kpi": {
-      "total": 1170,
+      "total": 1171,
       "pcp": 480,
-      "nekv": 690,
+      "nekv": 691,
       "zapis": 235,
       "prishel": 79,
       "neprishel": 55,
@@ -70,7 +70,7 @@
       "отложенный спрос": 41,
       "ндз финал": 25,
       "Другой город": 6,
-      "—": 3
+      "—": 4
     },
     "operator_stats": {
       "Ардашева": {
@@ -144,9 +144,9 @@
         "patients_no_dep": 0
       },
       "—": {
-        "total": 56,
+        "total": 57,
         "pcp": 16,
-        "nekv": 40,
+        "nekv": 41,
         "zapis": 2,
         "prishel": 0,
         "otval": 1,
@@ -8189,9 +8189,9 @@
     },
     "2026-08": {
       "kpi": {
-        "total": 156,
+        "total": 157,
         "pcp": 81,
-        "nekv": 75,
+        "nekv": 76,
         "zapis": 39,
         "prishel": 8,
         "neprishel": 5,
@@ -8199,7 +8199,7 @@
         "perezap": 0,
         "active_zapis": 26,
         "otval_zapis": 5,
-        "conv_pcp": 51.9,
+        "conv_pcp": 51.6,
         "conv_zapis_from_pcp": 48.1,
         "conv_prishel_from_zapis": 20.5,
         "sum_payment": 0,
@@ -8223,7 +8223,8 @@
         "неактуал": 23,
         "ОТКАЗ": 12,
         "отложенный спрос": 6,
-        "дубль": 1
+        "дубль": 1,
+        "—": 1
       },
       "operator_stats": {
         "Лена": {
@@ -8269,9 +8270,9 @@
           "patients_no_dep": 0
         },
         "—": {
-          "total": 1,
+          "total": 2,
           "pcp": 1,
-          "nekv": 0,
+          "nekv": 1,
           "zapis": 0,
           "prishel": 0,
           "otval": 0,
