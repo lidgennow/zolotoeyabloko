@@ -3,7 +3,7 @@
     "date_min": "2026-04-11",
     "date_max": "2026-08-12"
   },
-  "generated_at": "2026-08-12T12:25:33Z",
+  "generated_at": "2026-08-12T13:59:18Z",
   "months": [
     {
       "key": "2026-04",
@@ -28,14 +28,14 @@
     {
       "key": "2026-08",
       "label": "Август 2026",
-      "count": 157
+      "count": 159
     }
   ],
   "all": {
     "kpi": {
-      "total": 1171,
-      "pcp": 480,
-      "nekv": 691,
+      "total": 1173,
+      "pcp": 481,
+      "nekv": 692,
       "zapis": 235,
       "prishel": 79,
       "neprishel": 55,
@@ -44,7 +44,7 @@
       "active_zapis": 94,
       "otval_zapis": 62,
       "conv_pcp": 41.0,
-      "conv_zapis_from_pcp": 49.0,
+      "conv_zapis_from_pcp": 48.9,
       "conv_prishel_from_zapis": 33.6,
       "sum_payment": 776210,
       "sum_plan": 927833,
@@ -61,9 +61,9 @@
       "drr": 19.1
     },
     "status_counts": {
-      "недозвон": 299,
+      "недозвон": 300,
       "запись в клинику": 235,
-      "в работе / переговорах": 204,
+      "в работе / переговорах": 205,
       "неактуал": 192,
       "ОТКАЗ": 116,
       "дубль": 49,
@@ -102,9 +102,9 @@
         "patients_no_dep": 0
       },
       "Лена": {
-        "total": 357,
-        "pcp": 154,
-        "nekv": 203,
+        "total": 359,
+        "pcp": 155,
+        "nekv": 204,
         "zapis": 77,
         "prishel": 34,
         "otval": 20,
@@ -8189,9 +8189,9 @@
     },
     "2026-08": {
       "kpi": {
-        "total": 157,
-        "pcp": 81,
-        "nekv": 76,
+        "total": 159,
+        "pcp": 82,
+        "nekv": 77,
         "zapis": 39,
         "prishel": 8,
         "neprishel": 5,
@@ -8200,7 +8200,7 @@
         "active_zapis": 26,
         "otval_zapis": 5,
         "conv_pcp": 51.6,
-        "conv_zapis_from_pcp": 48.1,
+        "conv_zapis_from_pcp": 47.6,
         "conv_prishel_from_zapis": 20.5,
         "sum_payment": 0,
         "sum_plan": 0,
@@ -8217,9 +8217,9 @@
         "drr": null
       },
       "status_counts": {
-        "недозвон": 39,
+        "недозвон": 40,
         "запись в клинику": 39,
-        "в работе / переговорах": 36,
+        "в работе / переговорах": 37,
         "неактуал": 23,
         "ОТКАЗ": 12,
         "отложенный спрос": 6,
@@ -8228,9 +8228,9 @@
       },
       "operator_stats": {
         "Лена": {
-          "total": 40,
-          "pcp": 22,
-          "nekv": 18,
+          "total": 42,
+          "pcp": 23,
+          "nekv": 19,
           "zapis": 9,
           "prishel": 2,
           "otval": 2,
