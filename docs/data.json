@@ -3,7 +3,7 @@
     "date_min": "2026-04-11",
     "date_max": "2026-08-16"
   },
-  "generated_at": "2026-08-16T10:53:28Z",
+  "generated_at": "2026-08-16T11:25:58Z",
   "months": [
     {
       "key": "2026-04",
@@ -28,14 +28,14 @@
     {
       "key": "2026-08",
       "label": "Август 2026",
-      "count": 196
+      "count": 199
     }
   ],
   "all": {
     "kpi": {
-      "total": 1210,
+      "total": 1213,
       "pcp": 501,
-      "nekv": 709,
+      "nekv": 712,
       "zapis": 241,
       "prishel": 84,
       "neprishel": 56,
@@ -43,7 +43,7 @@
       "perezap": 20,
       "active_zapis": 94,
       "otval_zapis": 63,
-      "conv_pcp": 41.4,
+      "conv_pcp": 41.3,
       "conv_zapis_from_pcp": 48.1,
       "conv_prishel_from_zapis": 34.9,
       "sum_payment": 776210,
@@ -61,16 +61,16 @@
       "drr": 19.1
     },
     "status_counts": {
-      "недозвон": 313,
+      "недозвон": 312,
       "запись в клинику": 241,
       "в работе / переговорах": 216,
       "неактуал": 193,
       "ОТКАЗ": 119,
-      "дубль": 49,
+      "дубль": 50,
       "отложенный спрос": 44,
       "ндз финал": 25,
       "Другой город": 7,
-      "—": 3
+      "—": 6
     },
     "operator_stats": {
       "Ардашева": {
@@ -144,9 +144,9 @@
         "patients_no_dep": 0
       },
       "—": {
-        "total": 57,
+        "total": 60,
         "pcp": 17,
-        "nekv": 40,
+        "nekv": 43,
         "zapis": 2,
         "prishel": 0,
         "otval": 1,
@@ -8267,9 +8267,9 @@
     },
     "2026-08": {
       "kpi": {
-        "total": 196,
+        "total": 199,
         "pcp": 102,
-        "nekv": 94,
+        "nekv": 97,
         "zapis": 45,
         "prishel": 13,
         "neprishel": 6,
@@ -8277,7 +8277,7 @@
         "perezap": 0,
         "active_zapis": 26,
         "otval_zapis": 6,
-        "conv_pcp": 52.0,
+        "conv_pcp": 51.3,
         "conv_zapis_from_pcp": 44.1,
         "conv_prishel_from_zapis": 28.9,
         "sum_payment": 0,
@@ -8295,13 +8295,14 @@
         "drr": null
       },
       "status_counts": {
-        "недозвон": 53,
+        "недозвон": 52,
         "в работе / переговорах": 48,
         "запись в клинику": 45,
         "неактуал": 25,
         "ОТКАЗ": 14,
         "отложенный спрос": 9,
-        "дубль": 1,
+        "—": 3,
+        "дубль": 2,
         "Другой город": 1
       },
       "operator_stats": {
@@ -8348,9 +8349,9 @@
           "patients_no_dep": 0
         },
         "—": {
-          "total": 2,
+          "total": 5,
           "pcp": 2,
-          "nekv": 0,
+          "nekv": 3,
           "zapis": 0,
           "prishel": 0,
           "otval": 0,
