@@ -3,7 +3,7 @@
     "date_min": "2026-04-11",
     "date_max": "2026-08-17"
   },
-  "generated_at": "2026-08-17T07:33:59Z",
+  "generated_at": "2026-08-17T08:51:33Z",
   "months": [
     {
       "key": "2026-04",
@@ -34,18 +34,18 @@
   "all": {
     "kpi": {
       "total": 1223,
-      "pcp": 506,
-      "nekv": 717,
-      "zapis": 241,
+      "pcp": 507,
+      "nekv": 716,
+      "zapis": 242,
       "prishel": 88,
       "neprishel": 57,
       "otmena": 13,
       "perezap": 20,
-      "active_zapis": 88,
+      "active_zapis": 89,
       "otval_zapis": 65,
-      "conv_pcp": 41.4,
-      "conv_zapis_from_pcp": 47.6,
-      "conv_prishel_from_zapis": 36.5,
+      "conv_pcp": 41.5,
+      "conv_zapis_from_pcp": 47.7,
+      "conv_prishel_from_zapis": 36.4,
       "sum_payment": 776210,
       "sum_plan": 927833,
       "plan_with_dep_sum": 6667670,
@@ -56,21 +56,21 @@
       "only_payment_sum": 0,
       "only_payment_count": 0,
       "refusals_total": 121,
-      "neaktual_total": 197,
+      "neaktual_total": 198,
       "ad_spend": 1272600,
       "drr": 19.1
     },
     "status_counts": {
-      "недозвон": 310,
-      "запись в клинику": 241,
+      "недозвон": 312,
+      "запись в клинику": 242,
       "в работе / переговорах": 221,
-      "неактуал": 197,
+      "неактуал": 198,
       "ОТКАЗ": 121,
-      "дубль": 50,
+      "дубль": 51,
       "отложенный спрос": 44,
       "ндз финал": 25,
       "Другой город": 7,
-      "—": 7
+      "—": 2
     },
     "operator_stats": {
       "Ардашева": {
@@ -144,13 +144,13 @@
         "patients_no_dep": 0
       },
       "Светлана": {
-        "total": 5,
-        "pcp": 2,
-        "nekv": 3,
-        "zapis": 0,
+        "total": 10,
+        "pcp": 3,
+        "nekv": 7,
+        "zapis": 1,
         "prishel": 0,
         "otval": 0,
-        "active": 0,
+        "active": 1,
         "payment": 0,
         "plan_with_dep": 0,
         "plan_no_dep": 0,
@@ -158,9 +158,9 @@
         "patients_no_dep": 0
       },
       "—": {
-        "total": 62,
+        "total": 57,
         "pcp": 17,
-        "nekv": 45,
+        "nekv": 40,
         "zapis": 2,
         "prishel": 0,
         "otval": 1,
@@ -2384,12 +2384,21 @@
         "payment": 0,
         "plan_total": 0,
         "Комментарии:": null
+      },
+      {
+        "Имя:": "Татьяна",
+        "Дата записи": null,
+        "Явка:": null,
+        "Имя оператора, взявшего в работу": "Светлана",
+        "payment": 0,
+        "plan_total": 0,
+        "Комментарии:": null
       }
     ],
     "refusal_categories": [
       {
         "cat": "Другое",
-        "count": 303,
+        "count": 304,
         "share": 95.3,
         "items": [
           {
@@ -4207,6 +4216,12 @@
           {
             "Имя:": "Владимир",
             "Статус:": "ОТКАЗ",
+            "Имя оператора, взявшего в работу": "Светлана",
+            "Комментарии:": null
+          },
+          {
+            "Имя:": "Ирина",
+            "Статус:": "неактуал",
             "Имя оператора, взявшего в работу": "Светлана",
             "Комментарии:": null
           }
@@ -8341,18 +8356,18 @@
     "2026-08": {
       "kpi": {
         "total": 209,
-        "pcp": 106,
-        "nekv": 103,
-        "zapis": 45,
+        "pcp": 107,
+        "nekv": 102,
+        "zapis": 46,
         "prishel": 17,
         "neprishel": 7,
         "otmena": 1,
         "perezap": 0,
-        "active_zapis": 20,
+        "active_zapis": 21,
         "otval_zapis": 8,
-        "conv_pcp": 50.7,
-        "conv_zapis_from_pcp": 42.5,
-        "conv_prishel_from_zapis": 37.8,
+        "conv_pcp": 51.2,
+        "conv_zapis_from_pcp": 43.0,
+        "conv_prishel_from_zapis": 37.0,
         "sum_payment": 0,
         "sum_plan": 0,
         "plan_with_dep_sum": 0,
@@ -8363,19 +8378,18 @@
         "only_payment_sum": 0,
         "only_payment_count": 0,
         "refusals_total": 16,
-        "neaktual_total": 25,
+        "neaktual_total": 26,
         "ad_spend": null,
         "drr": null
       },
       "status_counts": {
-        "недозвон": 54,
+        "недозвон": 56,
         "в работе / переговорах": 52,
-        "запись в клинику": 45,
-        "неактуал": 25,
+        "запись в клинику": 46,
+        "неактуал": 26,
         "ОТКАЗ": 16,
         "отложенный спрос": 9,
-        "—": 5,
-        "дубль": 2,
+        "дубль": 3,
         "Другой город": 1
       },
       "operator_stats": {
@@ -8422,13 +8436,13 @@
           "patients_no_dep": 0
         },
         "Светлана": {
-          "total": 5,
-          "pcp": 2,
-          "nekv": 3,
-          "zapis": 0,
+          "total": 10,
+          "pcp": 3,
+          "nekv": 7,
+          "zapis": 1,
           "prishel": 0,
           "otval": 0,
-          "active": 0,
+          "active": 1,
           "payment": 0,
           "plan_with_dep": 0,
           "plan_no_dep": 0,
@@ -8436,9 +8450,9 @@
           "patients_no_dep": 0
         },
         "—": {
-          "total": 7,
+          "total": 2,
           "pcp": 2,
-          "nekv": 5,
+          "nekv": 0,
           "zapis": 0,
           "prishel": 0,
           "otval": 0,
@@ -8857,12 +8871,21 @@
           "payment": 0,
           "plan_total": 0,
           "Комментарии:": null
+        },
+        {
+          "Имя:": "Татьяна",
+          "Дата записи": null,
+          "Явка:": null,
+          "Имя оператора, взявшего в работу": "Светлана",
+          "payment": 0,
+          "plan_total": 0,
+          "Комментарии:": null
         }
       ],
       "refusal_categories": [
         {
           "cat": "Другое",
-          "count": 41,
+          "count": 42,
           "share": 100.0,
           "items": [
             {
@@ -9108,6 +9131,12 @@
             {
               "Имя:": "Владимир",
               "Статус:": "ОТКАЗ",
+              "Имя оператора, взявшего в работу": "Светлана",
+              "Комментарии:": null
+            },
+            {
+              "Имя:": "Ирина",
+              "Статус:": "неактуал",
               "Имя оператора, взявшего в работу": "Светлана",
               "Комментарии:": null
             }
