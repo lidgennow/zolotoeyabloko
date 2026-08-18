@@ -1,9 +1,9 @@
 {
   "period": {
     "date_min": "2026-04-11",
-    "date_max": "2026-08-17"
+    "date_max": "2026-08-18"
   },
-  "generated_at": "2026-08-18T03:01:20Z",
+  "generated_at": "2026-08-18T04:09:00Z",
   "months": [
     {
       "key": "2026-04",
@@ -28,14 +28,14 @@
     {
       "key": "2026-08",
       "label": "Август 2026",
-      "count": 215
+      "count": 216
     }
   ],
   "all": {
     "kpi": {
-      "total": 1229,
+      "total": 1230,
       "pcp": 511,
-      "nekv": 718,
+      "nekv": 719,
       "zapis": 243,
       "prishel": 88,
       "neprishel": 57,
@@ -43,7 +43,7 @@
       "perezap": 20,
       "active_zapis": 90,
       "otval_zapis": 65,
-      "conv_pcp": 41.6,
+      "conv_pcp": 41.5,
       "conv_zapis_from_pcp": 47.6,
       "conv_prishel_from_zapis": 36.2,
       "sum_payment": 776210,
@@ -70,7 +70,7 @@
       "отложенный спрос": 44,
       "ндз финал": 25,
       "Другой город": 8,
-      "—": 4
+      "—": 5
     },
     "operator_stats": {
       "Ардашева": {
@@ -158,9 +158,9 @@
         "patients_no_dep": 0
       },
       "—": {
-        "total": 59,
+        "total": 60,
         "pcp": 17,
-        "nekv": 42,
+        "nekv": 43,
         "zapis": 2,
         "prishel": 0,
         "otval": 1,
@@ -8388,9 +8388,9 @@
     },
     "2026-08": {
       "kpi": {
-        "total": 215,
+        "total": 216,
         "pcp": 111,
-        "nekv": 104,
+        "nekv": 105,
         "zapis": 47,
         "prishel": 17,
         "neprishel": 7,
@@ -8398,7 +8398,7 @@
         "perezap": 0,
         "active_zapis": 22,
         "otval_zapis": 8,
-        "conv_pcp": 51.6,
+        "conv_pcp": 51.4,
         "conv_zapis_from_pcp": 42.3,
         "conv_prishel_from_zapis": 36.2,
         "sum_payment": 0,
@@ -8423,8 +8423,8 @@
         "ОТКАЗ": 20,
         "отложенный спрос": 9,
         "дубль": 3,
-        "Другой город": 2,
-        "—": 2
+        "—": 3,
+        "Другой город": 2
       },
       "operator_stats": {
         "Лена": {
@@ -8484,9 +8484,9 @@
           "patients_no_dep": 0
         },
         "—": {
-          "total": 4,
+          "total": 5,
           "pcp": 2,
-          "nekv": 2,
+          "nekv": 3,
           "zapis": 0,
           "prishel": 0,
           "otval": 0,
