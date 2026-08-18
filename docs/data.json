@@ -3,7 +3,7 @@
     "date_min": "2026-04-11",
     "date_max": "2026-08-18"
   },
-  "generated_at": "2026-08-18T04:09:00Z",
+  "generated_at": "2026-08-18T05:03:40Z",
   "months": [
     {
       "key": "2026-04",
@@ -70,7 +70,8 @@
       "отложенный спрос": 44,
       "ндз финал": 25,
       "Другой город": 8,
-      "—": 5
+      "отказ": 3,
+      "—": 2
     },
     "operator_stats": {
       "Ардашева": {
@@ -144,9 +145,9 @@
         "patients_no_dep": 0
       },
       "Светлана": {
-        "total": 14,
+        "total": 16,
         "pcp": 6,
-        "nekv": 8,
+        "nekv": 10,
         "zapis": 1,
         "prishel": 0,
         "otval": 0,
@@ -158,9 +159,9 @@
         "patients_no_dep": 0
       },
       "—": {
-        "total": 60,
+        "total": 58,
         "pcp": 17,
-        "nekv": 43,
+        "nekv": 41,
         "zapis": 2,
         "prishel": 0,
         "otval": 1,
@@ -8423,7 +8424,7 @@
         "ОТКАЗ": 20,
         "отложенный спрос": 9,
         "дубль": 3,
-        "—": 3,
+        "отказ": 3,
         "Другой город": 2
       },
       "operator_stats": {
@@ -8470,9 +8471,9 @@
           "patients_no_dep": 0
         },
         "Светлана": {
-          "total": 14,
+          "total": 16,
           "pcp": 6,
-          "nekv": 8,
+          "nekv": 10,
           "zapis": 1,
           "prishel": 0,
           "otval": 0,
@@ -8484,9 +8485,9 @@
           "patients_no_dep": 0
         },
         "—": {
-          "total": 5,
+          "total": 3,
           "pcp": 2,
-          "nekv": 3,
+          "nekv": 1,
           "zapis": 0,
           "prishel": 0,
           "otval": 0,
