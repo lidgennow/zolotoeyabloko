@@ -3,7 +3,7 @@
     "date_min": "2026-04-11",
     "date_max": "2026-08-19"
   },
-  "generated_at": "2026-08-19T05:03:43Z",
+  "generated_at": "2026-08-19T05:57:46Z",
   "months": [
     {
       "key": "2026-04",
@@ -28,24 +28,24 @@
     {
       "key": "2026-08",
       "label": "Август 2026",
-      "count": 236
+      "count": 238
     }
   ],
   "all": {
     "kpi": {
-      "total": 1250,
-      "pcp": 517,
+      "total": 1252,
+      "pcp": 519,
       "nekv": 733,
-      "zapis": 248,
+      "zapis": 250,
       "prishel": 88,
       "neprishel": 57,
       "otmena": 13,
       "perezap": 20,
-      "active_zapis": 95,
+      "active_zapis": 97,
       "otval_zapis": 65,
-      "conv_pcp": 41.4,
-      "conv_zapis_from_pcp": 48.0,
-      "conv_prishel_from_zapis": 35.5,
+      "conv_pcp": 41.5,
+      "conv_zapis_from_pcp": 48.2,
+      "conv_prishel_from_zapis": 35.2,
       "sum_payment": 776210,
       "sum_plan": 927833,
       "plan_with_dep_sum": 6667670,
@@ -61,15 +61,15 @@
       "drr": 19.1
     },
     "status_counts": {
-      "недозвон": 309,
-      "запись в клинику": 248,
+      "недозвон": 310,
+      "запись в клинику": 250,
       "в работе / переговорах": 225,
       "неактуал": 198,
       "ОТКАЗ": 129,
       "дубль": 51,
       "отложенный спрос": 44,
       "ндз финал": 25,
-      "—": 13,
+      "—": 12,
       "Другой город": 8
     },
     "operator_stats": {
@@ -102,9 +102,9 @@
         "patients_no_dep": 0
       },
       "Лена": {
-        "total": 371,
+        "total": 372,
         "pcp": 163,
-        "nekv": 208,
+        "nekv": 209,
         "zapis": 78,
         "prishel": 38,
         "otval": 20,
@@ -144,13 +144,13 @@
         "patients_no_dep": 0
       },
       "Светлана": {
-        "total": 20,
-        "pcp": 8,
+        "total": 22,
+        "pcp": 10,
         "nekv": 12,
-        "zapis": 3,
+        "zapis": 5,
         "prishel": 0,
         "otval": 0,
-        "active": 3,
+        "active": 5,
         "payment": 0,
         "plan_with_dep": 0,
         "plan_no_dep": 0,
@@ -158,9 +158,9 @@
         "patients_no_dep": 0
       },
       "—": {
-        "total": 69,
+        "total": 68,
         "pcp": 18,
-        "nekv": 51,
+        "nekv": 50,
         "zapis": 3,
         "prishel": 0,
         "otval": 1,
@@ -2444,6 +2444,24 @@
         "Дата записи": "23.08 на 16.30",
         "Явка:": null,
         "Имя оператора, взявшего в работу": "Наталья",
+        "payment": 0,
+        "plan_total": 0,
+        "Комментарии:": null
+      },
+      {
+        "Имя:": "Сергей",
+        "Дата записи": "19.08 на   14.30",
+        "Явка:": null,
+        "Имя оператора, взявшего в работу": "Светлана",
+        "payment": 0,
+        "plan_total": 0,
+        "Комментарии:": null
+      },
+      {
+        "Имя:": "Юрий",
+        "Дата записи": "29.08  на 10.30",
+        "Явка:": null,
+        "Имя оператора, взявшего в работу": "Светлана",
         "payment": 0,
         "plan_total": 0,
         "Комментарии:": null
@@ -8457,19 +8475,19 @@
     },
     "2026-08": {
       "kpi": {
-        "total": 236,
-        "pcp": 117,
+        "total": 238,
+        "pcp": 119,
         "nekv": 119,
-        "zapis": 52,
+        "zapis": 54,
         "prishel": 17,
         "neprishel": 7,
         "otmena": 1,
         "perezap": 0,
-        "active_zapis": 27,
+        "active_zapis": 29,
         "otval_zapis": 8,
-        "conv_pcp": 49.6,
-        "conv_zapis_from_pcp": 44.4,
-        "conv_prishel_from_zapis": 32.7,
+        "conv_pcp": 50.0,
+        "conv_zapis_from_pcp": 45.4,
+        "conv_prishel_from_zapis": 31.5,
         "sum_payment": 0,
         "sum_plan": 0,
         "plan_with_dep_sum": 0,
@@ -8486,20 +8504,20 @@
       },
       "status_counts": {
         "в работе / переговорах": 56,
-        "недозвон": 53,
-        "запись в клинику": 52,
+        "недозвон": 54,
+        "запись в клинику": 54,
         "неактуал": 26,
         "ОТКАЗ": 24,
-        "—": 11,
+        "—": 10,
         "отложенный спрос": 9,
         "дубль": 3,
         "Другой город": 2
       },
       "operator_stats": {
         "Лена": {
-          "total": 54,
+          "total": 55,
           "pcp": 31,
-          "nekv": 23,
+          "nekv": 24,
           "zapis": 10,
           "prishel": 6,
           "otval": 2,
@@ -8539,13 +8557,13 @@
           "patients_no_dep": 0
         },
         "Светлана": {
-          "total": 20,
-          "pcp": 8,
+          "total": 22,
+          "pcp": 10,
           "nekv": 12,
-          "zapis": 3,
+          "zapis": 5,
           "prishel": 0,
           "otval": 0,
-          "active": 3,
+          "active": 5,
           "payment": 0,
           "plan_with_dep": 0,
           "plan_no_dep": 0,
@@ -8553,9 +8571,9 @@
           "patients_no_dep": 0
         },
         "—": {
-          "total": 14,
+          "total": 13,
           "pcp": 3,
-          "nekv": 11,
+          "nekv": 10,
           "zapis": 1,
           "prishel": 0,
           "otval": 0,
@@ -9034,6 +9052,24 @@
           "Дата записи": "23.08 на 16.30",
           "Явка:": null,
           "Имя оператора, взявшего в работу": "Наталья",
+          "payment": 0,
+          "plan_total": 0,
+          "Комментарии:": null
+        },
+        {
+          "Имя:": "Сергей",
+          "Дата записи": "19.08 на   14.30",
+          "Явка:": null,
+          "Имя оператора, взявшего в работу": "Светлана",
+          "payment": 0,
+          "plan_total": 0,
+          "Комментарии:": null
+        },
+        {
+          "Имя:": "Юрий",
+          "Дата записи": "29.08  на 10.30",
+          "Явка:": null,
+          "Имя оператора, взявшего в работу": "Светлана",
           "payment": 0,
           "plan_total": 0,
           "Комментарии:": null
