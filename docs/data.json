@@ -3,7 +3,7 @@
     "date_min": "2026-04-11",
     "date_max": "2026-08-21"
   },
-  "generated_at": "2026-08-21T07:02:43Z",
+  "generated_at": "2026-08-21T08:07:19Z",
   "months": [
     {
       "key": "2026-04",
@@ -28,14 +28,14 @@
     {
       "key": "2026-08",
       "label": "Август 2026",
-      "count": 254
+      "count": 255
     }
   ],
   "all": {
     "kpi": {
-      "total": 1268,
+      "total": 1269,
       "pcp": 522,
-      "nekv": 746,
+      "nekv": 747,
       "zapis": 252,
       "prishel": 92,
       "neprishel": 60,
@@ -43,7 +43,7 @@
       "perezap": 20,
       "active_zapis": 94,
       "otval_zapis": 66,
-      "conv_pcp": 41.2,
+      "conv_pcp": 41.1,
       "conv_zapis_from_pcp": 48.3,
       "conv_prishel_from_zapis": 36.5,
       "sum_payment": 776210,
@@ -61,7 +61,7 @@
       "drr": 19.1
     },
     "status_counts": {
-      "недозвон": 308,
+      "недозвон": 309,
       "запись в клинику": 252,
       "в работе / переговорах": 226,
       "неактуал": 211,
@@ -158,9 +158,9 @@
         "patients_no_dep": 0
       },
       "Светлана": {
-        "total": 44,
+        "total": 45,
         "pcp": 19,
-        "nekv": 25,
+        "nekv": 26,
         "zapis": 7,
         "prishel": 2,
         "otval": 2,
@@ -8633,9 +8633,9 @@
     },
     "2026-08": {
       "kpi": {
-        "total": 254,
+        "total": 255,
         "pcp": 122,
-        "nekv": 132,
+        "nekv": 133,
         "zapis": 56,
         "prishel": 21,
         "neprishel": 10,
@@ -8643,7 +8643,7 @@
         "perezap": 0,
         "active_zapis": 26,
         "otval_zapis": 9,
-        "conv_pcp": 48.0,
+        "conv_pcp": 47.8,
         "conv_zapis_from_pcp": 45.9,
         "conv_prishel_from_zapis": 37.5,
         "sum_payment": 0,
@@ -8663,7 +8663,7 @@
       "status_counts": {
         "в работе / переговорах": 57,
         "запись в клинику": 56,
-        "недозвон": 52,
+        "недозвон": 53,
         "неактуал": 39,
         "ОТКАЗ": 32,
         "отложенный спрос": 9,
@@ -8729,9 +8729,9 @@
           "patients_no_dep": 0
         },
         "Светлана": {
-          "total": 44,
+          "total": 45,
           "pcp": 19,
-          "nekv": 25,
+          "nekv": 26,
           "zapis": 7,
           "prishel": 2,
           "otval": 2,
