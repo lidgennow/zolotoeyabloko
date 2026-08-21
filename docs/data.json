@@ -3,7 +3,7 @@
     "date_min": "2026-04-11",
     "date_max": "2026-08-21"
   },
-  "generated_at": "2026-08-21T04:10:49Z",
+  "generated_at": "2026-08-21T05:06:08Z",
   "months": [
     {
       "key": "2026-04",
@@ -34,18 +34,18 @@
   "all": {
     "kpi": {
       "total": 1268,
-      "pcp": 522,
-      "nekv": 746,
-      "zapis": 251,
+      "pcp": 523,
+      "nekv": 745,
+      "zapis": 252,
       "prishel": 92,
       "neprishel": 60,
       "otmena": 13,
       "perezap": 20,
-      "active_zapis": 93,
+      "active_zapis": 94,
       "otval_zapis": 66,
       "conv_pcp": 41.2,
-      "conv_zapis_from_pcp": 48.1,
-      "conv_prishel_from_zapis": 36.7,
+      "conv_zapis_from_pcp": 48.2,
+      "conv_prishel_from_zapis": 36.5,
       "sum_payment": 776210,
       "sum_plan": 927833,
       "plan_with_dep_sum": 6667670,
@@ -62,7 +62,7 @@
     },
     "status_counts": {
       "недозвон": 317,
-      "запись в клинику": 251,
+      "запись в клинику": 252,
       "в работе / переговорах": 227,
       "неактуал": 207,
       "ОТКАЗ": 131,
@@ -70,7 +70,7 @@
       "отложенный спрос": 44,
       "ндз финал": 27,
       "Другой город": 8,
-      "—": 3
+      "—": 2
     },
     "operator_stats": {
       "Ардашева": {
@@ -116,13 +116,13 @@
         "patients_no_dep": 0
       },
       "Махаббат": {
-        "total": 1,
-        "pcp": 0,
+        "total": 2,
+        "pcp": 1,
         "nekv": 1,
-        "zapis": 0,
+        "zapis": 1,
         "prishel": 0,
         "otval": 0,
-        "active": 0,
+        "active": 1,
         "payment": 0,
         "plan_with_dep": 0,
         "plan_no_dep": 0,
@@ -172,9 +172,9 @@
         "patients_no_dep": 0
       },
       "—": {
-        "total": 57,
+        "total": 56,
         "pcp": 16,
-        "nekv": 41,
+        "nekv": 40,
         "zapis": 2,
         "prishel": 0,
         "otval": 1,
@@ -2485,6 +2485,15 @@
         "Дата записи": "24.08 НА 12.30",
         "Явка:": null,
         "Имя оператора, взявшего в работу": "Светлана",
+        "payment": 0,
+        "plan_total": 0,
+        "Комментарии:": null
+      },
+      {
+        "Имя:": "Сергей",
+        "Дата записи": "27.08 НА 17.30 ",
+        "Явка:": null,
+        "Имя оператора, взявшего в работу": "Махаббат",
         "payment": 0,
         "plan_total": 0,
         "Комментарии:": null
@@ -8565,18 +8574,18 @@
     "2026-08": {
       "kpi": {
         "total": 254,
-        "pcp": 122,
-        "nekv": 132,
-        "zapis": 55,
+        "pcp": 123,
+        "nekv": 131,
+        "zapis": 56,
         "prishel": 21,
         "neprishel": 10,
         "otmena": 1,
         "perezap": 0,
-        "active_zapis": 25,
+        "active_zapis": 26,
         "otval_zapis": 9,
-        "conv_pcp": 48.0,
-        "conv_zapis_from_pcp": 45.1,
-        "conv_prishel_from_zapis": 38.2,
+        "conv_pcp": 48.4,
+        "conv_zapis_from_pcp": 45.5,
+        "conv_prishel_from_zapis": 37.5,
         "sum_payment": 0,
         "sum_plan": 0,
         "plan_with_dep_sum": 0,
@@ -8594,14 +8603,13 @@
       "status_counts": {
         "недозвон": 61,
         "в работе / переговорах": 58,
-        "запись в клинику": 55,
+        "запись в клинику": 56,
         "неактуал": 35,
         "ОТКАЗ": 26,
         "отложенный спрос": 9,
         "дубль": 5,
         "ндз финал": 2,
-        "Другой город": 2,
-        "—": 1
+        "Другой город": 2
       },
       "operator_stats": {
         "Лена": {
@@ -8619,13 +8627,13 @@
           "patients_no_dep": 0
         },
         "Махаббат": {
-          "total": 1,
-          "pcp": 0,
+          "total": 2,
+          "pcp": 1,
           "nekv": 1,
-          "zapis": 0,
+          "zapis": 1,
           "prishel": 0,
           "otval": 0,
-          "active": 0,
+          "active": 1,
           "payment": 0,
           "plan_with_dep": 0,
           "plan_no_dep": 0,
@@ -8675,9 +8683,9 @@
           "patients_no_dep": 0
         },
         "—": {
-          "total": 2,
+          "total": 1,
           "pcp": 1,
-          "nekv": 1,
+          "nekv": 0,
           "zapis": 0,
           "prishel": 0,
           "otval": 0,
@@ -9183,6 +9191,15 @@
           "Дата записи": "24.08 НА 12.30",
           "Явка:": null,
           "Имя оператора, взявшего в работу": "Светлана",
+          "payment": 0,
+          "plan_total": 0,
+          "Комментарии:": null
+        },
+        {
+          "Имя:": "Сергей",
+          "Дата записи": "27.08 НА 17.30 ",
+          "Явка:": null,
+          "Имя оператора, взявшего в работу": "Махаббат",
           "payment": 0,
           "plan_total": 0,
           "Комментарии:": null
