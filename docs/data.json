@@ -3,7 +3,7 @@
     "date_min": "2026-04-11",
     "date_max": "2026-08-22"
   },
-  "generated_at": "2026-08-22T12:51:09Z",
+  "generated_at": "2026-08-22T13:36:26Z",
   "months": [
     {
       "key": "2026-04",
@@ -28,14 +28,14 @@
     {
       "key": "2026-08",
       "label": "Август 2026",
-      "count": 274
+      "count": 276
     }
   ],
   "all": {
     "kpi": {
-      "total": 1288,
+      "total": 1291,
       "pcp": 536,
-      "nekv": 752,
+      "nekv": 755,
       "zapis": 261,
       "prishel": 92,
       "neprishel": 61,
@@ -43,7 +43,7 @@
       "perezap": 20,
       "active_zapis": 102,
       "otval_zapis": 67,
-      "conv_pcp": 41.6,
+      "conv_pcp": 41.5,
       "conv_zapis_from_pcp": 48.7,
       "conv_prishel_from_zapis": 35.2,
       "sum_payment": 776210,
@@ -61,7 +61,7 @@
       "drr": 19.1
     },
     "status_counts": {
-      "недозвон": 295,
+      "недозвон": 297,
       "запись в клинику": 261,
       "в работе / переговорах": 231,
       "неактуал": 214,
@@ -70,7 +70,7 @@
       "отложенный спрос": 44,
       "ндз финал": 36,
       "Другой город": 8,
-      "—": 2
+      "—": 3
     },
     "operator_stats": {
       "Ардашева": {
@@ -116,9 +116,9 @@
         "patients_no_dep": 0
       },
       "Махаббат": {
-        "total": 15,
+        "total": 17,
         "pcp": 7,
-        "nekv": 8,
+        "nekv": 10,
         "zapis": 7,
         "prishel": 0,
         "otval": 1,
@@ -172,9 +172,9 @@
         "patients_no_dep": 0
       },
       "—": {
-        "total": 56,
+        "total": 57,
         "pcp": 16,
-        "nekv": 40,
+        "nekv": 41,
         "zapis": 2,
         "prishel": 0,
         "otval": 1,
@@ -8774,9 +8774,9 @@
     },
     "2026-08": {
       "kpi": {
-        "total": 274,
+        "total": 276,
         "pcp": 136,
-        "nekv": 138,
+        "nekv": 140,
         "zapis": 65,
         "prishel": 21,
         "neprishel": 11,
@@ -8784,7 +8784,7 @@
         "perezap": 0,
         "active_zapis": 34,
         "otval_zapis": 10,
-        "conv_pcp": 49.6,
+        "conv_pcp": 49.3,
         "conv_zapis_from_pcp": 47.8,
         "conv_prishel_from_zapis": 32.3,
         "sum_payment": 0,
@@ -8804,7 +8804,7 @@
       "status_counts": {
         "запись в клинику": 65,
         "в работе / переговорах": 62,
-        "недозвон": 45,
+        "недозвон": 47,
         "неактуал": 42,
         "ОТКАЗ": 37,
         "отложенный спрос": 9,
@@ -8828,9 +8828,9 @@
           "patients_no_dep": 0
         },
         "Махаббат": {
-          "total": 15,
+          "total": 16,
           "pcp": 7,
-          "nekv": 8,
+          "nekv": 9,
           "zapis": 7,
           "prishel": 0,
           "otval": 1,
@@ -8884,9 +8884,9 @@
           "patients_no_dep": 0
         },
         "—": {
-          "total": 1,
+          "total": 2,
           "pcp": 1,
-          "nekv": 0,
+          "nekv": 1,
           "zapis": 0,
           "prishel": 0,
           "otval": 0,
