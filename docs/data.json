@@ -3,7 +3,7 @@
     "date_min": "2026-04-11",
     "date_max": "2026-08-22"
   },
-  "generated_at": "2026-08-22T14:27:42Z",
+  "generated_at": "2026-08-22T14:51:56Z",
   "months": [
     {
       "key": "2026-04",
@@ -28,7 +28,7 @@
     {
       "key": "2026-08",
       "label": "Август 2026",
-      "count": 276
+      "count": 277
     }
   ],
   "all": {
@@ -8774,9 +8774,9 @@
     },
     "2026-08": {
       "kpi": {
-        "total": 276,
+        "total": 277,
         "pcp": 136,
-        "nekv": 140,
+        "nekv": 141,
         "zapis": 65,
         "prishel": 21,
         "neprishel": 11,
@@ -8784,7 +8784,7 @@
         "perezap": 0,
         "active_zapis": 34,
         "otval_zapis": 10,
-        "conv_pcp": 49.3,
+        "conv_pcp": 49.1,
         "conv_zapis_from_pcp": 47.8,
         "conv_prishel_from_zapis": 32.3,
         "sum_payment": 0,
@@ -8810,7 +8810,8 @@
         "отложенный спрос": 9,
         "ндз финал": 6,
         "дубль": 6,
-        "Другой город": 2
+        "Другой город": 2,
+        "—": 1
       },
       "operator_stats": {
         "Лена": {
@@ -8828,9 +8829,9 @@
           "patients_no_dep": 0
         },
         "Махаббат": {
-          "total": 16,
+          "total": 17,
           "pcp": 7,
-          "nekv": 9,
+          "nekv": 10,
           "zapis": 7,
           "prishel": 0,
           "otval": 1,
