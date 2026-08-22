@@ -3,7 +3,7 @@
     "date_min": "2026-04-11",
     "date_max": "2026-08-22"
   },
-  "generated_at": "2026-08-22T08:37:38Z",
+  "generated_at": "2026-08-22T09:33:07Z",
   "months": [
     {
       "key": "2026-04",
@@ -28,24 +28,24 @@
     {
       "key": "2026-08",
       "label": "Август 2026",
-      "count": 268
+      "count": 271
     }
   ],
   "all": {
     "kpi": {
-      "total": 1282,
-      "pcp": 531,
-      "nekv": 751,
-      "zapis": 260,
+      "total": 1285,
+      "pcp": 533,
+      "nekv": 752,
+      "zapis": 261,
       "prishel": 92,
       "neprishel": 61,
       "otmena": 13,
       "perezap": 20,
-      "active_zapis": 101,
+      "active_zapis": 102,
       "otval_zapis": 67,
-      "conv_pcp": 41.4,
+      "conv_pcp": 41.5,
       "conv_zapis_from_pcp": 49.0,
-      "conv_prishel_from_zapis": 35.4,
+      "conv_prishel_from_zapis": 35.2,
       "sum_payment": 776210,
       "sum_plan": 927833,
       "plan_with_dep_sum": 6667670,
@@ -56,17 +56,17 @@
       "only_payment_sum": 0,
       "only_payment_count": 0,
       "refusals_total": 141,
-      "neaktual_total": 212,
+      "neaktual_total": 213,
       "ad_spend": 1272600,
       "drr": 19.1
     },
     "status_counts": {
-      "недозвон": 301,
-      "запись в клинику": 260,
-      "в работе / переговорах": 227,
-      "неактуал": 212,
+      "недозвон": 300,
+      "запись в клинику": 261,
+      "в работе / переговорах": 228,
+      "неактуал": 213,
       "ОТКАЗ": 141,
-      "дубль": 53,
+      "дубль": 54,
       "отложенный спрос": 44,
       "ндз финал": 34,
       "Другой город": 8,
@@ -116,13 +116,13 @@
         "patients_no_dep": 0
       },
       "Махаббат": {
-        "total": 12,
-        "pcp": 6,
-        "nekv": 6,
-        "zapis": 6,
+        "total": 14,
+        "pcp": 7,
+        "nekv": 7,
+        "zapis": 7,
         "prishel": 0,
         "otval": 1,
-        "active": 5,
+        "active": 6,
         "payment": 0,
         "plan_with_dep": 0,
         "plan_no_dep": 0,
@@ -158,8 +158,8 @@
         "patients_no_dep": 0
       },
       "Светлана": {
-        "total": 60,
-        "pcp": 24,
+        "total": 61,
+        "pcp": 25,
         "nekv": 36,
         "zapis": 10,
         "prishel": 2,
@@ -2569,12 +2569,21 @@
         "payment": 0,
         "plan_total": 0,
         "Комментарии:": null
+      },
+      {
+        "Имя:": "Наталья",
+        "Дата записи": "24.08 НА  12.30 ",
+        "Явка:": null,
+        "Имя оператора, взявшего в работу": "Махаббат",
+        "payment": 0,
+        "plan_total": 0,
+        "Комментарии:": null
       }
     ],
     "refusal_categories": [
       {
         "cat": "Другое",
-        "count": 338,
+        "count": 339,
         "share": 95.8,
         "items": [
           {
@@ -4602,6 +4611,12 @@
           {
             "Имя:": "Роман ",
             "Статус:": "ОТКАЗ",
+            "Имя оператора, взявшего в работу": "Махаббат",
+            "Комментарии:": null
+          },
+          {
+            "Имя:": "Виктор",
+            "Статус:": "неактуал",
             "Имя оператора, взявшего в работу": "Махаббат",
             "Комментарии:": null
           }
@@ -8741,19 +8756,19 @@
     },
     "2026-08": {
       "kpi": {
-        "total": 268,
-        "pcp": 131,
-        "nekv": 137,
-        "zapis": 64,
+        "total": 271,
+        "pcp": 133,
+        "nekv": 138,
+        "zapis": 65,
         "prishel": 21,
         "neprishel": 11,
         "otmena": 1,
         "perezap": 0,
-        "active_zapis": 33,
+        "active_zapis": 34,
         "otval_zapis": 10,
-        "conv_pcp": 48.9,
+        "conv_pcp": 49.1,
         "conv_zapis_from_pcp": 48.9,
-        "conv_prishel_from_zapis": 32.8,
+        "conv_prishel_from_zapis": 32.3,
         "sum_payment": 0,
         "sum_plan": 0,
         "plan_with_dep_sum": 0,
@@ -8764,18 +8779,18 @@
         "only_payment_sum": 0,
         "only_payment_count": 0,
         "refusals_total": 35,
-        "neaktual_total": 40,
+        "neaktual_total": 41,
         "ad_spend": null,
         "drr": null
       },
       "status_counts": {
-        "запись в клинику": 64,
-        "в работе / переговорах": 58,
-        "недозвон": 51,
-        "неактуал": 40,
+        "запись в клинику": 65,
+        "в работе / переговорах": 59,
+        "недозвон": 50,
+        "неактуал": 41,
         "ОТКАЗ": 35,
         "отложенный спрос": 9,
-        "дубль": 5,
+        "дубль": 6,
         "ндз финал": 4,
         "Другой город": 2
       },
@@ -8795,13 +8810,13 @@
           "patients_no_dep": 0
         },
         "Махаббат": {
-          "total": 12,
-          "pcp": 6,
-          "nekv": 6,
-          "zapis": 6,
+          "total": 14,
+          "pcp": 7,
+          "nekv": 7,
+          "zapis": 7,
           "prishel": 0,
           "otval": 1,
-          "active": 5,
+          "active": 6,
           "payment": 0,
           "plan_with_dep": 0,
           "plan_no_dep": 0,
@@ -8837,8 +8852,8 @@
           "patients_no_dep": 0
         },
         "Светлана": {
-          "total": 60,
-          "pcp": 24,
+          "total": 61,
+          "pcp": 25,
           "nekv": 36,
           "zapis": 10,
           "prishel": 2,
@@ -9443,12 +9458,21 @@
           "payment": 0,
           "plan_total": 0,
           "Комментарии:": null
+        },
+        {
+          "Имя:": "Наталья",
+          "Дата записи": "24.08 НА  12.30 ",
+          "Явка:": null,
+          "Имя оператора, взявшего в работу": "Махаббат",
+          "payment": 0,
+          "plan_total": 0,
+          "Комментарии:": null
         }
       ],
       "refusal_categories": [
         {
           "cat": "Другое",
-          "count": 75,
+          "count": 76,
           "share": 100.0,
           "items": [
             {
@@ -9898,6 +9922,12 @@
             {
               "Имя:": "Роман ",
               "Статус:": "ОТКАЗ",
+              "Имя оператора, взявшего в работу": "Махаббат",
+              "Комментарии:": null
+            },
+            {
+              "Имя:": "Виктор",
+              "Статус:": "неактуал",
               "Имя оператора, взявшего в работу": "Махаббат",
               "Комментарии:": null
             }
