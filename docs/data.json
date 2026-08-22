@@ -3,7 +3,7 @@
     "date_min": "2026-04-11",
     "date_max": "2026-08-22"
   },
-  "generated_at": "2026-08-22T06:50:49Z",
+  "generated_at": "2026-08-22T07:36:46Z",
   "months": [
     {
       "key": "2026-04",
@@ -28,14 +28,14 @@
     {
       "key": "2026-08",
       "label": "Август 2026",
-      "count": 263
+      "count": 267
     }
   ],
   "all": {
     "kpi": {
-      "total": 1277,
+      "total": 1281,
       "pcp": 529,
-      "nekv": 748,
+      "nekv": 752,
       "zapis": 259,
       "prishel": 92,
       "neprishel": 61,
@@ -43,7 +43,7 @@
       "perezap": 20,
       "active_zapis": 100,
       "otval_zapis": 67,
-      "conv_pcp": 41.4,
+      "conv_pcp": 41.3,
       "conv_zapis_from_pcp": 49.0,
       "conv_prishel_from_zapis": 35.5,
       "sum_payment": 776210,
@@ -70,7 +70,7 @@
       "отложенный спрос": 44,
       "ндз финал": 34,
       "Другой город": 8,
-      "—": 2
+      "—": 6
     },
     "operator_stats": {
       "Ардашева": {
@@ -144,9 +144,9 @@
         "patients_no_dep": 0
       },
       "Наталья А": {
-        "total": 207,
-        "pcp": 79,
-        "nekv": 128,
+        "total": 205,
+        "pcp": 78,
+        "nekv": 127,
         "zapis": 35,
         "prishel": 10,
         "otval": 8,
@@ -158,9 +158,9 @@
         "patients_no_dep": 0
       },
       "Светлана": {
-        "total": 58,
-        "pcp": 23,
-        "nekv": 35,
+        "total": 60,
+        "pcp": 24,
+        "nekv": 36,
         "zapis": 10,
         "prishel": 2,
         "otval": 2,
@@ -172,9 +172,9 @@
         "patients_no_dep": 0
       },
       "—": {
-        "total": 56,
+        "total": 60,
         "pcp": 16,
-        "nekv": 40,
+        "nekv": 44,
         "zapis": 2,
         "prishel": 0,
         "otval": 1,
@@ -8732,9 +8732,9 @@
     },
     "2026-08": {
       "kpi": {
-        "total": 263,
+        "total": 267,
         "pcp": 129,
-        "nekv": 134,
+        "nekv": 138,
         "zapis": 63,
         "prishel": 21,
         "neprishel": 11,
@@ -8742,7 +8742,7 @@
         "perezap": 0,
         "active_zapis": 32,
         "otval_zapis": 10,
-        "conv_pcp": 49.0,
+        "conv_pcp": 48.3,
         "conv_zapis_from_pcp": 48.8,
         "conv_prishel_from_zapis": 33.3,
         "sum_payment": 0,
@@ -8768,6 +8768,7 @@
         "отложенный спрос": 9,
         "дубль": 5,
         "ндз финал": 4,
+        "—": 4,
         "Другой город": 2
       },
       "operator_stats": {
@@ -8814,9 +8815,9 @@
           "patients_no_dep": 0
         },
         "Наталья А": {
-          "total": 35,
-          "pcp": 17,
-          "nekv": 18,
+          "total": 33,
+          "pcp": 16,
+          "nekv": 17,
           "zapis": 10,
           "prishel": 4,
           "otval": 0,
@@ -8828,9 +8829,9 @@
           "patients_no_dep": 0
         },
         "Светлана": {
-          "total": 58,
-          "pcp": 23,
-          "nekv": 35,
+          "total": 60,
+          "pcp": 24,
+          "nekv": 36,
           "zapis": 10,
           "prishel": 2,
           "otval": 2,
@@ -8842,9 +8843,9 @@
           "patients_no_dep": 0
         },
         "—": {
-          "total": 1,
+          "total": 5,
           "pcp": 1,
-          "nekv": 0,
+          "nekv": 4,
           "zapis": 0,
           "prishel": 0,
           "otval": 0,
