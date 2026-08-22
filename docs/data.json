@@ -3,7 +3,7 @@
     "date_min": "2026-04-11",
     "date_max": "2026-08-22"
   },
-  "generated_at": "2026-08-22T09:33:07Z",
+  "generated_at": "2026-08-22T10:29:53Z",
   "months": [
     {
       "key": "2026-04",
@@ -28,13 +28,13 @@
     {
       "key": "2026-08",
       "label": "Август 2026",
-      "count": 271
+      "count": 272
     }
   ],
   "all": {
     "kpi": {
-      "total": 1285,
-      "pcp": 533,
+      "total": 1286,
+      "pcp": 534,
       "nekv": 752,
       "zapis": 261,
       "prishel": 92,
@@ -44,7 +44,7 @@
       "active_zapis": 102,
       "otval_zapis": 67,
       "conv_pcp": 41.5,
-      "conv_zapis_from_pcp": 49.0,
+      "conv_zapis_from_pcp": 48.9,
       "conv_prishel_from_zapis": 35.2,
       "sum_payment": 776210,
       "sum_plan": 927833,
@@ -63,7 +63,7 @@
     "status_counts": {
       "недозвон": 300,
       "запись в клинику": 261,
-      "в работе / переговорах": 228,
+      "в работе / переговорах": 229,
       "неактуал": 213,
       "ОТКАЗ": 141,
       "дубль": 54,
@@ -102,8 +102,8 @@
         "patients_no_dep": 0
       },
       "Лена": {
-        "total": 379,
-        "pcp": 166,
+        "total": 380,
+        "pcp": 167,
         "nekv": 213,
         "zapis": 78,
         "prishel": 39,
@@ -8756,8 +8756,8 @@
     },
     "2026-08": {
       "kpi": {
-        "total": 271,
-        "pcp": 133,
+        "total": 272,
+        "pcp": 134,
         "nekv": 138,
         "zapis": 65,
         "prishel": 21,
@@ -8766,8 +8766,8 @@
         "perezap": 0,
         "active_zapis": 34,
         "otval_zapis": 10,
-        "conv_pcp": 49.1,
-        "conv_zapis_from_pcp": 48.9,
+        "conv_pcp": 49.3,
+        "conv_zapis_from_pcp": 48.5,
         "conv_prishel_from_zapis": 32.3,
         "sum_payment": 0,
         "sum_plan": 0,
@@ -8785,7 +8785,7 @@
       },
       "status_counts": {
         "запись в клинику": 65,
-        "в работе / переговорах": 59,
+        "в работе / переговорах": 60,
         "недозвон": 50,
         "неактуал": 41,
         "ОТКАЗ": 35,
@@ -8796,8 +8796,8 @@
       },
       "operator_stats": {
         "Лена": {
-          "total": 62,
-          "pcp": 34,
+          "total": 63,
+          "pcp": 35,
           "nekv": 28,
           "zapis": 10,
           "prishel": 7,
