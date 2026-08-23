@@ -3,7 +3,7 @@
     "date_min": "2026-04-11",
     "date_max": "2026-08-23"
   },
-  "generated_at": "2026-08-23T12:52:27Z",
+  "generated_at": "2026-08-23T13:37:09Z",
   "months": [
     {
       "key": "2026-04",
@@ -28,13 +28,13 @@
     {
       "key": "2026-08",
       "label": "Август 2026",
-      "count": 285
+      "count": 286
     }
   ],
   "all": {
     "kpi": {
-      "total": 1299,
-      "pcp": 537,
+      "total": 1300,
+      "pcp": 538,
       "nekv": 762,
       "zapis": 265,
       "prishel": 92,
@@ -43,7 +43,7 @@
       "perezap": 20,
       "active_zapis": 106,
       "otval_zapis": 67,
-      "conv_pcp": 41.3,
+      "conv_pcp": 41.4,
       "conv_zapis_from_pcp": 49.3,
       "conv_prishel_from_zapis": 34.7,
       "sum_payment": 776210,
@@ -63,7 +63,7 @@
     "status_counts": {
       "недозвон": 288,
       "запись в клинику": 265,
-      "в работе / переговорах": 229,
+      "в работе / переговорах": 230,
       "неактуал": 217,
       "ОТКАЗ": 153,
       "дубль": 54,
@@ -130,8 +130,8 @@
         "patients_no_dep": 0
       },
       "Наталья": {
-        "total": 368,
-        "pcp": 161,
+        "total": 369,
+        "pcp": 162,
         "nekv": 207,
         "zapis": 93,
         "prishel": 29,
@@ -8933,8 +8933,8 @@
     },
     "2026-08": {
       "kpi": {
-        "total": 285,
-        "pcp": 139,
+        "total": 286,
+        "pcp": 140,
         "nekv": 146,
         "zapis": 68,
         "prishel": 21,
@@ -8943,8 +8943,8 @@
         "perezap": 0,
         "active_zapis": 37,
         "otval_zapis": 10,
-        "conv_pcp": 48.8,
-        "conv_zapis_from_pcp": 48.9,
+        "conv_pcp": 49.0,
+        "conv_zapis_from_pcp": 48.6,
         "conv_prishel_from_zapis": 30.9,
         "sum_payment": 0,
         "sum_plan": 0,
@@ -8962,7 +8962,7 @@
       },
       "status_counts": {
         "запись в клинику": 68,
-        "в работе / переговорах": 62,
+        "в работе / переговорах": 63,
         "недозвон": 46,
         "неактуал": 44,
         "ОТКАЗ": 42,
@@ -9001,8 +9001,8 @@
           "patients_no_dep": 0
         },
         "Наталья": {
-          "total": 105,
-          "pcp": 50,
+          "total": 106,
+          "pcp": 51,
           "nekv": 55,
           "zapis": 29,
           "prishel": 8,
