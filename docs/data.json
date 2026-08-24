@@ -3,7 +3,7 @@
     "date_min": "2026-04-11",
     "date_max": "2026-08-24"
   },
-  "generated_at": "2026-08-24T09:55:36Z",
+  "generated_at": "2026-08-24T10:43:18Z",
   "months": [
     {
       "key": "2026-04",
@@ -130,9 +130,9 @@
         "patients_no_dep": 0
       },
       "Наталья": {
-        "total": 375,
+        "total": 376,
         "pcp": 167,
-        "nekv": 208,
+        "nekv": 209,
         "zapis": 93,
         "prishel": 29,
         "otval": 24,
@@ -172,9 +172,9 @@
         "patients_no_dep": 0
       },
       "—": {
-        "total": 58,
+        "total": 57,
         "pcp": 17,
-        "nekv": 41,
+        "nekv": 40,
         "zapis": 2,
         "prishel": 0,
         "otval": 1,
@@ -9037,9 +9037,9 @@
           "patients_no_dep": 0
         },
         "Наталья": {
-          "total": 112,
+          "total": 113,
           "pcp": 56,
-          "nekv": 56,
+          "nekv": 57,
           "zapis": 29,
           "prishel": 8,
           "otval": 5,
@@ -9079,9 +9079,9 @@
           "patients_no_dep": 0
         },
         "—": {
-          "total": 3,
+          "total": 2,
           "pcp": 2,
-          "nekv": 1,
+          "nekv": 0,
           "zapis": 0,
           "prishel": 0,
           "otval": 0,
