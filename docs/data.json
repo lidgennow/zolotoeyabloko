@@ -3,7 +3,7 @@
     "date_min": "2026-04-11",
     "date_max": "2026-08-25"
   },
-  "generated_at": "2026-08-25T11:56:01Z",
+  "generated_at": "2026-08-25T13:02:06Z",
   "months": [
     {
       "key": "2026-04",
@@ -34,18 +34,18 @@
   "all": {
     "kpi": {
       "total": 1317,
-      "pcp": 545,
-      "nekv": 772,
-      "zapis": 270,
+      "pcp": 546,
+      "nekv": 771,
+      "zapis": 271,
       "prishel": 92,
       "neprishel": 61,
       "otmena": 13,
       "perezap": 20,
-      "active_zapis": 111,
+      "active_zapis": 112,
       "otval_zapis": 67,
-      "conv_pcp": 41.4,
-      "conv_zapis_from_pcp": 49.5,
-      "conv_prishel_from_zapis": 34.1,
+      "conv_pcp": 41.5,
+      "conv_zapis_from_pcp": 49.6,
+      "conv_prishel_from_zapis": 33.9,
       "sum_payment": 776210,
       "sum_plan": 927833,
       "plan_with_dep_sum": 6667670,
@@ -62,7 +62,7 @@
     },
     "status_counts": {
       "недозвон": 291,
-      "запись в клинику": 270,
+      "запись в клинику": 271,
       "в работе / переговорах": 232,
       "неактуал": 221,
       "ОТКАЗ": 154,
@@ -70,7 +70,7 @@
       "отложенный спрос": 43,
       "ндз финал": 40,
       "Другой город": 8,
-      "—": 3
+      "—": 2
     },
     "operator_stats": {
       "Ардашева": {
@@ -130,13 +130,13 @@
         "patients_no_dep": 0
       },
       "Наталья": {
-        "total": 378,
-        "pcp": 168,
+        "total": 379,
+        "pcp": 169,
         "nekv": 210,
-        "zapis": 94,
+        "zapis": 95,
         "prishel": 29,
         "otval": 24,
-        "active": 41,
+        "active": 42,
         "payment": 134367,
         "plan_with_dep": 231908,
         "plan_no_dep": 0,
@@ -172,9 +172,9 @@
         "patients_no_dep": 0
       },
       "—": {
-        "total": 58,
+        "total": 57,
         "pcp": 17,
-        "nekv": 41,
+        "nekv": 40,
         "zapis": 2,
         "prishel": 0,
         "otval": 1,
@@ -2656,6 +2656,15 @@
         "Дата записи": "ТОЛЬКО НА 10.09 сент.,зуб заживает,раньше не может.",
         "Явка:": null,
         "Имя оператора, взявшего в работу": "Махаббат",
+        "payment": 0,
+        "plan_total": 0,
+        "Комментарии:": null
+      },
+      {
+        "Имя:": "Артем, 25.08 в 18:25",
+        "Дата записи": null,
+        "Явка:": null,
+        "Имя оператора, взявшего в работу": "Наталья",
         "payment": 0,
         "plan_total": 0,
         "Комментарии:": null
@@ -9009,18 +9018,18 @@
     "2026-08": {
       "kpi": {
         "total": 303,
-        "pcp": 147,
-        "nekv": 156,
-        "zapis": 73,
+        "pcp": 148,
+        "nekv": 155,
+        "zapis": 74,
         "prishel": 21,
         "neprishel": 11,
         "otmena": 1,
         "perezap": 0,
-        "active_zapis": 42,
+        "active_zapis": 43,
         "otval_zapis": 10,
-        "conv_pcp": 48.5,
-        "conv_zapis_from_pcp": 49.7,
-        "conv_prishel_from_zapis": 28.8,
+        "conv_pcp": 48.8,
+        "conv_zapis_from_pcp": 50.0,
+        "conv_prishel_from_zapis": 28.4,
         "sum_payment": 0,
         "sum_plan": 0,
         "plan_with_dep_sum": 0,
@@ -9036,7 +9045,7 @@
         "drr": null
       },
       "status_counts": {
-        "запись в клинику": 73,
+        "запись в клинику": 74,
         "в работе / переговорах": 65,
         "недозвон": 49,
         "неактуал": 48,
@@ -9044,8 +9053,7 @@
         "отложенный спрос": 9,
         "дубль": 7,
         "ндз финал": 6,
-        "Другой город": 2,
-        "—": 1
+        "Другой город": 2
       },
       "operator_stats": {
         "Лена": {
@@ -9077,13 +9085,13 @@
           "patients_no_dep": 0
         },
         "Наталья": {
-          "total": 115,
-          "pcp": 57,
+          "total": 116,
+          "pcp": 58,
           "nekv": 58,
-          "zapis": 30,
+          "zapis": 31,
           "prishel": 8,
           "otval": 5,
-          "active": 17,
+          "active": 18,
           "payment": 0,
           "plan_with_dep": 0,
           "plan_no_dep": 0,
@@ -9119,9 +9127,9 @@
           "patients_no_dep": 0
         },
         "—": {
-          "total": 3,
+          "total": 2,
           "pcp": 2,
-          "nekv": 1,
+          "nekv": 0,
           "zapis": 0,
           "prishel": 0,
           "otval": 0,
@@ -9789,6 +9797,15 @@
           "Дата записи": "ТОЛЬКО НА 10.09 сент.,зуб заживает,раньше не может.",
           "Явка:": null,
           "Имя оператора, взявшего в работу": "Махаббат",
+          "payment": 0,
+          "plan_total": 0,
+          "Комментарии:": null
+        },
+        {
+          "Имя:": "Артем, 25.08 в 18:25",
+          "Дата записи": null,
+          "Явка:": null,
+          "Имя оператора, взявшего в работу": "Наталья",
           "payment": 0,
           "plan_total": 0,
           "Комментарии:": null
