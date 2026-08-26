@@ -3,7 +3,7 @@
     "date_min": "2026-04-11",
     "date_max": "2026-08-26"
   },
-  "generated_at": "2026-08-26T11:03:20Z",
+  "generated_at": "2026-08-26T11:57:44Z",
   "months": [
     {
       "key": "2026-04",
@@ -28,24 +28,24 @@
     {
       "key": "2026-08",
       "label": "Август 2026",
-      "count": 310
+      "count": 312
     }
   ],
   "all": {
     "kpi": {
-      "total": 1324,
-      "pcp": 547,
-      "nekv": 777,
-      "zapis": 276,
+      "total": 1326,
+      "pcp": 548,
+      "nekv": 778,
+      "zapis": 277,
       "prishel": 92,
       "neprishel": 61,
       "otmena": 13,
       "perezap": 20,
-      "active_zapis": 117,
+      "active_zapis": 118,
       "otval_zapis": 67,
       "conv_pcp": 41.3,
       "conv_zapis_from_pcp": 50.5,
-      "conv_prishel_from_zapis": 33.3,
+      "conv_prishel_from_zapis": 33.2,
       "sum_payment": 776210,
       "sum_plan": 927833,
       "plan_with_dep_sum": 6667670,
@@ -61,8 +61,8 @@
       "drr": 19.1
     },
     "status_counts": {
-      "недозвон": 295,
-      "запись в клинику": 276,
+      "недозвон": 296,
+      "запись в клинику": 277,
       "в работе / переговорах": 228,
       "неактуал": 221,
       "ОТКАЗ": 156,
@@ -116,13 +116,13 @@
         "patients_no_dep": 0
       },
       "Махаббат": {
-        "total": 19,
-        "pcp": 9,
-        "nekv": 10,
-        "zapis": 9,
+        "total": 21,
+        "pcp": 10,
+        "nekv": 11,
+        "zapis": 10,
         "prishel": 0,
         "otval": 1,
-        "active": 8,
+        "active": 9,
         "payment": 0,
         "plan_with_dep": 0,
         "plan_no_dep": 0,
@@ -2708,6 +2708,15 @@
       {
         "Имя:": "Лана, 89507830630",
         "Дата записи": "29.08   НА 11.30",
+        "Явка:": null,
+        "Имя оператора, взявшего в работу": "Махаббат",
+        "payment": 0,
+        "plan_total": 0,
+        "Комментарии:": null
+      },
+      {
+        "Имя:": "Гуля",
+        "Дата записи": "28.08  НА 14.30",
         "Явка:": null,
         "Имя оператора, взявшего в работу": "Махаббат",
         "payment": 0,
@@ -9074,19 +9083,19 @@
     },
     "2026-08": {
       "kpi": {
-        "total": 310,
-        "pcp": 149,
-        "nekv": 161,
-        "zapis": 79,
+        "total": 312,
+        "pcp": 150,
+        "nekv": 162,
+        "zapis": 80,
         "prishel": 21,
         "neprishel": 11,
         "otmena": 1,
         "perezap": 0,
-        "active_zapis": 48,
+        "active_zapis": 49,
         "otval_zapis": 10,
         "conv_pcp": 48.1,
-        "conv_zapis_from_pcp": 53.0,
-        "conv_prishel_from_zapis": 26.6,
+        "conv_zapis_from_pcp": 53.3,
+        "conv_prishel_from_zapis": 26.2,
         "sum_payment": 0,
         "sum_plan": 0,
         "plan_with_dep_sum": 0,
@@ -9102,9 +9111,9 @@
         "drr": null
       },
       "status_counts": {
-        "запись в клинику": 79,
+        "запись в клинику": 80,
         "в работе / переговорах": 61,
-        "недозвон": 53,
+        "недозвон": 54,
         "неактуал": 48,
         "ОТКАЗ": 45,
         "отложенный спрос": 9,
@@ -9128,13 +9137,13 @@
           "patients_no_dep": 0
         },
         "Махаббат": {
-          "total": 19,
-          "pcp": 9,
-          "nekv": 10,
-          "zapis": 9,
+          "total": 21,
+          "pcp": 10,
+          "nekv": 11,
+          "zapis": 10,
           "prishel": 0,
           "otval": 1,
-          "active": 8,
+          "active": 9,
           "payment": 0,
           "plan_with_dep": 0,
           "plan_no_dep": 0,
@@ -9906,6 +9915,15 @@
         {
           "Имя:": "Лана, 89507830630",
           "Дата записи": "29.08   НА 11.30",
+          "Явка:": null,
+          "Имя оператора, взявшего в работу": "Махаббат",
+          "payment": 0,
+          "plan_total": 0,
+          "Комментарии:": null
+        },
+        {
+          "Имя:": "Гуля",
+          "Дата записи": "28.08  НА 14.30",
           "Явка:": null,
           "Имя оператора, взявшего в работу": "Махаббат",
           "payment": 0,
