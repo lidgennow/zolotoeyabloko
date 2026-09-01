@@ -3,7 +3,7 @@
     "date_min": "2026-04-11",
     "date_max": "2026-09-01"
   },
-  "generated_at": "2026-09-01T07:43:36Z",
+  "generated_at": "2026-09-01T13:24:12Z",
   "months": [
     {
       "key": "2026-04",
@@ -39,18 +39,18 @@
   "all": {
     "kpi": {
       "total": 1367,
-      "pcp": 569,
-      "nekv": 798,
-      "zapis": 293,
+      "pcp": 568,
+      "nekv": 799,
+      "zapis": 294,
       "prishel": 104,
-      "neprishel": 66,
+      "neprishel": 67,
       "otmena": 14,
       "perezap": 22,
       "active_zapis": 116,
-      "otval_zapis": 73,
+      "otval_zapis": 74,
       "conv_pcp": 41.6,
-      "conv_zapis_from_pcp": 51.5,
-      "conv_prishel_from_zapis": 35.5,
+      "conv_zapis_from_pcp": 51.8,
+      "conv_prishel_from_zapis": 35.4,
       "sum_payment": 776210,
       "sum_plan": 927833,
       "plan_with_dep_sum": 6667670,
@@ -60,17 +60,17 @@
       "plan_no_dep_count": 0,
       "only_payment_sum": 0,
       "only_payment_count": 0,
-      "refusals_total": 160,
+      "refusals_total": 161,
       "neaktual_total": 223,
       "ad_spend": 1272600,
       "drr": 19.1
     },
     "status_counts": {
       "недозвон": 310,
-      "запись в клинику": 293,
-      "в работе / переговорах": 233,
+      "запись в клинику": 294,
+      "в работе / переговорах": 231,
       "неактуал": 223,
-      "ОТКАЗ": 160,
+      "ОТКАЗ": 161,
       "дубль": 55,
       "отложенный спрос": 43,
       "ндз финал": 40,
@@ -107,8 +107,8 @@
         "patients_no_dep": 0
       },
       "Лена": {
-        "total": 402,
-        "pcp": 173,
+        "total": 401,
+        "pcp": 172,
         "nekv": 229,
         "zapis": 85,
         "prishel": 41,
@@ -126,8 +126,8 @@
         "nekv": 14,
         "zapis": 13,
         "prishel": 4,
-        "otval": 1,
-        "active": 8,
+        "otval": 2,
+        "active": 7,
         "payment": 0,
         "plan_with_dep": 0,
         "plan_no_dep": 0,
@@ -135,13 +135,13 @@
         "patients_no_dep": 0
       },
       "Наталья": {
-        "total": 405,
+        "total": 406,
         "pcp": 183,
-        "nekv": 222,
-        "zapis": 108,
+        "nekv": 223,
+        "zapis": 109,
         "prishel": 35,
         "otval": 26,
-        "active": 47,
+        "active": 48,
         "payment": 134367,
         "plan_with_dep": 231908,
         "plan_no_dep": 0,
@@ -2749,7 +2749,7 @@
       {
         "Имя:": "Гуля",
         "Дата записи": "01.09 НА 14.30",
-        "Явка:": null,
+        "Явка:": "Не пришел",
         "Имя оператора, взявшего в работу": "Махаббат",
         "payment": 0,
         "plan_total": 0,
@@ -2802,9 +2802,18 @@
       },
       {
         "Имя:": "Анастасия",
-        "Дата записи": "01.09 НА 15.30",
+        "Дата записи": "05.09 НА 15.30",
         "Явка:": null,
         "Имя оператора, взявшего в работу": "Лена",
+        "payment": 0,
+        "plan_total": 0,
+        "Комментарии:": null
+      },
+      {
+        "Имя:": "Юлия",
+        "Дата записи": "03.09. 14:30",
+        "Явка:": null,
+        "Имя оператора, взявшего в работу": "Наталья",
         "payment": 0,
         "plan_total": 0,
         "Комментарии:": null
@@ -2876,7 +2885,7 @@
     "refusal_categories": [
       {
         "cat": "Другое",
-        "count": 368,
+        "count": 369,
         "share": 96.1,
         "items": [
           {
@@ -5085,6 +5094,12 @@
             "Имя:": "Кирилл, звонить на +79006796619",
             "Статус:": "ОТКАЗ",
             "Имя оператора, взявшего в работу": "Махаббат",
+            "Комментарии:": null
+          },
+          {
+            "Имя:": "Валерия ",
+            "Статус:": "ОТКАЗ",
+            "Имя оператора, взявшего в работу": "Наталья",
             "Комментарии:": null
           }
         ]
@@ -9269,18 +9284,18 @@
     "2026-08": {
       "kpi": {
         "total": 352,
-        "pcp": 171,
-        "nekv": 181,
-        "zapis": 96,
+        "pcp": 170,
+        "nekv": 182,
+        "zapis": 97,
         "prishel": 33,
-        "neprishel": 16,
+        "neprishel": 17,
         "otmena": 2,
         "perezap": 2,
         "active_zapis": 47,
-        "otval_zapis": 16,
-        "conv_pcp": 48.6,
-        "conv_zapis_from_pcp": 56.1,
-        "conv_prishel_from_zapis": 34.4,
+        "otval_zapis": 17,
+        "conv_pcp": 48.3,
+        "conv_zapis_from_pcp": 57.1,
+        "conv_prishel_from_zapis": 34.0,
         "sum_payment": 0,
         "sum_plan": 0,
         "plan_with_dep_sum": 0,
@@ -9296,9 +9311,9 @@
         "drr": null
       },
       "status_counts": {
-        "запись в клинику": 96,
-        "недозвон": 67,
-        "в работе / переговорах": 66,
+        "запись в клинику": 97,
+        "недозвон": 68,
+        "в работе / переговорах": 64,
         "неактуал": 50,
         "ОТКАЗ": 49,
         "отложенный спрос": 9,
@@ -9308,8 +9323,8 @@
       },
       "operator_stats": {
         "Лена": {
-          "total": 85,
-          "pcp": 42,
+          "total": 84,
+          "pcp": 41,
           "nekv": 43,
           "zapis": 17,
           "prishel": 9,
@@ -9327,8 +9342,8 @@
           "nekv": 14,
           "zapis": 13,
           "prishel": 4,
-          "otval": 1,
-          "active": 8,
+          "otval": 2,
+          "active": 7,
           "payment": 0,
           "plan_with_dep": 0,
           "plan_no_dep": 0,
@@ -9336,13 +9351,13 @@
           "patients_no_dep": 0
         },
         "Наталья": {
-          "total": 141,
+          "total": 142,
           "pcp": 72,
-          "nekv": 69,
-          "zapis": 44,
+          "nekv": 70,
+          "zapis": 45,
           "prishel": 14,
           "otval": 7,
-          "active": 23,
+          "active": 24,
           "payment": 0,
           "plan_with_dep": 0,
           "plan_no_dep": 0,
@@ -10136,7 +10151,7 @@
         {
           "Имя:": "Гуля",
           "Дата записи": "01.09 НА 14.30",
-          "Явка:": null,
+          "Явка:": "Не пришел",
           "Имя оператора, взявшего в работу": "Махаббат",
           "payment": 0,
           "plan_total": 0,
@@ -10189,9 +10204,18 @@
         },
         {
           "Имя:": "Анастасия",
-          "Дата записи": "01.09 НА 15.30",
+          "Дата записи": "05.09 НА 15.30",
           "Явка:": null,
           "Имя оператора, взявшего в работу": "Лена",
+          "payment": 0,
+          "plan_total": 0,
+          "Комментарии:": null
+        },
+        {
+          "Имя:": "Юлия",
+          "Дата записи": "03.09. 14:30",
+          "Явка:": null,
+          "Имя оператора, взявшего в работу": "Наталья",
           "payment": 0,
           "plan_total": 0,
           "Комментарии:": null
@@ -10888,13 +10912,13 @@
         "plan_no_dep_count": 0,
         "only_payment_sum": 0,
         "only_payment_count": 0,
-        "refusals_total": 0,
+        "refusals_total": 1,
         "neaktual_total": 0,
         "ad_spend": null,
         "drr": null
       },
       "status_counts": {
-        "недозвон": 1
+        "ОТКАЗ": 1
       },
       "operator_stats": {
         "Наталья": {
@@ -10915,7 +10939,21 @@
       "plans_with_deposit": [],
       "plans_without_deposit": [],
       "appointments": [],
-      "refusal_categories": []
+      "refusal_categories": [
+        {
+          "cat": "Другое",
+          "count": 1,
+          "share": 100.0,
+          "items": [
+            {
+              "Имя:": "Валерия ",
+              "Статус:": "ОТКАЗ",
+              "Имя оператора, взявшего в работу": "Наталья",
+              "Комментарии:": null
+            }
+          ]
+        }
+      ]
     }
   }
 }
