@@ -1,9 +1,9 @@
 {
   "period": {
     "date_min": "2026-04-11",
-    "date_max": "2026-08-31"
+    "date_max": "2026-09-01"
   },
-  "generated_at": "2026-09-01T01:59:53Z",
+  "generated_at": "2026-09-01T07:43:36Z",
   "months": [
     {
       "key": "2026-04",
@@ -29,13 +29,18 @@
       "key": "2026-08",
       "label": "Август 2026",
       "count": 352
+    },
+    {
+      "key": "2026-09",
+      "label": "2026-09",
+      "count": 1
     }
   ],
   "all": {
     "kpi": {
-      "total": 1366,
+      "total": 1367,
       "pcp": 569,
-      "nekv": 797,
+      "nekv": 798,
       "zapis": 293,
       "prishel": 104,
       "neprishel": 66,
@@ -43,7 +48,7 @@
       "perezap": 22,
       "active_zapis": 116,
       "otval_zapis": 73,
-      "conv_pcp": 41.7,
+      "conv_pcp": 41.6,
       "conv_zapis_from_pcp": 51.5,
       "conv_prishel_from_zapis": 35.5,
       "sum_payment": 776210,
@@ -55,22 +60,22 @@
       "plan_no_dep_count": 0,
       "only_payment_sum": 0,
       "only_payment_count": 0,
-      "refusals_total": 159,
+      "refusals_total": 160,
       "neaktual_total": 223,
       "ad_spend": 1272600,
       "drr": 19.1
     },
     "status_counts": {
-      "недозвон": 309,
+      "недозвон": 310,
       "запись в клинику": 293,
       "в работе / переговорах": 233,
       "неактуал": 223,
-      "ОТКАЗ": 159,
+      "ОТКАЗ": 160,
       "дубль": 55,
       "отложенный спрос": 43,
       "ндз финал": 40,
       "Другой город": 8,
-      "—": 3
+      "—": 2
     },
     "operator_stats": {
       "Ардашева": {
@@ -116,9 +121,9 @@
         "patients_no_dep": 0
       },
       "Махаббат": {
-        "total": 27,
+        "total": 28,
         "pcp": 14,
-        "nekv": 13,
+        "nekv": 14,
         "zapis": 13,
         "prishel": 4,
         "otval": 1,
@@ -130,13 +135,13 @@
         "patients_no_dep": 0
       },
       "Наталья": {
-        "total": 403,
-        "pcp": 182,
-        "nekv": 221,
-        "zapis": 107,
+        "total": 405,
+        "pcp": 183,
+        "nekv": 222,
+        "zapis": 108,
         "prishel": 35,
         "otval": 26,
-        "active": 46,
+        "active": 47,
         "payment": 134367,
         "plan_with_dep": 231908,
         "plan_no_dep": 0,
@@ -172,13 +177,13 @@
         "patients_no_dep": 0
       },
       "—": {
-        "total": 58,
-        "pcp": 17,
-        "nekv": 41,
-        "zapis": 3,
+        "total": 56,
+        "pcp": 16,
+        "nekv": 40,
+        "zapis": 2,
         "prishel": 0,
         "otval": 1,
-        "active": 2,
+        "active": 1,
         "payment": 0,
         "plan_with_dep": 0,
         "plan_no_dep": 0,
@@ -2511,7 +2516,7 @@
         "Имя:": "Сергей",
         "Дата записи": "06.09",
         "Явка:": null,
-        "Имя оператора, взявшего в работу": null,
+        "Имя оператора, взявшего в работу": "Наталья",
         "payment": 0,
         "plan_total": 0,
         "Комментарии:": null
@@ -2871,7 +2876,7 @@
     "refusal_categories": [
       {
         "cat": "Другое",
-        "count": 367,
+        "count": 368,
         "share": 96.1,
         "items": [
           {
@@ -5072,6 +5077,12 @@
           },
           {
             "Имя:": "Андрей",
+            "Статус:": "ОТКАЗ",
+            "Имя оператора, взявшего в работу": "Махаббат",
+            "Комментарии:": null
+          },
+          {
+            "Имя:": "Кирилл, звонить на +79006796619",
             "Статус:": "ОТКАЗ",
             "Имя оператора, взявшего в работу": "Махаббат",
             "Комментарии:": null
@@ -9279,7 +9290,7 @@
         "plan_no_dep_count": 0,
         "only_payment_sum": 0,
         "only_payment_count": 0,
-        "refusals_total": 48,
+        "refusals_total": 49,
         "neaktual_total": 50,
         "ad_spend": null,
         "drr": null
@@ -9289,12 +9300,11 @@
         "недозвон": 67,
         "в работе / переговорах": 66,
         "неактуал": 50,
-        "ОТКАЗ": 48,
+        "ОТКАЗ": 49,
         "отложенный спрос": 9,
         "дубль": 7,
         "ндз финал": 6,
-        "Другой город": 2,
-        "—": 1
+        "Другой город": 2
       },
       "operator_stats": {
         "Лена": {
@@ -9312,9 +9322,9 @@
           "patients_no_dep": 0
         },
         "Махаббат": {
-          "total": 27,
+          "total": 28,
           "pcp": 14,
-          "nekv": 13,
+          "nekv": 14,
           "zapis": 13,
           "prishel": 4,
           "otval": 1,
@@ -9326,13 +9336,13 @@
           "patients_no_dep": 0
         },
         "Наталья": {
-          "total": 140,
-          "pcp": 71,
+          "total": 141,
+          "pcp": 72,
           "nekv": 69,
-          "zapis": 43,
+          "zapis": 44,
           "prishel": 14,
           "otval": 7,
-          "active": 22,
+          "active": 23,
           "payment": 0,
           "plan_with_dep": 0,
           "plan_no_dep": 0,
@@ -9368,13 +9378,13 @@
           "patients_no_dep": 0
         },
         "—": {
-          "total": 3,
-          "pcp": 2,
-          "nekv": 1,
-          "zapis": 1,
+          "total": 1,
+          "pcp": 1,
+          "nekv": 0,
+          "zapis": 0,
           "prishel": 0,
           "otval": 0,
-          "active": 1,
+          "active": 0,
           "payment": 0,
           "plan_with_dep": 0,
           "plan_no_dep": 0,
@@ -9893,7 +9903,7 @@
           "Имя:": "Сергей",
           "Дата записи": "06.09",
           "Явка:": null,
-          "Имя оператора, взявшего в работу": null,
+          "Имя оператора, взявшего в работу": "Наталья",
           "payment": 0,
           "plan_total": 0,
           "Комментарии:": null
@@ -10253,7 +10263,7 @@
       "refusal_categories": [
         {
           "cat": "Другое",
-          "count": 98,
+          "count": 99,
           "share": 100.0,
           "items": [
             {
@@ -10843,10 +10853,69 @@
               "Статус:": "ОТКАЗ",
               "Имя оператора, взявшего в работу": "Махаббат",
               "Комментарии:": null
+            },
+            {
+              "Имя:": "Кирилл, звонить на +79006796619",
+              "Статус:": "ОТКАЗ",
+              "Имя оператора, взявшего в работу": "Махаббат",
+              "Комментарии:": null
             }
           ]
         }
       ]
+    },
+    "2026-09": {
+      "kpi": {
+        "total": 1,
+        "pcp": 0,
+        "nekv": 1,
+        "zapis": 0,
+        "prishel": 0,
+        "neprishel": 0,
+        "otmena": 0,
+        "perezap": 0,
+        "active_zapis": 0,
+        "otval_zapis": 0,
+        "conv_pcp": 0.0,
+        "conv_zapis_from_pcp": 0,
+        "conv_prishel_from_zapis": 0,
+        "sum_payment": 0,
+        "sum_plan": 0,
+        "plan_with_dep_sum": 0,
+        "plan_with_dep_count": 0,
+        "plan_with_dep_paid": 0,
+        "plan_no_dep_sum": 0,
+        "plan_no_dep_count": 0,
+        "only_payment_sum": 0,
+        "only_payment_count": 0,
+        "refusals_total": 0,
+        "neaktual_total": 0,
+        "ad_spend": null,
+        "drr": null
+      },
+      "status_counts": {
+        "недозвон": 1
+      },
+      "operator_stats": {
+        "Наталья": {
+          "total": 1,
+          "pcp": 0,
+          "nekv": 1,
+          "zapis": 0,
+          "prishel": 0,
+          "otval": 0,
+          "active": 0,
+          "payment": 0,
+          "plan_with_dep": 0,
+          "plan_no_dep": 0,
+          "patients_with_dep": 0,
+          "patients_no_dep": 0
+        }
+      },
+      "plans_with_deposit": [],
+      "plans_without_deposit": [],
+      "appointments": [],
+      "refusal_categories": []
     }
   }
 }
