@@ -3,7 +3,7 @@
     "date_min": "2026-04-11",
     "date_max": "2026-09-12"
   },
-  "generated_at": "2026-09-12T13:02:57Z",
+  "generated_at": "2026-09-12T16:27:11Z",
   "months": [
     {
       "key": "2026-04",
@@ -33,14 +33,14 @@
     {
       "key": "2026-09",
       "label": "2026-09",
-      "count": 106
+      "count": 107
     }
   ],
   "all": {
     "kpi": {
-      "total": 1472,
+      "total": 1473,
       "pcp": 595,
-      "nekv": 877,
+      "nekv": 878,
       "zapis": 314,
       "prishel": 105,
       "neprishel": 68,
@@ -74,7 +74,7 @@
       "дубль": 62,
       "отложенный спрос": 46,
       "ндз финал": 40,
-      "—": 21,
+      "—": 22,
       "Другой город": 8
     },
     "operator_stats": {
@@ -177,9 +177,9 @@
         "patients_no_dep": 0
       },
       "—": {
-        "total": 76,
+        "total": 77,
         "pcp": 17,
-        "nekv": 59,
+        "nekv": 60,
         "zapis": 3,
         "prishel": 0,
         "otval": 1,
@@ -11340,9 +11340,9 @@
     },
     "2026-09": {
       "kpi": {
-        "total": 106,
+        "total": 107,
         "pcp": 29,
-        "nekv": 77,
+        "nekv": 78,
         "zapis": 18,
         "prishel": 0,
         "neprishel": 0,
@@ -11350,7 +11350,7 @@
         "perezap": 0,
         "active_zapis": 18,
         "otval_zapis": 0,
-        "conv_pcp": 27.4,
+        "conv_pcp": 27.1,
         "conv_zapis_from_pcp": 62.1,
         "conv_prishel_from_zapis": 0.0,
         "sum_payment": 0,
@@ -11370,7 +11370,7 @@
       "status_counts": {
         "ОТКАЗ": 25,
         "недозвон": 22,
-        "—": 19,
+        "—": 20,
         "запись в клинику": 18,
         "в работе / переговорах": 8,
         "дубль": 7,
@@ -11421,9 +11421,9 @@
           "patients_no_dep": 0
         },
         "—": {
-          "total": 20,
+          "total": 21,
           "pcp": 1,
-          "nekv": 19,
+          "nekv": 20,
           "zapis": 1,
           "prishel": 0,
           "otval": 0,
